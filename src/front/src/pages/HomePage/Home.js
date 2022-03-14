@@ -12,24 +12,6 @@ import img_logo_footer from './img_logo_footer.png';
 import React, { Component } from "react"; 
 import { Link } from 'react-router-dom';
 
-/*
-const Home = () => {
-    render() {
-        return (
-          <div className="App">
-            <Header></Header>
-            <Top></Top>
-            <Middle></Middle>
-            <Bottom></Bottom>
-            <Footer_pink></Footer_pink>
-            <Footer_gray></Footer_gray>
-          </div>
-        );
-     }
-};
-*/
-
-//버튼 이벤트 수정 예정 (아직 페이지 연결 X)
 
 class Home extends Component {
   render() {
@@ -57,17 +39,17 @@ class Header extends Component{
           </href>
           
           <href onClick={()=>console.log("소개 페이지로 페이지 변경")}>
-            <Link to="/introduce" className="BT-navi" style={{width:'100px', height:'62px', left:'320px', top:'60px'}}>
+            <Link to="/introduce" className="BT-navi" style={{left:'160px'}}>
                     소개
             </Link>
           </href>
           <href onClick={()=>console.log("면접 연습페이지로 페이지 변경")}>
-            <Link to="/preinterview" className="BT-navi" style={{width:'100px', height:'62px', left:'445px', top:'60px'}}>
+            <Link to="/preinterview" className="BT-navi" style={{left:'250px'}}>
                 면접연습
             </Link>
           </href>
           <href onClick={()=>console.log("꿀팁 페이지로 페이지 변경 이벤트 추가 예정")}>
-            <span className="BT-navi" style={{width:'100px', height:'62px', left:'590px', top:'60px'}}>
+            <span className="BT-navi" style={{left:'350px'}}>
               면접꿀팁
             </span>
           </href>
