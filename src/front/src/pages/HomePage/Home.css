@@ -3,31 +3,28 @@
 .App {
     /* 메인 */
     position: relative;
-    width: "100%";
-    height: 3000px;
-    padding-left: 140px;
-    padding-right: 140px;
-  }
-  /*---------------------------------Header-------------------------------*/
-  .App-header {
+    width: 100vw;
+    height: 100vh;
+}
+/*---------------------------------Header-------------------------------*/
+.App-header {
     position: absolute;
-    width: 1512px;
-    height: 200px;
+    width: 100vw;
+    height: 15vh;
     left: 0px;
-  }
-  .App-logo {
+}
+.App-logo {
     position: absolute;
-    width: 265px;
-    height: 98px;
-    top: 50px;
-    left: 40px;
+    width: 12vw;
+    top: 3vh;
+    left: 2vw;
     cursor: pointer;
-  }
-  .BT-navi{
+}
+.BT-navi{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 16px;
     color: #5B7EFB;
     
     display: flex;
@@ -37,30 +34,31 @@
     padding: 3px;
   
     position: absolute;
-    background: #ffffff;
+
+    width: 8vw;
+    top:5vh;
   
     cursor: pointer;
     
-  }
-  .BT-mypage{
+}
+.BT-mypage{
     position: absolute;
-    width: 100px;
-    height: 45px;
-    left: 1350px;
-    top: 85px;
+    width: 5vw;
+    left: 90vw;
+    top: 5vh;
     cursor: pointer;
-  }
+}
   
-  /*---------------------------------T O P-------------------------------*/
-  .FR-top{
+/*---------------------------------T O P-------------------------------*/
+.FR-top{
     position: absolute;
-    width: 1260px;
+    width: 100vw;
     height: 600px;
     left: 0px;
     top: 175px;
     background: #F0F2F4;
-  }
-  .top-txt{
+}
+.top-txt{
     position: absolute;
     white-space: pre-line;
     font-family: Montserrat;
@@ -69,8 +67,8 @@
     font-size: 45px;
     line-height: 75px;
     color: #000000;
-  }
-  .BT-start{
+}
+.BT-start{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -88,8 +86,8 @@
     border-radius: 45px;
   
     cursor: pointer;
-  } 
-  .BT-login{
+} 
+.BT-login{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -109,15 +107,14 @@
     border-radius: 45px;
   
     cursor: pointer;
-  }
-  .img-main{
+}
+.img-main{
     position: absolute;
-    width: 390px;
-    height: 482px;
-    left: 984px;
+    width: 30vw;
+    left: 60vw;
     top: 60px;
-  }
-  .circle1{
+}
+.circle1{
     position: absolute;
     width: 29px;
     height: 29px;
@@ -125,17 +122,16 @@
     top: 70px;
     border-radius: 45px;
     background: #1342E9;
-  }
-  .circle2{
+}
+.circle2{
     position: absolute;
     width: 60px;
-    height: 60px;
     left: 622px;
     top: 214px;
     border-radius: 45px;
     background: #9CB0F8;
-  }
-  .circle3{
+}
+.circle3{
     position: absolute;
     width: 39px;
     height: 39px;
@@ -143,8 +139,8 @@
     top: 362.5px;
     border-radius: 45px;
     background: #D7E0FF;
-  }
-  .circle4{
+}
+.circle4{
     position: absolute;
     width: 36px;
     height: 36px;
@@ -152,31 +148,31 @@
     top: 139px;
     border-radius: 45px;
     background: #3258E0;
-  }
-  .img-dots{
+}
+.img-dots{
     position: absolute;
     width: 200px;
     height: 170px;
     left: 1200px;
     top: 60px;
-  }
-  /*--------------------------------- middle -------------------------------*/
-  .FR-middle{
+}
+/*--------------------------------- middle -------------------------------*/
+.FR-middle{
     position: absolute;
     width: "100%";
     height: 758px;
     left: 0px;
     top: 900px;
-  }
-  .img-gan{
+}
+.img-gan{
     position: absolute;
     width: 502px;
     height: 389px;
     left: 145px;
     top: 0px;
-  }
+}
   
-  .middle-txt1{
+.middle-txt1{
     position: absolute;
     font-family: 'Montserrat';
     font-style: normal;
@@ -184,9 +180,8 @@
     font-size: 50px;
     line-height: 69px;
     color: #000000;
-  
-  }
-  .middle-txt2{
+}
+.middle-txt2{
     position: absolute;
     font-family: 'Montserrat';
     font-style: normal;
@@ -195,9 +190,8 @@
     line-height: 35px;
     color: #000000;
     display: flex;
-  
-  }
-  .BT-join{
+}
+.BT-join{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -214,31 +208,31 @@
     border-radius: 45px;
   
     cursor: pointer;
-  } 
-  /*--------------------------------- bottom -------------------------------*/
-  .FR-bottom{
+} 
+/*--------------------------------- bottom -------------------------------*/
+.FR-bottom{
     position: absolute;
     width: 1512px;
     height: 725px;
     left: 0px;
     top: 1450px;
     background: #F0F2F4;
-  }
-  .box-step{
+}
+.box-step{
     position: absolute;
     width: 400px;
     height: 600px;
     top: 62.5px;
     background: #FFFFFF;
-  }
-  .img-step{
+}
+.img-step{
     position: absolute;
     width: 300px;
     height: 300px;
     left: 50px;
     top: 50px;
-  }
-  .bottom-txt1{
+}
+.bottom-txt1{
     position: absolute;
     font-family: 'Montserrat';
     width: 400px;
@@ -252,8 +246,8 @@
     text-align: center;
   
     color: #000000;
-  }
-  .bottom-txt2{
+}
+.bottom-txt2{
     position: absolute;
     font-family: 'Montserrat';
     width: 400px;
@@ -267,17 +261,17 @@
     text-align: center;
   
     color: #000000;
-  }
+}
   
-  /*--------------------------------- footer -------------------------------*/
-  .FR-footer-pink{
+/*--------------------------------- footer -------------------------------*/
+.FR-footer-pink{
     position: absolute;
     width: 1820px;
     height: 600px;
     left: 0px;
     top: 2050px;
-  }
-  .box-pink{
+}
+.box-pink{
     position: absolute;
     width: 1359px;
     height: 321px;
@@ -286,8 +280,8 @@
   
     background: #FFD0DB;
     border-radius: 55px;
-  }
-  .footer-pink-txt1{
+}
+.footer-pink-txt1{
     position: absolute;
     width: 1000px;
     height: 120px;
@@ -300,8 +294,8 @@
     line-height: 88px;
   
     color: rgba(0, 0, 0, 0.72);
-  }
-  .footer-pink-txt2{
+}
+.footer-pink-txt2{
     position: absolute;
     width: 743px;
     height: 84px;
@@ -315,27 +309,26 @@
     align-items: center;
   
     color: rgba(0, 0, 0, 0.72);
-  }
-  .FR-footer-gray{
+}
+.FR-footer-gray{
     position: absolute;
-    width: 1512px;
-    height: 200px;
+    width: 100vw;
+    height: 20vh;
     left: 0px;
     top: 2780px;
   
     background: #F0F2F4;
-  }
-  .img-logo-footer{
+}
+.img-logo-footer{
     position: absolute;
-    width: 117px;
-    height: 92px;
+    width: 10vw;
     left: 700px;
     top: 22px;
-  }
-  .footer-gray-txt{
+}
+.footer-gray-txt{
     position: absolute;
-    width: 1512px;
-    height: 59px;
+    width: 100vw;
+    height: 15vh;
     top: 114px;
   
     display: flex;
@@ -350,9 +343,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
-    
-  
+
     color: #BFBFBF;
-  
   }
   
