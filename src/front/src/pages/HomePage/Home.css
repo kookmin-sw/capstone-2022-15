@@ -1,5 +1,6 @@
 /* eslint-disable */
 /*-----------------메인 페이지-----------------*/
+html { font-size: 62.5%; }
 .App {
     /* 메인 */
     position: relative;
@@ -7,45 +8,42 @@
     height: 100vh;
 }
 /*---------------------------------Header-------------------------------*/
-.App-header {
+.Header {
     position: absolute;
     width: 100vw;
-    height: 15vh;
-    left: 0px;
+    height: auto;
+    background-color: #ffffff;
+    display: flex;
+
+    align-items: center;
+    padding: 1rem;
 }
-.App-logo {
-    position: absolute;
-    width: 12vw;
-    top: 3vh;
-    left: 2vw;
+.Logo {
+    /* position: relative; */
+    width: 13vw;
+    margin-left: 5vw;
     cursor: pointer;
+    padding-right: 3vw;
 }
+
 .BT-navi{
     font-family: Montserrat;
-    font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    color: #5B7EFB;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
-  
-    position: absolute;
-
-    width: 8vw;
-    top:5vh;
-  
+    font-size: 1.2vw;
+    text-decoration-line: none;
+    color: #56565c;
     cursor: pointer;
-    
+    padding-right: 3vw;
 }
+.BT-navi:hover{
+    color: #5B7EFB;
+}
+
 .BT-mypage{
     position: absolute;
-    width: 5vw;
-    left: 90vw;
-    top: 5vh;
+    float:right;
+    width: 4vw;
+    top: 4vh;
     cursor: pointer;
 }
   
@@ -53,9 +51,9 @@
 .FR-top{
     position: absolute;
     width: 100vw;
-    height: 600px;
+    height: 61vh;
     left: 0px;
-    top: 175px;
+    top: 13vh;
     background: #F0F2F4;
 }
 .top-txt{
@@ -64,16 +62,22 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 45px;
-    line-height: 75px;
-    color: #000000;
+    font-size: 2.6vw;
+    line-height: 9.3vh;
+    color: #000000; 
+
+    /* width: auto;  */
+    width: 19vw;
+    left: 6.5vw; 
+    top: 9vh;
 }
 .BT-start{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.4vw;
     color: #ffffff;
+    text-decoration-line: none;
     
     display: flex;
     flex-direction: row;
@@ -87,12 +91,16 @@
   
     cursor: pointer;
 } 
+.BT-start:hover{
+    background:  #ff85a1;
+}
 .BT-login{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.4vw;
     color: #5B7EFB;
+    text-decoration-line: none;
   
     display: flex;
     flex-direction: row;
@@ -100,66 +108,58 @@
     align-items: center;
     padding: 3;
   
-    position: absolute;
     background: #FBFCFF;
-    border: 4px solid #5B7EFB;
+    border: 0.2vw solid #5B7EFB;
     box-sizing: border-box;
     border-radius: 45px;
-  
+    
+    position: absolute;
     cursor: pointer;
+}
+.BT-login:hover{
+    color: #ff85a1;
+    border: 0.2vw solid #ff85a1;
 }
 .img-main{
     position: absolute;
-    width: 30vw;
+    width: 20vw;
+    left: 65vw;
+    top: 3vh;
+}
+.img-circle1{
+    position: absolute;
+    width: 1.6vw;
+    left: 45vw;
+    top: 27px;
+}
+.img-circle2{
+    position: absolute;
+    width: 3vw;
+    left: 51vw;
+    top: 23vh;
+}
+.img-circle3{
+    position: absolute;
+    width: 2vw;
     left: 60vw;
-    top: 60px;
+    top: 37vh;
 }
-.circle1{
+.img-circle4{
     position: absolute;
-    width: 29px;
-    height: 29px;
-    left: 555px;
-    top: 70px;
-    border-radius: 45px;
-    background: #1342E9;
-}
-.circle2{
-    position: absolute;
-    width: 60px;
-    left: 622px;
-    top: 214px;
-    border-radius: 45px;
-    background: #9CB0F8;
-}
-.circle3{
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    left: 778px;
-    top: 362.5px;
-    border-radius: 45px;
-    background: #D7E0FF;
-}
-.circle4{
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    left: 881px;
-    top: 139px;
-    border-radius: 45px;
-    background: #3258E0;
+    width: 2vw;
+    left: 64vw;
+    top: 11vh;
 }
 .img-dots{
     position: absolute;
-    width: 200px;
-    height: 170px;
-    left: 1200px;
-    top: 60px;
+    width: 14vw;
+    left: 80vw;
+    top: 3vh;
 }
 /*--------------------------------- middle -------------------------------*/
 .FR-middle{
     position: absolute;
-    width: "100%";
+    width: 100vw;
     height: 758px;
     left: 0px;
     top: 900px;
@@ -212,7 +212,7 @@
 /*--------------------------------- bottom -------------------------------*/
 .FR-bottom{
     position: absolute;
-    width: 1512px;
+    width: 100vw;
     height: 725px;
     left: 0px;
     top: 1450px;
@@ -266,7 +266,7 @@
 /*--------------------------------- footer -------------------------------*/
 .FR-footer-pink{
     position: absolute;
-    width: 1820px;
+    width: 100vw;
     height: 600px;
     left: 0px;
     top: 2050px;
