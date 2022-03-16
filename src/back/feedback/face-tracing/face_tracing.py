@@ -1,21 +1,17 @@
-import os
-
 import cv2
 import dlib
 import numpy as np
-# import json
-# import urllib.parse
-# import psutil
 import boto3
 import time
+from urllib.parse import unquote_plus
 
 s3 = boto3.client('s3')
 
 def lambda_handler(event, context):
-# Get the object from the event and show its content type
-#     try:
-    video = s3.generate_presigned_url( ClientMethod='get_object', Params={ 'Bucket': "testvideo-for-face-detection", 'Key': "interviewer.mp4" } )
-    print(video)
+    # read file from s3
+    bucket = event['Record']['s3']['bucket']['name']
+    key = unquote_plus(event['Record']['s3']['object']['key'])
+    video = s3.generate_presigned_url( ClientMethod='get_object', Params={ 'Bucket': bucket, 'Key': key} )
     
     start = time.time()
 
@@ -37,7 +33,6 @@ def lambda_handler(event, context):
     # detector function from dlib
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("/opt/my-code/shape_predictor_68_face_landmarks.dat")
-
 
     color = (0,255,0)               # green
     weight = 5
@@ -77,13 +72,4 @@ def lambda_handler(event, context):
     print(distance_p30_numpy)
     # X = np.linspace(0.0 ,len(distance_p30_numpy) / fps, num=len(distance_p30_numpy))
 
-
-# pid = os.getpid()
-# current_process = psutil.Process(pid)
-# # current_process_memory_usage = current_process.memory_info()
-# print(current_process_memory_usage)
-lambda_handler("","")
-# pid = os.getpid()
-# current_process = psutil.Process(pid)
-# current_process_memory_usage = current_process.memory_info()
-# print(current_process_memory_usage)
+# lambda_handler("","")
