@@ -1,25 +1,23 @@
 .App {
-    /* 메인 */
     position: relative;
     width: "100%";
-    height: 1510px;
+    height: 1110px;
     padding-left: 140px;
     padding-right: 140px;
   }
 
-/*--------------------------------- navigation bar -------------------------------*/
 
-
-/*--------------------------------- body -------------------------------*/
-.description {
+/*-------------------- description ---------------------*/
+.description-layout {
     position: relative;
     width: 100%;
     height: 218px;
-    left: 0px;
+    margin-top: 210px;
+    /* left: 0px; */
     /* top: 215px; */
 }
 
-.descrip-title {
+.description-title {
     position: relative;
     width: 276px;
     min-height: 50px;
@@ -39,7 +37,7 @@
 }
 
 
-.descrip-content {
+.description-content {
     position: relative;
     width: 596px;
     height: 48px;
@@ -56,6 +54,91 @@
     color: #A5A5A5;
 }
 
-/*--------------------------------- footer -------------------------------*/
+/*--------------------- cam setting ---------------------*/
+.cam-setting-layout {
+    position: relative;
+    /* width: 100%; */
+    height: 737px;
+    margin-right: 80px;
+    /* left: 0px; */
+    /* top: 433px; */
+}
+
+.cam-setting-title {
+    position: relative;
+    width: 241px;
+    height: 37px;
+    padding-left: 80px;
+    /* top: 42px; */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 37px;
+
+    display: flex;
+    align-items: center;
+}
+
+.cam-show-layout {
+    position: relative;
+    /* width: 100%; */
+    height: 480px;
+    margin-left: 80px;
+    margin-top: 10px;
+    /* margin-right: 80px; */
+    /* padding-right: 80px; */
+    
+    display: flex;
+    background-color: #A5A5A5
+}
+
+.cam-show {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    /* margin-right: 80px; */
+    /* padding-right: 80px; */
+    /* justify-content: center;
+    align-items: center; */
+    margin: auto;
+
+    display: flex;
+    background-color: #000000
+}
+
+/*-------------------- start button --------------------*/
+.start-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2.99753px;
+    margin-left: auto;
+    margin-top: 25px;
+
+    position: relative;
+    width: 200px;
+    height: 60px;
+    /* left: 1197px; */
+    /* top: 805px; */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    /* line-height: 37px; */
+
+    align-items: center;
+
+    background: rgba(91, 126, 251, 0.5);
+    border-radius: 35px;
+    border: none;
+    /* border-color: #A5A5A5; */
+    /* border-style: hidden; */
+}
+
 
   

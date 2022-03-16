@@ -1,7 +1,7 @@
 // import Button from ''
 import './PreInterview.css';
 import img_logo_long from './img_logo_long.png';
-import { Body } from './components/body';
+import { PageDescription } from '../../components/PageDescription';
 import BT_mypage from './BT_mypage.png';
 import img_logo_footer from './img_logo_footer.png';
 
@@ -9,39 +9,20 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 
-const COLORS = ['#5B7EFB', '#FF89A5', '#E9EAED']; // 보라, 분홍, 회색 
-let cnt = 0;
-// const changeColor = () => {
-//     // let cnt= 0 ;
-//     ++cnt;
-//     let nowCo = COLORS[cnt%3];
-// }
-
-// const PreInterview = () => {
-//     return (
-//         <div>
-//             <h1>
-//                 Pre-Interview Page!
-//             </h1>
-//             <h2>hihihih</h2>
-
-            
-//         </div>
-//     );
-// };
 class PreInterview extends Component {
     render() {
         return (
             <div className="App">
-            {/* <Header></Header> */}
-            <Body></Body>
-            {/* <Footer_gray></Footer_gray> */}
+                {/* <Header></Header> */}
+                <PageDescription></PageDescription>
+                <CamSetting></CamSetting>
+                {/* <Footer_gray></Footer_gray> */}
             </div>
         );
     }
 }
 class Header extends Component{
-    render(){
+    render() {
       return (
         <div className="App-header">
             <href onClick={()=>console.log("메인페이지로 페이지 변경 이벤트 추가 예정")}>
@@ -76,26 +57,28 @@ class Header extends Component{
   }
 
 
-// class Body extends Component { 
-//     render() {
-//         return (
-//             <div className="description">
-//                 <span className="descrip-title">
-//                     화상 기기 설정
-//                 </span>
-//                 <span className="descrip-content">
-//                     IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
-//                     화상 기기를 연결한 후 START버튼을 눌러 면접 연습을 시작하세요.
-//                 </span>
-//             </div>
-//             <div className="">
+class CamSetting extends Component { 
+    render() {
+        return (
+            <div className="cam-setting-layout">
+                <span className="cam-setting-title">
+                    WEBCAM 연결 · · ·
+                </span>
+                <div className="cam-show-layout">
+                    <div className="cam-show">
 
-//             </div>
-//         );
-//     }
+                    </div>
+                    {/* conneting webcam */}
+                </div>
+                <button className="start-button">
+                    START
+                </button>
+            </div>
+        );
+    }
     
 
-// }
+}
 
 class Footer_gray extends Component {
     render() {
