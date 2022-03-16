@@ -11,8 +11,50 @@
 
 
 /*--------------------------------- body -------------------------------*/
+.description {
+    position: relative;
+    width: 100%;
+    height: 218px;
+    left: 0px;
+    /* top: 215px; */
+}
+
+.descrip-title {
+    position: relative;
+    width: 276px;
+    min-height: 50px;
+    height: 70px;
+    padding-left: 80px;
+    padding-top: 22px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 850;
+    font-size: 32px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
 
 
+.descrip-content {
+    position: relative;
+    width: 596px;
+    height: 48px;
+    padding-left: 80px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #A5A5A5;
+}
 
 /*--------------------------------- footer -------------------------------*/
 

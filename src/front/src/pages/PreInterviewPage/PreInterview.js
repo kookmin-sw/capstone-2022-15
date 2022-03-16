@@ -1,6 +1,7 @@
 // import Button from ''
 import './PreInterview.css';
 import img_logo_long from './img_logo_long.png';
+import { Body } from './components/body';
 import BT_mypage from './BT_mypage.png';
 import img_logo_footer from './img_logo_footer.png';
 
@@ -75,17 +76,26 @@ class Header extends Component{
   }
 
 
-class Body extends Component { 
-    render() {
-        return (
-            <div className="description">
-                
-            </div>
-        );
-    }
+// class Body extends Component { 
+//     render() {
+//         return (
+//             <div className="description">
+//                 <span className="descrip-title">
+//                     화상 기기 설정
+//                 </span>
+//                 <span className="descrip-content">
+//                     IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
+//                     화상 기기를 연결한 후 START버튼을 눌러 면접 연습을 시작하세요.
+//                 </span>
+//             </div>
+//             <div className="">
+
+//             </div>
+//         );
+//     }
     
 
-}
+// }
 
 class Footer_gray extends Component {
     render() {
