@@ -4,9 +4,7 @@
 front
  │    README.md
  ├─ public
- │   │    index.html
- │   └─ images
- │
+ │        index.html
  └─ src
      │    App.js
      │    index.js
