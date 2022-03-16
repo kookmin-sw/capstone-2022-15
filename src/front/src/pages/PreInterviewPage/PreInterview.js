@@ -32,9 +32,9 @@ class PreInterview extends Component {
     render() {
         return (
             <div className="App">
-            <Header></Header>
+            {/* <Header></Header> */}
             <Body></Body>
-            <Footer_gray></Footer_gray>
+            {/* <Footer_gray></Footer_gray> */}
             </div>
         );
     }
