@@ -32,12 +32,11 @@ class CamSetting extends Component {
                 </span>
                 <div className="cam-show-layout">
                     <div className="cam-show">
-
+                        {/* webcam 연결 기능 구현 부분 */}
                     </div>
-                    {/* conneting webcam */}
                 </div>
                 <button className="start-button">
-                    START
+                    <Link to="/interview">START</Link>
                 </button>
             </div>
         );
