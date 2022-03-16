@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 class PreInterview extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="PreInterviewApp">
                 {/* <Header></Header> */}
                 <PageDescription></PageDescription>
                 <CamSetting></CamSetting>
