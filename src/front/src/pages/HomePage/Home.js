@@ -2,12 +2,19 @@
 import './Home.css';
 import img_logo_long from './img_logo_long.png';
 import BT_mypage from './BT_mypage.png';
-import img_main from './img_main.png';
+import img_top_txt from './img_top_txt.png';
+import img_circle1 from './img_circle1.png';
+import img_circle2 from './img_circle2.png';
+import img_circle3 from './img_circle3.png';
+import img_circle4 from './img_circle4.png';
 import img_dots from './img_dots.png';
+import img_main from './img_main.png';
 import img_gan from './img_gan.png';
 import img_step1 from './img_step1.png';
 import img_step3 from './img_step3.png';
 import img_logo_footer from './img_logo_footer.png';
+
+
 
 import React, { Component } from "react"; 
 import { Link } from 'react-router-dom';
@@ -18,11 +25,12 @@ class Home extends Component {
     return (
       <div className="App">
         <Header></Header>
+
         <Top></Top>
-        <Middle></Middle>
+        {/* <Middle></Middle>
         <Bottom></Bottom>
         <Footer_pink></Footer_pink>
-        <Footer_gray></Footer_gray>
+        <Footer_gray></Footer_gray>  */}
       </div>
     );
   }
@@ -31,34 +39,35 @@ class Home extends Component {
 class Header extends Component{
   render(){
     return (
-      <div className="App-header">
-          <href onClick={()=>console.log("메인페이지로 페이지 변경")}>
+      <div className="Header">
+          <div onClick={()=>console.log("메인페이지로 페이지 변경")}>
             <Link to="/">
-                <img src={img_logo_long} className="App-logo"/>
+                <img src={img_logo_long} className="Logo"/>
             </Link>
-          </href>
+          </div>
           
-          <href onClick={()=>console.log("소개 페이지로 페이지 변경")}>
-            <Link to="/introduce" className="BT-navi" style={{left:'160px'}}>
+          <div onClick={()=>console.log("소개 페이지로 페이지 변경")}>
+            <Link to="/introduce" className="BT-navi">
                     소개
             </Link>
-          </href>
-          <href onClick={()=>console.log("면접 연습페이지로 페이지 변경")}>
-            <Link to="/preinterview" className="BT-navi" style={{left:'250px'}}>
+          </div>
+          <div onClick={()=>console.log("면접 연습페이지로 페이지 변경")}>
+            <Link to="/preinterview" className="BT-navi">
                 면접연습
             </Link>
-          </href>
-          <href onClick={()=>console.log("꿀팁 페이지로 페이지 변경 이벤트 추가 예정")}>
-            <span className="BT-navi" style={{left:'350px'}}>
+          </div>
+          <div onClick={()=>console.log("꿀팁 페이지로 페이지 변경 이벤트 추가 예정")}>
+            <span className="BT-navi">
               면접꿀팁
             </span>
-          </href>
-          <href onClick={()=>console.log("마이페이지로 페이지 변경")}>
+          </div>
+          <div onClick={()=>console.log("마이페이지로 페이지 변경")}>
             <Link to="/mypage">
                 <img src={BT_mypage} className="BT-mypage"/> 
             </Link>
-          </href>
-        </div>
+          </div>
+      </div>
+        
     );
   }
 }
@@ -68,27 +77,28 @@ class Top extends Component{
   render(){
     return(
       <div className="FR-top">
-      <span className="top-txt" style={{width:'400px', height:'396px', left:'145px', top:'117px'}}>
+        <img src={img_top_txt} className="top-txt"/> 
+      {/* <span className="top-txt">
       가상 면접관이 있는 <br></br>
       인퓨와 함께라면 <br></br>
       내일은 면접왕 <br></br>
       👑
-      </span>
-      <href onClick={()=>console.log("화상기기 설정 페이지로 페이지 변경")}>
-            <Link to="/preinterview" className="BT-start" style={{width:'200px', height:'62px', left:'133px', top:'458px'}}>
+      </span> */}
+      <div onClick={()=>console.log("화상기기 설정 페이지로 페이지 변경")}>
+            <Link to="/preinterview" className="BT-start" style={{width:'9.5vw', height:'6vh', left:'6.5vw', top:'47vh'}}>
                 연습시작!
             </Link>
-      </href>
-      <href onClick={()=>console.log("로그인 페이지로 페이지 변경 이벤트 추가")}>
-            <Link to ="mypage" className="BT-login" style={{width:'200px', height:'66px', left:'380px', top:'458px'}}>
+      </div>
+      <div onClick={()=>console.log("로그인 페이지로 페이지 변경 이벤트 추가")}>
+            <Link to ="mypage" className="BT-login" style={{width:'10vw', height:'7vh', left:'19vw', top:'47vh'}}>
                 로그인
             </Link>
-      </href>
+      </div>
       <img src={img_main} className="img-main"/> 
-      <div className="circle1"/>
-      <div className="circle2"/>
-      <div className="circle3"/>
-      <div className="circle4"/>
+      <img src={img_circle1} className="img-circle1"/>
+      <img src={img_circle2} className="img-circle2"/>
+      <img src={img_circle3} className="img-circle3"/>
+      <img src={img_circle4} className="img-circle4"/>
       <img src={img_dots} className="img-dots"/> 
     </div>      
     );
@@ -109,11 +119,11 @@ class Middle extends Component{
             인퓨는 가상 생성된 모의 면접관과 함께 <br></br>
             실제 면접과 유사한 방식으로 연습할 수 있습니다.
           </span>
-          <href onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
+          <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
                 <Link to ="login" className="BT-join" style={{width:'250px', height:'72px', left:'1000px', top:'310px', background:'#FFAFC2', border: '1px solid #FFAFC2'}}>
                   회원가입
                 </Link>
-          </href>
+          </div>
         </div>      
     );
   }
@@ -172,11 +182,11 @@ class Footer_pink extends Component{
               오늘 준비할 면접을 내일로 미루지 말자!
             </span>
           </div>
-          <href onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경 이벤트 추가")}>
+          <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경 이벤트 추가")}>
             <Link to ="login" className="BT-join" style={{width:'250px', height:'72px', left:'1120px', top:'460px', background:'#5B7EFB', border: '1px solid #5B7EFB'}}>
                   회원가입
             </Link>
-          </href>
+          </div>
         </div>
     );
   }
