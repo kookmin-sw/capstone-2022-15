@@ -12,13 +12,11 @@ import img_main from '../images/img_main.png';
 import img_gan from '../images/img_gan.png';
 import img_step1 from '../images/img_step1.png';
 import img_step3 from '../images/img_step3.png';
-import img_logo_footer from '../images/img_logo_footer.png';
-
-
 
 import React, { Component } from "react"; 
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer';
 
 class Home extends Component {
   render() {
@@ -30,11 +28,9 @@ class Home extends Component {
         <Top/>
         <Middle/>
         <Bottom/>
-
-        {/*
-        
         <Footer_pink/>
-        <Footer_gray/> */}
+        <Footer/>
+        
       </div>
     );
   }
@@ -124,7 +120,7 @@ class Middle extends Component{
             실제 면접과 유사한 방식으로 연습할 수 있습니다.
           </span>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
-                <Link to ="login" className="BT-join" style={{width:'14vw', height:'8vh', left:'68.2vw', top:'52vh'}}>
+                <Link to ="login" className="BT-join" style={{left:'68.2vw', top:'52vh'}}>
                   회원가입
                 </Link>
           </div>
@@ -187,7 +183,7 @@ class Footer_pink extends Component{
             </span>
           </div>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경 이벤트 추가")}>
-            <Link to ="login" className="BT-join" style={{width:'250px', height:'72px', left:'1120px', top:'460px', background:'#5B7EFB', border: '1px solid #5B7EFB'}}>
+            <Link to ="login" className="BT-join" style={{left:'74vw', top:'33vh'}}>
                   회원가입
             </Link>
           </div>
@@ -195,17 +191,5 @@ class Footer_pink extends Component{
     );
   }
 }
-class Footer_gray extends Component{
-  render(){
-    return(
-      <div className='FR-footer-gray'>
-      <img src={img_logo_footer} className="img-logo-footer"/> 
-      <span className='footer-gray-txt'>
-        국민대학교 소프트웨어학부<br></br>
-        캡스톤 15조
-      </span>
-    </div>
-    );
-  }
-}
+
 export default Home;
