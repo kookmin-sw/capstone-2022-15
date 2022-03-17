@@ -2,7 +2,6 @@
 # IN4U - Interview For You
 ![img_logo_long](https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png)
 
-GAN으로 생성된 가상의 모의 면접관과 면접 연습을 할 수 있는 웹사이트입니다.
 
 ## 팀소개 및 페이지를 꾸며주세요.
 
