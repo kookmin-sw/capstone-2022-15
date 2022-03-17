@@ -206,53 +206,57 @@ html { font-size: 62.5%; }
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.8vw;
     color: #ffffff;
     text-decoration-line: none;
+
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 3px;
-
+    background:#ff85a1;
+    border: '1px solid #FFAFC2';
     position: absolute;
     border-radius: 45px;
 
     cursor: pointer;
   } 
+  .BT-join:hover{
+    background: #5B7EFB;
+  }
   /*--------------------------------- bottom -------------------------------*/
   .FR-bottom{
     position: absolute;
-    width: 1512px;
-    height: 725px;
+    width: 98vw;
+    height: 90vh;
     left: 0px;
-    top: 1450px;
+    top: 161vh;
     background: #F0F2F4;
   }
   .box-step{
     position: absolute;
-    width: 400px;
-    height: 600px;
-    top: 62.5px;
+    width: 25vw;
+    height: 80vh;
+    top: 5vh;
     background: #FFFFFF;
   }
   .img-step{
     position: absolute;
-    width: 300px;
-    height: 300px;
-    left: 50px;
-    top: 50px;
+    width: 20vw;
+    left: 2.5vw;
+    top: 6vh;
   }
   .bottom-txt1{
     position: absolute;
     font-family: 'Montserrat';
-    width: 400px;
-    height: 236px;
-    top: 370px;
-    left:0px;
+    width: 20vw;
+    height:3vw;
+    top:52vh;
+    left: 2.5vw;
 
-    font-size: 45px;
+    font-size: 3vw;
     font-weight: 700;
     line-height: 78px;
     text-align: center;
@@ -262,14 +266,14 @@ html { font-size: 62.5%; }
   .bottom-txt2{
     position: absolute;
     font-family: 'Montserrat';
-    width: 400px;
-    height: 236px;
-    top: 460px;
+    width: 25vw;
+    height: 4vw;
+    top:65vh;
     left:0px;
 
-    font-size: 25px;
+    font-size: 1.4vw;
     font-weight: bold;
-    line-height: 35px;
+
     text-align: center;
 
     color: #000000;
