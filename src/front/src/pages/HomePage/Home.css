@@ -5,7 +5,7 @@ html { font-size: 62.5%; }
     /* 메인 */
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 /*---------------------------------Header-------------------------------*/
 /* .Header {
@@ -210,13 +210,15 @@ html { font-size: 62.5%; }
     color: #ffffff;
     text-decoration-line: none;
 
+    width: 15vw; 
+    height: 9vh;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 3px;
-    background:#ff85a1;
+    background:#5B7EFB;
     border: '1px solid #FFAFC2';
     position: absolute;
     border-radius: 45px;
@@ -224,7 +226,7 @@ html { font-size: 62.5%; }
     cursor: pointer;
   } 
   .BT-join:hover{
-    background: #5B7EFB;
+    background: #ff85a1;
   }
   /*--------------------------------- bottom -------------------------------*/
   .FR-bottom{
@@ -282,86 +284,46 @@ html { font-size: 62.5%; }
   /*--------------------------------- footer -------------------------------*/
   .FR-footer-pink{
     position: absolute;
-    width: 1820px;
-    height: 600px;
+    width: 98vw;
+    height: 68vh;
     left: 0px;
-    top: 2050px;
+    top: 260vh;
   }
   .box-pink{
     position: absolute;
-    width: 1359px;
-    height: 321px;
-    left: 76px;
-    top: 260px;
+    width: 90vw;
+    height: 40vh;
+    left: 4vw;
+    top: 10vh;
 
-    background: #FFD0DB;
+    background: #fcdde4;
     border-radius: 55px;
   }
   .footer-pink-txt1{
     position: absolute;
-    width: 1000px;
-    height: 120px;
-    left: 61px;
-    top: 83px;
+    width: 70vw;
+    height: 20vh;
+    left: 4vw;
+    top: 10vh;
 
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 65px;
-    line-height: 88px;
+    font-size: 4vw;
 
     color: rgba(0, 0, 0, 0.72);
   }
   .footer-pink-txt2{
     position: absolute;
-    width: 743px;
-    height: 84px;
-    left: 61px;
-    top: 165px;
+    width: 40vw;
+    height: 20vh;
+    left: 4.5vw;
+    top: 17vh;
 
     font-family: 'Montserrat';
     font-weight: 560;
-    font-size: 30px;
+    font-size: 1.6vw;
     display: flex;
     align-items: center;
 
     color: rgba(0, 0, 0, 0.72);
-  }
-  .FR-footer-gray{
-    position: absolute;
-    width: 1512px;
-    height: 200px;
-    left: 0px;
-    top: 2780px;
-
-    background: #F0F2F4;
-  }
-  .img-logo-footer{
-    position: absolute;
-    width: 117px;
-    height: 92px;
-    left: 700px;
-    top: 22px;
-  }
-  .footer-gray-txt{
-    position: absolute;
-    width: 1512px;
-    height: 59px;
-    top: 114px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
-    text-align: center;
-
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
-
-
-    color: #BFBFBF;
-
   }
