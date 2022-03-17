@@ -1,0 +1,32 @@
+.FR-footer-gray{
+    position: absolute;
+    width: 98vw;
+    height: 18vh;
+    left: 0px;
+    top: 330vh;
+
+    background: #F0F2F4;
+  }
+  .img-logo-footer{
+    position: absolute;
+    width: 5vw;
+    left: 46.5vw;
+    top: 3vh;
+  }
+  .footer-gray-txt{
+    position: absolute;
+    width: 15vw;
+
+    height: 3vw;
+    top: 5.5vw;
+    left: 41.5vw;
+    text-align: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+
+    color: #a0a0a0;
+
+  }
