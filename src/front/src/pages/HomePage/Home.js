@@ -24,16 +24,17 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
+        
+        {/* <Header/> */}
         <Navbar/>
+        <Top/>
+        <Middle/>
+        <Bottom/>
 
-        <Top></Top>
         {/*
-        <Header></Header>
-
-        <Middle></Middle>
-        <Bottom></Bottom>
-        <Footer_pink></Footer_pink>
-        <Footer_gray></Footer_gray>  */}
+        
+        <Footer_pink/>
+        <Footer_gray/> */}
       </div>
     );
   }
@@ -114,16 +115,16 @@ class Middle extends Component{
     return(
       <div className="FR-middle">
           <img src={img_gan} className="img-gan"/> 
-          <span className="middle-txt1" style={{width:'594px', height:'349px', left:'840px', top:'0px'}}>
+          <span className="middle-txt1" style={{width:'33vw', left:'60vw', top:'12vh'}}>
             면접, <br></br>
             언제 어디서든 실전처럼!
           </span>
-          <span className="middle-txt2" style={{width:'690px', height:'349px', left:'840px', top:'160px'}}>
+          <span className="middle-txt2" style={{width:'32vw', left:'60.5vw', top:'33vh'}}>
             인퓨는 가상 생성된 모의 면접관과 함께 <br></br>
             실제 면접과 유사한 방식으로 연습할 수 있습니다.
           </span>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
-                <Link to ="login" className="BT-join" style={{width:'250px', height:'72px', left:'1000px', top:'310px', background:'#FFAFC2', border: '1px solid #FFAFC2'}}>
+                <Link to ="login" className="BT-join" style={{width:'14vw', height:'8vh', left:'68.2vw', top:'52vh'}}>
                   회원가입
                 </Link>
           </div>
@@ -137,7 +138,7 @@ class Bottom extends Component{
   render(){
     return(
       <div className='FR-bottom'>
-          <div className="box-step" style={{left: "100px"}}>
+          <div className="box-step" style={{left: "4vw"}}>
             <img src={img_step1} className="img-step"/> 
             <span className="bottom-txt1">
               STEP 1
@@ -147,7 +148,7 @@ class Bottom extends Component{
               면접 연습 환경 준비
             </span>
           </div>
-          <div className="box-step" style={{left: "550px"}}>
+          <div className="box-step" style={{left: "36.5vw"}}>
             <img src={img_step1} className="img-step"/> 
             <span className="bottom-txt1">
                 STEP 2
@@ -157,7 +158,7 @@ class Bottom extends Component{
               실전 면접 연습
             </span>
           </div>
-          <div className="box-step" style={{left: "1000px"}}>
+          <div className="box-step" style={{left: "69vw"}}>
             <img src={img_step3} className="img-step"/> 
             <span className="bottom-txt1">
                 STEP 3
