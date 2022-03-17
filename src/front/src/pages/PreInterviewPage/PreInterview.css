@@ -45,7 +45,7 @@
 
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     display: flex;
@@ -109,12 +109,15 @@
 }
 
 /*-------------------- start button --------------------*/
+.link-to-interviewpage {
+    text-decoration: none;
+}
+
 .start-button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 2.99753px;
     margin-left: auto;
     margin-top: 25px;
 
@@ -138,7 +141,8 @@
     border: none;
     /* border-color: #A5A5A5; */
     /* border-style: hidden; */
-}
 
+    cursor: pointer;
+}
 
   

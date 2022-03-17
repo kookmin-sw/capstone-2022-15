@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 class Interview extends Component {
     render() {
         return (
-            <div className="App">
-            <PageDescription></PageDescription>
+            <div className="InterviewApp">
+                <PageDescription></PageDescription>
             </div>
         );
     }
 }
+
 
 
 
