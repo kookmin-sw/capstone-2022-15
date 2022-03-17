@@ -64,7 +64,7 @@ html { font-size: 62.5%; }
     height: 61vh;
     left: 0px;
     top: 14vh;
-    background: #F0F2F4;
+    background: #F0F2F4; 
 }
 .top-txt{
     position: absolute;
@@ -133,7 +133,7 @@ html { font-size: 62.5%; }
 .img-main{
     position: absolute;
     width: 20vw;
-    left: 65vw;
+    left: 71.5vw;
     top: 3vh;
 }
 .img-circle1{
@@ -165,3 +165,199 @@ html { font-size: 62.5%; }
     width: 14vw;
     left: 80vw;
 }
+ /*--------------------------------- middle -------------------------------*/
+ .FR-middle{
+    position: absolute;
+    width: 98vw;
+    height: 70vh;
+    left: 0px;
+    top: 80vh;
+
+    /* background: #323d49;  */
+  }
+  .img-gan{
+    position: absolute;
+    width: 30vw;
+    left: 6.5vw;
+    top: 12vh;
+  }
+
+  .middle-txt1{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.8vw;
+    line-height: 9vh;
+    color: #000000;
+
+  }
+  .middle-txt2{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3vw;
+    line-height: 5vh;
+    color: #000000;
+
+  }
+  .BT-join{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration-line: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+
+    position: absolute;
+    border-radius: 45px;
+
+    cursor: pointer;
+  } 
+  /*--------------------------------- bottom -------------------------------*/
+  .FR-bottom{
+    position: absolute;
+    width: 1512px;
+    height: 725px;
+    left: 0px;
+    top: 1450px;
+    background: #F0F2F4;
+  }
+  .box-step{
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    top: 62.5px;
+    background: #FFFFFF;
+  }
+  .img-step{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50px;
+    top: 50px;
+  }
+  .bottom-txt1{
+    position: absolute;
+    font-family: 'Montserrat';
+    width: 400px;
+    height: 236px;
+    top: 370px;
+    left:0px;
+
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 78px;
+    text-align: center;
+
+    color: #000000;
+  }
+  .bottom-txt2{
+    position: absolute;
+    font-family: 'Montserrat';
+    width: 400px;
+    height: 236px;
+    top: 460px;
+    left:0px;
+
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  /*--------------------------------- footer -------------------------------*/
+  .FR-footer-pink{
+    position: absolute;
+    width: 1820px;
+    height: 600px;
+    left: 0px;
+    top: 2050px;
+  }
+  .box-pink{
+    position: absolute;
+    width: 1359px;
+    height: 321px;
+    left: 76px;
+    top: 260px;
+
+    background: #FFD0DB;
+    border-radius: 55px;
+  }
+  .footer-pink-txt1{
+    position: absolute;
+    width: 1000px;
+    height: 120px;
+    left: 61px;
+    top: 83px;
+
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 88px;
+
+    color: rgba(0, 0, 0, 0.72);
+  }
+  .footer-pink-txt2{
+    position: absolute;
+    width: 743px;
+    height: 84px;
+    left: 61px;
+    top: 165px;
+
+    font-family: 'Montserrat';
+    font-weight: 560;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.72);
+  }
+  .FR-footer-gray{
+    position: absolute;
+    width: 1512px;
+    height: 200px;
+    left: 0px;
+    top: 2780px;
+
+    background: #F0F2F4;
+  }
+  .img-logo-footer{
+    position: absolute;
+    width: 117px;
+    height: 92px;
+    left: 700px;
+    top: 22px;
+  }
+  .footer-gray-txt{
+    position: absolute;
+    width: 1512px;
+    height: 59px;
+    top: 114px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    text-align: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+
+
+    color: #BFBFBF;
+
+  }
