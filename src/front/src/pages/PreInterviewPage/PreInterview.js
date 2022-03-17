@@ -35,9 +35,11 @@ class CamSetting extends Component {
                         {/* webcam 연결 기능 구현 부분 */}
                     </div>
                 </div>
-                <button className="start-button">
-                    <Link to="/interview">START</Link>
-                </button>
+                <Link to="/interview" className="link-to-interviewpage">
+                    <button className="start-button">
+                        START
+                    </button>
+                </Link>
             </div>
         );
     }
