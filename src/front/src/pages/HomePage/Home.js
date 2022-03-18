@@ -89,7 +89,7 @@ class Top extends Component{
                 연습시작!
             </Link>
       </div>
-      <div onClick={()=>console.log("로그인 페이지로 페이지 변경 이벤트 추가")}>
+      <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
             <Link to ="/login" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
                 로그인
             </Link>
