@@ -2,7 +2,7 @@ const Login = () => {
     return (
         <div>
             <h1>
-                Interview Page!
+                Login Page!
             </h1>
         </div>
     );
