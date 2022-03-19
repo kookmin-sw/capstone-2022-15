@@ -1,11 +1,11 @@
-const Interview = () => {
+const Mypage = () => {
     return (
         <div>
             <h1>
-                Interview Page!
+                My Page!
             </h1>
         </div>
     );
 };
 
-export default Interview;
+export default Mypage;
