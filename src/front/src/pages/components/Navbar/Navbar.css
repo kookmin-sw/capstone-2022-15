@@ -4,6 +4,13 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    position:absolute;
+    left: 1vw;
+    width:auto;
+
+    z-index: 5;
+    background: rgb(255, 255, 255);
+    top:0vh;
 }
 
 .navbar-logo{
@@ -56,19 +63,25 @@
     display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 500px) {
     .Navbar{
         position: relative;
     }
 
     .nav-menu{
         flex-direction: column;
-        width: 100%;
-        height: 500px;
+        width: 95%;
+        height: auto;
         position: absolute;
-        top: 80px;
+        text-align: center;
+        justify-content: center;
+        top: 13vh;
+
         /* left:-100%; */
         transition: all .5s ease;
+        padding: 1.5rem;
+        margin: 2rem auto;
+        background: #fff;
     }
 
     .nav-menu.active{
@@ -81,7 +94,7 @@
     .nav-links{
         text-align: center;
         padding: 2rem;
-        width: 100%;
+        width: 95%;
         display: table;
     }
 
@@ -123,13 +136,13 @@
         background: #7577fa;
         text-decoration: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .nav-links-mobile:hover{
         background: #ff85a1;;
-        color: #6568f4;
-        transition: 250ms;
+        color: #fff;
+        transition-duration: 400ms;
     }
 
     Button {
