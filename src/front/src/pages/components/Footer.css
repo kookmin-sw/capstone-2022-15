@@ -1,0 +1,39 @@
+/* Footer 위치 수정 예정
+지금은 fixed라 무조건 아래 계속 보이는데,
+메인페이지에서는 스크롤 내려서 하단에만 보이게 수정 예정 
+Home.js에서 style로 top 지정해도 페이지마다 다르게 보이는 건 안돼서, 
+일단 모든 페이지 하단에서 보이게 쓸 수 있도록 fixed로 하단에 고정해 놓음! 
+*/
+
+.FR-footer-gray{
+    position: fixed;
+    bottom: 0vh;
+    width: 98vw;
+    height: 17vh;
+    left: 0.5vw;
+
+    background: #F0F2F4;
+  }
+  .img-logo-footer{
+    position: absolute;
+    width: 5vw;
+    left: 46.5vw;
+    top: 2.2vh;
+  }
+  .footer-gray-txt{
+    position: absolute;
+    width: 15vw;
+
+    height: 3vw;
+    top: 4.7vw;
+    left: 41.5vw;
+    text-align: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95vw;
+
+    color: #a0a0a0;
+
+  }
