@@ -2,7 +2,7 @@ const Mypage = () => {
     return (
         <div>
             <h1>
-                Interview Page!
+                My Page!
             </h1>
         </div>
     );
