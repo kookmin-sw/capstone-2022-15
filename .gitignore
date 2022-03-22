@@ -3,6 +3,11 @@
 /.pnp
 .pnp.js
 .jpg
+.pt
+.mp4
+.jpeg
+.zip
+.pkl
 
 # testing
 /coverage
