@@ -25,9 +25,20 @@ class CamSetting extends Component {
     render() {
         return (
             <div className="cam-setting-layout">
-                <span className="cam-setting-title">
-                    WEBCAM 연결 · · ·
-                </span>
+                <div className="mini-title">
+                    <div className="cam-setting-title">
+                        WEBCAM 연결
+                    </div>
+                    {/* <div className="Connecting">
+                        Connecting
+                    </div> */}
+                    <div className="Connected">
+                        Connected
+                    </div>
+                    {/* <div className="Connection-failed">
+                        Connection failed
+                    </div> */}
+                </div>
                 <div className="cam-show-layout">
                     <div className="cam-show">
                         {/* <CamRecorder></CamRecorder> */}
