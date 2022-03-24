@@ -29,7 +29,10 @@ class Home extends Component {
         <Middle/>
         <Bottom/>
         <Footer_pink/>
-        <Footer/>
+        <div className='footer_top'>
+          <Footer/>
+        </div>
+        
         
       </div>
     );
