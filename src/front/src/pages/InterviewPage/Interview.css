@@ -45,8 +45,81 @@
     /* line-height: 37px; */
 
     background: rgba(91, 126, 251, 0.5);
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
 
     cursor: pointer;
+}
+
+.start-interview-button:hover{
+  background-color: #5B7EFB;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.next-interview-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+
+  position: relative;
+  width: 200px;
+  height: 50px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  /* line-height: 37px; */
+
+  background: rgba(91, 126, 251, 0.5);
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.next-interview-button:hover{
+  background-color: #5B7EFB;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.stop-interview-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+
+  position: relative;
+  width: 200px;
+  height: 50px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  /* line-height: 37px; */
+
+  background: rgba(91, 126, 251, 0.5);
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.stop-interview-button:hover{
+  background-color: #5B7EFB;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
 }

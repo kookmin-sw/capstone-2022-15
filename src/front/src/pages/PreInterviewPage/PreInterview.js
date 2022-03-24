@@ -33,9 +33,9 @@ class CamSetting extends Component {
                     {/* <div className="Connecting">
                         Connecting
                     </div> */}
-                    <div className="Connected">
+                    {/* <div className="Connected">
                         Connected
-                    </div>
+                    </div> */}
                     {/* <div className="Connection-failed">
                         Connection failed
                     </div> */}
