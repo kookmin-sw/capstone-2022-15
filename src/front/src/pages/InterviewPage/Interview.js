@@ -6,7 +6,7 @@ let count = 1;
 
 function Interview() {
     const [buttonState, setButtonState] = useState(true);
-    const [questionNumberState, setQuestionNumberState] = useState(0);
+    const [questionNumberState, setQuestionNumberState] = useState(1);
 
     // function changeButtonStateTrue() {
     //     setButtonState(true);
@@ -35,18 +35,18 @@ function Interview() {
             <div className="button-section">
                 {/* state true : 면접 시작 button */}
                 {buttonState 
-                && <button className="start-interview-button" onClick={() => setButtonState(false)}>
+                && <button className="interview-button" onClick={() => setButtonState(false)}>
                     면접 시작
                 </button>}
                 {/* state false : 다음 질문 button */}
                 {!buttonState 
                 && questionNumberState < 2 
-                && <button className="next-interview-button" onClick={() => setQuestionNumberState(questionNumberState+1)}>
+                && <button className="interview-button" onClick={() => setQuestionNumberState(questionNumberState+1)}>
                     다음 질문
                 </button>}
                 {/* state false : 면접 종료 button */}
                 {questionNumberState === 2 
-                && <button className="stop-interview-button">
+                && <button className="interview-button">
                     면접 종료
                 </button>}
             </div>
