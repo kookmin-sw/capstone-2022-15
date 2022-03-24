@@ -322,3 +322,8 @@ html { font-size: 62.5%; }
 
     color: rgba(0, 0, 0, 0.72);
   }
+  .footer_top{
+    z-index: 7;
+    position: absolute;
+    top:330vh;
+  }
