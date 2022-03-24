@@ -29,7 +29,9 @@ function Interview() {
         <div className="interview-app">
             {/*------ 가상 면접관 ------*/}
             <div className="interviewer-section">
-
+                <video autoPlay muted width="100%" height="100%" controls >
+                    <source src="./test_video.mp4" type="video/mp4"/>
+                </video>                
             </div>
             {/*-------- 사용자 --------*/}
             <div className="button-section">
