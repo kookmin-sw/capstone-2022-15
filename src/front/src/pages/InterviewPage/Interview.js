@@ -21,15 +21,15 @@ function Interview() {
     //     console.log('count ', count);
     // }, [count]);
 
-    function changeQuestionNumberState() {
-        setQuestionNumberState(questionNumberState + 1);
-    }
+    // function changeQuestionNumberState() {
+    //     setQuestionNumberState(questionNumberState + 1);
+    // }
 
     return (
         <div className="interview-app">
             {/*------ 가상 면접관 ------*/}
             <div className="interviewer-section">
-                <video autoPlay muted width="100%" height="100%" controls >
+                <video autoPlay width="100%" height="100%" controls >
                     <source src="./test_video.mp4" type="video/mp4"/>
                 </video>                
             </div>
@@ -43,17 +43,20 @@ function Interview() {
                 {/* state false : 다음 질문 button */}
                 {!buttonState 
                 && questionNumberState < 2 
-                && <button className="interview-button" onClick={() => setQuestionNumberState(questionNumberState+1)}>
+                && <button className="interview-button" onClick={() => setQuestionNumberState(questionNumberState + 1)}>
                     다음 질문
                 </button>}
                 {/* state false : 면접 종료 button */}
                 {questionNumberState === 2 
                 && <button className="interview-button">
-                    면접 종료
+                    <Link to="/mypage" className="link-to-mypage">
+                        면접 종료
+                    </Link>
                 </button>}
             </div>
         </div>
     );
 }
+
 
 export default Interview;
