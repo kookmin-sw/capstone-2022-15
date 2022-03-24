@@ -21,6 +21,7 @@ class PreInterview extends Component {
     }
 }
 
+const clickMotion = () => window.open('/interview', '_blank');
 class CamSetting extends Component { 
     render() {
         return (
@@ -45,7 +46,7 @@ class CamSetting extends Component {
                     </div>
                 </div>
                 <Link to="/interview" className="link-to-interviewpage">
-                {/* <button onClick={() => window.open('/interview', '_blank')}>/interview</button> */}
+                    {/* <button onClick={clickMotion}>/interview</button> */}
                     <button className="start-button">
                         START
                     </button>
