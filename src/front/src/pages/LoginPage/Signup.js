@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import './Signup.css';
+import Axios from 'axios';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -20,6 +21,21 @@ const Signup = () => {
     }
   }, []);
 
+  const onChangeName = (e) => {
+    setName(e.target.value)
+  }
+  const onChangeId = (e) => {
+    setId(e.target.value)
+  }
+  const onChangePw1 = (e) => {
+    setPassword1(e.target.value)
+  }
+  const onChangePw2 = (e) => {
+    setPassword2(e.target.value)
+  }
+  const onChangeInterest = (e) => {
+    setInterest(e.target.value)
+  }
   const onSubmit = e => {
     e.preventDefault();
 
@@ -34,31 +50,29 @@ const Signup = () => {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
       return false
     }
-
-    fetch('http://127.0.0.1:8000/api/v1/mall/auth/register/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.key) {
-          localStorage.clear();
-          localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/dashboard');
+  
+    Axios.post('/api/v1/mall/auth/register/', user)
+      .then(res => {
+        if (res.data.key) {
+          localStorage.clear()
+          localStorage.setItem('token', res.data.key)
+          // 사용하려면 App.js에서 /로 라우팅해야 한다
+          window.location.replace('/signup')
         } else {
-          setName('');
-          setId('');
-          setPassword1('');
-          setPassword2('');
-          setInterest('');
-          localStorage.clear();
-          setErrors(true);
+          setName('')
+          setId('')
+          setPassword1('')
+          setPassword2('')
+          setInterest('')
+          localStorage.clear()
+          setErrors(true)
         }
-      });
-  };
+      })
+      .catch(err => {
+        console.clear()
+        alert('아이디 혹은 비밀번호가 일치하지 않습니다')
+      })
+  }
 
   return (
     <div className='Signup_App'>
@@ -76,7 +90,7 @@ const Signup = () => {
                 name='name'
                 type='name'
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={onChangeName}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,29 +101,32 @@ const Signup = () => {
                 name='id'
                 type='id'
                 value={id}
-                onChange={e => setId(e.target.value)}
+                onChange={onChangeId}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='password1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 name='password1'
                 type='password'
                 value={password1}
-                onChange={e => setPassword1(e.target.value)}
+                onChange={onChangePw1}
+                minLength='8'
+                pattern='^(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&])[a-z\d$@$!%*#?&]{8,16}$'
                 required
               />{' '}
+              <br/>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <br />
               <br />
               <label htmlFor='password2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
               <input
                 name='password2'
                 type='password'
                 value={password2}
-                onChange={e => setPassword2(e.target.value)}
+                onChange={onChangePw2}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,7 +137,7 @@ const Signup = () => {
                 name='interest'
                 type='interest'
                 value={interest}
-                onChange={e => setInterest(e.target.value)}
+                onChange={onChangeInterest}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -143,27 +160,6 @@ const Signup = () => {
     </div>
   );
 };
-
-class Core extends Component {
-  render() {
-    return (
-      <div className="App">
-        
-        {/* <Header/> */}
-        <Navbar/>
-        <Top/>
-        <Middle/>
-        <Bottom/>
-        <Footer_pink/>
-        <div className='footer_top'>
-          <Footer/>
-        </div>
-        
-        
-      </div>
-    );
-  }
-}
 
 
 export default Signup;
