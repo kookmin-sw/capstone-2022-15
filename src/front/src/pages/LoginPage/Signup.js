@@ -8,17 +8,17 @@ import { Link } from 'react-router-dom';
 import img_main_simple from '../images/img_main_simple.png';
 
 const Signup = () => {
-  const [name, setName] = useState('');
-  const [id, setId] = useState('');
+  const [user_name, setName] = useState('');
+  const [user_id, setuser_id] = useState('');
   const [password1, setPassword1] = useState('');
-  const [password2, setPassword2] = useState('');
-  const [interest, setInterest] = useState('');
+  const [user_pw, setuser_pw] = useState('');
+  const [user_interest, setuser_interest] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/signup');
+      window.location.replace('http://localhost:3000/');
     } else {
       setLoading(false);
     }
@@ -27,53 +27,53 @@ const Signup = () => {
   const onChangeName = (e) => {
     setName(e.target.value)
   }
-  const onChangeId = (e) => {
-    setId(e.target.value)
+  const onChangeuser_id = (e) => {
+    setuser_id(e.target.value)
   }
   const onChangePw1 = (e) => {
     setPassword1(e.target.value)
   }
   const onChangePw2 = (e) => {
-    setPassword2(e.target.value)
+    setuser_pw(e.target.value)
   }
-  const onChangeInterest = (e) => {
-    setInterest(e.target.value)
+  const onChangeuser_interest = (e) => {
+    setuser_interest(e.target.value)
   }
   const onSubmit = e => {
     e.preventDefault();
 
     const user = {
-      name: name,
-      id: id,
+      user_name: user_name,
+      user_id: user_id,
       password1: password1,
-      password2: password2,
-      interest: interest
+      user_pw: user_pw,
+      user_interest: user_interest
     };
-    if(password1 !== password2) {
+    if(password1 !== user_pw) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
       return false
     }
-  
-    Axios.post('/api/v1/mall/auth/register/', user)
+    //'/api/v1/mall/auth/register/'
+    Axios.post('/accounts/join', user)
       .then(res => {
         if (res.data.key) {
           localStorage.clear()
           localStorage.setItem('token', res.data.key)
           // 사용하려면 App.js에서 /로 라우팅해야 한다
-          window.location.replace('/signup')
+          window.location.replace('/')
         } else {
           setName('')
-          setId('')
+          setuser_id('')
           setPassword1('')
-          setPassword2('')
-          setInterest('')
+          setuser_pw('')
+          setuser_interest('')
           localStorage.clear()
           setErrors(true)
         }
       })
       .catch(err => {
         console.clear()
-        alert('아이디 혹은 비밀번호가 일치하지 않습니다')
+        alert('아직 회원가입 불가')
       })
   }
 
@@ -89,23 +89,23 @@ const Signup = () => {
           <div className='Inner_grey'>
             <form onSubmit={onSubmit}>
               <br /><br />
-              <label htmlFor='name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
-                name='name'
-                type='name'
-                value={name}
+                user_name='user_name'
+                type='user_name'
+                value={user_name}
                 onChange={onChangeName}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
-                name='id'
-                type='id'
-                value={id}
-                onChange={onChangeId}
+                user_user_id='user_id'
+                type='user_id'
+                value={user_id}
+                onChange={onChangeuser_id}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,7 +113,7 @@ const Signup = () => {
               <br />
               <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
-                name='password1'
+                user_pw1='password1'
                 type='password'
                 value={password1}
                 onChange={onChangePw1}
@@ -125,23 +125,23 @@ const Signup = () => {
               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
-              <label htmlFor='password2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
+              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
               <input
-                name='password2'
+                user_pw='user_pw'
                 type='password'
-                value={password2}
+                value={user_pw}
                 onChange={onChangePw2}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+              <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
               <input
-                name='interest'
-                type='interest'
-                value={interest}
-                onChange={onChangeInterest}
+                user_user_interest='user_interest'
+                type='user_interest'
+                value={user_interest}
+                onChange={onChangeuser_interest}
                 required
               />{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
