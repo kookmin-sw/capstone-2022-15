@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-
+import './Signup.css';
+import img_main_simple from '../images/img_main_simple.png';
+import Navbar from '../components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 const Login = () => {
 
   const [user_id, setUser_id] = useState('')
@@ -15,7 +18,7 @@ const Login = () => {
       user_pw: user_pw
     }
 
-    Axios.post('/accounts/login/', user)
+    Axios.post('/accounts/login', user)
       .then(res => {
         if (res.data.key) {
           localStorage.clear()
@@ -38,31 +41,47 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <h1>로그인</h1>
-      <br />
-      {errors === true && <h2>Cannot log in with provided credentials</h2>}
-        <form onSubmit={onSubmit}>
-          <label>아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input
-            type='user_id'
-            value={user_id}
-            required
-            onChange={e => setUser_id(e.target.value)}
-          />
-          <br/><br/>
-          <label>비밀번호&nbsp;&nbsp;&nbsp;</label>
-          <input
-            type='user_pw'
-            value={user_pw}
-            required
-            onChange={e => setUser_pw(e.target.value)}
-          />
-          <br/><br/>
-          <input type='submit' size="large" value='로그인' />
-        </form>
+    <div className='Signup_App'>
+      <Navbar/>
+      <img src={img_main_simple} className="Img"/>
+      <div className='SignupBox_layer'>
+        <div className='SignupBox'>
+          <h1>로그인</h1>
+          {errors === true && <h2>Cannot log in with provided credentials</h2>}
+          <div className='Inner_grey'>
+            <br/><br/><br/>
+              <form onSubmit={onSubmit}>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  type='user_id'
+                  value={user_id}
+                  required
+                  onChange={e => setUser_id(e.target.value)}
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/><br/>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  type='user_pw'
+                  value={user_pw}
+                  required
+                  onChange={e => setUser_pw(e.target.value)}
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/><br/><br/>
+                <input type='submit' className='BT-Join' value='로그인' />
+                <br /><br /><br/><br/>
+              </form>
+            </div>
+            <br/>
+            <div className='Txt_login'>
+            아직 IN4U의 회원이 아니라면 👉👉👉&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to ="/signup" className="BT-Login" >
+                &nbsp;&nbsp;회원가입&nbsp;&nbsp;
+                </Link>
+            </div>  
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
