@@ -7,23 +7,25 @@
 
 
 
-### 주요 기능 
+### I. 주요 기능 
 
-### 프로젝트 구성도
+### II. 프로젝트 구성도
 ![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
 
-### 실행 흐름
+### III. 실행 흐름
 
 ![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
  
  
-### 기대효과
+### IV. 기대효과
 
 
 ## 2. 소개 영상
 <!--
 200초 동영상 
 -->
+
+## 3. 팀 소개
 
 #### 정유선 
 <!--
