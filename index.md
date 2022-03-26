@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+# "인퓨" Interview For You
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/capstone-2022-15/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+**팀페이지 주소** : https://kookmin-sw.github.io/capstone-2022-15
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 1. 프로젝트 소개
+![img_logo_long](https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### 주요 기능 
 
-# Header 1
-## Header 2
-### Header 3
+### 프로젝트 구성도
+![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
 
-- Bulleted
-- List
+### 실행 흐름
 
-1. Numbered
-2. List
+![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
+ 
+ 
+### 기대효과
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/capstone-2022-15/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 2. 소개 영상
+<!--
+200초 동영상 
+-->
