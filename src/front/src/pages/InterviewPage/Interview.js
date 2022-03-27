@@ -1,7 +1,7 @@
 import './Interview.css';
 
 import React, {useState, useEffect} from "react"; 
-import videoSrc from "./test_video.mp4";
+import videoSrc from "./interviewer_01.mp4";
 import { Link } from 'react-router-dom';
 let count = 1;
 
@@ -30,7 +30,7 @@ function Interview() {
         <div className="interview-app">
             {/*------------------ 가상 면접관 ------------------*/}
             <div className="interviewer-section">
-                <video autoPlay width="100%" height="100%">
+                <video width="100%" height="100%">
                     {/* <source src="./test_video.mp4" type="video/mp4">
                     </source> */}
                     <source src={videoSrc}/>
