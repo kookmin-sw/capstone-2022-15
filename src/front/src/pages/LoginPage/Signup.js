@@ -89,7 +89,7 @@ const Signup = () => {
           <div className='Inner_grey'>
             <form onSubmit={onSubmit}>
               <br /><br />
-              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_name='user_name'
                 type='user_name'
@@ -100,7 +100,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_user_id='user_id'
                 type='user_id'
@@ -111,7 +111,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_pw1='password1'
                 type='password'
@@ -125,7 +125,7 @@ const Signup = () => {
               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
-              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
+              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
               <input
                 user_pw='user_pw'
                 type='password'
@@ -136,14 +136,8 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
-                <SelectBox options={OPTIONS} defaultValue="0">
-                  user_interest='user_interest'
-                  type='user_interest'
-                  value={user_interest}
-                  onChange={onChangeuser_interest}
-                  required
-                </SelectBox>
+              <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
+                <SelectBox options={OPTIONS} defaultValue="0"/>
               </label> 
               {/* <input
                 user_user_interest='user_interest'
@@ -173,8 +167,8 @@ const Signup = () => {
 
 const OPTIONS = [
   { value: "0", name: "선택없음" },
-	{ value: "1", name: "SW" },
-
+	{ value: "1", name: "Front-end" },
+  { value: "1", name: "Back-end" },
 ];
 
 
@@ -201,7 +195,7 @@ const SelectBox = (props) => {
 	);
 };
 const SelectBoxWrapper = styled.div`
-  width: 77%;
+  width: 77.2%;
   white-space: pre-wrap;
   display: inline-block;
 `;
@@ -210,7 +204,7 @@ export const Select = styled.select`
 	margin: 0;
 	min-width: 0;
   padding: 3.5px 3.5px;
-	width: 77%;
+	width: 77.2%;
 	font-size: inherit;
 	line-height: inherit;
 
