@@ -47,8 +47,8 @@ function Interview() {
                 {/* state false : 다음 질문 button */}
                 {!buttonState 
                 && questionNumberState < 2 
-                && <button className="interview-button" onClick={() => setQuestionNumberState(questionNumberState + 1)}>
-                    다음 질문
+                && <button className="done-button" onClick={() => setQuestionNumberState(questionNumberState + 1)}>
+                    대답 완료
                 </button>}
                 {/* state false : 면접 종료 button */}
                 {questionNumberState === 2 
