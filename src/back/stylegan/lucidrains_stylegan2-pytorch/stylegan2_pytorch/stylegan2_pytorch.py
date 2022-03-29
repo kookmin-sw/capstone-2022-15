@@ -759,14 +759,13 @@ class StyleGAN2(nn.Module):
         return x
 
 class Trainer():
-    # args parameter
     def __init__(
         self,
         name = 'default',
         results_dir = 'results',
         models_dir = 'models',
         base_dir = './',
-        image_size = 128, # 128
+        image_size = 128,
         network_capacity = 16,
         fmap_max = 512,
         transparent = False,
@@ -1204,6 +1203,7 @@ class Trainer():
         mixed_latents = [(tmp1, tt), (tmp2, num_layers - tt)]
 
         generated_images = self.generate_truncated(self.GAN.SE, self.GAN.GE, mixed_latents, n, trunc_psi = self.trunc_psi)
+
         torchvision.utils.save_image(generated_images, str(self.results_dir / self.name / f'{str(num)}-mr.{ext}'), nrow=num_rows)
 
     @torch.no_grad()
@@ -1374,8 +1374,8 @@ class Trainer():
 
         name = num
         if num == -1:
-            # file_paths = [p for p in Path(self.models_dir / self.name).glob('550000.pt')]
             file_paths = [p for p in Path(self.models_dir / self.name).glob('model_*.pt')]
+	    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",self.models_dir)
             saved_nums = sorted(map(lambda x: int(x.stem.split('_')[1]), file_paths))
             if len(saved_nums) == 0:
                 return
