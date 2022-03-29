@@ -1,6 +1,8 @@
 import './Interview.css';
 
 import React, {useState, useEffect} from "react"; 
+import firstVideo from "./interviewer_01.mp4";
+// import secondVideo from "./interviewer_02.mp4";
 import { Link } from 'react-router-dom';
 let count = 1;
 
@@ -27,13 +29,15 @@ function Interview() {
 
     return (
         <div className="interview-app">
-            {/*------ 가상 면접관 ------*/}
+            {/*------------------ 가상 면접관 ------------------*/}
             <div className="interviewer-section">
-                <video autoPlay width="100%" height="100%" controls >
-                    <source src="./test_video.mp4" type="video/mp4"/>
+                <video width="100%" height="100%">
+                    {/* <source src="./test_video.mp4" type="video/mp4">
+                    </source> */}
+                    <source src={firstVideo}/>
                 </video>                
             </div>
-            {/*-------- 사용자 --------*/}
+            {/*-------------------- 사용자 --------------------*/}
             <div className="button-section">
                 {/* state true : 면접 시작 button */}
                 {buttonState 
