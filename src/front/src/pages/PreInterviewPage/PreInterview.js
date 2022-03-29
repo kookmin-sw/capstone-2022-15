@@ -5,17 +5,21 @@ import { PageDescription } from '../../components/PageDescription';
 import React, { Component } from "react"; 
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 
 class PreInterview extends Component {
     render() {
         return (
-            <div className="PreInterviewApp">
-                <Navbar/>
-                <PageDescription></PageDescription>
-                <CamSetting></CamSetting>
-                {/* <Footer/> */}
+            <div>
+                <div className="PreInterviewApp">
+                    <Navbar/>
+                    <PageDescription></PageDescription>
+                    <CamSetting></CamSetting>
+                </div>
+                <div className="PreInterviewAppFooter">
+                    <Footer/>
+                </div>
             </div>
         );
     }
