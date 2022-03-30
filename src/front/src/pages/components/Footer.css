@@ -26,10 +26,13 @@ Home.js에서 style로 top 지정해도 페이지마다 다르게 보이는 건 
   .footer-gray-txt {
     position: relative;
     width: 15vw;
-
     height: 3vw;
+    display: flex;
+    margin: auto;
     /* top: 4.7vw;
     left: 41.5vw; */
+    justify-content: center;
+    
     text-align: center;
 
     font-family: 'Montserrat';
