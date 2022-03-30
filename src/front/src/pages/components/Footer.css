@@ -6,12 +6,12 @@ Home.js에서 style로 top 지정해도 페이지마다 다르게 보이는 건 
 */
 
   .FR-footer-gray {
-    /* position: fixed; */
+    /* position: relative; */
     /* bottom: 0vh; */
     width: 100%;
-    height: 10vh;
+    /* height: 10vh; */
     padding-top: 1vh;
-    padding-bottom: 1.5vh;
+    padding-bottom: 3vh;
     /* height: 100px; */
     /* left: 0.5vw; */
 
