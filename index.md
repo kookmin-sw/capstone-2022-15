@@ -32,7 +32,8 @@
 ## 4. 팀 소개
 
 
-#### 정유선 (팀장)
+#### 정유선 (팀장) [@yoosun](https://github.com/usun813)
+
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
 
 ```
@@ -44,7 +45,7 @@ Role: 프론트엔드
     • 로고, 이미지 디자인 
 ```
 
-#### 김지민 
+#### 김지민 [@JiminKim](https://github.com/JiminK)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
@@ -57,7 +58,7 @@ Role: 프론트엔드 리더, GIT 관리
 ```
 
 
-#### 송경민
+#### 송경민 [@kyungmin](https://github.com/skm0626)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
 
 ```
@@ -70,7 +71,7 @@ Role: AI
 ```
 
 
-#### 조재오 
+#### 조재오 [@Jaeo](https://github.com/Grievle)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
 
 ```
@@ -82,7 +83,7 @@ Role: 백엔드 리더, 피드백
 ```
 
 
-#### 황예은
+#### 황예은 [@yeieun1213](https://github.com/yeieun1213)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="200" height="200"/>
 
 ```
