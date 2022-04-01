@@ -3,8 +3,7 @@
 **팀페이지 주소** : https://kookmin-sw.github.io/capstone-2022-15
 
 ## 1. 프로젝트 소개
-![img_logo_long](https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png)
-
+<p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
 
 ### I. 주요 기능 
