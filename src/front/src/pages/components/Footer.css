@@ -1,30 +1,47 @@
-.FR-footer-gray{
-    bottom: 0vh;
-    width: 98vw;
-    height: 17vh;
-    left: 0vw;
+/* Footer 위치 수정 예정
+지금은 fixed라 무조건 아래 계속 보이는데,
+메인페이지에서는 스크롤 내려서 하단에만 보이게 수정 예정 
+Home.js에서 style로 top 지정해도 페이지마다 다르게 보이는 건 안돼서, 
+일단 모든 페이지 하단에서 보이게 쓸 수 있도록 fixed로 하단에 고정해 놓음! 
+*/
+
+  .FR-footer-gray {
+    /* position: relative; */
+    /* bottom: 0vh; */
+    width: 100%;
+    /* height: 10vh; */
+    padding-top: 1vh;
+    padding-bottom: 3vh;
+    /* height: 100px; */
+    /* left: 0.5vw; */
+
 
     background: #F0F2F4;
   }
-  .img-logo-footer{
-    position: absolute;
-    width: 5vw;
-    left: 46.5vw;
-    top: 2.2vh;
+  .img-logo-footer {
+    position: relative;
+    width: 4.5vw;
+    display: flex;
+    margin: auto;
+    /* left: 46.5vw;
+    top: 2.2vh; */
   }
-  .footer-gray-txt{
-    position: absolute;
+  .footer-gray-txt {
+    position: relative;
     width: 15vw;
+    height: 1vw;
+    display: flex;
+    margin: auto;
+    /* top: 4.7vw;
+    left: 41.5vw; */
+    justify-content: center;
 
-    height: 3vw;
-    top: 4.7vw;
-    left: 41.5vw;
     text-align: center;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 0.95vw;
+    font-size: 0.9vw;
 
     color: #a0a0a0;
 
