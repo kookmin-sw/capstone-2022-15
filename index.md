@@ -45,7 +45,7 @@ Role: 프론트엔드
     • 로고, 이미지 디자인 
 ```
 
-#### 김지민 [@JiminKim](https://github.com/JiminK)
+#### 김지민 [@miniee](https://github.com/JiminK)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
