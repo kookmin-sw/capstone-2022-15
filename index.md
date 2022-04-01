@@ -29,7 +29,7 @@
 ## 3. 팀 소개
 
 #### 정유선 
-![jys](https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png)
+<img src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
 
 ```
 Student ID: 20181690
@@ -39,7 +39,7 @@ Role: 팀장
 
 
 #### 김지민 
-![kjm](https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png)
+<img src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
 Student ID: 20181597
@@ -49,7 +49,7 @@ Role:
 
 
 #### 송경민
-![skm](https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png)
+<img src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
 
 ```
 Student ID: 20181630
@@ -58,7 +58,7 @@ Role:
 ```
 
 #### 조재오
-![jjo](https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png)
+<img src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
 
 ```
 Student ID: 20181696
