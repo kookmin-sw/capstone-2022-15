@@ -1,7 +1,8 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7010240&assignment_repo_type=AssignmentRepo)
-# Welcome to GitHub
 
-캡스톤 팀 생성을 축하합니다.
+# IN4U - Interview For You
+![img_logo_long](https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png)
+
 
 ## 팀소개 및 페이지를 꾸며주세요.
 
@@ -72,6 +73,6 @@ Syntax highlighted code block
 
 자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Support or Contact
+### Support or Contact.
 
 readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.

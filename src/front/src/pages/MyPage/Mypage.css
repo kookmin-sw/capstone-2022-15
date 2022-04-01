@@ -1,1 +1,83 @@
 /* eslint-disable */
+.Bar{
+    position: relative;
+    padding: 1.3rem;
+    top: 80px;
+    background: #56565c;
+    color: #fff;
+    font-size: 1vw;
+}
+
+.Menu-box{
+    position: relative;
+    top: 80px;
+    width: 20vw;
+    height: 78.5vh;
+
+    background: #dfdfdf;
+    flex-direction: row;
+    align-items: stretch;
+}
+.Menu-txt1{
+    position: relative;
+    font-size: 0.5vw;
+    left: 2.5vw;
+    top: 5vh;
+    width: 10vw;
+}
+.Menu-txt2{
+    position: relative;
+    font-size: 1.3vw;
+    left: 8vw;
+    top: 7vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    background: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    width: 10.5vw;
+}
+.Menu-txt2:hover{
+    color: #ff85a1;
+}
+.Main-box{
+    position: relative;
+    width: 70vw;
+    left:21vw;
+
+
+}
+.Img_mypage{
+    position: absolute;
+    width:15vw;
+    bottom: 3vh;
+    left: 2vw;
+}
+.List {
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    min-height: 400px;
+    background: #56565c;
+}
+
+.list_tit {
+    border-bottom: solid 1px #ababab;
+    color : #ababab;
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #5B7EFB;
+}
+
+.list_grid {
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+}
+
+.list_data {
+    line-height: 40px;
+}
+
+.acenter {
+    text-align: center;
+}

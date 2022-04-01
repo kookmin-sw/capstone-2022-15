@@ -1,0 +1,70 @@
+.Signup_App {
+    width: 100%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.SignupBox_layer{
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+}
+.SignupBox{
+    display: inline-block;
+    text-align: center;
+}
+.Inner_grey{
+    background: #eaebec; 
+}
+.BT-Join{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    color:#fff;
+    text-decoration-line: none;
+
+    border: 1px #5B7EFB;
+    background: #5B7EFB;
+    height: 30px;
+    width: 100px;
+  
+    cursor: pointer;
+}
+.BT-Join:hover{
+    background:  #ff85a1;
+} 
+.Txt_login{
+    font-size: 0.9vw;
+}
+.BT-Login{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.1vw;
+    color:#5B7EFB;
+    text-decoration-line: none;
+
+    background: #FBFCFF;
+    border: 0.2vw solid #5B7EFB;
+    box-sizing: border-box;
+    border-radius: 45px;
+    white-space:nowrap;
+    
+    width: 30px;
+  
+    cursor: pointer;
+}
+.BT-Login:hover{
+    border: 0.2vw solid #ff85a1;
+    color:#ff85a1;
+} 
+.Nowrap{
+    white-space: nowrap;
+}
+.Img{
+    position : fixed;
+    bottom : 40px;
+    right: 40px;
+    width: 230px;
+}
