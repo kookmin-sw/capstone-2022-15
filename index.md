@@ -30,6 +30,9 @@
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
 ## 4. 팀 소개
+
+<p>
+
 #### 정유선 (팀장)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
 
@@ -41,6 +44,8 @@ Role: 프론트엔드
     • 웹 클라이언트 개발
     • 로고, 이미지 디자인 
 ```
+</p>
+<p>
 
 #### 김지민 
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
@@ -53,6 +58,8 @@ Role: 프론트엔드 리더, GIT 관리
     • 클라이언트 서버 구축
     • GIT 코드 형상 관리
 ```
+</p>
+<p>
 
 #### 송경민
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
@@ -65,6 +72,8 @@ Role: AI
     • 질문 mp3 생성
     • 입 모양 생성 및 면접관 영상 구현 
 ```
+</p>
+<p>
 
 #### 조재오 
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
@@ -76,6 +85,8 @@ Role: 백엔드 리더, 피드백
     • 면접 결과에 대한 피드백 구현
     • AWS 시스템 구성  
 ```
+</p>
+<p>
 
 #### 황예은
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="200" height="200"/>
@@ -87,3 +98,4 @@ Role: 서버
     • API
     • DB 
 ```
+</p>
