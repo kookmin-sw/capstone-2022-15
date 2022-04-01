@@ -30,9 +30,8 @@
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
 ## 4. 팀 소개
-
 #### 정유선 (팀장)
-<img src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
 
 ```
 Student ID: 20181690
@@ -44,7 +43,7 @@ Role: 프론트엔드
 ```
 
 #### 김지민 
-<img src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
 Student ID: 20181597
@@ -56,7 +55,7 @@ Role: 프론트엔드 리더, GIT 관리
 ```
 
 #### 송경민
-<img src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
 
 ```
 Student ID: 20181630
@@ -68,7 +67,7 @@ Role: AI
 ```
 
 #### 조재오 
-<img src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
 
 ```
 Student ID: 20181696
@@ -79,7 +78,7 @@ Role: 백엔드 리더, 피드백
 ```
 
 #### 황예은
-<img src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="200" height="200"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="200" height="200"/>
 
 ```
 Student ID: 20181710
