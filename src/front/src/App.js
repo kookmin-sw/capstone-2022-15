@@ -5,6 +5,7 @@ import Interview from './pages/InterviewPage/Interview';
 import Mypage from './pages/MyPage/Mypage';
 import Login from './pages/LoginPage/Login';
 import Introduce from './pages/IntroducePage/Introduce';
+import Signup from './pages/LoginPage/Signup';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/interview" element={<Interview />} />
       <Route path="/mypage" element={<Mypage />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup/>} />
       <Route path="/introduce" element={<Introduce />} />
     </Routes>
   );
