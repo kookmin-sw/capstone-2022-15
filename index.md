@@ -9,10 +9,11 @@
 ### I. 주요 기능 
 
 ### II. 프로젝트 구성도
+<!-- 수정해야함 -->
 ![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
 
 ### III. 실행 흐름
-
+<!-- 수정해야함 -->
 ![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
  
  
@@ -23,6 +24,7 @@
 <!--
 200초 동영상 
 -->
+[200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
 
 
 ## 3. 팀 소개
