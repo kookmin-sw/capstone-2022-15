@@ -22,14 +22,14 @@ RUN /bin/bash -c "source /opt/miniconda/etc/profile.d/conda.sh"
 RUN conda env list
 RUN /bin/bash -c "source activate /opt/conda-env"
 
+RUN mv /var/lang/bin/python3.8 /var/lang/bin/python3.8-clean && ln -sf /opt/conda-env/bin/python /var/lang/bin/python3.8
+
+RUN /opt/conda-env/bin/python3.8 -m pip install -r requirements.txt
 RUN /opt/conda-env/bin/python3.8 -m pip install --upgrade pip
 RUN /opt/miniconda/bin/conda install -c conda-forge opencv
 RUN /opt/miniconda/bin/conda install -c conda-forge dlib
 RUN /opt/conda-env/bin/python3.8 -m pip install awslambdaric
 RUN /opt/conda-env/bin/python3.8 -m pip install boto3
-
-RUN /opt/conda-env/bin/python3.8 -m pip install -r requirements.txt
-RUN mv /var/lang/bin/python3.8 /var/lang/bin/python3.8-clena && ln -sf /opt/conda-env/bin/python /var/lang/bin/python3.8
 COPY face_tracing.py /opt/my-code/face_tracing.py
 
 ENV PYTHONPATH "/opt/conda-env/lib/python3.8/site-package:/opt/my-code"
@@ -43,6 +43,7 @@ RUN which python
 COPY lambda-entrypoint.sh /lambda-entrypoint.sh
 RUN chmod 755 /lambda-entrypoint.sh
 RUN mkdir /opt/extensions
+RUN python -c "import dlib;print(dlib.__version__)"
 ENV LAMBDA_TASK_ROOT=/var/task
 
 COPY shape_predictor_68_face_landmarks.dat /opt/my-code/shape_predictor_68_face_landmarks.dat
