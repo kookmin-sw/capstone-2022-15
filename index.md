@@ -27,23 +27,23 @@
 
 ## 3. 팀 소개
 
-#### 정유선 
+#### 정유선 (팀장)
 <img src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
 
 ```
 Student ID: 20181690
-E-mail: 
-Role: 팀장, 프론트엔드
+E-mail: usun18813@kookmin.ac.kr
+Role: 프론트엔드
 ```
 
 
-#### 김지민 
+#### 김지민 (프론트엔드 리더)
 <img src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
 Student ID: 20181597
 E-mail: jimin981005@kookmin.ac.kr
-Role: 프론트엔드 리더, GIT 관리
+Role: 프론트엔드, GIT 관리
 ```
 
 
@@ -56,13 +56,13 @@ E-mail:
 Role: AI
 ```
 
-#### 조재오
+#### 조재오 (프로젝트 매니저)
 <img src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
 
 ```
 Student ID: 20181696
 E-mail: 
-Role: 프로젝트 매니저, 피드백, 시스템 구성
+Role: 피드백, 시스템 구성
 ```
 
 #### 황예은
