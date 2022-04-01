@@ -33,7 +33,7 @@
 ```
 Student ID: 20181690
 E-mail: 
-Role: 팀장
+Role: 팀장, 프론트엔드
 ```
 
 
@@ -43,7 +43,7 @@ Role: 팀장
 ```
 Student ID: 20181597
 E-mail: jimin981005@kookmin.ac.kr
-Role: 
+Role: 프론트엔드 리더, GIT 관리
 ```
 
 
@@ -53,7 +53,7 @@ Role:
 ```
 Student ID: 20181630
 E-mail: 
-Role:  
+Role: AI
 ```
 
 #### 조재오
@@ -62,7 +62,7 @@ Role:
 ```
 Student ID: 20181696
 E-mail: 
-Role: 
+Role: 프로젝트 매니저, 피드백, 시스템 구성
 ```
 
 #### 황예은
@@ -72,6 +72,6 @@ Role:
 ```
 Student ID: 20181710
 E-mail: 
-Role: 
+Role: 서버
 ```
 
