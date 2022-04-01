@@ -1,37 +1,91 @@
-## Welcome to GitHub Pages
+# "인퓨" Interview For You
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**팀페이지 주소** : https://kookmin-sw.github.io/capstone-2022-15
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 1. 프로젝트 소개
+<p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### I. 주요 기능 
 
-```markdown
-Syntax highlighted code block
+### II. 프로젝트 구성도
+<!-- 수정해야함 -->
+![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
 
-# Header 1
-## Header 2
-### Header 3
+### III. 실행 흐름
+<!-- 수정해야함 -->
+![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
+ 
+ 
+### IV. 기대효과
 
-- Bulleted
-- List
+## 2. Abstract
 
-1. Numbered
-2. List
+## 3. 소개 영상
 
-**Bold** and _Italic_ and `Code` text
+<!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
+[![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
 
-[Link](url) and ![Image](src)
+<!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
+![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
+
+## 4. 팀 소개
+
+#### 정유선 (팀장)
+<img src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="200" height="200"/>
+
+```
+Student ID: 20181690
+E-mail: usun18813@kookmin.ac.kr
+Role: 프론트엔드
+    • UI/UX 디자인
+    • 웹 클라이언트 개발
+    • 로고, 이미지 디자인 
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### 김지민 
+<img src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
-### Jekyll Themes
+```
+Student ID: 20181597
+E-mail: jimin981005@kookmin.ac.kr
+Role: 프론트엔드 리더, GIT 관리
+    • UI/UX 디자인, 웹 클라이언트 개발
+    • 클라이언트 서버 구축
+    • GIT 코드 형상 관리
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### 송경민
+<img src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
 
-### Support or Contact
+```
+Student ID: 20181630
+E-mail: 
+Role: AI
+    • 가상 면접관 얼굴 생성
+    • 질문 mp3 생성
+    • 입 모양 생성 및 면접관 영상 구현 
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### 조재오 
+<img src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
+
+```
+Student ID: 20181696
+E-mail: cho5095@kookmin.ac.kr
+Role: 백엔드 리더, 피드백, 시스템 구성
+    • 면접 결과에 대한 피드백 구현
+    • AWS 시스템 구성  
+```
+
+#### 황예은
+<!--
+이미지
+-->
+```
+Student ID: 20181710
+E-mail: 
+Role: 서버
+    • API
+    • DB 
+```

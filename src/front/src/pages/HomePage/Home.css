@@ -6,6 +6,7 @@ html { font-size: 62.5%; }
     position: relative;
     width: 100%;
     height: auto;
+    left:0vw;
 }
 /*---------------------------------Header-------------------------------*/
 /* .Header {
@@ -14,7 +15,6 @@ html { font-size: 62.5%; }
     height: auto;
     background-color: #ffffff;
     display: flex;
-
     align-items: center;
     padding: 1rem;
     
@@ -27,7 +27,6 @@ html { font-size: 62.5%; }
     cursor: pointer;
     padding-right: 3vw;
 }
-
 .BT-navi{
     font-family: Montserrat;
     font-weight: bold;
@@ -35,19 +34,15 @@ html { font-size: 62.5%; }
     text-decoration-line: none;
     color: #56565c;
     cursor: pointer;
-
-
     display: flex;
     list-style: none;
     text-align: center;
     margin-right: 2rem;
     justify-content: space-between;
-
 }
 .BT-navi:hover{
     color: #5B7EFB;
 }
-
 .BT-mypage{
     position: absolute;
     width: 4vw;
@@ -326,4 +321,9 @@ html { font-size: 62.5%; }
     align-items: center;
 
     color: rgba(0, 0, 0, 0.72);
+  }
+  .footer_top{
+    z-index: 7;
+    position: absolute;
+    top:330vh;
   }
