@@ -35,9 +35,13 @@ Student ID: 20181690
 E-mail: usun18813@kookmin.ac.kr
 Role: 프론트엔드
 ```
+<!-- 
+UI/UX 디자인
+웹 클라이언트 개발
+로고, 이미지 디자인 
+-->
 
-
-#### 김지민 (프론트엔드 리더)
+#### 김지민 (Front-end Leader)
 <img src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="200" height="200"/>
 
 ```
@@ -45,7 +49,11 @@ Student ID: 20181597
 E-mail: jimin981005@kookmin.ac.kr
 Role: 프론트엔드, GIT 관리
 ```
-
+<!-- 
+UI/UX 디자인, 웹 클라이언트 개발
+클라이언트 서버 구축
+GIT 코드 형상 관리 
+-->
 
 #### 송경민
 <img src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="200" height="200"/>
@@ -55,15 +63,24 @@ Student ID: 20181630
 E-mail: 
 Role: AI
 ```
+<!--
+가상 면접관 얼굴 생성
+질문 mp3 생성
+입 모양 생성 및 면접관 영상 구현 
+-->
 
-#### 조재오 (프로젝트 매니저)
+#### 조재오 (Back-end Leader)
 <img src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="200" height="200"/>
 
 ```
 Student ID: 20181696
-E-mail: 
+E-mail: cho5095@kookmin.ac.kr
 Role: 피드백, 시스템 구성
 ```
+<!-- 
+면접 결과에 대한 피드백 구현
+AWS 시스템 구성  
+-->
 
 #### 황예은
 <!--
@@ -74,4 +91,7 @@ Student ID: 20181710
 E-mail: 
 Role: 서버
 ```
-
+<!-- 
+API
+DB 
+-->
