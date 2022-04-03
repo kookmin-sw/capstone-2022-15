@@ -1,78 +1,94 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7010240&assignment_repo_type=AssignmentRepo)
+# "인퓨" Interview For You
 
-# IN4U - Interview For You
-![img_logo_long](https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png)
+**팀페이지 주소** : https://kookmin-sw.github.io/capstone-2022-15
 
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
-
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
-
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
-
-**예시)** 2020년 0조  https://kookmin-sw.github.io/capstone-2020-0/
+## 1. 프로젝트 소개
+<p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
 
-## 내용에 아래와 같은 내용들을 추가하세요.
+### I. 주요 기능 
 
-### 1. 프로잭트 소개
+### II. 프로젝트 구성도
+<!-- 수정해야함 -->
+![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
 
-프로젝트
+### III. 실행 흐름
+<!-- 수정해야함 -->
+![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
+ 
+ 
+### IV. 기대효과
 
-### 2. 소개 영상
+## 2. Abstract
 
-프로젝트 소개하는 영상을 추가하세요
+## 3. 소개 영상
 
-### 3. 팀 소개
+<!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
+[![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
 
-팀을 소개하세요.
+<!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
+![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
-
-### 4. 사용법
-
-소스코드제출시 설치법이나 사용법을 작성하세요.
-
-### 5. 기타
-
-추가적인 내용은 자유롭게 작성하세요.
+## 4. 팀 소개
 
 
-## Markdown을 사용하여 내용꾸미기
+#### 정유선 (팀장) [@yoosun](https://github.com/usun813)
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="150" height="150"/>
 
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+Student ID: 20181690
+E-mail: usun18813@kookmin.ac.kr
+Role: 프론트엔드
+    • UI/UX 디자인
+    • 웹 클라이언트 개발
+    • 로고, 이미지 디자인 
 ```
 
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### 김지민 [@miniee](https://github.com/JiminK)
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="150" height="150"/>
 
-### Support or Contact.
+```
+Student ID: 20181597
+E-mail: jimin981005@kookmin.ac.kr
+Role: 프론트엔드 리더, GIT 관리
+    • UI/UX 디자인, 웹 클라이언트 개발
+    • 클라이언트 서버 구축
+    • GIT 코드 형상 관리
+```
 
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+
+#### 송경민 [@kyungmin](https://github.com/skm0626)
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="150" height="150"/>
+
+```
+Student ID: 20181630
+E-mail: skm0626@kookmin.ac.kr
+Role: AI
+    • 가상 면접관 얼굴 생성
+    • 질문 mp3 생성
+    • 입 모양 생성 및 면접관 영상 구현 
+```
+
+
+#### 조재오 [@Jaeo](https://github.com/Grievle)
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="150" height="150"/>
+
+```
+Student ID: 20181696
+E-mail: cho5095@kookmin.ac.kr
+Role: 백엔드 리더, 피드백
+    • 면접 결과에 대한 피드백 구현
+    • AWS 시스템 구성  
+```
+
+
+#### 황예은 [@yeieun1213](https://github.com/yeieun1213)
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="150" height="150"/>
+
+```
+Student ID: 20181710
+E-mail: yeieun1213@kookmin.ac.kr
+Role: 서버
+    • API
+    • DB 
+```
