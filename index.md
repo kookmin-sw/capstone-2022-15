@@ -54,6 +54,7 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 ![실행흐름](https://user-images.githubusercontent.com/39400030/161415304-4ee441bd-9f23-464f-bb90-4d053e1a8b66.jpeg)
  <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
 
+<br>
 
 ## 2. Abstract
 The project name "INFU or IN4U" means "Interview For You."
@@ -67,6 +68,7 @@ As more and more companies continue to maintain non-face-to-face employment even
 Infu provides a more realistic interview practice unlike the existing interview practice service in which a virtually created interviewer moves his or her mouth and delivers questions by voice, without an interviewer existing.
 Interview practice with interviewers created by StyleGAN and Wav2lip can help you practice face-to-face interviews as well as online interviews.
 
+<br>
 
 ## 3. 소개 영상
 
@@ -76,6 +78,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
+<br>
 
 ## 4. 팀 소개
 
@@ -142,6 +145,7 @@ Role: 서버
 
 ```
 
+<br>
 
 ## 5. 사용법
 
