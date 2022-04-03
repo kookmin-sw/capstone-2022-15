@@ -5,7 +5,7 @@
 ## 1. 프로젝트 소개
 <p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
-프로젝트 이름인 '인퓨(INFU 또는 IN4U)'는 Interview For You의 뜻을 가진다. 
+프로젝트 이름인 '인퓨(INFU 또는 IN4U)'는 'Interview For You'의 뜻을 가진다. 
 인퓨는 가상 생성된 얼굴의 면접관과 함께 사용자가 면접 연습을 하고 피드백을 받을 수 있는 웹 서비스다.
 
 <!-- 이어서 프로젝트의 필요성에 대해 설명하겠습니다. -->
