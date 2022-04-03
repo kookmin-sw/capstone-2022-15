@@ -133,6 +133,7 @@ E-mail: cho5095@kookmin.ac.kr
 Role: 백엔드 리더, 피드백
     • 면접 결과에 대한 피드백 구현
     • AWS 시스템 구성  
+
 ```
 
 
@@ -145,6 +146,7 @@ E-mail: yeieun1213@kookmin.ac.kr
 Role: 서버
     • API
     • DB 
+    
 ```
 
 <br>
