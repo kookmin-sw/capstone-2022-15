@@ -47,13 +47,13 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 
 ### III. 시스템 구조도
 
-![시스템구조도](https://user-images.githubusercontent.com/39400030/161415301-85eeded3-ab7d-420a-88b3-d9ce7bb8c17e.jpeg)
+![시스템구조도](https://user-images.githubusercontent.com/39400030/161416926-ed514b15-0010-49f4-85d3-2664438e77db.jpg)
 <!-- <img width="1440" alt="시스템구조도" src="https://user-images.githubusercontent.com/39400030/161415199-beed98b6-9382-4046-bf38-957439de9734.png"> -->
 
 
 ### IV. 실행 흐름 
 
-![실행흐름](https://user-images.githubusercontent.com/39400030/161415304-4ee441bd-9f23-464f-bb90-4d053e1a8b66.jpeg)
+![실행흐름](https://user-images.githubusercontent.com/39400030/161416930-fa4d4268-9061-486f-a769-a00122854310.jpg)
  <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
 
 <br>
@@ -76,6 +76,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 <!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
 [![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
+
 
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
