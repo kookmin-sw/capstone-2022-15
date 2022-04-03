@@ -85,6 +85,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 ## 4. 팀 소개
 
+
 #### 정유선 (팀장) [@yoosun](https://github.com/usun813)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="150" height="150"/>
 
@@ -145,11 +146,11 @@ E-mail: yeieun1213@kookmin.ac.kr
 Role: 서버
     • API
     • DB 
-    
+
 ```
 
 <br>
 
 ## 5. 사용법
-
 추후 추가 예정
+
