@@ -2,6 +2,8 @@
 
 **팀페이지 주소** : https://kookmin-sw.github.io/capstone-2022-15
 
+<br>
+
 ## 1. 프로젝트 소개
 <p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
@@ -57,15 +59,15 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 <br>
 
 ## 2. Abstract
-The project name "INFU or IN4U" means "Interview For You."
-Infu is a web service that allows users to practice interviews and receive feedback along with interviewers with virtually created faces.
+The project name "인퓨(INFU or IN4U)" means "Interview For You."
+인퓨 is a web service that allows users to practice interviews and receive feedback along with interviewers with virtually created faces.
 
 Interviews are essential for new beginnings, such as college entrance, employment, and turnover, but are one of the difficult processes for many people.
 According to a survey conducted by humans, about 77% of job seekers who experienced interviews said they regretted it, and among them, "because they did not answer properly," which can be answered by repeated practice, was cited as the most regrettable reason.
 In addition, as untact becomes commonplace in 2020, interviews have also changed to non-face-to-face, increasing the number of job seekers who feel burdened by non-face-to-face interviews because they do not know how to prepare or are worried about being shown on the camera.
 As more and more companies continue to maintain non-face-to-face employment even after the end of the pandemic, the need to prepare for online interviews is increasing.
 
-Infu provides a more realistic interview practice unlike the existing interview practice service in which a virtually created interviewer moves his or her mouth and delivers questions by voice, without an interviewer existing.
+인퓨 provides a more realistic interview practice unlike the existing interview practice service in which a virtually created interviewer moves his or her mouth and delivers questions by voice, without an interviewer existing.
 Interview practice with interviewers created by StyleGAN and Wav2lip can help you practice face-to-face interviews as well as online interviews.
 
 <br>
