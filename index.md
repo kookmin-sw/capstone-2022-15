@@ -48,12 +48,25 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 ![시스템구조도](https://user-images.githubusercontent.com/39400030/161415301-85eeded3-ab7d-420a-88b3-d9ce7bb8c17e.jpeg)
 <!-- <img width="1440" alt="시스템구조도" src="https://user-images.githubusercontent.com/39400030/161415199-beed98b6-9382-4046-bf38-957439de9734.png"> -->
 
+
 ### IV. 실행 흐름 
 
 ![실행흐름](https://user-images.githubusercontent.com/39400030/161415304-4ee441bd-9f23-464f-bb90-4d053e1a8b66.jpeg)
  <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
 
+
 ## 2. Abstract
+The project name "INFU or IN4U" means "Interview For You."
+Infu is a web service that allows users to practice interviews and receive feedback along with interviewers with virtually created faces.
+
+Interviews are essential for new beginnings, such as college entrance, employment, and turnover, but are one of the difficult processes for many people.
+According to a survey conducted by humans, about 77% of job seekers who experienced interviews said they regretted it, and among them, "because they did not answer properly," which can be answered by repeated practice, was cited as the most regrettable reason.
+In addition, as untact becomes commonplace in 2020, interviews have also changed to non-face-to-face, increasing the number of job seekers who feel burdened by non-face-to-face interviews because they do not know how to prepare or are worried about being shown on the camera.
+As more and more companies continue to maintain non-face-to-face employment even after the end of the pandemic, the need to prepare for online interviews is increasing.
+
+Infu provides a more realistic interview practice unlike the existing interview practice service in which a virtually created interviewer moves his or her mouth and delivers questions by voice, without an interviewer existing.
+Interview practice with interviewers created by StyleGAN and Wav2lip can help you practice face-to-face interviews as well as online interviews.
+
 
 ## 3. 소개 영상
 
@@ -63,8 +76,8 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
-## 4. 팀 소개
 
+## 4. 팀 소개
 
 #### 정유선 (팀장) [@yoosun](https://github.com/usun813)
 <img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="150" height="150"/>
