@@ -9,13 +9,15 @@
 ### I. 주요 기능 
 
 ### II. 프로젝트 구성도
-<!-- 수정해야함 -->
-![시스템구조](https://user-images.githubusercontent.com/39400030/160230114-b46112d2-c1b6-4f6a-86d0-8f83f46dab45.jpeg)
+![시스템구조도](https://user-images.githubusercontent.com/39400030/161415301-85eeded3-ab7d-420a-88b3-d9ce7bb8c17e.jpeg)
+<!-- <img width="1440" alt="시스템구조도" src="https://user-images.githubusercontent.com/39400030/161415199-beed98b6-9382-4046-bf38-957439de9734.png"> -->
+
 
 ### III. 실행 흐름
-<!-- 수정해야함 -->
-![실행흐름](https://user-images.githubusercontent.com/39400030/160230118-cd7127d6-6d8b-424c-b7b8-cd0edc19cd31.jpeg)
- 
+![실행흐름](https://user-images.githubusercontent.com/39400030/161415304-4ee441bd-9f23-464f-bb90-4d053e1a8b66.jpeg)
+ <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
+
+
  
 ### IV. 기대효과
 
@@ -79,6 +81,7 @@ E-mail: cho5095@kookmin.ac.kr
 Role: 백엔드 리더, 피드백
     • 면접 결과에 대한 피드백 구현
     • AWS 시스템 구성  
+
 ```
 
 
@@ -91,4 +94,10 @@ E-mail: yeieun1213@kookmin.ac.kr
 Role: 서버
     • API
     • DB 
+
 ```
+
+
+## 5. 사용법
+
+추후 추가 예정
