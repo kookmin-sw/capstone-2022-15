@@ -87,7 +87,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 
 #### 정유선 (팀장) [@yoosun](https://github.com/usun813)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="120" height="120"/>
 
 ```
 Student ID: 20181690
@@ -98,10 +98,9 @@ Role: 프론트엔드
     • 로고, 이미지 디자인 
 ```
 
-<br>
 
 #### 김지민 [@miniee](https://github.com/JiminK)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="120"  height="120"/>
 
 ```
 Student ID: 20181597
@@ -112,10 +111,9 @@ Role: 프론트엔드 리더, GIT 관리
     • GIT 코드 형상 관리
 ```
 
-<br>
 
 #### 송경민 [@kyungmin](https://github.com/skm0626)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="120" height="120"/>
 
 ```
 Student ID: 20181630
@@ -126,10 +124,9 @@ Role: AI
     • 입 모양 생성 및 면접관 영상 구현 
 ```
 
-<br>
 
 #### 조재오 [@Jaeo](https://github.com/Grievle)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="120" height="120"/>
 
 ```
 Student ID: 20181696
@@ -140,10 +137,9 @@ Role: 백엔드 리더, 피드백
 
 ```
 
-<br>
 
 #### 황예은 [@yeieun1213](https://github.com/yeieun1213)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="120" height="120"/>
 
 ```
 Student ID: 20181710
