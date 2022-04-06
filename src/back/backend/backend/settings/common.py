@@ -5,25 +5,6 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 import os
 
-# 맨위쪽에 입력하시면 됩니다.
-
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(BASE_DIR, "front", "build"),  # 경로 변경
-        ],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-        },
-    },
-]
 
 # 경로 추가
 """
@@ -77,7 +58,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -161,21 +142,34 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# 로그인
 REST_FRAMEWORK = {
-    # 각 요청에 대한 허용/거부
-    # 등록 된 사용자 만 API에 액세스 할 수 있도록
-    # 인증 된 사용자에 대한 액세스를 허용하고 인증되지 않은 사용자에 대한 액세스를 거부하는걸
-    # DEFAULT_PERMISSION_CLASSES 설정을 사용하여 전체적으로 설정
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    # 유저 식별
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    # 유효한 유저만 접근
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
     ),
 }
+"""
+ACCOUNT_USER_MODEL_USERNAME_FIELD = True
+ACCOUNT_USERNAME_REQUIRED = True
+REST_USE_JWT = True
+from datetime import timedelta
 
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=2),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": False,  # 재발급
+    "BLACKLIST_AFTER_ROTATION": True,
+}
+"""
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# 로그인 성공후 이동하는 URL
+LOGIN_REDIRECT_URL = "/"

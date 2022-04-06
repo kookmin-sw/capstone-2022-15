@@ -1,5 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
+from django import forms
 from django.contrib.auth.models import AbstractUser
 
 
@@ -46,9 +47,15 @@ class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = "user_id"
-    REQUIRED_FIELDS = ["user_name", "user_interest"]
+    # REQUIRED_FIELDS = ["user_name", "user_interest"]
 
     objects = CustomUserManager()
 
     def __str__(self):
         return self.user_id
+
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["user_id", "password"]
