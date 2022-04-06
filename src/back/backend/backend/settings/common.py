@@ -151,19 +151,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ),
 }
-"""
-ACCOUNT_USER_MODEL_USERNAME_FIELD = True
-ACCOUNT_USERNAME_REQUIRED = True
-REST_USE_JWT = True
-from datetime import timedelta
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(hours=2),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-    "ROTATE_REFRESH_TOKENS": False,  # 재발급
-    "BLACKLIST_AFTER_ROTATION": True,
-}
-"""
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",

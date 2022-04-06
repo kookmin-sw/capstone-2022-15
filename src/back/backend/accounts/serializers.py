@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
-# 회원가입
+# signup
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
@@ -18,14 +18,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
         return user
 
 
-# 접속 유지중인지 확인
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = "user_id"
-
-
-# 로그인
+# login
 class LoginUserSerializer(serializers.Serializer):
     user_id = serializers.CharField()
     password = serializers.CharField()
