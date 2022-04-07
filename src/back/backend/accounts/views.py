@@ -4,25 +4,32 @@ from rest_framework import status
 from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from .serializers import CreateUserSerializer, LoginUserSerializer
+from rest_framework.authtoken.models import Token
+
+User = get_user_model()
 
 
 class SignupView(APIView):
     http_method_names = ["post"]
 
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [
+        permissions.AllowAny,
+    ]
 
     def post(self, *args, **kwargs):
         serializer = CreateUserSerializer(data=self.request.data)
         if serializer.is_valid():
-            get_user_model().objects.create_user(**serializer.validated_data)
+            user = User.objects.create_user(**serializer.validated_data)
+            token = Token.objects.create(user=user)
             return Response(
                 status=status.HTTP_201_CREATED,
                 data={
                     "success": True,
+                    "token": token.key,
                 },
             )
+        # already id exists etc..
         return Response(
             status=status.HTTP_400_BAD_REQUEST,
             data={
@@ -32,12 +39,38 @@ class SignupView(APIView):
 
 
 class LoginView(APIView):
-    serializer_class = LoginUserSerializer
-
     def post(self, request, *args, **kwargs):
         serializer = LoginUserSerializer(data=self.request.data)
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data
-        user.pop("password")
+        user_data = serializer.validated_data
+        user_id = user_data["user_id"]
+        password = user_data["password"]
 
-        return Response(status=status.HTTP_200_OK, data={"success": True, "user": user})
+        # wrong request
+        if user_id is None or password is None:
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data={"error": "user id/password required"},
+            )
+        user = User.objects.filter(user_id=user_id).first()
+        # not founded user
+        if user is None:
+            return Response(
+                {"error": "user is not founded"}, status=status.HTTP_404_NOT_FOUND
+            )
+        # wrong password
+        if not user.check_password(password):
+            return Response(
+                {"error": "wrong password"}, status=status.HTTP_400_BAD_REQUEST
+            )
+        # success
+        token = Token.objects.get(user=user)
+        return Response(
+            status=status.HTTP_200_OK,
+            data={"success": True, "user": user_id, "token": token.key},
+        )
+
+
+class LogoutView(APIView):
+    def post(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_200_OK)

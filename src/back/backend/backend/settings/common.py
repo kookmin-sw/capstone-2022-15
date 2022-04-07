@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # third apps
     # django-rest-auth
     "rest_framework",
-    "rest_framework_simplejwt.token_blacklist",
+    # "rest_framework_simplejwt.token_blacklist",
     "rest_framework.authtoken",
     "dj_rest_auth",
     "dj_rest_auth.registration",
@@ -144,10 +144,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # 로그인
 REST_FRAMEWORK = {
-    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.AllowAny",
+        # "rest_framework.permissions.IsAuthenticated",
+    ),
     # 유효한 유저만 접근
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ),
 }
