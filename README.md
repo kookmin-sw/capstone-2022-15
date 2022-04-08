@@ -12,8 +12,8 @@
 
 <!-- 이어서 프로젝트의 필요성에 대해 설명하겠습니다. -->
 면접은 대입, 취업, 이직과 같이 새로운 시작을 할 때 필수이지만 많은 사람들이 어려워 하는 과정 중 하나이다.
-사람인에서 진행한 설문조사에 따르면 면접 경험한 구직자 중 약 77%로가 후회했다고 응답하였고, 그 중 반복적으로 연습하면 답할 수 있는 "준비한 답변을 제대로 하지 못해서"가 가장 후회한 이유로 꼽혔다.
-또 2020년, 언택트가 일상화 되면서 면접도 비대면으로 바뀌어 어떻게 준비해야 할지 모르거나 카메라에 비춰지는 모습이 걱정되어 비대면 면접에 부담을 느끼는 구직자가 증가하고 있다.
+사람인에서 진행한 설문조사에 따르면 면접을 경험한 구직자 중 약 77%가 자신의 면접에 대해 후회한다고 응답하였고, 그 중 반복적으로 연습하면 답할 수 있는 "준비한 답변을 제대로 하지 못해서"가 가장 높은 비율을 차지했다.
+또한 2020년부터 언택트가 일상화 되면서 대부분의 면접이 비대면으로 바뀌었다. 
 펜데믹 종식 이후에도 비대면 채용 유지를 지속한다는 기업이 증가하는 추세로, 온라인 면접 준비의 필요성이 높아지고 있다.
 
 인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다.
@@ -63,8 +63,8 @@ The project name "인퓨(INFU or IN4U)" means "Interview For You."
 인퓨 is a web service that allows users to practice interviews and receive feedback along with interviewers with virtually created faces.
 
 Interviews are essential for new beginnings, such as college entrance, employment, and turnover, but are one of the difficult processes for many people.
-According to a survey conducted by humans, about 77% of job seekers who experienced interviews said they regretted it, and among them, "because they did not answer properly," which can be answered by repeated practice, was cited as the most regrettable reason.
-In addition, as untact becomes commonplace in 2020, interviews have also changed to non-face-to-face, increasing the number of job seekers who feel burdened by non-face-to-face interviews because they do not know how to prepare or are worried about being shown on the camera.
+According to a survey conducted by people, about 77% of job seekers who experienced the interview said they regretted it, and among them, "because they did not respond properly" that can be answered by repeated practice accounted for the highest percentage.
+In addition, as untact has become commonplace since 2020, most interviews have changed non-face-to-face.
 As more and more companies continue to maintain non-face-to-face employment even after the end of the pandemic, the need to prepare for online interviews is increasing.
 
 인퓨 provides a more realistic interview practice unlike the existing interview practice service in which a virtually created interviewer moves his or her mouth and delivers questions by voice, without an interviewer existing.
@@ -74,8 +74,12 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 ## 3. 소개 영상
 
+### I. 200초 소개 동영상
 <!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
 [![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
+
+### II. 중간 발표 영상
+[![중간 발표 영상](https://user-images.githubusercontent.com/39400030/162360283-c2917008-e1e4-45ad-a0e1-8e31e4ca5712.png)](https://youtu.be/YphsQx7i4go)
 
 
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
@@ -85,8 +89,9 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 ## 4. 팀 소개
 
+
 #### 정유선 (팀장) [@yoosun](https://github.com/usun813)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191794-c365e6c8-3a43-4030-84cb-b875f90637bd.png" width="135" height="135"/>
 
 ```
 Student ID: 20181690
@@ -97,8 +102,9 @@ Role: 프론트엔드
     • 로고, 이미지 디자인 
 ```
 
+
 #### 김지민 [@miniee](https://github.com/JiminK)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="135"  height="135"/>
 
 ```
 Student ID: 20181597
@@ -111,7 +117,7 @@ Role: 프론트엔드 리더, GIT 관리
 
 
 #### 송경민 [@kyungmin](https://github.com/skm0626)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191790-ffb69be5-2a37-4772-a9ae-832c82c448f5.png" width="135" height="135"/>
 
 ```
 Student ID: 20181630
@@ -124,7 +130,7 @@ Role: AI
 
 
 #### 조재오 [@Jaeo](https://github.com/Grievle)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161191993-adfc28e6-3653-485c-9dac-8d0ac1a23d05.png" width="135" height="135"/>
 
 ```
 Student ID: 20181696
@@ -137,7 +143,7 @@ Role: 백엔드 리더, 피드백
 
 
 #### 황예은 [@yeieun1213](https://github.com/yeieun1213)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="150" height="150"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/161310314-1dd32fbb-6579-4d8b-aa35-35c8f2ec1d99.png" width="135" height="135"/>
 
 ```
 Student ID: 20181710
@@ -145,11 +151,10 @@ E-mail: yeieun1213@kookmin.ac.kr
 Role: 서버
     • API
     • DB 
-    
+
 ```
 
 <br>
 
 ## 5. 사용법
-
 추후 추가 예정
