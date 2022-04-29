@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar';
 import img_main_simple from '../images/img_main_simple.png';
 import './Mypage.css';
 import List from './list.js'
-
+import Footer from '../components/Footer';
 //<img src={img_main_simple}/>  
 
 const Mypage = () => {
@@ -13,6 +13,9 @@ const Mypage = () => {
             <Navbar/>
             <Bar/>
             <MenuBox/>
+            <div className='mypage_footer_top'>
+              <Footer/>
+            </div>
         </div>
     );
 };
@@ -26,36 +29,37 @@ class Bar extends Component{
         </div>
       );
     }
-  }
-  class MenuBox extends Component{
-    render(){
-      return(
-        <div className='Menu-box'>
-            <div className='Menu-txt1'>
-                 Feedback
-            </div>
-            <div className='Menu-txt2'>
-            &nbsp;&nbsp;&nbsp;&nbsp;연습기록
-            </div>
+}
+class MenuBox extends Component{
+  render(){
+    return(
+      <div className='Menu-box'>
+          <div className='Menu-txt1'>
+              Feedback
+          </div>
+          <div className='Menu-txt2'>
+          &nbsp;&nbsp;&nbsp;&nbsp;연습기록
+          </div>
 
-            <img src={img_main_simple} className="Img_mypage"/>  
+          <img src={img_main_simple} className="Img_mypage"/>  
 
-            <div className='Main-box'>
-                <MainBox/>
-            </div>
-        </div>
-      );
-    }
+          <div className='Main-box'>
+              <MainBox/>
+          </div>
+      </div>
+    );
   }
-  class MainBox extends Component{
-    render(){
-      return(
-        <div>
-            <List/>
-        </div>
+}
+class MainBox extends Component{
+  render(){
+    return(
+      <div>
+          <List/>
+      </div>
         
-      );
-    }
+    );
   }
+}
   
+
 export default Mypage;
