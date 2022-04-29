@@ -12,7 +12,7 @@ const Signup = () => {
   const [user_id, setuser_id] = useState('');
   const [password1, setPassword1] = useState('');
   const [user_pw, setuser_pw] = useState('');
-  const [user_interest, setuser_interest] = useState('');
+  // const [user_interest, setuser_interest] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -36,9 +36,9 @@ const Signup = () => {
   const onChangePw2 = (e) => {
     setuser_pw(e.target.value)
   }
-  const onChangeuser_interest = (e) => {
-    setuser_interest(e.target.value)
-  }
+  // const onChangeuser_interest = (e) => {
+  //   setuser_interest(e.target.value)
+  // }
   const onSubmit = e => {
     e.preventDefault();
 
@@ -47,7 +47,7 @@ const Signup = () => {
       user_id: user_id,
       password1: password1,
       user_pw: user_pw,
-      user_interest: user_interest
+      // user_interest: user_interest
     };
     if(password1 !== user_pw) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
@@ -66,7 +66,7 @@ const Signup = () => {
           setuser_id('')
           setPassword1('')
           setuser_pw('')
-          setuser_interest('')
+          // setuser_interest('')
           localStorage.clear()
           setErrors(true)
         }
@@ -136,9 +136,9 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
+              {/* <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
                 <SelectBox options={OPTIONS} defaultValue="0"/>
-              </label> 
+              </label>  */}
               {/* <input
                 user_user_interest='user_interest'
                 type='user_interest'
@@ -147,7 +147,8 @@ const Signup = () => {
                 required
               />{' '} */}
               
-              <br /><br /><br />
+              {/* <br /><br /> */}
+              <br />
               <input type='submit' className='BT-Join' value='회원가입' />
               <br /><br /><br />
             </form>
