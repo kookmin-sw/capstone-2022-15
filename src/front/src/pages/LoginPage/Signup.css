@@ -3,6 +3,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
+    
 }
 
 .SignupBox_layer{
@@ -63,8 +64,14 @@
     white-space: nowrap;
 }
 .Img{
-    position : fixed;
+    position : absolute;
     bottom : 40px;
     right: 40px;
-    width: 230px;
+    width: 200px;
+    top: 320px;
+}
+.Signup_Footer{
+    z-index: 7;
+    position: absolute;
+    top:88vh;
 }
