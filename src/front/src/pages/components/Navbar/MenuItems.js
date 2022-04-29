@@ -1,7 +1,7 @@
 export const MenuItems = [
     {
         title: '소개',
-        url: '/introduce',
+        url: 'https://kookmin-sw.github.io/capstone-2022-15/',
         cName: 'nav-links'
     },
     {
@@ -10,7 +10,7 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'About Us',
+        title: 'Git Hub',
         url: 'https://kookmin-sw.github.io/capstone-2022-15/',
         cName: 'nav-links'
     },
