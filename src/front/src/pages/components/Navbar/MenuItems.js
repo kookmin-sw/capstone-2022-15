@@ -10,8 +10,8 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Contact Us',
-        url: '#',
+        title: 'About Us',
+        url: 'https://kookmin-sw.github.io/capstone-2022-15/',
         cName: 'nav-links'
     },
     //cName은 class name, cName이 'nav-links-mobile'인 것은 모바일에만 보이게
