@@ -3,7 +3,6 @@
 html { font-size: 62.5%; }
 .App {
     /* 메인 */
-    position: relative;
     width: 100%;
     height: auto;
     left:0vw;
