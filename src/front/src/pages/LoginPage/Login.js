@@ -1,9 +1,11 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import Axios from 'axios';
 import './Signup.css';
 import img_main_simple from '../images/img_main_simple.png';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 const Login = () => {
 
   const [user_id, setUser_id] = useState('')
@@ -43,6 +45,9 @@ const Login = () => {
   return (
     <div className='Signup_App'>
       <Navbar/>
+      <div className='Signup_Footer'>
+        <Footer/>
+      </div>
       <img src={img_main_simple} className="Img"/>
       <div className='SignupBox_layer'>
         <div className='SignupBox'>
