@@ -94,7 +94,7 @@ const Signup = () => {
           <div className='Inner_grey'>
             <form onSubmit={onSubmit}>
               <br /><br />
-              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_name='user_name'
                 type='user_name'
@@ -105,7 +105,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_user_id='user_id'
                 type='user_id'
@@ -116,7 +116,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_pw1='password1'
                 type='password'
@@ -130,7 +130,7 @@ const Signup = () => {
               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
-              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
+              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
               <input
                 user_pw='user_pw'
                 type='password'
