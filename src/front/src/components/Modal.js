@@ -18,6 +18,12 @@ const ModalComponent = ({
 }) => {
     return (
         <div className="modal">
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={closeModalHandler}
+                style={modalStyle.content ? modalStyle : defaultStyle}
+                ariaHideApp={false}
+            ></Modal>
         </div>
     );
 }
