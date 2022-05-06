@@ -3,9 +3,23 @@
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
 
+const defaultStyle = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      width: '400px',
+      height: '400px',
+      transform: 'translate(-50%, -50%)',
+      background: 'white'
+    },
+  };
+
 const DefaultContent = () => {
-    return (
-        <div>hello</div>
+    return(
+        <div>hello :)</div>
     )
 }
 
@@ -25,6 +39,7 @@ const ModalComponent = ({
                 ariaHideApp={false}
             >
                 {Content ? <Content/> : <DefaultContent/>}
+                <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
             </Modal>
         </div>
     );
