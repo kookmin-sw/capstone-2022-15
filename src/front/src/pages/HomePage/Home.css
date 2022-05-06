@@ -3,7 +3,6 @@
 html { font-size: 62.5%; }
 .App {
     /* 메인 */
-    position: relative;
     width: 100%;
     height: auto;
     left:0vw;
@@ -57,7 +56,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 98vw;
     height: 61vh;
-    left: 0px;
+    left: 5px;
     top: 14vh;
     background: #F0F2F4; 
 }
@@ -303,7 +302,7 @@ html { font-size: 62.5%; }
 
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 3.7vw;
 
     color: rgba(0, 0, 0, 0.72);
   }
@@ -316,7 +315,7 @@ html { font-size: 62.5%; }
 
     font-family: 'Montserrat';
     font-weight: 560;
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     display: flex;
     align-items: center;
 

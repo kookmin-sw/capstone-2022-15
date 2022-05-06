@@ -6,13 +6,14 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import img_main_simple from '../images/img_main_simple.png';
+import Footer from '../components/Footer';
 
 const Signup = () => {
   const [user_name, setName] = useState('');
   const [user_id, setuser_id] = useState('');
   const [password1, setPassword1] = useState('');
   const [user_pw, setuser_pw] = useState('');
-  const [user_interest, setuser_interest] = useState('');
+  // const [user_interest, setuser_interest] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -36,9 +37,9 @@ const Signup = () => {
   const onChangePw2 = (e) => {
     setuser_pw(e.target.value)
   }
-  const onChangeuser_interest = (e) => {
-    setuser_interest(e.target.value)
-  }
+  // const onChangeuser_interest = (e) => {
+  //   setuser_interest(e.target.value)
+  // }
   const onSubmit = e => {
     e.preventDefault();
 
@@ -47,7 +48,7 @@ const Signup = () => {
       user_id: user_id,
       password1: password1,
       user_pw: user_pw,
-      user_interest: user_interest
+      // user_interest: user_interest
     };
     if(password1 !== user_pw) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
@@ -66,7 +67,7 @@ const Signup = () => {
           setuser_id('')
           setPassword1('')
           setuser_pw('')
-          setuser_interest('')
+          // setuser_interest('')
           localStorage.clear()
           setErrors(true)
         }
@@ -80,6 +81,10 @@ const Signup = () => {
   return (
     <div className='Signup_App'>
       <Navbar/>
+      <div className='Signup_Footer'>
+        <Footer/>
+      </div>
+      
       <img src={img_main_simple} className="Img"/>
       <div className='SignupBox_layer'>
         <div className='SignupBox'>
@@ -89,7 +94,7 @@ const Signup = () => {
           <div className='Inner_grey'>
             <form onSubmit={onSubmit}>
               <br /><br />
-              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_name'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_name='user_name'
                 type='user_name'
@@ -100,7 +105,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='user_id'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_user_id='user_id'
                 type='user_id'
@@ -111,7 +116,7 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <label htmlFor='password1'>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
               <input
                 user_pw1='password1'
                 type='password'
@@ -125,7 +130,7 @@ const Signup = () => {
               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
-              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
+              <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>
               <input
                 user_pw='user_pw'
                 type='password'
@@ -136,9 +141,9 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
+              {/* <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
                 <SelectBox options={OPTIONS} defaultValue="0"/>
-              </label> 
+              </label>  */}
               {/* <input
                 user_user_interest='user_interest'
                 type='user_interest'
@@ -147,7 +152,8 @@ const Signup = () => {
                 required
               />{' '} */}
               
-              <br /><br /><br />
+              {/* <br /><br /> */}
+              <br />
               <input type='submit' className='BT-Join' value='회원가입' />
               <br /><br /><br />
             </form>

@@ -12,9 +12,9 @@
     position: relative;
     top: 80px;
     width: 20vw;
-    height: 78.5vh;
+    height: 89vh;
 
-    background: #dfdfdf;
+    background: #F0F2F4;
     flex-direction: row;
     align-items: stretch;
 }
@@ -24,18 +24,19 @@
     left: 2.5vw;
     top: 5vh;
     width: 10vw;
+    
 }
 .Menu-txt2{
     position: relative;
-    font-size: 1.3vw;
-    left: 8vw;
+    font-size: 1.1vw;
+    left: 11vw;
     top: 7vh;
     padding: 1rem;
     color: #5B7EFB;
     background: #fff;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    width: 10.5vw;
+    width: 8vw;
 }
 .Menu-txt2:hover{
     color: #ff85a1;
@@ -43,9 +44,7 @@
 .Main-box{
     position: relative;
     width: 70vw;
-    left:21vw;
-
-
+    left:22.5vw;
 }
 .Img_mypage{
     position: absolute;
@@ -58,20 +57,22 @@
     margin-left: 50px;
     margin-right: 20px;
     min-height: 400px;
-    background: #56565c;
+    border: 0.2vw solid #5B7EFB;
 }
 
 .list_tit {
-    border-bottom: solid 1px #ababab;
+    border-bottom: solid 1.5px #56565c;
+    padding-bottom: 7px;
     color : #ababab;
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #5B7EFB;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #56565c;
 }
 
 .list_grid {
     display: grid;
-    grid-template-columns: 70% 15% 15%;
+    grid-template-columns: 50% 25% 25%;
+
 }
 
 .list_data {
@@ -80,4 +81,9 @@
 
 .acenter {
     text-align: center;
+}
+.mypage_footer_top{
+    z-index: 7;
+    position: absolute;
+    top: 110vh;
 }
