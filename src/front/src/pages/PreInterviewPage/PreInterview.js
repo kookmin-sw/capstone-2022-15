@@ -2,27 +2,21 @@
 import './PreInterview.css';
 import { PageDescription } from '../../components/PageDescription';
 // import { CamRecorder } from '../../components/CamRecorder';
-import React, { Component } from "react"; 
+import React, { useEffect, useState } from "react"; 
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 
-
-class PreInterview extends Component {
-    render() {
-        return (
-            <div>
-                <div className="PreInterviewApp">
-                    <Navbar/>
-                    <PageDescription></PageDescription>
-                    <CamSetting></CamSetting>
-                </div>
-                <div className="PreInterviewAppFooter">
-                    <Footer/>
-                </div>
-            </div>
-        );
-    }
+const PreInterview = () => {
+    return (
+        <div className="PreInterviewApp">
+            <Navbar/>
+            <PageDescription></PageDescription>
+            <CamSetting></CamSetting>
+            <SelectInterviewType/> {/* add SelectInterviewType component */}
+            {/* <Footer/> */}
+        </div>
+    );
 }
 
 const clickMotion = () => window.open('/interview', '_blank');
