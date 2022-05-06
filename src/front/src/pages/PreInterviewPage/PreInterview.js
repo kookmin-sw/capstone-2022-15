@@ -7,19 +7,9 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 
-const PreInterview = () => {
-    return (
-        <div className="PreInterviewApp">
-            <Navbar/>
-            <PageDescription></PageDescription>
-            <CamSetting></CamSetting>
-            <SelectInterviewType/> {/* add SelectInterviewType component */}
-            {/* <Footer/> */}
-        </div>
-    );
-}
 
 const clickMotion = () => window.open('/interview', '_blank');
+
 const CamSetting = () => { 
        
     return (
@@ -54,5 +44,64 @@ const CamSetting = () => {
 
 }
 
+const SelectInterviewType = () => {
+    const modalStyle = {
+        content:{
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            width: '400px',
+            height: '400px',
+            transform: 'translate(-50%, -50%)',
+            background: 'white'
+        }
+    }
+    const closeButtonStyle = {
+        color: "blue"
+    }
+    const ModalContents = () => {
+        return(
+                <div> fill what you want in PreInterview </div>
+            )
+    }
+    const [openModal, isOpenModal] = useState(false)
+    const openModalHandler = () => {
+        isOpenModal(true)
+    }
+    const closeModalHandler = () => {
+        isOpenModal(false)
+    }
+
+    return(
+        <div>
+            <button className="temp" onClick={() => isOpenModal(true)}>
+                open modal
+            </button>
+            {isOpenModal && <ModalComponent
+                isOpen={openModal}
+                closeModalHandler={closeModalHandler}
+                modalStyle={modalStyle}
+                Content={ModalContents}
+                CloseButtonStyle={closeButtonStyle}
+                />
+            }
+        </div>
+    )
+}
+
+
+const PreInterview = () => {
+    return (
+        <div className="PreInterviewApp">
+            <Navbar/>
+            <PageDescription></PageDescription>
+            <CamSetting></CamSetting>
+            <SelectInterviewType/> {/* add SelectInterviewType component */}
+            {/* <Footer/> */}
+        </div>
+    );
+}
 
 export default PreInterview;
