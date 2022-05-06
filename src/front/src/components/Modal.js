@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 
 const DefaultContent = () => {
     return (
-        <div>hello :)</div>
+        <div>hello</div>
     )
 }
 
