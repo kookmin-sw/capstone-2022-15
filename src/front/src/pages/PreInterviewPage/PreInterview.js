@@ -5,7 +5,8 @@ import { PageDescription } from '../../components/PageDescription';
 import React, { useEffect, useState } from "react"; 
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer';
+import ModalComponent from '../../components/Modal';
+// import Footer from '../components/Footer';
 
 
 const clickMotion = () => window.open('/interview', '_blank');
