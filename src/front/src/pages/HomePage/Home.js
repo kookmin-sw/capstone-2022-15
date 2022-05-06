@@ -16,7 +16,7 @@ import img_step3 from '../images/img_step3.png';
 import React, { Component } from "react"; 
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 class Home extends Component {
   render() {
@@ -29,7 +29,6 @@ class Home extends Component {
         <Middle/>
         <Bottom/>
         <Footer_pink/>
-
         <div className='footer_top'>
           <Footer/>
         </div>        
