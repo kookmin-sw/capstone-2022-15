@@ -69,7 +69,7 @@ class List extends Component {
 
         <div className='list_grid list_tit'>
           <div> 유형 </div>
-          <div> 진행상황 </div>
+          <div className='acenter'> 진행상황 </div>
           <div className='acenter'> 날짜 </div>
         </div>
 
