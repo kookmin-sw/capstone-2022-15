@@ -1,9 +1,10 @@
 from django.contrib.auth import get_user_model, authenticate, login
 
+from rest_framework import permissions, authentication
+
 from rest_framework import status
-from rest_framework import permissions
-from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.response import Response
 from .serializers import CreateUserSerializer, LoginUserSerializer
 from rest_framework.authtoken.models import Token
 
@@ -21,7 +22,7 @@ class SignupView(APIView):
         serializer = CreateUserSerializer(data=self.request.data)
         if serializer.is_valid():
             user = User.objects.create_user(**serializer.validated_data)
-            token = Token.objects.create(user=user)
+            token = Token.objects.create(user=user)  # token create
             return Response(
                 status=status.HTTP_201_CREATED,
                 data={
@@ -39,6 +40,14 @@ class SignupView(APIView):
 
 
 class LoginView(APIView):
+    authentication_classes=[
+        authentication.TokenAuthentication
+    ]
+
+    permission_classes = [
+        #permissions.IsAuthenticated,
+        permissions.AllowAny
+    ]
     def post(self, request, *args, **kwargs):
         serializer = LoginUserSerializer(data=self.request.data)
         serializer.is_valid(raise_exception=True)
@@ -64,13 +73,8 @@ class LoginView(APIView):
                 {"error": "wrong password"}, status=status.HTTP_400_BAD_REQUEST
             )
         # success
-        token = Token.objects.get(user=user)
+        token = Token.objects.get(user=user)  # token get
         return Response(
             status=status.HTTP_200_OK,
-            data={"success": True, "user": user_id, "token": token.key},
+            data={"success": True, "user": user_id, "token":token.key},
         )
-
-
-class LogoutView(APIView):
-    def post(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_200_OK)

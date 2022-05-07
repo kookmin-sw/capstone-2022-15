@@ -47,7 +47,7 @@ class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = "user_id"
-    # REQUIRED_FIELDS = ["user_name", "user_interest"]
+    REQUIRED_FIELDS = ["user_name", "user_interest"]
 
     objects = CustomUserManager()
 
