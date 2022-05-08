@@ -4,7 +4,7 @@ import PreInterview from './pages/PreInterviewPage/PreInterview';
 import Interview from './pages/InterviewPage/Interview';
 import Mypage from './pages/MyPage/Mypage';
 import Login from './pages/LoginPage/Login';
-import Introduce from './pages/IntroducePage/Introduce';
+// import Introduce from './pages/IntroducePage/Introduce';
 import Signup from './pages/LoginPage/Signup';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Route path="/mypage" element={<Mypage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup/>} />
-      <Route path="/introduce" element={<Introduce />} />
+      {/* <Route path="/introduce" element={<Introduce />} /> */}
     </Routes>
   );
 }
