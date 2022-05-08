@@ -8,7 +8,7 @@ const WebcamStreamCapture = ({
 }) => {  
     return (
       <>
-        <Webcam audio={false} ref={webcamRef}/>
+        <Webcam audio={true} ref={webcamRef}/>
         {capturing
         }
         {recordedChunks.length > 0
