@@ -1,5 +1,3 @@
-// 1111 make modal component
-
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
 
@@ -28,7 +26,11 @@ const ModalComponent = ({
     closeModalHandler,
     modalStyle,
     Content,
-    CloseButtonStyle
+    CloseButtonStyle,
+    selectedInterviewType,
+    startCaptureHandler,
+    stopCaptureHandler,
+    downloadHandler,
 }) => {
     return (
         <div className="modal">
@@ -38,7 +40,12 @@ const ModalComponent = ({
                 style={modalStyle.content ? modalStyle : defaultStyle}
                 ariaHideApp={false}
             >
-                {Content ? <Content/> : <DefaultContent/>}
+                <Interview 
+                    selectedInterviewType={selectedInterviewType}
+                    startCaptureHandler={startCaptureHandler}
+                    stopInterviewHandler={stopCaptureHandler}
+                    downloadHandler={downloadHandler}
+                />
                 <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
             </Modal>
         </div>
