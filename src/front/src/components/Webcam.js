@@ -12,9 +12,12 @@ const WebcamStreamCapture = ({
     return (
       <>
         <Webcam audio={true} ref={webcamRef}/>
-        {capturing
-        }
-        {recordedChunks.length > 0
+        {capturing ? (
+          stopCaptureHandler && <button onClick={stopCaptureHandler}>Stop Capture</button>
+        ) : (
+          startCaptureHandler && <button onClick={startCaptureHandler}>Start Capture</button>
+        )}
+        {recordedChunks.length > 0 
         }
       </>
     );
