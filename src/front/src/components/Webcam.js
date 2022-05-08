@@ -17,8 +17,9 @@ const WebcamStreamCapture = ({
         ) : (
           startCaptureHandler && <button onClick={startCaptureHandler}>Start Capture</button>
         )}
-        {recordedChunks.length > 0 
-        }
+        {recordedChunks.length > 0 && (
+          downloadHandler && <button onClick={downloadHandler}>Download</button>
+        )}
       </>
     );
   };
