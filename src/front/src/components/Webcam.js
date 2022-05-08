@@ -5,6 +5,9 @@ const WebcamStreamCapture = ({
     webcamRef,
     capturing,
     recordedChunks,
+    startCaptureHandler,
+    stopCaptureHandler,
+    downloadHandler,
 }) => {  
     return (
       <>
