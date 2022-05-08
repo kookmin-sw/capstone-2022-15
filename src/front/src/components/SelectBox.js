@@ -1,8 +1,21 @@
 import React from "react"; 
 
-const SelectBox = () => {
+const SelectBox = ({
+    className,
+
+}) => {
     return (
-        <div>
+        <div className={className}>
+            {Object.keys(selectBoxObject).map((key, idx) => {
+            return (
+                    <>
+                        <input
+                            key={idx}
+                            name={key}
+                            value={key}
+                            /> 
+                    </>
+                )
         </div>
     );
 }
