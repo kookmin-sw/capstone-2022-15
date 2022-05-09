@@ -120,7 +120,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 98vw;
     height: 70vh;
-    left: 0px;
+    left: 5px;
     top: 80vh;
 
     /* background: #323d49;  */
@@ -183,7 +183,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 98vw;
     height: 90vh;
-    left: 0px;
+    left: 5px;
     top: 161vh;
     background: #F0F2F4;
   }
