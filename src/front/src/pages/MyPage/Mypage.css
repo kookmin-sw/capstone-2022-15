@@ -12,45 +12,41 @@
     position: relative;
     top: 80px;
     width: 20vw;
-    height: 89vh;
 
     background: #F0F2F4;
     flex-direction: row;
     align-items: stretch;
 }
-.Menu-txt1{
-    position: relative;
-    font-size: 0.5vw;
-    left: 2.5vw;
-    top: 5vh;
-    width: 10vw;
-    
-}
 .Menu-txt2{
-    position: relative;
+    position: absolute;
     font-size: 1.1vw;
-    left: 11vw;
+    left: 6vw;
     top: 7vh;
     padding: 1rem;
     color: #5B7EFB;
     background: #fff;
     font-weight: 600;
     cursor: pointer;
-    width: 8vw;
+    text-decoration: none;
+    width: 13vw;
+    text-align: center;
 }
 .Menu-txt2:hover{
     color: #ff85a1;
 }
+
 .Main-box{
-    position: relative;
+    position: absolute;
     width: 70vw;
     left:22.5vw;
+    top: 6.5vh;
 }
 .Img_mypage{
     position: absolute;
-    width:15vw;
+    width:13vw;
     bottom: 3vh;
-    left: 2vw;
+    left: 3vw;
+    top:40vh;
 }
 .List {
     padding: 10px;
@@ -74,7 +70,6 @@
     grid-template-columns: 50% 25% 25%;
 
 }
-
 .list_data {
     line-height: 40px;
 }
@@ -85,5 +80,62 @@
 .mypage_footer_top{
     z-index: 7;
     position: absolute;
-    top: 110vh;
+    top: 100vh;
+}
+
+/*-------------------- Feedback.js에서만 사용 -----------------*/
+.mypage_footer_top2{
+    z-index: 7;
+    position: absolute;
+    top: 233vh;
+}
+.Menu-txt22{
+    position: absolute;
+    font-size: 1.1vw;
+    left: 6vw;
+    top: 7vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    font-weight: 600;
+    cursor: pointer;
+    width: 13vw;
+    text-decoration: none;
+    text-align: center;
+}
+.Menu-txt22:hover{
+    color: #ff85a1;
+}
+.Menu-txt3{
+    position: absolute;
+    font-size: 1.1vw;
+    left: 6vw;
+    top: 14vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    background: #fff;
+    font-weight: 600;
+    width: 13vw;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Interviewer-section{
+    position: relative;
+    width: 45vw;
+    left: 14vw;
+    top:2vh;
+}
+
+.Feedback-txt{
+    position: relative;
+    width: 45vw;
+    left: 2vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.Chart{
+    position: relative;
+    width: 30vw;
+    left: 22vw;
 }
