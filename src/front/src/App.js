@@ -19,13 +19,11 @@ function App() {
       <Route path="/mypage" element={<Mypage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup/>} />
-
       <Route path="/feedback" element={<Feedback1 />} />
       <Route path="/feedback/2" element={<Feedback2 />} />
       <Route path="/feedback/3" element={<Feedback3 />} />
       <Route path="/feedback/4" element={<Feedback4 />} />
       <Route path="/feedback/5" element={<Feedback5 />} /> 
-      
     </Routes>
   );
 }
