@@ -54,6 +54,18 @@ const PreInterview = () => {
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
 
+    const startCaptureHandler = useCallback(() => {
+
+        mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
+          mimeType: "video/webm"
+        });
+        mediaRecorderRef.current.addEventListener(
+          "dataavailable",
+          handleDataAvailable
+        );
+        mediaRecorderRef.current.start();
+      }, [webcamRef, mediaRecorderRef]);
+      
     return (
         <div className="PreInterviewApp">
             <Navbar/>
