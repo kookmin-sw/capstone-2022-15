@@ -53,8 +53,8 @@ const PreInterview = () => {
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
-
     const startCaptureHandler = useCallback(() => {
+
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
           mimeType: "video/webm"
         });
@@ -64,18 +64,19 @@ const PreInterview = () => {
         );
         mediaRecorderRef.current.start();
       }, [webcamRef, mediaRecorderRef]);
-    const handleDataAvailable = useCallback(
+
+      const handleDataAvailable = useCallback(
         ({ data }) => {
           if (data.size > 0) {
             setRecordedChunks((prev) => prev.concat(data));
           }
         },
         [setRecordedChunks]
-    );
+      );
     const stopCaptureHandler = useCallback(() => {
         mediaRecorderRef.current.stop();
     }, [mediaRecorderRef, webcamRef]);
-
+    
     const downloadHandler = useCallback(() => {
         if (recordedChunks.length) {
             const blob = new Blob(recordedChunks, {
