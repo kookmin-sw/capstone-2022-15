@@ -120,7 +120,9 @@ const PreInterview = () => {
                     modalStyle={modalStyle}
                     CloseButtonStyle={closeButtonStyle}
                     selectedInterviewType={selectedInterviewType}
-
+                    startCaptureHandler={startCaptureHandler}
+                    stopCaptureHandler={stopCaptureHandler}
+                    
                     />
                 }
             </div>
