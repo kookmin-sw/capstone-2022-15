@@ -5,10 +5,12 @@ import Footer from '../components/Footer';
 import './Mypage.css';
 import img_main_simple from '../images/img_main_simple.png';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Feedback = () => {
     return (
         <div>
+
             <Navbar/>
             <Bar2/>
             <MenuBox2/> 
@@ -18,12 +20,6 @@ const Feedback = () => {
         </div>
     );
 };
-{/* 
-질문 1, 2, 3, 4, 5를 왼쪽 메뉴바에 보여주고
-그걸 클릭할 때마다 동영상/차트 이미지 값을 다르게 받아오면 될 것 같은데
-이걸 어떻게 하냐...
-*/}
-
 
 class Bar2 extends Component{
     render(){
@@ -43,9 +39,37 @@ class MenuBox2 extends Component{
                 연습목록
                 </Link>
             </div>
-            <div className='Menu-txt3'>
-            &nbsp;&nbsp;질문 1
+
+            <div onClick={()=>console.log("마이 페이지로 페이지 변경")}>
+                <Link to="/feedback/" className='Menu-txt3' style={{top:'14vh'}}>
+                &nbsp;&nbsp;질문 1
+                </Link>
             </div>
+
+            <div onClick={()=>console.log("마이 페이지로 페이지 변경")}>
+                <Link to="/feedback/2" className='Menu-txt3' style={{top:'20vh'}}>
+                &nbsp;&nbsp;질문 2
+                </Link>
+            </div>
+
+            <div onClick={()=>console.log("마이 페이지로 페이지 변경") }>
+                <Link to="/feedback/3" className='Menu-txt3' style={{top:'26vh'}}>
+                &nbsp;&nbsp;질문 3
+                </Link>
+            </div>
+
+            <div onClick={()=>console.log("마이 페이지로 페이지 변경") }>
+                <Link to="/feedback/4" className='Menu-txt3' style={{top:'32vh'}}>
+                &nbsp;&nbsp;질문 4
+                </Link>
+            </div>
+            
+            <div onClick={()=>console.log("마이 페이지로 페이지 변경") }>
+                <Link to="/feedback/5" className='Menu-txt3' style={{top:'38vh'}}>
+                &nbsp;&nbsp;질문 5
+                </Link>
+            </div>
+        
             
             <img src={img_main_simple} className="Img_mypage"/>  
             <div className='Main-box'>
@@ -55,29 +79,49 @@ class MenuBox2 extends Component{
       );
     }
   }
+
+// 수정 예정
+export const getID = async () =>
+  await axios.get('/feedback/');
+
+export const getInterviewID = async () =>
+  await axios.get('/feedback/');
+
+export const getChartHead= async () =>
+  await axios.get('/feedback/');
+
+export const getChartVoice= async () =>
+  await axios.get('/feedback/');
+
 class MainFeedback extends Component{
   render(){
+    const videoUrl = "https://www.youtube.com/embed/7H8VzdCyxu0"
+    // const user_id = getID
+    // const interview_id = getInterviewID
+    // const videoUrl = user_id + interview_id + "/interview_video/interview" + interview_id+".mp4"
+
+    const ChartHead = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
+    const ChartVoice = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
     return(
+      
       <div>
         <div className='Feedback-txt'style={{top:'5.2vh'}}>
               🔹 Video Check
         </div>
         <div className="Interviewer-section">
-
-              <iframe width="700vw" height="394vh" src="https://www.youtube.com/embed/7H8VzdCyxu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-               
+              <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
         </div>
 
         <div className='Feedback-txt' style={{top:'17vh'}}>
               🔹 머리 움직임
         </div>
-        <img src={"https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"} className="Chart" style={{top:'14vh'}}/>  
+        <img src={ChartHead} className="Chart" style={{top:'14vh'}}/>  
 
 
         <div className='Feedback-txt'style={{top:'30vh'}}>
               🔹 목소리 크기
         </div>
-        <img src={"https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"} className="Chart" style={{top:'26vh'}}/>  
+        <img src={ChartVoice} className="Chart" style={{top:'26vh'}}/>  
 
       </div>
         
