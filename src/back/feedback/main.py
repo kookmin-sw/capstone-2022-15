@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 
 import boto3
 from urllib.parse import unquote_plus
@@ -75,5 +73,3 @@ def lambda_handler(event, context):
             pass
     else:
         pass
-
-
