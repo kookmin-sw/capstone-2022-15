@@ -64,14 +64,17 @@ const PreInterview = () => {
         );
         mediaRecorderRef.current.start();
       }, [webcamRef, mediaRecorderRef]);
-      const handleDataAvailable = useCallback(
+    const handleDataAvailable = useCallback(
         ({ data }) => {
           if (data.size > 0) {
             setRecordedChunks((prev) => prev.concat(data));
           }
         },
         [setRecordedChunks]
-      );
+    );
+    const stopCaptureHandler = useCallback(() => {
+        mediaRecorderRef.current.stop();
+    }, [mediaRecorderRef, webcamRef]);
     return (
         <div className="PreInterviewApp">
             <Navbar/>
