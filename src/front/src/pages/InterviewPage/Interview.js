@@ -4,6 +4,8 @@ import React, {useState, useEffect} from "react";
 import firstVideo from "./interviewer_01.mp4";
 // import secondVideo from "./interviewer_02.mp4";
 import { Link } from 'react-router-dom';
+import SyncLoader from "react-spinners/SyncLoader";
+
 let count = 1;
 
 function Interview() {
