@@ -32,7 +32,7 @@
 
 .description-title {
     position: relative;
-    width: 276px;
+    width: 500px;
     min-height: 50px;
     height: 70px;
     padding-left: 80px;
@@ -53,8 +53,8 @@
 
 .description-content {
     position: relative;
-    width: 596px;
-    height: 48px;
+    width: 800px;
+    height: 80px;
     padding-left: 80px;
 
     font-family: Montserrat;
@@ -193,6 +193,12 @@
 }
 
 /*-------------------- select box --------------------*/
-.select-box {
-    color: red;
+.select-interview-type {
+
 }
+
+
+
+/* .select-box {
+    color: red;
+} */
