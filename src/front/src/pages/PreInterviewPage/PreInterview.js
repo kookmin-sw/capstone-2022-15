@@ -118,6 +118,7 @@ const PreInterview = () => {
                     isOpen={openModal}
                     closeModalHandler={closeModalHandler}
                     modalStyle={modalStyle}
+                    CloseButtonStyle={closeButtonStyle}
 
                     />
                 }
