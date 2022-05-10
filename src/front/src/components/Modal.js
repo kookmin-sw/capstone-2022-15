@@ -1,3 +1,5 @@
+// 1111 make modal component
+
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
 import Interview from '../pages/InterviewPage/Interview'
@@ -16,17 +18,10 @@ const defaultStyle = {
     },
   };
 
-const DefaultContent = () => {
-    return(
-        <div>hello :)</div>
-    )
-}
-
 const ModalComponent = ({
     isOpen,
     closeModalHandler,
     modalStyle,
-    Content,
     CloseButtonStyle,
     selectedInterviewType,
     startCaptureHandler,
@@ -44,8 +39,9 @@ const ModalComponent = ({
                 <Interview 
                     selectedInterviewType={selectedInterviewType}
                     startCaptureHandler={startCaptureHandler}
-                    stopInterviewHandler={stopCaptureHandler}
+                    stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
+                    closeModalHandler={closeModalHandler}
                 />
                 <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
             </Modal>
