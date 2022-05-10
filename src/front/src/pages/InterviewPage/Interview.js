@@ -19,7 +19,7 @@ const override = {
 
 function Interview({
     selectedInterviewType,
-    startCaptureHandler,
+    startCaptureHandler, 
 
 
 }) {
