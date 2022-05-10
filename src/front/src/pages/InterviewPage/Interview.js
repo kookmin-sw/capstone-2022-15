@@ -31,7 +31,20 @@ function Interview({
     const [preSignedUrl, setPreSignedUrl] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const urlToBackend = `~/getPresigned/${selectedInterviewType}`;
+
     console.log('buttonState', buttonState)
+
+    // api to backend
+    // axios({
+    //     url: urlToBackend,
+    //     method: 'GET'
+    // }).then((response) => {
+    //     setPreSignedUrl(response.data)
+    //     setLoading(false)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
 
     console.log('questionNumberState', questionNumberState)
     var intervalFunc = setInterval(() => {
