@@ -75,6 +75,24 @@ const PreInterview = () => {
     const stopCaptureHandler = useCallback(() => {
         mediaRecorderRef.current.stop();
     }, [mediaRecorderRef, webcamRef]);
+
+    const downloadHandler = useCallback(() => {
+        if (recordedChunks.length) {
+            const blob = new Blob(recordedChunks, {
+            type: "video/mp4"
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            a.href = url;
+            a.download = "001.mp4";
+            a.click();
+            window.URL.revokeObjectURL(url);
+            setRecordedChunks([]);
+        }
+    }, [recordedChunks]);
+
     return (
         <div className="PreInterviewApp">
             <Navbar/>
