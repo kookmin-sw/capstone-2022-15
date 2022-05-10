@@ -72,7 +72,8 @@
 .cam-setting-layout {
     position: relative;
     /* width: 100%; */
-    height: 737px;
+    height: 650px;
+    margin-top: 20px;
     margin-right: 80px;
     /* left: 0px; */
     /* top: 433px; */
@@ -106,7 +107,7 @@
     /* padding-right: 80px; */
     
     display: flex;
-    background-color: #cacaca
+    background-color: #cccccc
 }
 
 .cam-show {
@@ -194,11 +195,21 @@
 
 /*-------------------- select box --------------------*/
 .select-interview-type {
-
+    position: relative;
+    height: 150px;
+    margin-top: 20px;
+    margin-right: 80px;
 }
 
+.select-interview-type-layout {
+    position: relative;
+    /* width: 100%; */
+    height: 150px;
+    margin-left: 80px;
+    margin-top: 10px;
+    /* margin-right: 80px; */
+    /* padding-right: 80px; */
+    
+    display: flex;
+}
 
-
-/* .select-box {
-    color: red;
-} */

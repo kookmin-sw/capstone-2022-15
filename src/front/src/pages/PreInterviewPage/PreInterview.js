@@ -101,7 +101,7 @@ const PreInterview = () => {
             <div className="cam-setting-layout">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        WEBCAM 연결
+                        • WEBCAM 연결 
                     </div>
                 </div>
                 <div className="cam-show-layout">
@@ -111,6 +111,21 @@ const PreInterview = () => {
                             recordedChunks={recordedChunks}
                             />}
                     </div>
+                </div>
+            </div>
+            <div className="select-interview-type">
+                <div className="mini-title">
+                    <div className="cam-setting-title">
+                        • 면접 종류 선택 
+                    </div>
+                </div>
+                <div className="select-interview-type-layout">
+                    <SelectBox
+                        type={'checkBox'}
+                        className={styles.selectBox}
+                        checkedId={checkedId}
+                        changeHandler={changeHandler}
+                        selectBoxObject={interviewTypeName} />
                 </div>
                 <button className="start-button" onClick={() => isOpenModal(true)}>
                     START
@@ -126,15 +141,6 @@ const PreInterview = () => {
                     downloadHandler={downloadHandler}
                     />
                 }
-            </div>
-            <div>
-                면접 종류
-                <SelectBox
-                    type={'checkBox'}
-                    className={styles.selectBox}
-                    checkedId={checkedId}
-                    changeHandler={changeHandler}
-                    selectBoxObject={interviewTypeName} />
             </div> {/* add SelectInterviewType component */}
             {/* <Footer/> */}
         </div>
