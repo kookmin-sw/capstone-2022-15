@@ -39,7 +39,10 @@ const closeButtonStyle = {
 }
 
 const PreInterview = () => {
+    const [openModal, isOpenModal] = useState(false);
+
     const webcamRef = useRef(null);
+
 
     return (
         <div className="PreInterviewApp">
