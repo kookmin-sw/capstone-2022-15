@@ -51,7 +51,8 @@ const PreInterview = () => {
         setSelectedInterviewType(id)
     }
     const webcamRef = useRef(null);
-
+    const mediaRecorderRef = useRef(null);
+    const [recordedChunks, setRecordedChunks] = useState([]);
 
     return (
         <div className="PreInterviewApp">
