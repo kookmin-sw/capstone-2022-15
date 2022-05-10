@@ -10,8 +10,10 @@
 .interviewer-section {
   position: relative;
   width: 100%;
+  margin-left: auto;
   /* height: 650px; */
-  height: 90vh;
+  height: 80vh;
+  text-align: center;
 }
 
 /*---------------------- button ----------------------*/
