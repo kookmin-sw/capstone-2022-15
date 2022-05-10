@@ -22,7 +22,7 @@ function Interview({
     startCaptureHandler, 
     stopCaptureHandler,
     downloadHandler,
-
+    closeModalHandler,
 }) {
     const [buttonState, setButtonState] = useState(true);
     const [questionNumberState, setQuestionNumberState] = useState(1);
