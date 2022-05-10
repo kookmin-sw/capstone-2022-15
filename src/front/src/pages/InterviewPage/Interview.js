@@ -21,7 +21,7 @@ function Interview({
     selectedInterviewType,
     startCaptureHandler, 
     stopCaptureHandler,
-
+    downloadHandler,
 
 }) {
     const [buttonState, setButtonState] = useState(true);
