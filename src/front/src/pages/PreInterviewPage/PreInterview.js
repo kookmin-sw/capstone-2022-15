@@ -116,6 +116,7 @@ const PreInterview = () => {
                 </button>
                 {isOpenModal && <ModalComponent
                     isOpen={openModal}
+                    closeModalHandler={closeModalHandler}
                     modalStyle={modalStyle}
 
                     />
