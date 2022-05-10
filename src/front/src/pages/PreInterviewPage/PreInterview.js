@@ -23,6 +23,20 @@ const interviewTypeName = {
     6: '빅 데이터'   
 }
 
+const modalStyle = {
+    content:{
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        width: '90vw',
+        height: '90vh',
+        transform: 'translate(-50%, -50%)',
+        background: 'white'
+    }
+}
+
 const CamSetting = () => { 
        
     return (
