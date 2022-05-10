@@ -32,7 +32,7 @@ function Interview({
     // console.log('questionNumberState', questionNumberState)
     var intervalFunc = setInterval(() => {
         console.log('time out')
-        downloadHandler()
+        downloadHandler() 
         startCaptureHandler()
         stopInterval()
         setQuestionNumberState(questionNumberState + 1)
@@ -83,6 +83,7 @@ function Interview({
                     && questionNumberState % 2 === 0
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
+                        await downloadHandler()
                         await startCaptureHandler()
                         intervalFunc()
                     }}>
