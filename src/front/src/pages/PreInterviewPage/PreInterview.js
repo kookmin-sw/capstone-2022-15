@@ -37,6 +37,10 @@ const modalStyle = {
     }
 }
 
+const closeButtonStyle = {
+    color: "blue"
+}
+
 const CamSetting = () => { 
        
     return (
