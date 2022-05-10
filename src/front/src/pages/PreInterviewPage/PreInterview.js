@@ -42,13 +42,16 @@ const PreInterview = () => {
     const [openModal, isOpenModal] = useState(false);
     const [checkedId, setCheckedId] = useState();
     const [selectedInterviewType, setSelectedInterviewType] = useState('')
-
-    const webcamRef = useRef(null);
-
+    const closeModalHandler = () => {
+        downloadHandler()
+        isOpenModal(false)
+    }
     const changeHandler = (id) => {
         setCheckedId(id)
         setSelectedInterviewType(id)
     }
+    const webcamRef = useRef(null);
+
 
     return (
         <div className="PreInterviewApp">
