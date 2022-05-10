@@ -19,6 +19,8 @@ const override = {
 
 function Interview({
     selectedInterviewType,
+    startCaptureHandler,
+
 
 }) {
     const [buttonState, setButtonState] = useState(true);
