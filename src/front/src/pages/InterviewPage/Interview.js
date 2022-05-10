@@ -61,6 +61,7 @@ function Interview({
                     && <button className="interview-button" onClick={async () => {
                         stopInterval()
                         await setButtonState(false)
+                        await startCaptureHandler()
                         intervalFunc()
                     }}>
                         면접 시작
@@ -80,6 +81,7 @@ function Interview({
                     && questionNumberState % 2 === 0
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
+                        await startCaptureHandler()
                         intervalFunc()
                     }}>
                         다음 질문
