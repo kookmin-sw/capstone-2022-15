@@ -12,7 +12,7 @@
     position: relative;
     top: 80px;
     width: 20vw;
-
+    height: 50vh;
     background: #F0F2F4;
     flex-direction: row;
     align-items: stretch;
@@ -46,7 +46,7 @@
     width:13vw;
     bottom: 3vh;
     left: 3vw;
-    top:40vh;
+    top:55vh;
 }
 .List {
     padding: 10px;
@@ -80,7 +80,7 @@
 .mypage_footer_top{
     z-index: 7;
     position: absolute;
-    top: 100vh;
+    top: 110vh;
 }
 
 /*-------------------- Feedback.js에서만 사용 -----------------*/
