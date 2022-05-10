@@ -73,6 +73,7 @@ function Interview({
                     && questionNumberState % 2 === 1
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
+                        await stopCaptureHandler()
                         stopInterval()
                     }}>
                         대답 완료
