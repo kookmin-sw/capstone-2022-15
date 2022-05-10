@@ -122,7 +122,7 @@ const PreInterview = () => {
                     selectedInterviewType={selectedInterviewType}
                     startCaptureHandler={startCaptureHandler}
                     stopCaptureHandler={stopCaptureHandler}
-                    
+                    downloadHandler={downloadHandler}
                     />
                 }
             </div>
