@@ -105,7 +105,10 @@ const PreInterview = () => {
                 </div>
                 <div className="cam-show-layout">
                     <div className="cam-show">
-                        
+                        {<WebcamStreamCapture
+                            webcamRef={webcamRef}
+                            recordedChunks={recordedChunks}
+                            />}
                     </div>
                 </div>
                 <button className="start-button" onClick={() => isOpenModal(true)}>
