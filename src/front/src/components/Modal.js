@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
+import Interview from '../pages/InterviewPage/Interview'
 
 const defaultStyle = {
     content: {
