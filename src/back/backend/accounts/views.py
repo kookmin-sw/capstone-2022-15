@@ -59,22 +59,22 @@ class LoginView(APIView):
         if user_id is None or password is None:
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,
-                data={"error": "user id/password required"},
+                data={"isLogin": False, "error": "user id/password required"},
             )
         user = User.objects.filter(user_id=user_id).first()
         # not founded user
         if user is None:
             return Response(
-                {"error": "user is not founded"}, status=status.HTTP_404_NOT_FOUND
+                {"isLogin": False, "error": "user is not founded"}, status=status.HTTP_404_NOT_FOUND
             )
         # wrong password
         if not user.check_password(password):
             return Response(
-                {"error": "wrong password"}, status=status.HTTP_400_BAD_REQUEST
+                {"isLogin": False, "error": "wrong password"}, status=status.HTTP_400_BAD_REQUEST
             )
         # success
         token = Token.objects.get(user=user)  # token get
         return Response(
             status=status.HTTP_200_OK,
-            data={"success": True, "user": user_id, "token":token.key},
+            data={"isLogin": True, "user_id": user_id, "token":token.key},
         )

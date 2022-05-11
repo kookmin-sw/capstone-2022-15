@@ -16,6 +16,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
             validated_data["user_name"],
             validated_data["user_interest"],
         )
+        user.save()
         return user
 
 
