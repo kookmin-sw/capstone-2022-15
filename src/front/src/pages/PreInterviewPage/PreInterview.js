@@ -12,13 +12,13 @@ import SelectBox from '../../components/SelectBox';
 const clickMotion = () => window.open('/interview', '_blank');
 
 const interviewTypeName = {
-    0: '인성면접',
-    1: '임베디드',
-    2: 'UI/UX',
-    3: '데이터베이스',
-    4: '보안',
-    5: '클라우드',
-    6: '빅 데이터'   
+    0: '[인성] 인성 면접',
+    1: '[직무] 임베디드 SW 엔지니어',
+    2: '[직무] UI/UX 디자이너',
+    3: '[직무] DB 엔지니어',
+    4: '[직무] 보안 엔지니어',
+    5: '[직무] 클라우드 아키텍처 개발자',
+    6: '[직무] 빅데이터 개발자'  
 }
 const modalStyle = {
     content:{
@@ -116,7 +116,7 @@ const PreInterview = () => {
             <div className="select-interview-type">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        • 면접 종류 선택 
+                        • 면접 종류 선택
                     </div>
                 </div>
                 <div className="select-interview-type-layout">
