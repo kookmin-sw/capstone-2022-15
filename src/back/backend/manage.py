@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings.dev')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings.dev")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -17,6 +17,18 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    try:
+        if sys.argv[2] == "react":
+            project_root = os.getcwd()
+            os.chdir(os.path.join(project_root, "front"))
+            os.system("npm run build")
+            os.chdir(project_root)
+            sys.argv.pop(2)
+    except IndexError:
+        execute_from_command_line(sys.argv)
+    else:
+        execute_from_command_line(sys.argv)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
