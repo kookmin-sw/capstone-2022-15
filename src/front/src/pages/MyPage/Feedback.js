@@ -3,7 +3,6 @@ import React, { useState, useEffect, Component } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 import './Mypage.css';
-import img_main_simple from '../images/img_main_simple.png';
 import { Link } from 'react-router-dom';
 import Rechart from './Chart';
 
@@ -18,7 +17,7 @@ const Feedback = () => {
   const [question_n, setQuestion_n] = useState(0)
   const [errors, setErrors] = useState(false)
 
-//참고 https://blog.devgenius.io/django-react-authentication-part-2-ea626688165e
+//이거참고 https://blog.devgenius.io/django-react-authentication-part-2-ea626688165e
 
 
 /*
@@ -78,8 +77,7 @@ className= * 은 Mypage.css에 있움 */  }
               🔹 나의 답변
           <div className="Stt">
             여기에 STT 내용 <br/>
-            일단 사이즈 볼려고 테두리 넣었는데<br/>
-            겉에 테두리를 할까 말까<br/>
+            배경색 넣을까 말까<br/>
             🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
             인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다. 
 
@@ -167,8 +165,6 @@ class MenuBox2 extends Component{
                 </Link>
             </div>
         
-            
-            <img src={img_main_simple} className="Img_mypage"/>  
             <div className='Main-box'>
               <MainFeedback/>
           </div>
