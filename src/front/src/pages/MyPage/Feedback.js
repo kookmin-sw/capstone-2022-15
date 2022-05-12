@@ -3,7 +3,7 @@ import React, { useState, useEffect, Component } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 import './Mypage.css';
-import img_main_simple from '../images/img_main_simple.png';
+import txtFile from './testForTxt.txt';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -33,7 +33,7 @@ class Bar2 extends Component{
 class MenuBox2 extends Component{
     render(){
       return(
-        <div className='Menu-box' style={{height: '215vh'}}>
+        <div className='Menu-box' style={{height: '285vh'}}>
             <div onClick={()=>console.log("마이 페이지로 페이지 변경")}>
                 <Link to="/mypage" className='Menu-txt22'>
                 연습목록
@@ -70,8 +70,6 @@ class MenuBox2 extends Component{
                 </Link>
             </div>
         
-            
-            <img src={img_main_simple} className="Img_mypage"/>  
             <div className='Main-box'>
               <MainFeedback/>
           </div>
@@ -94,6 +92,14 @@ export const getChartVoice= async () =>
   await axios.get('/feedback/');
 
 class MainFeedback extends Component{
+  handleChange(e){
+    let file = txtFile;
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      console.log(fileReader.result);
+    };
+    fileReader.readAsText(file);
+  }
   render(){
     const videoUrl = "https://www.youtube.com/embed/7H8VzdCyxu0"
     // const user_id = getID
@@ -102,6 +108,7 @@ class MainFeedback extends Component{
 
     const ChartHead = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
     const ChartVoice = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
+    let VideoTxt = txtFile;
     return(
       
       <div>
@@ -109,20 +116,30 @@ class MainFeedback extends Component{
               🔹 Video Check
         </div>
         <div className="Interviewer-section">
-              <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
+              <iframe width="600vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
         </div>
 
-        <div className='Feedback-txt' style={{top:'17vh'}}>
-              🔹 머리 움직임
-        </div>
-        <img src={ChartHead} className="Chart" style={{top:'14vh'}}/>  
+      
 
+        <div className='Feedback-txt' style={{top:'17vh', height:"40vh"}}>
+              🔹 나의 답변
+        </div>
+        {/* <div className="Video_txt" >
+                <p>{VideoTxt}</p>
+        </div> */}
+        <div className="Video_txt">
+          <input type="file" onChange={tihs.handleChange.bind(this)} />
+        </div>
 
         <div className='Feedback-txt'style={{top:'30vh'}}>
               🔹 목소리 크기
         </div>
         <img src={ChartVoice} className="Chart" style={{top:'26vh'}}/>  
 
+        <div className='Feedback-txt' style={{top:'43vh'}}>
+              🔹 머리 움직임
+        </div>
+        <img src={ChartHead} className="Chart" style={{top:'39vh'}}/>  
       </div>
         
     );
