@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
+import axios from 'axios';
+
 // import Footer from '../components/Footer';
 
 const clickMotion = () => window.open('/interview', '_blank');
@@ -53,6 +55,8 @@ const PreInterview = () => {
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
+    const [preSingedUrl, setPreSignedUrl] = useState('')
+    const [video, setVideo] = useState('https://drive.google.com/file/d/1PVhI_o93PTxhzw8IlYp4i8fA-IDjgcGS/view?usp=sharing')
     const startCaptureHandler = useCallback(() => {
 
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -93,6 +97,48 @@ const PreInterview = () => {
             setRecordedChunks([]);
         }
     }, [recordedChunks]);
+    const isTest = true;
+    let getInterviewerPreSignedUrl = isTest
+                    ? `http://localhost:8000/interview/practice/${checkedId}`
+                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
+    let postIntervieweeUrl = isTest
+                    ? `http://localhost:8000/interview/practice/${checkedId}`
+                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
+
+    const getInterviewer = () => {
+        // setLoading(true);
+        axios({
+            url: getInterviewerPreSignedUrl,
+            method: 'GET'
+        }).then((response) => {
+            // console.log(response);
+            // console.log(response.data);
+            setPreSignedUrl(response.data.interview_url);
+            // setLoading(false);
+        }).then(() => {
+            setVideo(preSingedUrl)
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    const postInterviewee = () => {
+        // setLoading(true);
+        axios({
+            url: postIntervieweeUrl,
+            method: 'POST',
+            headers: {
+                Authroization: 'Token knflskdnfan48729385y34u53'
+            },
+            data: {
+                user_id: `${1}`,
+                question_n: `${checkedId}`,
+                question_id: 132
+            }
+        }).then((response) => {
+            
+        })
+    }
 
     return (
         <div className="PreInterviewApp">
@@ -139,6 +185,8 @@ const PreInterview = () => {
                     startCaptureHandler={startCaptureHandler}
                     stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
+                    getInterviewerHandler={getInterviewer}
+                    video={video}
                     />
                 }
             </div> {/* add SelectInterviewType component */}

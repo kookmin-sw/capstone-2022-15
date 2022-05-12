@@ -25,6 +25,8 @@ function Interview({
     stopCaptureHandler,
     downloadHandler,
     closeModalHandler,
+    getInterviewerHandler,
+    video,
 }) {
     const [buttonState, setButtonState] = useState(true);
     const [questionNumberState, setQuestionNumberState] = useState(1);
@@ -47,20 +49,20 @@ function Interview({
     // })
 
     console.log('questionNumberState', questionNumberState)
-    var intervalFunc = setInterval(() => {
-        console.log('time out')
-        downloadHandler()
-        startCaptureHandler()
-        stopInterval()
-        setQuestionNumberState(questionNumberState + 1)
-    }, 5000)
+    // var intervalFunc = setInterval(() => {
+    //     console.log('time out')
+    //     downloadHandler()
+    //     startCaptureHandler()
+    //     stopInterval()
+    //     setQuestionNumberState(questionNumberState + 1)
+    // }, 5000)
 
-    var stopInterval = () => {
-        clearInterval(intervalFunc)
-    }
-    useEffect(() => {
-        stopInterval()
-    }, [])
+    // var stopInterval = () => {
+    //     clearInterval(intervalFunc)
+    // }
+    // useEffect(() => {
+    //     stopInterval()
+    // }, [])
     return (
         <>
             {!loading && <div className="interview-app">
@@ -69,7 +71,7 @@ function Interview({
                     <video width="80%" height="80%">
                         {/* <source src="./test_video.mp4" type="video/mp4">
                         </source> */}
-                        <source src={firstVideo}/>
+                        <source src={video}/>
                     </video>                
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
@@ -77,10 +79,11 @@ function Interview({
                     {/* state true : 면접 시작 button */}
                     {buttonState 
                     && <button className="interview-button" onClick={async () => {
-                        stopInterval()
+                        // stopInterval()
                         await setButtonState(false)
                         await startCaptureHandler()
-                        intervalFunc()
+                        getInterviewerHandler()
+                        // intervalFunc()
                     }}>
                         면접 시작
                     </button>}
@@ -91,7 +94,7 @@ function Interview({
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
                         await stopCaptureHandler()
-                        stopInterval()
+                        // stopInterval()
                     }}>
                         대답 완료
                     </button>}
@@ -102,7 +105,7 @@ function Interview({
                         setQuestionNumberState(questionNumberState + 1)
                         await downloadHandler()
                         await startCaptureHandler()
-                        intervalFunc()
+                        // intervalFunc()
                     }}>
                         다음 질문
                     </button>}
