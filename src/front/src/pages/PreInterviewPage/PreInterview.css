@@ -107,7 +107,7 @@
     /* padding-right: 80px; */
     
     display: flex;
-    background-color: #cccccc
+    background-color: #000000
 }
 
 .cam-show {
@@ -121,7 +121,7 @@
     margin: auto;
 
     display: flex;
-    background-color: #000000
+    background-color: rgb(133, 133, 133)
 }
 
 .mini-title {
