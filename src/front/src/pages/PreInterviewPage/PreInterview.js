@@ -55,7 +55,7 @@ const PreInterview = () => {
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
-    const [preSingedUrl, setPreSignedUrl] = useState('')
+    const [preSignedUrl, setPreSignedUrl] = useState('')
     const [video, setVideo] = useState('')
     const startCaptureHandler = useCallback(() => {
 
@@ -116,7 +116,7 @@ const PreInterview = () => {
             setPreSignedUrl(response.data.interview_url);
             // setLoading(false);
         }).then(() => {
-            setVideo(preSingedUrl)
+            setVideo(preSignedUrl)
         }).catch((error) => {
             console.log(error);
         })
