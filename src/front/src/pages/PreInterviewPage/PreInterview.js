@@ -56,7 +56,7 @@ const PreInterview = () => {
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
     const [preSingedUrl, setPreSignedUrl] = useState('')
-    const [video, setVideo] = useState('https://drive.google.com/file/d/1PVhI_o93PTxhzw8IlYp4i8fA-IDjgcGS/view?usp=sharing')
+    const [video, setVideo] = useState('')
     const startCaptureHandler = useCallback(() => {
 
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -101,7 +101,7 @@ const PreInterview = () => {
     let getInterviewerPreSignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}`
                     : `https://kmuin4u.com/interview/practice/${checkedId}`;
-    let postIntervieweeUrl = isTest
+    let postIntervieweePresignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}`
                     : `https://kmuin4u.com/interview/practice/${checkedId}`;
 
@@ -125,7 +125,7 @@ const PreInterview = () => {
     const postInterviewee = () => {
         // setLoading(true);
         axios({
-            url: postIntervieweeUrl,
+            url: postIntervieweePresignedUrl,
             method: 'POST',
             headers: {
                 Authroization: 'Token knflskdnfan48729385y34u53'
