@@ -20,7 +20,7 @@ const interviewTypeName = {
     3: '[직무] DB 엔지니어',
     4: '[직무] 보안 엔지니어',
     5: '[직무] 클라우드 아키텍처 개발자',
-    6: '[직무] 빅데이터 개발자'  
+    6: '[직무] 빅데이터 개발자' 
 }
 const modalStyle = {
     content:{
@@ -133,7 +133,8 @@ const PreInterview = () => {
             data: {
                 user_id: `${1}`,
                 question_n: ``,
-                question_id: `${checkedId}`
+                field_id: `${checkedId}`,
+                interview_date: ``
             }
         }).then((response) => {
             
