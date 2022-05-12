@@ -18,8 +18,10 @@ const Signup = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    //setLoading(false);
+    localStorage.clear();
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/');
+      window.location.replace('http://localhost:3000/login');
     } else {
       setLoading(false);
     }
@@ -46,27 +48,30 @@ const Signup = () => {
     const user = {
       user_name: user_name,
       user_id: user_id,
-      password1: password1,
-      user_pw: user_pw,
-      // user_interest: user_interest
+      password : password1,
+//      user_pw: user_pw,
+       user_interest: "user_interest"
     };
     if(password1 !== user_pw) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
       return false
     }
     //'/api/v1/mall/auth/register/'
-    Axios.post('/accounts/join', user)
+
+    Axios.post('http://localhost:8000/accounts/join', user)
       .then(res => {
-        if (res.data.key) {
+          console.log(res.data)
+        if (res.data.token) {
           localStorage.clear()
-          localStorage.setItem('token', res.data.key)
+          localStorage.setItem('token', res.data.token)
           // 사용하려면 App.js에서 /로 라우팅해야 한다
-          window.location.replace('/')
+          window.location.replace('/login')
+          setErrors(false)
         } else {
-          setName('')
-          setuser_id('')
-          setPassword1('')
-          setuser_pw('')
+          setName('아')
+          setuser_id('아')
+          setPassword1('abcABC123!@#')
+          setuser_pw('abcABC123')
           // setuser_interest('')
           localStorage.clear()
           setErrors(true)

@@ -6,6 +6,7 @@ import Mypage from './pages/MyPage/Mypage';
 import Login from './pages/LoginPage/Login';
 import Signup from './pages/LoginPage/Signup';
 import Feedback1 from './pages/MyPage/Feedback';
+import HomeAfterLogin from './pages/HomePage/HomeAfterLogin';
 //import Feedback2 from './pages/MyPage/Feedback2';
 //import Feedback3 from './pages/MyPage/Feedback3';
 //import Feedback4 from './pages/MyPage/Feedback4';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/homeafterlogin" element={<HomeAfterLogin />} />
       <Route path="/preinterview" element={<PreInterview />} />
       <Route path="/interview" element={<Interview />} />
       <Route path="/mypage" element={<Mypage />} />
