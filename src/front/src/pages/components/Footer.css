@@ -6,22 +6,21 @@
 }
 .img-logo-footer{
   position: absolute;
-  width: 4vw;
-  left: 48vw;
-  top: 2.2vh;
+  width: 6vw;
+  left: 47.5vw;
+  top: 3.2vh;
 }
 .footer-gray-txt{
   position: absolute;
-  width: 15vw;
+  width: 20vw;
 
   height: 2.6vw;
-  top: 4.4vw;
-  left: 42.5vw;
-  text-align: center;
+  top: 1.5vw;
+  left: 4vw;
 
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.75vw;
 
   color: #a0a0a0;

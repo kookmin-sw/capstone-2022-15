@@ -10,6 +10,7 @@ import img_dots from '../images/img_dots.png';
 import img_main from '../images/img_main.png';
 import img_gan from '../images/img_gan.png';
 import img_step1 from '../images/img_step1.png';
+import img_step2 from '../images/img_step2.png';
 import img_step3 from '../images/img_step3.png';
 
 import React, { Component } from "react"; 
@@ -107,7 +108,7 @@ class Bottom extends Component{
             </span>
           </div>
           <div className="box-step" style={{left: "36.5vw"}}>
-            <img src={img_step1} className="img-step"/> 
+            <img src={img_step2} className="img-step"/> 
             <span className="bottom-txt1">
                 STEP 2
             </span>
