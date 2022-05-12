@@ -173,9 +173,10 @@ const PreInterview = () => {
                         changeHandler={changeHandler}
                         selectBoxObject={interviewTypeName} />
                 </div>
-                <button className="start-button" onClick={() => isOpenModal(true)}>
-                    START
-                </button>
+                <div className="button-layout">
+                    <button className="start-button" onClick={() => isOpenModal(true)}>
+                        START
+                    </button>
                 {isOpenModal && <ModalComponent
                     isOpen={openModal}
                     closeModalHandler={closeModalHandler}
@@ -189,6 +190,7 @@ const PreInterview = () => {
                     video={video}
                     />
                 }
+                </div>
             </div> {/* add SelectInterviewType component */}
             {/* <Footer/> */}
         </div>
