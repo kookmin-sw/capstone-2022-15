@@ -1,3 +1,7 @@
 django~=4.0.3
 djangorestframework
+djangorestframework-simplejwt
+dj-rest-auth
+django-allauth
 django-cors-headers
+pillows

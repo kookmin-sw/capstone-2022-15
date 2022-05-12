@@ -17,16 +17,19 @@ const Login = () => {
 
     const user = {
       user_id: user_id,
-      user_pw: user_pw
+      password: user_pw
     }
 
-    Axios.post('/accounts/login', user)
+    Axios.post('http://localhost:8000/accounts/login', user)
       .then(res => {
-        if (res.data.key) {
+        console.log(res)
+        if (res.data.token) {
           localStorage.clear()
-          localStorage.setItem('token', res.data.key)
+          localStorage.setItem('token', res.data.token)
           // 사용하려면 App.js에서 /*로 라우팅해야 한다
-          window.location.replace('/login')
+          window.location.replace('/homeafterlogin')
+          console.log("login success")
+//          Axios.defaults.headers.common['Authorization'] = `token ${res.payload.accessToken}`
         } else {
           setUser_id('')
           setUser_pw('')

@@ -109,7 +109,6 @@ class MainFeedback extends Component{
     const ChartHead = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
     const ChartVoice = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
     let VideoTxt = txtFile;
-    
     return(
       
       <div>
@@ -131,20 +130,16 @@ class MainFeedback extends Component{
         <div className="Video_txt">
           <input type="file" onChange={tihs.handleChange.bind(this)} />
         </div>
-    
 
         <div className='Feedback-txt'style={{top:'30vh'}}>
               🔹 목소리 크기
         </div>
         <img src={ChartVoice} className="Chart" style={{top:'26vh'}}/>  
 
-
         <div className='Feedback-txt' style={{top:'43vh'}}>
               🔹 머리 움직임
         </div>
         <img src={ChartHead} className="Chart" style={{top:'39vh'}}/>  
-
-
       </div>
         
     );
