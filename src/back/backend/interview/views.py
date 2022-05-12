@@ -6,9 +6,7 @@ from rest_framework.response import Response
 
 # Create your views here.
 class PreparationView(APIView):
-    # 로그인했을 경우만 접근 가능하게 하는 거로 수정 필요
     permission_classes = [
-        #permissions.AllowAny,
         permissions.IsAuthenticated
     ]
     def get(self, request, *args, **kwargs):
