@@ -132,8 +132,8 @@ const PreInterview = () => {
             },
             data: {
                 user_id: `${1}`,
-                question_n: `${checkedId}`,
-                question_id: 132
+                question_n: ``,
+                question_id: `${checkedId}`
             }
         }).then((response) => {
             
