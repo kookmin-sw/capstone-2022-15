@@ -45,7 +45,6 @@ class LoginView(APIView):
     ]
 
     permission_classes = [
-        #permissions.IsAuthenticated,
         permissions.AllowAny
     ]
     def post(self, request, *args, **kwargs):
