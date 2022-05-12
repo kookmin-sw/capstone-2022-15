@@ -1,1 +1,140 @@
 /* eslint-disable */
+.Bar{
+    position: relative;
+    padding: 1.3rem;
+    top: 80px;
+    background: #56565c;
+    color: #fff;
+    font-size: 1vw;
+}
+
+.Menu-box{
+    position: relative;
+    top: 80px;
+    width: 20vw;
+
+    background: #F0F2F4;
+    flex-direction: row;
+    align-items: stretch;
+}
+.Menu-txt2{
+    position: absolute;
+    font-size: 1.1vw;
+    left: 6vw;
+    top: 7vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    background: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    width: 13vw;
+    text-align: center;
+}
+.Menu-txt2:hover{
+    color: #ff85a1;
+}
+
+.Main-box{
+    position: absolute;
+    width: 70vw;
+    left:22.5vw;
+    top: 6.5vh;
+}
+.Img_mypage{
+    position: absolute;
+    width:15vw;
+    bottom: 3vh;
+    left: 2vw;
+}
+.List {
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    min-height: 400px;
+    border: 0.2vw solid #5B7EFB;
+}
+
+.list_tit {
+    border-bottom: solid 1.5px #56565c;
+    padding-bottom: 7px;
+    color : #ababab;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #56565c;
+}
+
+.list_grid {
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+
+}
+.list_data {
+    line-height: 40px;
+}
+
+.acenter {
+    text-align: center;
+}
+.mypage_footer_top{
+    z-index: 7;
+    position: absolute;
+    top: 110vh;
+}
+
+/*-------------------- Feedback.js에서만 사용 -----------------*/
+.mypage_footer_top2{
+    z-index: 7;
+    position: absolute;
+    top: 233vh;
+}
+.Menu-txt22{
+    position: absolute;
+    font-size: 1.1vw;
+    left: 6vw;
+    top: 7vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    font-weight: 600;
+    cursor: pointer;
+    width: 13vw;
+    text-decoration: none;
+    text-align: center;
+}
+.Menu-txt22:hover{
+    color: #ff85a1;
+}
+.Menu-txt3{
+    position: absolute;
+    font-size: 1.1vw;
+    left: 6vw;
+    top: 14vh;
+    padding: 1rem;
+    color: #5B7EFB;
+    background: #fff;
+    font-weight: 600;
+    width: 13vw;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Interviewer-section{
+    position: relative;
+    width: 45vw;
+    left: 14vw;
+    top:2vh;
+}
+
+.Feedback-txt{
+    position: relative;
+    width: 45vw;
+    left: 2vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.Chart{
+    position: relative;
+    width: 30vw;
+    left: 22vw;
+}

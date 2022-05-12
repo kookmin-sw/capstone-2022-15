@@ -1,7 +1,6 @@
 /* eslint-disable */
 import './Home.css';
-// import img_logo_long from '../images/img_logo_long.png';
-// import BT_mypage from '../images/BT_mypage.png';
+
 import img_top_txt from '../images/img_top_txt.png';
 import img_circle1 from '../images/img_circle1.png';
 import img_circle2 from '../images/img_circle2.png';
@@ -11,6 +10,7 @@ import img_dots from '../images/img_dots.png';
 import img_main from '../images/img_main.png';
 import img_gan from '../images/img_gan.png';
 import img_step1 from '../images/img_step1.png';
+import img_step2 from '../images/img_step2.png';
 import img_step3 from '../images/img_step3.png';
 
 import React, { Component } from "react"; 
@@ -22,56 +22,19 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        
-        {/* <Header/> */}
+
         <Navbar/>
         <Top/>
         <Middle/>
         <Bottom/>
         <Footer_pink/>
-        <Footer/>
-        
+        <div className='footer_top'>
+          <Footer/>
+        </div>
       </div>
     );
   }
 }
-
-// class Header extends Component{
-//   render(){
-//     return (
-//       <div className="Header">
-//           <div onClick={()=>console.log("메인페이지로 페이지 변경")}>
-//             <Link to="/">
-//                 <img src={img_logo_long} className="Logo"/>
-//             </Link>
-//           </div>
-          
-//           <div onClick={()=>console.log("소개 페이지로 페이지 변경")}>
-//             <Link to="/introduce" className="BT-navi">
-//                     소개
-//             </Link>
-//           </div>
-//           <div onClick={()=>console.log("면접 연습페이지로 페이지 변경")}>
-//             <Link to="/preinterview" className="BT-navi">
-//                 면접연습
-//             </Link>
-//           </div>
-//           <div onClick={()=>console.log("꿀팁 페이지로 페이지 변경 이벤트 추가 예정")}>
-//             <span className="BT-navi">
-//               면접꿀팁
-//             </span>
-//           </div>
-//           <div onClick={()=>console.log("마이페이지로 페이지 변경")}>
-//             <Link to="/mypage">
-//                 <img src={BT_mypage} className="BT-mypage"/> 
-//             </Link>
-//           </div>
-//       </div>
-        
-//     );
-//   }
-// }
-
 
 class Top extends Component{
   render(){
@@ -145,7 +108,7 @@ class Bottom extends Component{
             </span>
           </div>
           <div className="box-step" style={{left: "36.5vw"}}>
-            <img src={img_step1} className="img-step"/> 
+            <img src={img_step2} className="img-step"/> 
             <span className="bottom-txt1">
                 STEP 2
             </span>

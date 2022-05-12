@@ -3,66 +3,16 @@
 html { font-size: 62.5%; }
 .App {
     /* 메인 */
-    position: relative;
     width: 100%;
     height: auto;
+    left:0vw;
 }
-/*---------------------------------Header-------------------------------*/
-/* .Header {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    background-color: #ffffff;
-    display: flex;
-
-    align-items: center;
-    padding: 1rem;
-    
-}
-.Logo {
-    /* position: relative;  
-    width: 13vw;
-    margin-left: 5vw;
-    justify-self: start;
-    cursor: pointer;
-    padding-right: 3vw;
-}
-
-.BT-navi{
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 1.2vw;
-    text-decoration-line: none;
-    color: #56565c;
-    cursor: pointer;
-
-
-    display: flex;
-    list-style: none;
-    text-align: center;
-    margin-right: 2rem;
-    justify-content: space-between;
-
-}
-.BT-navi:hover{
-    color: #5B7EFB;
-}
-
-.BT-mypage{
-    position: absolute;
-    width: 4vw;
-    top: 5vh;
-    display: flex;
-    left:85vw;
-    cursor: pointer;
-} */
-
 /*---------------------------------T O P-------------------------------*/
 .FR-top{
     position: absolute;
     width: 98vw;
     height: 61vh;
-    left: 0px;
+    left: 5px;
     top: 14vh;
     background: #F0F2F4; 
 }
@@ -170,7 +120,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 98vw;
     height: 70vh;
-    left: 0px;
+    left: 5px;
     top: 80vh;
 
     /* background: #323d49;  */
@@ -233,7 +183,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 98vw;
     height: 90vh;
-    left: 0px;
+    left: 5px;
     top: 161vh;
     background: #F0F2F4;
   }
@@ -308,7 +258,7 @@ html { font-size: 62.5%; }
 
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 3.7vw;
 
     color: rgba(0, 0, 0, 0.72);
   }
@@ -321,9 +271,14 @@ html { font-size: 62.5%; }
 
     font-family: 'Montserrat';
     font-weight: 560;
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     display: flex;
     align-items: center;
 
     color: rgba(0, 0, 0, 0.72);
+  }
+  .footer_top{
+    z-index: 7;
+    position: absolute;
+    top:330vh;
   }

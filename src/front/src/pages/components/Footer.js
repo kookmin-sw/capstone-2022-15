@@ -9,9 +9,11 @@ function Footer () {
         <div className='FR-footer-gray'>
         <img src={img_logo_footer} className="img-logo-footer"/> 
         <span className='footer-gray-txt'>
-          국민대학교 소프트웨어학부<br></br>
-          캡스톤 15조
+          KOOKMIN UNIVERSITY SOFTWARE<br/>
+          2022 CAPSTONE TEAM 15 "INFU"<br/><br/>
+          Interviewer's Voice From "onairstudio"
         </span>
+        
       </div>
       );
 }

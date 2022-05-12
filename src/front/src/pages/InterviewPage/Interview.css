@@ -1,0 +1,102 @@
+.interview-app {
+  position: relative;
+  width: "100%";
+  height: 100vh;
+  /* padding-left: 140px;
+  padding-right: 140px; */
+}
+
+/*-------------------- interviewer --------------------*/
+.interviewer-section {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  /* height: 650px; */
+  height: 80vh;
+  text-align: center;
+}
+
+/*---------------------- button ----------------------*/
+.button-section {
+  position: relative;
+  width: 100%;
+  /* height: 135px; */
+  /* margin-top: 330px; */
+  margin: auto;
+
+  display: flex;
+}
+
+.interview-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+
+  position: relative;
+  width: 200px;
+  height: 48px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+
+  background: rgba(91, 126, 251, 0.5);
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.interview-button:hover {
+  background-color: #5B7EFB;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.link-to-mypage {
+  text-decoration: none;
+  margin: auto;
+  display: flex; 
+  position: relative;
+
+  color: white;
+
+}
+
+.done-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+
+  position: relative;
+  width: 200px;
+  height: 48px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+
+  background: rgba(134, 134, 134, 0.5);
+  border-radius: 30px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.done-button:hover {
+  background-color: #5e5e5e;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
