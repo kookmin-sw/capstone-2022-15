@@ -42,7 +42,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 850;
-    font-size: 32px;
+    font-size: 34px;
     line-height: 46px;
     display: flex;
     align-items: center;
@@ -65,14 +65,14 @@
     display: flex;
     align-items: center;
 
-    color: #979797;
+    color: #838383;
 }
 
 /*--------------------- cam setting ---------------------*/
 .cam-setting-layout {
     position: relative;
     /* width: 100%; */
-    height: 650px;
+    height: 580px;
     margin-top: 20px;
     margin-right: 80px;
     /* left: 0px; */
@@ -88,13 +88,13 @@
 
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 23px;
     line-height: 37px;
+    color: rgb(81, 119, 255);
 
     display: flex;
     align-items: center;
-
 }
 
 .cam-show-layout {
@@ -107,7 +107,7 @@
     /* padding-right: 80px; */
     
     display: flex;
-    background-color: #cccccc
+    background-color: #000000
 }
 
 .cam-show {
@@ -121,7 +121,7 @@
     margin: auto;
 
     display: flex;
-    background-color: #000000
+    background-color: rgb(133, 133, 133)
 }
 
 .mini-title {
@@ -160,6 +160,9 @@
 .link-to-interviewpage {
     text-decoration: none;
 }
+.button-layout {
+    height: 120px;
+}
 
 .start-button {
     display: flex;
@@ -167,7 +170,7 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    margin-top: 25px;
+    /* margin-top: 25px; */
 
     position: relative;
     width: 200px;
@@ -196,7 +199,7 @@
 /*-------------------- select box --------------------*/
 .select-interview-type {
     position: relative;
-    height: 150px;
+    height: 300px;
     margin-top: 20px;
     margin-right: 80px;
 }
@@ -204,12 +207,19 @@
 .select-interview-type-layout {
     position: relative;
     /* width: 100%; */
-    height: 350px;
+    height: 300px;
     margin-left: 80px;
     margin-top: 10px;
     /* margin-right: 80px; */
     /* padding-right: 80px; */
     
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 37px;
+
     display: flex;
+    /* align-items: center; */
 }
 

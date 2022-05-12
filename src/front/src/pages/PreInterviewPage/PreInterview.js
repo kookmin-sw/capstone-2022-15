@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
+import axios from 'axios';
+
 // import Footer from '../components/Footer';
 
 const clickMotion = () => window.open('/interview', '_blank');
@@ -18,7 +20,7 @@ const interviewTypeName = {
     3: '[직무] DB 엔지니어',
     4: '[직무] 보안 엔지니어',
     5: '[직무] 클라우드 아키텍처 개발자',
-    6: '[직무] 빅데이터 개발자'  
+    6: '[직무] 빅데이터 개발자' 
 }
 const modalStyle = {
     content:{
@@ -53,6 +55,8 @@ const PreInterview = () => {
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
+    const [preSingedUrl, setPreSignedUrl] = useState('')
+    const [video, setVideo] = useState('')
     const startCaptureHandler = useCallback(() => {
 
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -93,6 +97,49 @@ const PreInterview = () => {
             setRecordedChunks([]);
         }
     }, [recordedChunks]);
+    const isTest = true;
+    let getInterviewerPreSignedUrl = isTest
+                    ? `http://localhost:8000/interview/practice/${checkedId}`
+                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
+    let postIntervieweePresignedUrl = isTest
+                    ? `http://localhost:8000/interview/practice/${checkedId}`
+                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
+
+    const getInterviewer = () => {
+        // setLoading(true);
+        axios({
+            url: getInterviewerPreSignedUrl,
+            method: 'GET'
+        }).then((response) => {
+            // console.log(response);
+            // console.log(response.data);
+            setPreSignedUrl(response.data.interview_url);
+            // setLoading(false);
+        }).then(() => {
+            setVideo(preSingedUrl)
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    const postInterviewee = () => {
+        // setLoading(true);
+        axios({
+            url: postIntervieweePresignedUrl,
+            method: 'POST',
+            headers: {
+                Authroization: 'Token knflskdnfan48729385y34u53'
+            },
+            data: {
+                user_id: `${1}`,
+                question_n: ``,
+                field_id: `${checkedId}`,
+                interview_date: ``
+            }
+        }).then((response) => {
+            
+        })
+    }
 
     return (
         <div className="PreInterviewApp">
@@ -127,9 +174,10 @@ const PreInterview = () => {
                         changeHandler={changeHandler}
                         selectBoxObject={interviewTypeName} />
                 </div>
-                <button className="start-button" onClick={() => isOpenModal(true)}>
-                    START
-                </button>
+                <div className="button-layout">
+                    <button className="start-button" onClick={() => isOpenModal(true)}>
+                        START
+                    </button>
                 {isOpenModal && <ModalComponent
                     isOpen={openModal}
                     closeModalHandler={closeModalHandler}
@@ -139,8 +187,11 @@ const PreInterview = () => {
                     startCaptureHandler={startCaptureHandler}
                     stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
+                    getInterviewerHandler={getInterviewer}
+                    video={video}
                     />
                 }
+                </div>
             </div> {/* add SelectInterviewType component */}
             {/* <Footer/> */}
         </div>

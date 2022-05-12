@@ -12,7 +12,7 @@ const SelectBox = ({
         <div className={className}>
             {Object.keys(selectBoxObject).map((key, idx) => {
                 return (
-                    <>
+                    <div>
                         <input
                             type={type}
                             key={idx}
@@ -20,7 +20,7 @@ const SelectBox = ({
                             value={key}
                             onClick={() => changeHandler(key)}
                             checked={key === checkedId}/> {selectBoxObject[key]}
-                    </>
+                    </div>
                 )
             })}
         </div>
