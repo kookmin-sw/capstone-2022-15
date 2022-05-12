@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import './Mypage.css';
 import img_main_simple from '../images/img_main_simple.png';
 import { Link } from 'react-router-dom';
-import GetChart from './ChartTest';
+import Rechart from './Chart';
 
 export const Authentication = React.createContext(null);
 
@@ -56,21 +56,12 @@ const Feedback = () => {
 };
 
 
-
 class MainFeedback extends Component{
   render(){
     const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo" 
     //const videoUrl = user_id + interview_id + "/interview_video/interview" + interview_id+".mp4"
 
-    const imgUrl = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
-    //
-
-
-    const ChartHead = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
-    const ChartVoice = "https://github.com/usun813/temp/blob/main/cYZnk--br-br-.png?raw=true"
-
     return(
-      
       <div>
         <div className='Feedback-txt'style={{top:'5.2vh'}}>
               🔹 Video Check
@@ -79,25 +70,42 @@ class MainFeedback extends Component{
               <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
         </div>
 
+
+
+{/*STT 해야되는 부분...
+className= * 은 Mypage.css에 있움 */  }
         <div className='Feedback-txt' style={{top:'17vh', height:"40vh"}}>
               🔹 나의 답변
-        </div>
-        {/* <div className="Video_txt" >
-                <p>{VideoTxt}</p>
-        </div> */}
-        <div className="Video_txt">
-          {/* <input type="file" onChange={tihs.handleChange.bind(this)} />  */}
-        </div>
+          <div className="Stt">
+            여기에 STT 내용 <br/>
+            일단 사이즈 볼려고 테두리 넣었는데<br/>
+            겉에 테두리를 할까 말까<br/>
+            🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
+            인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다. 
 
+          </div>
+        </div>
+        
+
+
+{/*목소리 차트*/}
         <div className='Feedback-txt'style={{top:'30vh'}}>
               🔹 목소리 크기
+            <div style={{ width: '50vw', height: '40vh',  left:'14vw',position:'absolute'}}>
+              <Rechart />
+            </div>
         </div>
-        <img src={ChartVoice} className="Chart" style={{top:'26vh'}}/>  
+        
 
-        <div className='Feedback-txt' style={{top:'43vh'}}>
+
+{/*머리 움직임 차트*/}
+        <div className='Feedback-txt' style={{top:'85vh'}}>
               🔹 머리 움직임
+            <div style={{ width: '50vw', height: '40vh',  left:'14vw',position:'absolute'}}>
+              <Rechart />
+            </div>
         </div>
-        <img src={ChartHead} className="Chart" style={{top:'39vh'}}/>  
+          
       </div>
 
         
