@@ -20,7 +20,7 @@ const Login = () => {
       password: user_pw
     }
 
-    Axios.post('http://localhost:8000/accounts/login', user)
+    Axios.post('https://api.kmuin4u.com/accounts/login', user)
       .then(res => {
         console.log(res)
         if (res.data.token) {
