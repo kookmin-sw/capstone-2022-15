@@ -129,12 +129,6 @@ const PreInterview = () => {
             method: 'GET',
             headers: {
                 Authroization: 'Token knflskdnfan48729385y34u53'
-            },
-            data: {
-                user_id: `${window.localStorage.getItem(`user_id`)}`, // interviewer 요청할 때 user_id 필요 없어 보임
-                question_n: ``,
-                field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
-                interview_date: ``
             }
         }).then((response) => { // response에는 get요청으로 받아온 presigned url이 들어감
             // console.log(response);
@@ -157,10 +151,9 @@ const PreInterview = () => {
                 Authroization: 'Token knflskdnfan48729385y34u53'
             },
             data: {
-                user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
+                // user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
                 question_n: ``,
                 field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
-                interview_date: ``
             }
         }).then((response) => { // 대안 -> 녹화 영상 저장할 s3는 public으로  
             setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 필요 
