@@ -45,3 +45,4 @@ class FaceMovement:
         plt.plot(self.result_distance[1:])
 #        plt.ylim([0,1])
         plt.savefig(path)
+        return path
