@@ -10,7 +10,7 @@ class List extends Component {
       data : [],
       page : 1,
       limit : 10,
-      all_page : [],
+      all_page : [], 
     }
   }
 
@@ -21,10 +21,10 @@ class List extends Component {
 
   _getListData = async function() {
     const { limit } = 10;
-    const page = this._setPage();
-    const [user_id, setUser_id] = useState('')
-    const [field_id, setField_id] = useState(0)
-    const [interview_start, setInterview_start] = useState(0)
+    // const page = this._setPage();
+    const {user_id} = this.state;
+    const {field_id} = this.state;
+    const {interview_start} = this.state;
   
 
     // Board 테이블 데이터 전체 수
