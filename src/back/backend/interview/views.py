@@ -27,19 +27,22 @@ class PracticeView(APIView):
 
         # s3 presigned url
         bucket = 'virtual-interview-video'
-        key = select(field_id)
+        question_id, key = select(field_id)
         interviewer_url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
         print(interviewer_url)
 
         return Response(status=status.HTTP_200_OK, data={"success":True, 'interviewer_url':interviewer_url})
 
-    # interviee url response
+    # interviewee url response
     def post(self, request, *args, **kwargs):
         print(request.user)
         # 토큰 / 유저 아이디 / 몇번째 질문인지 / 인터뷰 날짜 / 분야 / 면접자 영상 저장 url
         user_id = request.user
         interview_id = 1
-        question_n = 2
+        question_n = request.data['question_n']
+        field_id = request.data['field_id']
+        interview_id = 1
+        print(user_id, field_id, question_n)
         # s3 presigned url
         bucket = 'user-interview-video-bucket'
         key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(user_id, interview_id, question_n)
