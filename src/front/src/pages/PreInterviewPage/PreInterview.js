@@ -114,7 +114,7 @@ const PreInterview = () => {
             })
         }
     }, [recordedChunks]);
-    const isTest = true;
+    const isTest = false;
     let getInterviewerPreSignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
                     : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
