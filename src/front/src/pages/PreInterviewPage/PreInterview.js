@@ -116,11 +116,11 @@ const PreInterview = () => {
     }, [recordedChunks]);
     const isTest = true;
     let getInterviewerPreSignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}`
+                    ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
                     : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}`
-                    : `https://api.kmuin4u.com/interview/practice/${checkedId}`;
+                    ? `http://localhost:8000/interview/practice/` 
+                    : `https://api.kmuin4u.com/interview/practice/`;
 
     const getInterviewer = () => { 
         // setLoading(true);
@@ -148,11 +148,11 @@ const PreInterview = () => {
         })
     }
 
-    const getIntervieweePresignedUrl = () => { // api 명세서 작성 서둘러랏
+    const postInterviewee = () => { 
         // setLoading(true);
         axios({
             url: postIntervieweePresignedUrl,
-            method: 'GET',
+            method: 'POST', // GET 
             headers: {
                 Authroization: 'Token knflskdnfan48729385y34u53'
             },
@@ -162,31 +162,31 @@ const PreInterview = () => {
                 field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
                 interview_date: ``
             }
-        }).then((response) => { // 녹화 영상 저장할 s3는 public으로 바꿔줘 
-            setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 내놔
+        }).then((response) => { // 대안 -> 녹화 영상 저장할 s3는 public으로  
+            setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 필요 
         }).catch((error) => {
             console.log(error);
         })
     }
 
-    const postInterviewee = () => {
-        axios({
-            url: postIntervieweePresignedUrl,
-            method: 'POST',
-            headers: {
-                Authroization: 'Token knflskdnfan48729385y34u53'
-            },
-            data: {
-                user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
-                question_n: ``,
-                field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
-                interview_date: ``
+    // const postInterviewee = () => { // POST 아니고 S3에 바로 저장 
+    //     axios({
+    //         url: postIntervieweePresignedUrl,
+    //         method: 'POST',
+    //         headers: {
+    //             Authroization: 'Token knflskdnfan48729385y34u53'
+    //         },
+    //         data: {
+    //             user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
+    //             question_n: ``,
+    //             field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
+    //             interview_date: ``
 
-            }
-        }).then((response) => { // 녹화 영상 저장할 s3는 public으로 바꿔줘 
-            setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 내놔
-        })
-    }
+    //         }
+    //     }).then((response) => { // 녹화 영상 저장할 s3는 public으로 바꿔줘 
+    //         setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 내놔
+    //     })
+    // }
 
     return (
         <div className="PreInterviewApp">
@@ -235,7 +235,7 @@ const PreInterview = () => {
                     stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
                     getInterviewerHandler={getInterviewer}
-                    getIntervieweePresignedUrlHandler={getIntervieweePresignedUrl}
+                    postIntervieweeHandler={postInterviewee}
                     video={video}
                     />
                 }
