@@ -58,6 +58,7 @@ def lambda_handler(event, context):
 
     # Get Feedback Type
     feedback_type = os.environ['FEEDBACK_TYPE']
+    save_bucket = os.environ['S3_BUCKET_NAME_SUBMIT']
     print(f"feedback_type : {feedback_type}")
 
     # Get S3 Object
@@ -122,7 +123,7 @@ def lambda_handler(event, context):
         raise Exception(f"Invalid Feedback Type : {feedback_type}")
 
     # Upload Result
-    upload_file_to_s3(s3, path, bucket, upload_key)
+    upload_file_to_s3(s3, path, save_bucket, upload_key)
     print("Upload result file")
 
 
