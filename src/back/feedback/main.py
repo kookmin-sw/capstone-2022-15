@@ -53,14 +53,17 @@ def speech_to_text(s3, bucket, key):
 
 
 def lambda_handler(event, context):
+    # Get trigger s3 information
+    message = event['Records'][0]['Sns']['Message'].split('\t')
+
     # Get Feedback Type
     feedback_type = os.environ['FEEDBACK_TYPE']
     print(f"feedback_type : {feedback_type}")
 
     # Get S3 Object
     s3 = boto3.client('s3')
-    bucket = event['Records'][0]['s3']['bucket']['name']
-    key = unquote_plus(event['Records'][0]['s3']['object']['key'])
+    bucket = message[0]
+    key = message[1]
     values = key.split("/")
     user_id = values[0]
     interview_id = values[1]
@@ -72,6 +75,8 @@ def lambda_handler(event, context):
     print(f"key : {key}")
     print(f"user_id : {user_id}")
     print(f"interview_id : {interview_id}")
+    print("** setting finish **")
+    print("--" * 10)
 
     # get presinged url
     url = get_url_from_s3(s3, bucket, key)
@@ -119,3 +124,5 @@ def lambda_handler(event, context):
     # Upload Result
     upload_file_to_s3(s3, path, bucket, upload_key)
     print("Upload result file")
+
+
