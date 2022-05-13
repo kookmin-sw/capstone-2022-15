@@ -52,7 +52,7 @@ const data = [
 ];
 
 export default class Example extends PureComponent {
-    static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
+    static demoUrl =  'https://codesandbox.io/s/tiny-line-chart-r5z0f';;
 
     render() {
         return (
@@ -79,7 +79,7 @@ export default class Example extends PureComponent {
                         stroke="#8884d8"
                         activeDot={{ r: 6 }}
                     />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                    <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
                 </LineChart>
             </ResponsiveContainer>
         );
