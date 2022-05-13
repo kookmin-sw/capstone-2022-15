@@ -121,14 +121,16 @@ const PreInterview = () => {
     let postIntervieweePresignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/` 
                     : `https://api.kmuin4u.com/interview/practice/`;
-
+    
+    console.log(typeof(window.localStorage.getItem('token')));
     const getInterviewer = () => { 
         // setLoading(true);
         axios({
             url: getInterviewerPreSignedUrl, // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
             method: 'GET',
             headers: {
-                Authroization: 'Token knflskdnfan48729385y34u53'
+                'Authorization':'Token ' + window.localStorage.getItem('token')
+                
             }
         }).then((response) => { // response에는 get요청으로 받아온 presigned url이 들어감
             // console.log(response);
