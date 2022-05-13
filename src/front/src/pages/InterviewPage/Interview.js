@@ -26,6 +26,7 @@ function Interview({
     downloadHandler,
     closeModalHandler,
     getInterviewerHandler,
+    getIntervieweePresignedUrlHandler,
     video,
 }) {
     const [buttonState, setButtonState] = useState(true);
@@ -68,11 +69,14 @@ function Interview({
             {!loading && <div className="interview-app">
                 {/*------------------ 가상 면접관 ------------------*/}
                 <div className="interviewer-section">
-                    <video width="80%" height="80%">
+                    {video!=='' && <video width="80%" height="80%">
                         {/* <source src="./test_video.mp4" type="video/mp4">
                         </source> */}
+                        {/* video가 빈string이 아닐 때 */}
                         <source src={video}/>
-                    </video>                
+                    </video>}
+                        {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={50} />}
+                        {/* {video==='' && <div>No Video</div>} */}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
@@ -81,7 +85,7 @@ function Interview({
                     && <button className="interview-button" onClick={async () => {
                         // stopInterval()
                         await setButtonState(false)
-                        await startCaptureHandler()
+                        await startCaptureHandler() // 녹화시작
                         getInterviewerHandler()
                         // intervalFunc()
                     }}>
@@ -94,6 +98,7 @@ function Interview({
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
                         await stopCaptureHandler()
+                        getIntervieweePresignedUrlHandler()
                         // stopInterval()
                     }}>
                         대답 완료
@@ -103,7 +108,8 @@ function Interview({
                     && questionNumberState % 2 === 0
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
-                        await downloadHandler()
+                        // await downloadHandler()
+                        
                         await startCaptureHandler()
                         // intervalFunc()
                     }}>
