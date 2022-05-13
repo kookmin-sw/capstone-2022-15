@@ -6,8 +6,8 @@ def select(field_id):
     question_id = random.randint(1, 5)
 
     if field_id == 0:
-        key = '{}/00{}.mp4'.format(field_list[field_id], field_list[question_id])
+        key = '{}/00{}.mp4'.format(field_list[field_id], question_id)
     else:
-        key = 'job_interview/{}/00{}.mp4'.format(field_list[field_id], field_list[question_id])
+        key = 'job_interview/{}/00{}.mp4'.format(field_list[field_id], question_id)
 
     return question_id, key
