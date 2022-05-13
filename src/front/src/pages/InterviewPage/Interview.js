@@ -26,7 +26,7 @@ function Interview({
     downloadHandler,
     closeModalHandler,
     getInterviewerHandler,
-    getIntervieweePresignedUrlHandler,
+    postIntervieweeHandler,
     video,
 }) {
     const [buttonState, setButtonState] = useState(true);
@@ -98,7 +98,7 @@ function Interview({
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
                         await stopCaptureHandler()
-                        getIntervieweePresignedUrlHandler()
+                        postIntervieweeHandler()
                         // stopInterval()
                     }}>
                         대답 완료
@@ -109,7 +109,7 @@ function Interview({
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
                         // await downloadHandler()
-                        
+                        getInterviewerHandler()
                         await startCaptureHandler()
                         // intervalFunc()
                     }}>
