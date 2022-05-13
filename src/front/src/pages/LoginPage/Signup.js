@@ -21,7 +21,7 @@ const Signup = () => {
     //setLoading(false);
     localStorage.clear();
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/login');
+      window.location.replace('https://api.kmuin4u.com/login');
     } else {
       setLoading(false);
     }
@@ -58,7 +58,7 @@ const Signup = () => {
     }
     //'/api/v1/mall/auth/register/'
 
-    Axios.post('http://localhost:8000/accounts/join', user)
+    Axios.post('https://api.kmuin4u.com/accounts/join', user)
       .then(res => {
           console.log(res.data)
         if (res.data.token) {
