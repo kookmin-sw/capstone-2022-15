@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import './Mypage.css';
 
 import axios from 'axios';
@@ -10,7 +10,7 @@ class List extends Component {
       data : [],
       page : 1,
       limit : 10,
-      all_page : [],
+      all_page : [], 
     }
   }
 
@@ -20,17 +20,24 @@ class List extends Component {
   }
 
   _getListData = async function() {
-    const { limit } = this.state;
-    const page = this._setPage();
+    const { limit } = 10;
+    // const page = this._setPage();
+    const {user_id} = this.state;
+    const {field_id} = this.state;
+    const {interview_start} = this.state;
+  
 
     // Board 테이블 데이터 전체 수
-    const total_cnt = await axios('/accounts/');
+    const total_cnt = 7;
 
     // 데이터 가져오기
-    const total_list = await axios('/accounts/', {
-      method : 'POST',
-      headers: new Headers(),
-      data : { limit : limit, page : page }
+    const total_list = await axios('/accounts/mypage', {
+      method : 'GET',
+      // headers: new Headers(),
+      data : { user_id: user_id,
+               field_id: field_id,
+               interview_start: interview_start
+             }
     })
 
     // 전체 페이지 수 구하기
@@ -68,8 +75,8 @@ class List extends Component {
       <div className='List'>
 
         <div className='list_grid list_tit'>
-          <div> 유형 </div>
-          <div className='acenter'> 진행상황 </div>
+          <div className='acenter'> 유형 </div>
+          {/* <div className='acenter'> 진행상황 </div> */}
           <div className='acenter'> 날짜 </div>
         </div>
 

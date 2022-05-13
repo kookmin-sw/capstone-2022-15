@@ -11,7 +11,8 @@ function Footer () {
         <span className='footer-gray-txt'>
           KOOKMIN UNIVERSITY SOFTWARE<br/>
           2022 CAPSTONE TEAM 15 "INFU"<br/><br/>
-          Interviewer's Voice From "onairstudio"
+          Interviewer's Voice From "onairstudio"<br/>
+          Interviewer's Face Data From "한국과학기술연구원과 한국지능정보사회진흥원"
         </span>
         
       </div>

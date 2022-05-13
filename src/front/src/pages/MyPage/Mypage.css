@@ -12,7 +12,6 @@
     position: relative;
     top: 80px;
     width: 20vw;
-
     background: #F0F2F4;
     flex-direction: row;
     align-items: stretch;
@@ -43,9 +42,10 @@
 }
 .Img_mypage{
     position: absolute;
-    width:15vw;
+    width:13vw;
     bottom: 3vh;
-    left: 2vw;
+    left: 3vw;
+    top:55vh;
 }
 .List {
     padding: 10px;
@@ -86,7 +86,7 @@
 .mypage_footer_top2{
     z-index: 7;
     position: absolute;
-    top: 233vh;
+    top: 310vh;
 }
 .Menu-txt22{
     position: absolute;
@@ -120,15 +120,14 @@
 
 .Interviewer-section{
     position: relative;
-    width: 45vw;
+    width: 40vw;
     left: 14vw;
     top:2vh;
 }
 
 .Feedback-txt{
     position: relative;
-    width: 45vw;
-    left: 2vw;
+    left: 2.5vw;
     font-size: 1.2vw;
     font-weight: 600;
 }
@@ -137,4 +136,14 @@
     position: relative;
     width: 30vw;
     left: 22vw;
+}
+.Stt{
+    position: relative;
+    width: 54.5vw;
+    left: 11.5vw;
+    font-size: 1.1vw;
+    font-weight: 500;
+    /* border: 0.1vw solid #5B7EFB; */
+    background-color: #F0F2F4;
+    text-align: justify;
 }

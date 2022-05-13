@@ -27,6 +27,9 @@ const ModalComponent = ({
     startCaptureHandler,
     stopCaptureHandler,
     downloadHandler,
+    getInterviewerHandler,
+    postIntervieweeHandler,
+    video,
 }) => {
     return (
         <div className="modal">
@@ -42,6 +45,9 @@ const ModalComponent = ({
                     stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
                     closeModalHandler={closeModalHandler}
+                    getInterviewerHandler={getInterviewerHandler}
+                    postIntervieweeHandler={postIntervieweeHandler}
+                    video={video}
                 />
                 <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
             </Modal>
