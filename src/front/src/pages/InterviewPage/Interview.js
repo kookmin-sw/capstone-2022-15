@@ -29,19 +29,22 @@ function Interview({
     postIntervieweeHandler,
     video,
     clearVideoHandler,
+    questionNHandler
 }) {
     const [buttonState, setButtonState] = useState(true);
     const [questionNumberState, setQuestionNumberState] = useState(1);
     const [loading, setLoading] = useState(false)
 
-    const urlToBackend = `~/getPresigned/${selectedInterviewType}`;
-
     console.log('buttonState', buttonState)
 
     useEffect(() => {
-        console.log('hehe')
     }, [video])
 
+    useEffect(() => {
+        if (questionNumberState % 2 === 0) {
+            questionNHandler(questionNumberState / 2)
+        }
+    }, [questionNumberState])
     // console.log(video, 'video')
     return (
         <>
@@ -58,17 +61,15 @@ function Interview({
                     {/* state true : 면접 시작 button */}
                     {buttonState 
                     && <button className="interview-button" onClick={async () => {
-                        // stopInterval()
                         await setButtonState(false)
                         await startCaptureHandler() // 녹화시작
                         getInterviewerHandler()
-                        // intervalFunc()
                     }}>
                         면접 시작
                     </button>}
                     {/* state false : 다음 질문 button */}
                     {!buttonState 
-                    && questionNumberState < 10
+                    && questionNumberState < 6
                     && questionNumberState % 2 === 1
                     && <button className="done-button" onClick={() => {
                         setQuestionNumberState(questionNumberState + 1)
@@ -79,7 +80,7 @@ function Interview({
                         대답 완료
                     </button>}
                     {!buttonState 
-                    && questionNumberState < 10
+                    && questionNumberState < 6
                     && questionNumberState % 2 === 0
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
@@ -90,12 +91,11 @@ function Interview({
                         다음 질문
                     </button>}
                     {/* state false : 면접 종료 button */}
-                    {questionNumberState === 10
+                    {questionNumberState === 6
                     && <button className="interview-button" onClick={closeModalHandler}>
                             면접 종료
                     </button>}
                 </div>
-                {selectedInterviewType}
             </div>}
             {loading && <SyncLoader color={'blue'} loading={loading} css={override} size={50} />}
         </>

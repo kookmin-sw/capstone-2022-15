@@ -39,6 +39,7 @@ const closeButtonStyle = {
 const PreInterview = () => {
     const [openModal, isOpenModal] = useState(false);
     const [checkedId, setCheckedId] = useState();
+    const [questionN, setQuestionN] = useState(0);
     const [selectedInterviewType, setSelectedInterviewType] = useState('')
     const closeModalHandler = () => {
         downloadHandler()
@@ -90,18 +91,12 @@ const PreInterview = () => {
             const blob = new Blob(recordedChunks, {
             type: "video/mp4"
             });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            document.body.appendChild(a);
-            a.style = "display: none";
-            a.href = url;
-            let file = new File([blob], url); // 테스트 필요
+            let file = new File([blob], 'interviewee video'); // 테스트 필요
             let formData = new FormData();
             formData.append("data", file);
             formData.append("Content-Type", "video/mp4");
             axios.put(`${intervieweePreSignedUrl}`, file)
-                .then((response) => {
-                  window.URL.revokeObjectURL(url);
+                .then((_response) => {
                   setRecordedChunks([])
               }).catch((error) => {
                 console.log(error);
@@ -141,7 +136,7 @@ const PreInterview = () => {
                 'Authorization':'Token ' + window.localStorage.getItem('token')
             },
             data: {
-                question_n: ``,
+                question_n: `${questionN}`,
                 field_id: `${checkedId}`, 
             }
         }).then((response) => { // 대안 -> 녹화 영상 저장할 s3는 public으로  
@@ -201,6 +196,7 @@ const PreInterview = () => {
                     postIntervieweeHandler={postInterviewee}
                     video={video}
                     clearVideoHandler={() => {setVideo('')}}
+                    questionNHandler={setQuestionN}
                     />
                 }
                 </div>
