@@ -112,7 +112,7 @@
 
 .cam-show {
     position: relative;
-    width: 640px;
+    /* width: 640px; */
     height: 480px;
     /* margin-right: 80px; */
     /* padding-right: 80px; */
