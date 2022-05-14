@@ -57,7 +57,15 @@ const PreInterview = () => {
     const [recordedChunks, setRecordedChunks] = useState([]);
     const [preSignedUrl, setPreSignedUrl] = useState('') // 가상면접관 Presigned url
     const [intervieweePreSignedUrl, setIntervieweePresignedUrl] = useState('') // 녹화영상 presigned url
-    const [video, setVideo] = useState(firstVideo)
+
+    const [video, setVideo] = useState('')
+    useEffect(() => {
+        console.log('presinged url:', preSignedUrl)
+        if(preSignedUrl !== ''){
+            setVideo(preSignedUrl)
+        }
+    }, [preSignedUrl])
+
     const startCaptureHandler = useCallback(() => {
 
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -117,12 +125,13 @@ const PreInterview = () => {
     const isTest = false;
     let getInterviewerPreSignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
+                    // ? `http://172.30.1.43:8000/interview/practice/${checkedId}`
                     : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/` 
-                    : `https://api.kmuin4u.com/interview/practice/`;
+                    ? `http://localhost:8000/interview/practice/save` 
+                    : `https://api.kmuin4u.com/interview/practice/save`;
     
-    console.log(typeof(window.localStorage.getItem('token')));
+    // console.log(typeof(window.localStorage.getItem('token')));
     const getInterviewer = () => { 
         // setLoading(true);
         axios({
@@ -130,15 +139,16 @@ const PreInterview = () => {
             method: 'GET',
             headers: {
                 'Authorization':'Token ' + window.localStorage.getItem('token')
-                
             }
         }).then((response) => { // response에는 get요청으로 받아온 presigned url이 들어감
-            // console.log(response);
-            // console.log(response.data);
-            setPreSignedUrl(response.data.interview_url); // 확인하기 
+            // console.log('response', response);
+            // console.log('response.data', response.data);
+            setPreSignedUrl(response.data.interviewer_url); // 확인하기 -> 맞음  
             // setLoading(false);
+            console.log(">>>>>>>>", response.data.interviewer_url)
         }).then(() => {
             setVideo(preSignedUrl) 
+            console.log('presinged url:', preSignedUrl)
         }).catch((error) => {
             console.log(error);
         })
@@ -150,7 +160,7 @@ const PreInterview = () => {
             url: postIntervieweePresignedUrl,
             method: 'POST', // GET 
             headers: {
-                Authroization: 'Token knflskdnfan48729385y34u53'
+                'Authorization':'Token ' + window.localStorage.getItem('token')
             },
             data: {
                 // user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기

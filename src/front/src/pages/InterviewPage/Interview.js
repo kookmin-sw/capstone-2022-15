@@ -26,13 +26,16 @@ function Interview({
     downloadHandler,
     closeModalHandler,
     getInterviewerHandler,
-    postIntervieweeHandler,
+    getIntervieweePresignedUrlHandler,
     video,
 }) {
     const [buttonState, setButtonState] = useState(true);
     const [questionNumberState, setQuestionNumberState] = useState(1);
     const [preSignedUrl, setPreSignedUrl] = useState('')
     const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        console.log('videoee', video)
+    }, [video])
 
     const urlToBackend = `~/getPresigned/${selectedInterviewType}`;
 
@@ -64,12 +67,13 @@ function Interview({
     // useEffect(() => {
     //     stopInterval()
     // }, [])
+    console.log(video, 'video')
     return (
         <>
             {!loading && <div className="interview-app">
                 {/*------------------ 가상 면접관 ------------------*/}
                 <div className="interviewer-section">
-                    {video!=='' && <video width="80%" height="80%">
+                    {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
                         {/* <source src="./test_video.mp4" type="video/mp4">
                         </source> */}
                         {/* video가 빈string이 아닐 때 */}
@@ -98,7 +102,7 @@ function Interview({
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
                         await stopCaptureHandler()
-                        postIntervieweeHandler()
+                        getIntervieweePresignedUrlHandler()
                         // stopInterval()
                     }}>
                         대답 완료
