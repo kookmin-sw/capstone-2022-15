@@ -3,15 +3,11 @@ import styles from './SelectBox.module.css';
 import { PageDescription } from '../../components/PageDescription';
 import WebcamStreamCapture from '../../components/Webcam'
 import React, { useEffect, useState, useRef, useCallback } from "react"; 
-import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
-import firstVideo from "../InterviewPage/interviewer_01.mp4";
 // import Footer from '../components/Footer';
-
-const clickMotion = () => window.open('/interview', '_blank');
 
 const interviewTypeName = {
     0: '[인성] 인성 면접',
@@ -57,10 +53,9 @@ const PreInterview = () => {
     const [recordedChunks, setRecordedChunks] = useState([]);
     const [preSignedUrl, setPreSignedUrl] = useState('') // 가상면접관 Presigned url
     const [intervieweePreSignedUrl, setIntervieweePresignedUrl] = useState('') // 녹화영상 presigned url
-
     const [video, setVideo] = useState('')
+
     useEffect(() => {
-        console.log('presinged url:', preSignedUrl)
         if(preSignedUrl !== ''){
             setVideo(preSignedUrl)
         }
@@ -102,38 +97,29 @@ const PreInterview = () => {
             a.href = url;
             let file = new File([blob], url); // 테스트 필요
             let formData = new FormData();
-            formData.append("media", file);
-            formData.append("content", "Blob확인");
-            // formData.append("tagList", "blob");
-            // formData.append("username", "admin"); 
-            // a.download = "s3/userid/embeded/202205081726_001.mp4";
-            // a.download = `${intervieweePreSignedUrl}/${checkedId}` // 확인 필요, 영상 저장할 s3주소 알려주세요
-            // a.click();
-            axios.post(`${intervieweePreSignedUrl}/${checkedId}`, formData, {
-                headers: {
-                  "Content-Type": "multipart/form-data",
-                //   Authorization: 'Token knflskdnfan48729385y34u53'
-                }
-              }).then((response) => {
+            formData.append("data", file);
+            formData.append("Content-Type", "video/mp4");
+            axios.put(`${intervieweePreSignedUrl}`, file)
+                .then((response) => {
                   window.URL.revokeObjectURL(url);
                   setRecordedChunks([])
               }).catch((error) => {
                 console.log(error);
             })
         }
-    }, [recordedChunks]);
+    }, [recordedChunks, intervieweePreSignedUrl]);
     const isTest = false;
     let getInterviewerPreSignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
-                    // ? `http://172.30.1.43:8000/interview/practice/${checkedId}`
+                    // ? `http://127.0.0.1:8000/interview/practice/${checkedId}`
                     : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/save` 
+                    // ? 'http://127.0.0.1:8000/interview/practice/save'
                     : `https://api.kmuin4u.com/interview/practice/save`;
     
-    // console.log(typeof(window.localStorage.getItem('token')));
     const getInterviewer = () => { 
-        // setLoading(true);
+        console.log('called')
         axios({
             url: getInterviewerPreSignedUrl, // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
             method: 'GET',
@@ -141,21 +127,13 @@ const PreInterview = () => {
                 'Authorization':'Token ' + window.localStorage.getItem('token')
             }
         }).then((response) => { // response에는 get요청으로 받아온 presigned url이 들어감
-            // console.log('response', response);
-            // console.log('response.data', response.data);
-            setPreSignedUrl(response.data.interviewer_url); // 확인하기 -> 맞음  
-            // setLoading(false);
-            console.log(">>>>>>>>", response.data.interviewer_url)
-        }).then(() => {
-            setVideo(preSignedUrl) 
-            console.log('presinged url:', preSignedUrl)
+            setPreSignedUrl(response.data.interviewer_url); // 확인하기 -> 맞음 
         }).catch((error) => {
             console.log(error);
         })
     }
 
     const postInterviewee = () => { 
-        // setLoading(true);
         axios({
             url: postIntervieweePresignedUrl,
             method: 'POST', // GET 
@@ -163,35 +141,15 @@ const PreInterview = () => {
                 'Authorization':'Token ' + window.localStorage.getItem('token')
             },
             data: {
-                // user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
                 question_n: ``,
                 field_id: `${checkedId}`, 
             }
         }).then((response) => { // 대안 -> 녹화 영상 저장할 s3는 public으로  
-            setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 필요 
+            setIntervieweePresignedUrl(response.data.interviewee_url); // 확인하기 , 어디에 저장해야하는지 주소 필요 
         }).catch((error) => {
             console.log(error);
         })
     }
-
-    // const postInterviewee = () => { // POST 아니고 S3에 바로 저장 
-    //     axios({
-    //         url: postIntervieweePresignedUrl,
-    //         method: 'POST',
-    //         headers: {
-    //             Authroization: 'Token knflskdnfan48729385y34u53'
-    //         },
-    //         data: {
-    //             user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
-    //             question_n: ``,
-    //             field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
-    //             interview_date: ``
-
-    //         }
-    //     }).then((response) => { // 녹화 영상 저장할 s3는 public으로 바꿔줘 
-    //         setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 내놔
-    //     })
-    // }
 
     return (
         <div className="PreInterviewApp">
@@ -242,10 +200,11 @@ const PreInterview = () => {
                     getInterviewerHandler={getInterviewer}
                     postIntervieweeHandler={postInterviewee}
                     video={video}
+                    clearVideoHandler={() => {setVideo('')}}
                     />
                 }
                 </div>
-            </div> {/* add SelectInterviewType component */}
+            </div>
             {/* <Footer/> */}
         </div>
     );

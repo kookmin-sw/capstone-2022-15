@@ -26,61 +26,32 @@ function Interview({
     downloadHandler,
     closeModalHandler,
     getInterviewerHandler,
-    getIntervieweePresignedUrlHandler,
+    postIntervieweeHandler,
     video,
+    clearVideoHandler,
 }) {
     const [buttonState, setButtonState] = useState(true);
     const [questionNumberState, setQuestionNumberState] = useState(1);
-    const [preSignedUrl, setPreSignedUrl] = useState('')
     const [loading, setLoading] = useState(false)
-    useEffect(() => {
-        console.log('videoee', video)
-    }, [video])
 
     const urlToBackend = `~/getPresigned/${selectedInterviewType}`;
 
     console.log('buttonState', buttonState)
 
-    // api to backend
-    // axios({
-    //     url: urlToBackend,
-    //     method: 'GET'
-    // }).then((response) => {
-    //     setPreSignedUrl(response.data)
-    //     setLoading(false)
-    // }).catch((error) => {
-    //     console.log(error)
-    // })
+    useEffect(() => {
+        console.log('hehe')
+    }, [video])
 
-    console.log('questionNumberState', questionNumberState)
-    // var intervalFunc = setInterval(() => {
-    //     console.log('time out')
-    //     downloadHandler()
-    //     startCaptureHandler()
-    //     stopInterval()
-    //     setQuestionNumberState(questionNumberState + 1)
-    // }, 5000)
-
-    // var stopInterval = () => {
-    //     clearInterval(intervalFunc)
-    // }
-    // useEffect(() => {
-    //     stopInterval()
-    // }, [])
-    console.log(video, 'video')
+    // console.log(video, 'video')
     return (
         <>
             {!loading && <div className="interview-app">
                 {/*------------------ 가상 면접관 ------------------*/}
                 <div className="interviewer-section">
                     {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
-                        {/* <source src="./test_video.mp4" type="video/mp4">
-                        </source> */}
-                        {/* video가 빈string이 아닐 때 */}
                         <source src={video}/>
                     </video>}
-                        {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={50} />}
-                        {/* {video==='' && <div>No Video</div>} */}
+                    {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={50} />}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
@@ -99,11 +70,11 @@ function Interview({
                     {!buttonState 
                     && questionNumberState < 10
                     && questionNumberState % 2 === 1
-                    && <button className="done-button" onClick={async () => {
+                    && <button className="done-button" onClick={() => {
                         setQuestionNumberState(questionNumberState + 1)
-                        await stopCaptureHandler()
-                        getIntervieweePresignedUrlHandler()
-                        // stopInterval()
+                        stopCaptureHandler()
+                        postIntervieweeHandler()
+                        clearVideoHandler()
                     }}>
                         대답 완료
                     </button>}
@@ -112,10 +83,9 @@ function Interview({
                     && questionNumberState % 2 === 0
                     && <button className="done-button" onClick={async () => {
                         setQuestionNumberState(questionNumberState + 1)
-                        // await downloadHandler()
                         getInterviewerHandler()
-                        await startCaptureHandler()
-                        // intervalFunc()
+                        downloadHandler()
+                        startCaptureHandler()
                     }}>
                         다음 질문
                     </button>}
