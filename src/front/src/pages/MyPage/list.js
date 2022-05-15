@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import './Mypage.css';
 import { Link } from 'react-router-dom';
-import queryString from 'query-string';
 
 
 import axios from 'axios';
@@ -10,6 +9,10 @@ const List = () => {
     const [interview_id, getInterviewrID] = useState('');
     const [field_id, getFieldID] = useState('')
     const [interview_start, getInterviewStart] = useState('')
+    const isTest = false;
+    let getMypage = isTest
+    ? `http://localhost:8000/accounts/mypage` // checkedId -> ques
+    : `https://api.kmuin4u.com/accounts/mypage`; 
 
     const data = {
         interview_id:interview_id,
@@ -17,8 +20,14 @@ const List = () => {
         interview_start:interview_start
     }
     
-    axios.get('https://api.kmuin4u.com/accounts/mypage', data)
-    .then(response => {
+    axios({
+      url: getMypage, 
+      method: 'GET',
+      headers: {
+          'Authorization':'Token ' + window.localStorage.getItem('token')
+          
+      }
+    }).then(response => {
       console.log("Mypage Get Success")
         getInterviewrID(response.data.interview_id)
         getFieldID(response.data.field_id)
