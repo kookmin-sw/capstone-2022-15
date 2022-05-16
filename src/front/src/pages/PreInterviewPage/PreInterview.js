@@ -114,7 +114,7 @@ const PreInterview = () => {
                     : `https://api.kmuin4u.com/interview/practice/save`;
     
     const getInterviewer = () => { 
-        console.log('called')
+        // console.log('called')
         axios({
             url: getInterviewerPreSignedUrl, // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
             method: 'GET',
