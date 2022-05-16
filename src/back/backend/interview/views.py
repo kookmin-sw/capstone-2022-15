@@ -27,7 +27,7 @@ class PracticeView(APIView):
 
         # s3 presigned url
         bucket = 'virtual-interview-video'
-        question_id, key = select(field_id)
+        question_id, key = select(field_id) # select video randomly
         interviewer_url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
         print(interviewer_url)
 
@@ -41,14 +41,12 @@ class PracticeView(APIView):
         interview_id = 1
         question_n = request.data['question_n']
         field_id = request.data['field_id']
-        interview_id = 1
         print(user_id, field_id, question_n)
         # s3 presigned url
         bucket = 'user-interview-video-bucket'
         key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(user_id, interview_id, question_n)
         interviewee_url = s3.generate_presigned_url(ClientMethod='put_object', Params={'Bucket':bucket, 'Key':key})
         print(interviewee_url)
-        #interviewee_url = 'http://'
 
         # json error
         #data = {'user':request.user}
