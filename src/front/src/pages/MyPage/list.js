@@ -45,7 +45,7 @@ class List extends Component {
         </div>
 
           {list ? list.map( (el, key) => {
-            const GoFeedbackPage = '/accounts/feedback/'+ el.interview_id;
+            const GoFeedbackPage = '/accounts/feedback1/'+ el.interview_id;
             return(
               <div className='list_grid list_data' key={key}>
                 <div> <Link to={GoFeedbackPage}> {el.field_id} </Link> </div>
