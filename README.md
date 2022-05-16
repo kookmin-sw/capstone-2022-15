@@ -157,4 +157,21 @@ Role: 서버
 <br>
 
 ## 5. 사용법
-추후 추가 예정
+### git clone
+```
+$ git clone https://github.com/kookmin-sw/capstone-2022-15.git
+```
+
+### Server setting
+1. 
+2. 
+
+### Client setting
+1. node module 설치
+```
+$ npm i
+```
+2. 실행
+```
+$ npm start
+```
