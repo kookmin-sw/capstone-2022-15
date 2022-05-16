@@ -20,10 +20,7 @@ class VoiceVolume:
         self.decibal = librosa.power_to_db(amplitude ** 2, ref=np.min)
         self.decibal = np.convolve(self.decibal, np.ones((DOWN_SAMPLING,)) / DOWN_SAMPLING, mode='valid')
 
-    def write(self, path='/tmp/volume.png'):
-        plt.plot(self.decibal)
-        plt.xticks([i for i in range(1, len(self.decibal), DOWN_SAMPLING * 30)],
-                   [i // DOWN_SAMPLING for i in range(1, len(self.decibal), DOWN_SAMPLING * 30)])
-        plt.ylim([0, 80])
-        plt.savefig(path)
+    def write(self, path='/tmp/volume.npz'):
+        time = np.linspace(0, self.running_time, len(self.decibal))
+        np.savez(path, time=time, data=self.decibal)
         return path
