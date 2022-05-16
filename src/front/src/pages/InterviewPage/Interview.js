@@ -96,7 +96,9 @@ function Interview({
                         closeModalHandler()
                         setQuestionNumberState(0)
                     }}>
-                        면접 종료
+                        <Link to="/mypage" className="interview-end-button">
+                            면접 종료
+                        </Link>
                     </button>}
                 </div>
             </div>}
