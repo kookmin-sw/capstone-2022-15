@@ -81,7 +81,7 @@
 
 .cam-setting-title {
     position: relative;
-    width: 241px;
+    width: 200px;
     height: 37px;
     padding-left: 80px;
     /* top: 42px; */
@@ -223,3 +223,24 @@
     /* align-items: center; */
 }
 
+/*-------------------- notification --------------------*/
+/* .notification {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 200px;
+    height: 60px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    
+    border-radius: 35px;
+    border: none;
+
+    cursor: pointer;
+} */
