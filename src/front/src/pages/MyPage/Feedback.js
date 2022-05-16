@@ -19,7 +19,7 @@ const Feedback = () => {
   const isTest = false;
     let getFeedbackpage = isTest
     ? `http://localhost:8000/accounts/feedback` // checkedId -> ques
-    : `https://api.kmuin4u.com/accounts/feedback`; 
+    : `https://setInterview_idapi.kmuin4u.com/accounts/feedback`; 
 
   axios({
     url: getFeedbackpage, 
@@ -35,7 +35,7 @@ const Feedback = () => {
   })
   .catch(error => {
       console.log(error)
-      alert('error')
+      alert(' error')
   })
 
 
@@ -54,6 +54,7 @@ const Feedback = () => {
 
 class Bar2 extends Component{
     render(){
+      
       return(
         <div className='Bar'>
             My Page - 피드백
@@ -61,6 +62,7 @@ class Bar2 extends Component{
       );
     }
 }
+
 class MenuBox2 extends Component{
     render(){
       return(
@@ -72,19 +74,19 @@ class MenuBox2 extends Component{
             </div>
 
             <div onClick={()=>console.log("질문 1 Feedback")}>
-                <Link to="/feedback/" className='Menu-txt3' style={{top:'14vh'}}>
+                <Link to="/feedback1/*" className='Menu-txt3' style={{top:'14vh'}}>
                 &nbsp;&nbsp;질문 1
                 </Link>
             </div>
 
             <div onClick={()=>console.log("질문 2 Feedback")}>
-                <Link to="/feedback/2" className='Menu-txt3' style={{top:'20vh'}}>
+                <Link to="/feedback2/*" className='Menu-txt3' style={{top:'20vh'}}>
                 &nbsp;&nbsp;질문 2
                 </Link>
             </div>
 
             <div onClick={()=>console.log("질문 3 Feedback") }>
-                <Link to="/feedback/3" className='Menu-txt3' style={{top:'26vh'}}>
+                <Link to="/feedback3/*" className='Menu-txt3' style={{top:'26vh'}}>
                 &nbsp;&nbsp;질문 3
                 </Link>
             </div>
@@ -102,7 +104,124 @@ class MenuBox2 extends Component{
     render(){
       const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo" 
       //const videoUrl = user_id + interview_id + "/interview_video/interview" + interview_id+".mp4"
-  
+      let chart_data1 = [
+        {
+            name: "우",
+            uv: 2300,
+            pv: 3200,
+            amt: 2400,
+        },
+        {
+            name: "와",
+            uv: 2500,
+            pv: 3398,
+            amt: 2210,
+        },
+        {
+            name: "아",
+            uv: 2500,
+            pv: 3800,
+            amt: 2290,
+        },
+        {
+            name: "아",
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: "아",
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: "악",
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+      
+      ];
+      
+      let chart_data2 = [
+        {
+            name: "제",
+            uv: 2300,
+            pv: 3200,
+            amt: 2400,
+        },
+        {
+            name: "발",
+            uv: 2500,
+            pv: 3398,
+            amt: 2210,
+        },
+        {
+            name: "피",
+            uv: 2500,
+            pv: 3800,
+            amt: 2290,
+        },
+        {
+            name: "드",
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: "백",
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: "페",
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+      
+      ];
+      let chart_data3 = [
+        {
+            name: "지",
+            uv: 2300,
+            pv: 3200,
+            amt: 2400,
+        },
+        {
+            name: "성",
+            uv: 2500,
+            pv: 3398,
+            amt: 2210,
+        },
+        {
+            name: "공",
+            uv: 2500,
+            pv: 3800,
+            amt: 2290,
+        },
+        {
+            name: "하",
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: "자",
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: "구",
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+      
+      ];
       return(
         <div>
           <div className='Feedback-txt'style={{top:'5.2vh'}}>
@@ -125,12 +244,11 @@ class MenuBox2 extends Component{
           </div>
           
   
-  
   {/*목소리 차트*/}
           <div className='Feedback-txt'style={{top:'32vh'}}>
                 🔹 목소리 크기
               <div style={{ width: '50vw', height: '40vh',  left:'14vw',position:'absolute'}}>
-                <Rechart />
+                <Rechart chart_data= {chart_data1}  />
               </div>
           </div>
           
@@ -140,7 +258,7 @@ class MenuBox2 extends Component{
           <div className='Feedback-txt' style={{top:'87vh'}}>
                 🔹 머리 움직임
               <div style={{ width: '50vw', height: '40vh',  left:'14vw',position:'absolute'}}>
-                <Rechart />
+                <Rechart chart_data= {chart_data2}/>
               </div>
           </div>
   
@@ -149,7 +267,7 @@ class MenuBox2 extends Component{
           <div className='Feedback-txt' style={{top:'141vh'}}>
                 🔹 시선 처리
               <div style={{ width: '50vw', height: '40vh',  left:'14vw',position:'absolute'}}>
-                <Rechart />
+                <Rechart chart_data= {chart_data3}/>
               </div>
           </div>  
         </div>  
@@ -157,56 +275,18 @@ class MenuBox2 extends Component{
     }
   }
 
+  
 
-class Rechart extends Component{
-  static demoUrl =  'https://codesandbox.io/s/tiny-line-chart-r5z0f';
-    render(){
-      const data = [
-        {
-            name: "10초",
-            uv: 2300,
-            pv: 3200,
-            amt: 2400,
-        },
-        {
-            name: "20초",
-            uv: 2500,
-            pv: 3398,
-            amt: 2210,
-        },
-        {
-            name: "30초",
-            uv: 2500,
-            pv: 3800,
-            amt: 2290,
-        },
-        {
-            name: "40초",
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-        },
-        {
-            name: "50초",
-            uv: 1890,
-            pv: 4800,
-            amt: 2181,
-        },
-        {
-            name: "60초",
-            uv: 2390,
-            pv: 3800,
-            amt: 2500,
-        },
-    
-    ];
-
-    return (
+const Rechart = ({
+  // static demoUrl =  'https://codesandbox.io/s/tiny-line-chart-r5z0f';
+    chart_data
+}) => {
+  return (
       <ResponsiveContainer width="100%" height="100%">
           <LineChart
               width={500}
               height={300}
-              data={data}
+              data={chart_data}
               margin={{
                   top: 5,
                   right: 30,
@@ -230,5 +310,6 @@ class Rechart extends Component{
       </ResponsiveContainer>
   );
 }
-}
+
+
 export default Feedback;
