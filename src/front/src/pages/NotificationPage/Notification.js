@@ -1,5 +1,7 @@
 import './Notification.css';
 import Navbar from '../components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
+
 // import { PageDescription } from '../../components/PageDescription';
 
 // import Footer from '../components/Footer';
@@ -56,6 +58,11 @@ const PreInterview = () => {
                     Step 5 <br></br>
                     중간에 <br></br>
                 </div>
+            </div>
+            <div className="button-layout">
+                <Link to="/preinterview" className="start-button">
+                    다음 
+                </Link>
             </div>
             {/* <Footer/> */}
         </div>
