@@ -5,7 +5,7 @@ export class PageDescription extends Component {
         return (
             <div className="description-layout">
                 <span className="description-title">
-                    화상 기기 설정 및 면접 종류 선택
+                    면접 환경 세팅하기
                 </span>
                 <span className="description-content">
                     IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>

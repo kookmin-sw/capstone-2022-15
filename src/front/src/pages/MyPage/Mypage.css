@@ -48,11 +48,11 @@
     top:55vh;
 }
 .List {
-    padding: 10px;
-    margin-left: 50px;
-    margin-right: 20px;
+    padding: 1vw;
+    margin-left: 5vw;
+    margin-right: 1vw;
     min-height: 400px;
-    border: 0.2vw solid #5B7EFB;
+    /* border: 0.2vw solid #5B7EFB; */
 }
 
 .list_tit {
@@ -66,7 +66,7 @@
 
 .list_grid {
     display: grid;
-    grid-template-columns: 50% 25% 25%;
+    grid-template-columns: 50% 50%;
 
 }
 .list_data {
@@ -86,7 +86,7 @@
 .mypage_footer_top2{
     z-index: 7;
     position: absolute;
-    top: 310vh;
+    top: 335vh;
 }
 .Menu-txt22{
     position: absolute;
@@ -117,7 +117,9 @@
     text-decoration: none;
     text-align: center;
 }
-
+.Menu-txt3:hover{
+    color: #ff85a1;
+}
 .Interviewer-section{
     position: relative;
     width: 40vw;
