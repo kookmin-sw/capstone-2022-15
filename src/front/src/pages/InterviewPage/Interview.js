@@ -1,13 +1,8 @@
 import './Interview.css';
 
 import React, {useState, useEffect} from "react"; 
-import firstVideo from "./interviewer_01.mp4";
-// import secondVideo from "./interviewer_02.mp4";
-import { Link, useLocation } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import SyncLoader from "react-spinners/SyncLoader";
-
-let count = 1;
 
 const override = {
   margin: 'auto',
