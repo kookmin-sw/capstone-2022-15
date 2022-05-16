@@ -6,7 +6,7 @@ export const MenuItems = [
     },
     {
         title: '면접연습',
-        url: "/preinterview",
+        url: "/notification",
         cName: 'nav-links'
     },
     {
