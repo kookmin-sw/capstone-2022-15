@@ -17,7 +17,12 @@ def face_movement(url):
 
 def iris_movement(url):
     from feedback.video.face_iris_movement import IrisMovement
-    pass
+    ir = IrisMovement()
+    print("Init Iris Movement")
+    ir.eval(url)
+    path = ir.write()
+    print("Save result on /tmp")
+    return path
 
 
 def hand_movement(url):
@@ -28,8 +33,11 @@ def hand_movement(url):
 def voice_analysis(s3, bucket, key):
     from feedback.audio.voice_analysis import VoiceVolume
     volume = VoiceVolume()
+    print("init")
     volume.make_result(s3, bucket, key)
+    print("result")
     path = volume.write()
+    print("write")
     return path
 
 
@@ -93,25 +101,25 @@ def lambda_handler(event, context):
     if feedback_type == 'face-movement':
         path = face_movement(url)
         # user_id_{}/interview_id_{}/result/face_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"face_movement_{filename}.png"
+        upload_key = BASE_RESULT_PATH + f"face_movement_{filename}.npy"
 
     # (video) iris movement
     elif feedback_type == 'iris-movement':
         path = iris_movement(url)
         # user_id_{}/interview_id_{}/result/iris_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"iris_movement_{filename}.png"
+        upload_key = BASE_RESULT_PATH + f"iris_movement_{filename}.npy"
 
     # (video) hand movemnt
     elif feedback_type == 'hand-movement':
         path = hand_movement(url)
         # user_id_{}/interview_id_{}/result/hand_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"hand_movemnt_{filename}.png"
+        upload_key = BASE_RESULT_PATH + f"hand_movemnt_{filename}.npy"
 
     # (audio) voice analysis
     elif feedback_type == 'voice-analysis':
         path = voice_analysis(s3, bucket, key)
         # user_id_{}/interview_id_{}/result/volume_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"volume_{filename}.png"
+        upload_key = BASE_RESULT_PATH + f"volume_{filename}.npy"
 
     # (audio) STT
     elif feedback_type == 'stt':
@@ -125,5 +133,6 @@ def lambda_handler(event, context):
     # Upload Result
     upload_file_to_s3(s3, path, save_bucket, upload_key)
     print("Upload result file")
+
 
 
