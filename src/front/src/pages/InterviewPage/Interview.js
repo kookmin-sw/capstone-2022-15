@@ -46,6 +46,11 @@ function Interview({
         }
     }, [questionNumberState])
     // console.log(video, 'video')
+
+    function clickHandler(e) {
+        window.location.href = "/mypage"
+    }
+
     return (
         <>
             {!loading && <div className="interview-app">
@@ -95,10 +100,9 @@ function Interview({
                     && <button className="interview-button" onClick={() => {
                         closeModalHandler()
                         setQuestionNumberState(0)
+                        clickHandler()
                     }}>
-                        <Link to="/mypage" className="interview-end-button">
-                            면접 종료
-                        </Link>
+                        면접 종료
                     </button>}
                 </div>
             </div>}
