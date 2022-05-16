@@ -140,6 +140,13 @@
     font-size: 1.2vw;
     font-weight: 600;
 }
+.Feedback-Q{
+    position: relative;
+    left: 2.5vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color:#5B7EFB;
+}
 
 .Chart{
     position: relative;
