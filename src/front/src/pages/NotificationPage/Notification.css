@@ -9,7 +9,7 @@
 .notification-layout1 {
     position: relative;
     /* width: 100%; */
-    height: 580px;
+    height: 880px;
     margin-top: 20px;
     margin-right: 80px;
 }
@@ -28,11 +28,10 @@
     height: 80px;
     padding-left: 80px;
     
-
     font-family: Montserrat;
     /* font-weight: 500; */
     font-size: 18px;
-    line-height: 25px;
+    line-height: 27px;
     /* color: rgb(81, 119, 255); */
 
     display: flex;
@@ -42,6 +41,7 @@
 .notification-content {
     margin-left: 80px;
     margin-top: 10px;
+    height: 580px;
 }
 
 .notice1-cam-show-example-layout {
@@ -55,7 +55,7 @@
 
 .notice1-cam-show-example {
     position: relative;
-    width: 640px;
+    width: 800px;
     height: 480px;
     margin: auto;
 

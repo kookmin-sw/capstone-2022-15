@@ -24,18 +24,23 @@ const PreInterview = () => {
             <div className="notification-layout1">
                 <div className="notice-1">
                     <div className="notification-title">
-                    1️⃣ &nbsp;IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보다 정확한 피드백을 위해, 아래 그림에 표시된 선을 참고하여 카메라를 세팅해주세요.<br></br>
+                        1️⃣ &nbsp;IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보다 정확한 피드백을 위해, 아래 그림에 표시된 선을 참고하여 카메라를 세팅해주세요.<br></br>
                     </div>
                 </div>
                 <div className="notification-content">
                     <div className="notice1-cam-show-example-layout">
                         <img className="notice1-cam-show-example"></img>
                     </div>
-                    2. 면접 연습을 진행하며 녹화된 영상은 마이페이지의 피드백에서 확인할 수 있습니다.<br></br>
-                    이때 웹캠을 통해 화면이 녹화되고 목소리가 녹음되므로, 스피커를 사용할 경우 면접관의 목소리와 주변 소음으로 인해 정확도가 떨어질 수 있습니다.<br></br>
-                    가급적이면 헤드셋이나 이어폰을 사용해 주시기 바랍니다.
                 </div>
+                <div className="notice-1">
+                    <div className="notification-title">
+                        2️⃣ &nbsp;면접 연습을 진행하며 녹화된 영상은 마이페이지의 피드백에서 확인할 수 있습니다.<br></br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이때 사용자의 웹캠을 통해 화면이 녹화되고 목소리가 녹음되므로,<br></br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스피커를 사용할 경우 면접관의 목소리와 주변 소음으로 인해 정확도가 떨어질 수 있습니다.<br></br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가급적이면 헤드셋이나 이어폰을 사용해 주시기 바랍니다.<br></br>
+                    </div>
+                </div>   
             </div>
             <div className="notification-layout2">
                 <div className="notice-2">
