@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
-
+import firstVideo from "../InterviewPage/interviewer_01.mp4";
 // import Footer from '../components/Footer';
 
 const clickMotion = () => window.open('/interview', '_blank');
@@ -55,8 +55,9 @@ const PreInterview = () => {
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const [recordedChunks, setRecordedChunks] = useState([]);
-    const [preSignedUrl, setPreSignedUrl] = useState('')
-    const [video, setVideo] = useState('')
+    const [preSignedUrl, setPreSignedUrl] = useState('') // 가상면접관 Presigned url
+    const [intervieweePreSignedUrl, setIntervieweePresignedUrl] = useState('') // 녹화영상 presigned url
+    const [video, setVideo] = useState(firstVideo)
     const startCaptureHandler = useCallback(() => {
 
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -91,55 +92,96 @@ const PreInterview = () => {
             document.body.appendChild(a);
             a.style = "display: none";
             a.href = url;
-            a.download = "s3/userid/embeded/202205081726_001.mp4";
-            a.click();
-            window.URL.revokeObjectURL(url);
-            setRecordedChunks([]);
+            let file = new File([blob], url); // 테스트 필요
+            let formData = new FormData();
+            formData.append("media", file);
+            formData.append("content", "Blob확인");
+            // formData.append("tagList", "blob");
+            // formData.append("username", "admin"); 
+            // a.download = "s3/userid/embeded/202205081726_001.mp4";
+            // a.download = `${intervieweePreSignedUrl}/${checkedId}` // 확인 필요, 영상 저장할 s3주소 알려주세요
+            // a.click();
+            axios.post(`${intervieweePreSignedUrl}/${checkedId}`, formData, {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                //   Authorization: 'Token knflskdnfan48729385y34u53'
+                }
+              }).then((response) => {
+                  window.URL.revokeObjectURL(url);
+                  setRecordedChunks([])
+              }).catch((error) => {
+                console.log(error);
+            })
         }
     }, [recordedChunks]);
-    const isTest = true;
+    const isTest = false;
     let getInterviewerPreSignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}`
-                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
+                    ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
+                    : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}`
-                    : `https://kmuin4u.com/interview/practice/${checkedId}`;
-
-    const getInterviewer = () => {
+                    ? `http://localhost:8000/interview/practice/` 
+                    : `https://api.kmuin4u.com/interview/practice/`;
+    
+    console.log(typeof(window.localStorage.getItem('token')));
+    const getInterviewer = () => { 
         // setLoading(true);
         axios({
-            url: getInterviewerPreSignedUrl,
-            method: 'GET'
-        }).then((response) => {
+            url: getInterviewerPreSignedUrl, // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
+            method: 'GET',
+            headers: {
+                'Authorization':'Token ' + window.localStorage.getItem('token')
+                
+            }
+        }).then((response) => { // response에는 get요청으로 받아온 presigned url이 들어감
             // console.log(response);
             // console.log(response.data);
-            setPreSignedUrl(response.data.interview_url);
+            setPreSignedUrl(response.data.interview_url); // 확인하기 
             // setLoading(false);
         }).then(() => {
-            setVideo(preSignedUrl)
+            setVideo(preSignedUrl) 
         }).catch((error) => {
             console.log(error);
         })
     }
 
-    const postInterviewee = () => {
+    const postInterviewee = () => { 
         // setLoading(true);
         axios({
             url: postIntervieweePresignedUrl,
-            method: 'POST',
+            method: 'POST', // GET 
             headers: {
                 Authroization: 'Token knflskdnfan48729385y34u53'
             },
             data: {
-                user_id: `${1}`,
+                // user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
                 question_n: ``,
-                field_id: `${checkedId}`,
-                interview_date: ``
+                field_id: `${checkedId}`, 
             }
-        }).then((response) => {
-            
+        }).then((response) => { // 대안 -> 녹화 영상 저장할 s3는 public으로  
+            setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 필요 
+        }).catch((error) => {
+            console.log(error);
         })
     }
+
+    // const postInterviewee = () => { // POST 아니고 S3에 바로 저장 
+    //     axios({
+    //         url: postIntervieweePresignedUrl,
+    //         method: 'POST',
+    //         headers: {
+    //             Authroization: 'Token knflskdnfan48729385y34u53'
+    //         },
+    //         data: {
+    //             user_id: `${window.localStorage.getItem(`user_id`)}`, // user_id는 string으로 -> 유선이한테 물어보기
+    //             question_n: ``,
+    //             field_id: `${checkedId}`, // url에 있는데 왜 body에 또 넣어?
+    //             interview_date: ``
+
+    //         }
+    //     }).then((response) => { // 녹화 영상 저장할 s3는 public으로 바꿔줘 
+    //         setIntervieweePresignedUrl(response.data.interview_url); // 확인하기 , 어디에 저장해야하는지 주소 내놔
+    //     })
+    // }
 
     return (
         <div className="PreInterviewApp">
@@ -188,6 +230,7 @@ const PreInterview = () => {
                     stopCaptureHandler={stopCaptureHandler}
                     downloadHandler={downloadHandler}
                     getInterviewerHandler={getInterviewer}
+                    postIntervieweeHandler={postInterviewee}
                     video={video}
                     />
                 }
