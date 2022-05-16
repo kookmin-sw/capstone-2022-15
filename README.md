@@ -110,8 +110,8 @@ Role: 프론트엔드
 Student ID: 20181597
 E-mail: jimin981005@kookmin.ac.kr
 Role: 프론트엔드 리더, GIT 관리
-    • UI/UX 디자인, 웹 클라이언트 개발
-    • 클라이언트 서버 구축
+    • UI/UX 디자인
+    • 웹 클라이언트 개발
     • GIT 코드 형상 관리
 ```
 
