@@ -71,6 +71,13 @@
 }
 .list_data {
     line-height: 40px;
+    text-decoration-line: none;
+    font-size: 1vw;
+    text-align: center;
+    color: #000000;
+}
+.list_data:hover {
+    color: #5B7EFB;
 }
 
 .acenter {
