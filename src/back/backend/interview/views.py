@@ -4,18 +4,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 
-from rest_framework.authtoken.models import Token
-from django.contrib.auth import get_user_model
-
-from .serializers import InterviewSerializer
 from .models import Interview
 
 # s3
 import boto3
 from .file_manage import select
 s3 = boto3.client('s3')
-
-User = get_user_model()
 
 # interview preactice
 class PracticeView(APIView):
@@ -41,7 +35,7 @@ class PracticeView(APIView):
         # 토큰 / 유저 정보 / 인터뷰 번호 / 질문 번호 / 인터뷰 날짜 / 분야 / 면접자 영상 저장 url
         interview.author = request.user
         user_id = request.user
-        interview_id = 1
+        interview_id = 2
         question_n = request.data['question_n']
         field_id = request.data['field_id']
 
