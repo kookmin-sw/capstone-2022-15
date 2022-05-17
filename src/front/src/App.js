@@ -7,8 +7,8 @@ import Login from './pages/LoginPage/Login';
 import Signup from './pages/LoginPage/Signup';
 import Feedback1 from './pages/MyPage/Feedback';
 import HomeAfterLogin from './pages/HomePage/HomeAfterLogin';
-//import Feedback2 from './pages/MyPage/Feedback2';
-//import Feedback3 from './pages/MyPage/Feedback3';
+import Feedback2 from './pages/MyPage/Feedback2';
+import Feedback3 from './pages/MyPage/Feedback3';
 //import Feedback4 from './pages/MyPage/Feedback4';
 //import Feedback5 from './pages/MyPage/Feedback5';
 function App() {
@@ -21,7 +21,10 @@ function App() {
       <Route path="/mypage" element={<Mypage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup/>} />
-      <Route path="/feedback" element={<Feedback1 />} />
+      <Route path="/feedback1/*" element={<Feedback1 />} />
+      <Route path="/feedback2/*" element={<Feedback2 />} />
+      <Route path="/feedback3/*" element={<Feedback3 />} />
+
 
     </Routes>
   );

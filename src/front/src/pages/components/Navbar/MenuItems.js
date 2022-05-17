@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
         title: '(임시)Feedback',
-        url: "/feedback",
+        url: "/feedback1/",
         cName: 'nav-links'
     },
     //cName은 class name, cName이 'nav-links-mobile'인 것은 모바일에만 보이게
