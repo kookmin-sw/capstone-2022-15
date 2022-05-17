@@ -82,25 +82,25 @@ class LoginView(APIView):
             data={"isLogin": True, "user_id": user_id, "token":token.key},
         )
 
+
 class MypageView(APIView):
     permission_class=[
         permissions.IsAuthenticated
     ]
 
     def get(self, request, *args, **kwargs):
-
         query = Interview.objects.filter(author_id=request.user)
         query_data = serializers.serialize('json', query)
         return HttpResponse(query_data, content_type="text/json-comment-filtered")
+
 
 class FeedbackView(APIView):
     permission_class=[
         permissions.IsAuthenticated
     ]
 
-    def post(self, request, *args, **kwargs):
-        return Response(
-            status=status.HTTP_200_OK,
-            data={"success":True}
-        )
+    def get(self, request, interview_id, question_n, *args, **kwargs):
+        query = Interview.objects.filter(author_id=request.user)
+        query_data = serializers.serialize('json', query)
+        return HttpResponse(query_data, content_type='text/json-comment-filtered')
 
