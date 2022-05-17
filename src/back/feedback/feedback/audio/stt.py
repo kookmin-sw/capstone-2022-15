@@ -1,4 +1,3 @@
-import boto3
 import requests
 from feedback.utils.io import download_audio_from_s3
 

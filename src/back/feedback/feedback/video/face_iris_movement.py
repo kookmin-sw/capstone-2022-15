@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import mediapipe as mp
+from feedback.utils.io import download_video_from_s3
 
 
 class IrisMovement:
@@ -11,8 +12,9 @@ class IrisMovement:
         self.result_iris = []
         self.duration = 0
 
-    def eval(self, s3_url) -> np.array:
-        cap = cv2.VideoCapture(s3_url)
+    def eval(self, s3, bucket, key) -> np.array:
+        path = download_video_from_s3(s3, bucket, key)
+        cap = cv2.VideoCapture(path)
         print('read url')
         print(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         fps = int(cap.get(cv2.CAP_PROP_FPS))
