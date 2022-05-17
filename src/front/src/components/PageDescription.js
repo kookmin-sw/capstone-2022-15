@@ -5,7 +5,21 @@ export class PageDescription extends Component {
         return (
             <div className="description-layout">
                 <span className="description-title">
-                    화상 기기 설정 및 면접 종류 선택
+                    {/* <div style={{color:'rgba(91, 126, 251, 0.3)'}}>   
+                    안내 사항 •
+                    </div>
+                    <div style={{color:'rgb(81, 119, 255)'}}>
+                    &nbsp;연습 방법 
+                    </div>
+                    <div style={{color:'rgba(91, 126, 251, 0.3)'}}>
+                    &nbsp;• 면접 환경 세팅하기
+                    </div> */}
+                    <div style={{color:'rgba(91, 126, 251, 0.3)'}}>   
+                    안내 사항&nbsp;• 연습 방법 
+                    </div>
+                    <div style={{color:'rgb(81, 119, 255)'}}>
+                    &nbsp;• 면접 환경 세팅하기
+                    </div>
                 </span>
                 <span className="description-content">
                     IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
