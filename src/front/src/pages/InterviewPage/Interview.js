@@ -2,16 +2,18 @@ import './Interview.css';
 
 import React, {useState, useEffect} from "react"; 
 // import axios from 'axios';
-import SyncLoader from "react-spinners/SyncLoader";
+import BarLoader from "react-spinners/BarLoader";
 
 const override = {
-  margin: 'auto',
-  borderColor: 'red',
-  justifyContent: 'center',
+//   margin: '200px 0 0 0',
+//   margin: 'auto 0',
+//   justifyContent: 'center',
   display: 'flex',
   alignItems: 'center',
-  height: '98vh',
-  width: '100%'
+  height: '100%',
+  width: '100%',
+//   color: 'black'
+//   margin: '2px'
 }
 
 function Interview({
@@ -54,7 +56,7 @@ function Interview({
                     {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
                         <source src={video}/>
                     </video>}
-                    {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
+                    {video==='' && <BarLoader color={'rgb(81, 119, 255)'} loading={true} css={override} height={8} speedMultiplier={0.7} />}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
@@ -101,7 +103,7 @@ function Interview({
                     </button>}
                 </div>
             </div>}
-            {loading && <SyncLoader color={'blue'} loading={loading} css={override} size={30} />}
+            {loading && <BarLoader color={'rgb(81, 119, 255)'} loading={loading} css={override} height={8} speedMultiplier={0.7} />}
         </>
     );
 }

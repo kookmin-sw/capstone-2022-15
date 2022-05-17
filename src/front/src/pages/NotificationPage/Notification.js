@@ -13,12 +13,17 @@ const PreInterview = () => {
             <Navbar/>
             <div className="description-layout">
                 <span className="description-title">
-                    면접 연습 전 안내 사항
+                    <div style={{color:'rgb(81, 119, 255)'}}>   
+                    안내 사항&nbsp;
+                    </div>
+                    <div style={{color:'rgba(91, 126, 251, 0.3)'}}>
+                    • 연습 방법 • 면접 환경 세팅하기
+                    </div>
                 </span>
                 <span className="description-content">
-                    면접 연습을 시작하기 전에 아래의 안내 사항을 잘 숙지해주세요. <br></br>
-                    그 후 다음 버튼을 눌러 면접 환경을 세팅한 뒤 면접 연습을 진행해주세요.<br></br>
-                    Good Luck :) 
+                    님, 안녕하세요.<br></br>
+                    면접 시간은 총 3분입니다.<br></br>
+                    면접 연습을 시작하기 전에 아래의 안내 사항을 잘 숙지해주세요. 
                 </span>
             </div>
             <div className="notification-layout1">
