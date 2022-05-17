@@ -10,4 +10,11 @@ django
     (vir_cap)capstone-2022-15/src/back/backend> python3 manage.py runserver
 
 
-login authen
+sqlit3 db
+
+    python3 manage.py dbshell
+
+sqlite3 table column name
+    
+    pragma table_info({table_name});
+

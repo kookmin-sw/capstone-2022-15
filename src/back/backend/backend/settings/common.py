@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # local apps
     "interview",
     "accounts",
+    "mypage"
 ]
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
