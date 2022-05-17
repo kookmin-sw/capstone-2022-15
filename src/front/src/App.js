@@ -11,11 +11,14 @@ import Feedback2 from './pages/MyPage/Feedback2';
 import Feedback3 from './pages/MyPage/Feedback3';
 //import Feedback4 from './pages/MyPage/Feedback4';
 //import Feedback5 from './pages/MyPage/Feedback5';
+import Notification from './pages/NotificationPage/Notification';
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/homeafterlogin" element={<HomeAfterLogin />} />
+      <Route path="/notification" element={<Notification />} />
       <Route path="/preinterview" element={<PreInterview />} />
       <Route path="/interview" element={<Interview />} />
       <Route path="/mypage" element={<Mypage />} />
