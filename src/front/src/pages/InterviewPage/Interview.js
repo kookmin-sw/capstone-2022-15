@@ -2,7 +2,7 @@ import './Interview.css';
 
 import React, {useState, useEffect} from "react"; 
 // import axios from 'axios';
-import SyncLoader from "react-spinners/SyncLoader";
+import BarLoader from "react-spinners/BarLoader";
 
 const override = {
   margin: 'auto',
@@ -10,7 +10,7 @@ const override = {
   justifyContent: 'center',
   display: 'flex',
   alignItems: 'center',
-  height: '98vh',
+//   height: '98vh',
   width: '100%'
 }
 
@@ -54,7 +54,7 @@ function Interview({
                     {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
                         <source src={video}/>
                     </video>}
-                    {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
+                    {video==='' && <BarLoader color={'blue'} loading={true} css={override} size={30} />}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
@@ -101,7 +101,7 @@ function Interview({
                     </button>}
                 </div>
             </div>}
-            {loading && <SyncLoader color={'blue'} loading={loading} css={override} size={30} />}
+            {loading && <BarLoader color={'blue'} loading={loading} css={override} size={30} />}
         </>
     );
 }
