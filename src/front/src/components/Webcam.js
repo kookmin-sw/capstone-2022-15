@@ -11,7 +11,7 @@ const WebcamStreamCapture = ({
 }) => {  
     return (
       <>
-        <Webcam audio={true} ref={webcamRef}/>
+        <Webcam audio={true} ref={webcamRef} muted={true} mirrored={true}/>
         {capturing ? (
           stopCaptureHandler && <button onClick={stopCaptureHandler}>Stop Capture</button>
         ) : (

@@ -11,7 +11,7 @@ export const Authentication = React.createContext(null);
 import {ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
-const Feedback = () => {
+const Feedback2 = () => {
   const isTest = false;
     let getFeedbackpage = isTest
     ? `http://localhost:8000/accounts/feedback` // checkedId -> ques
@@ -73,7 +73,7 @@ const Feedback = () => {
 
       return(
         <div>
-          <div className='Feedback-Q'> Q1 </div>
+          <div className='Feedback-Q'> Q2 </div>
           <div className='Feedback-txt'style={{top:'5.2vh'}}>
                 🔹 Video Check
           </div>
@@ -207,4 +207,4 @@ class MenuBox2 extends Component{
     );
   }
 }
-export default Feedback;
+export default Feedback2;

@@ -13,13 +13,13 @@ const Signup = () => {
   const [user_id, setuser_id] = useState('');
   const [password1, setPassword1] = useState('');
   const [user_pw, setuser_pw] = useState('');
-  // const [user_interest, setuser_interest] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    localStorage.clear();
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/');
+      window.location.replace('https://api.kmuin4u.com/login');
     } else {
       setLoading(false);
     }
@@ -37,37 +37,35 @@ const Signup = () => {
   const onChangePw2 = (e) => {
     setuser_pw(e.target.value)
   }
-  // const onChangeuser_interest = (e) => {
-  //   setuser_interest(e.target.value)
-  // }
   const onSubmit = e => {
     e.preventDefault();
 
     const user = {
       user_name: user_name,
       user_id: user_id,
-      password1: password1,
-      user_pw: user_pw,
-      // user_interest: user_interest
+      password : password1,
+//      user_pw: user_pw,
+       user_interest: "user_interest"
     };
     if(password1 !== user_pw) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다')
       return false
     }
     //'/api/v1/mall/auth/register/'
-    Axios.post('/accounts/join', user)
+
+    Axios.post('https://api.kmuin4u.com/accounts/join', user)
       .then(res => {
-        if (res.data.key) {
+          console.log(res.data)
+        if (res.data.token) {
           localStorage.clear()
-          localStorage.setItem('token', res.data.key)
-          // 사용하려면 App.js에서 /로 라우팅해야 한다
-          window.location.replace('/')
+          localStorage.setItem('token', res.data.token)
+          window.location.replace('/login')
+          setErrors(false)
         } else {
-          setName('')
-          setuser_id('')
-          setPassword1('')
-          setuser_pw('')
-          // setuser_interest('')
+          setName('아')
+          setuser_id('아')
+          setPassword1('abcABC123!@#')
+          setuser_pw('abcABC123')
           localStorage.clear()
           setErrors(true)
         }
@@ -141,18 +139,6 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              {/* <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
-                <SelectBox options={OPTIONS} defaultValue="0"/>
-              </label>  */}
-              {/* <input
-                user_user_interest='user_interest'
-                type='user_interest'
-                value={user_interest}
-                onChange={onChangeuser_interest}
-                required
-              />{' '} */}
-              
-              {/* <br /><br /> */}
               <br />
               <input type='submit' className='BT-Join' value='회원가입' />
               <br /><br /><br />
@@ -170,12 +156,6 @@ const Signup = () => {
     </div>
   );
 };
-
-const OPTIONS = [
-  { value: "0", name: "선택없음" },
-	{ value: "1", name: "Front-end" },
-  { value: "1", name: "Back-end" },
-];
 
 
 const SelectBox = (props) => {

@@ -6,6 +6,7 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
+
 # 경로 추가
 """
 STATICFILES_DIRS = [
@@ -40,11 +41,9 @@ INSTALLED_APPS = [
     # third apps
     # django-rest-auth
     "rest_framework",
-    #"rest_framework_simplejwt.token_blacklist",
     "rest_framework.authtoken",
     "dj_rest_auth",
     "dj_rest_auth.registration",
-    "knox",
     # django-allauth
     "allauth",
     "allauth.account",
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     # local apps
     "interview",
     "accounts",
+    "mypage"
 ]
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -82,6 +82,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
@@ -145,27 +146,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # 로그인
 REST_FRAMEWORK = {
-# 유효한 유저만 접근
+    # 유효한 유저만 접근
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        #"rest_framework.permissions.AllowAny",
-        "rest_framework.permissions.IsAuthenticated", # 인증사 사용자
-        #"rest_framework.permissions.IsAdminUser", # 관리자
+        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated", # 인증된 사용자
 
 
     ),
 
 }
-
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
 # 로그인 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = "/"

@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
 
 
 def main():
@@ -16,10 +17,9 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
-    try:
+    try: # react templates
         if sys.argv[2] == "react":
-            project_root = os.getcwd()
+            project_root = Path(__file__).resolve().parent.parent.parent
             os.chdir(os.path.join(project_root, "front"))
             os.system("npm run build")
             os.chdir(project_root)
