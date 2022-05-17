@@ -5,8 +5,12 @@ from rest_framework import permissions, authentication
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import HttpResponse
 from .serializers import CreateUserSerializer, LoginUserSerializer
 from rest_framework.authtoken.models import Token
+
+from interview.models import Interview
+from django.core import serializers
 
 User = get_user_model()
 
@@ -77,3 +81,26 @@ class LoginView(APIView):
             status=status.HTTP_200_OK,
             data={"isLogin": True, "user_id": user_id, "token":token.key},
         )
+
+class MypageView(APIView):
+    permission_class=[
+        permissions.IsAuthenticated
+    ]
+
+    def get(self, request, *args, **kwargs):
+
+        query = Interview.objects.filter(author_id=request.user)
+        query_data = serializers.serialize('json', query)
+        return HttpResponse(query_data, content_type="text/json-comment-filtered")
+
+class FeedbackView(APIView):
+    permission_class=[
+        permissions.IsAuthenticated
+    ]
+
+    def post(self, request, *args, **kwargs):
+        return Response(
+            status=status.HTTP_200_OK,
+            data={"success":True}
+        )
+
