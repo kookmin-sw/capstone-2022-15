@@ -1,0 +1,111 @@
+.NotificationApp {
+    /* position: relative; */
+    width: 100%;
+    height: auto;
+    left: 0vw;
+}
+
+/* --------------- notice 1 ---------------- */
+.notification-layout1 {
+    position: relative;
+    /* width: 100%; */
+    height: 880px;
+    margin-top: 20px;
+    margin-right: 80px;
+}
+
+.notice-1 {
+    /* height: 80px; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.notification-title {
+    position: relative;
+    /* width: 200px; */
+    height: 80px;
+    padding-left: 80px;
+    
+    font-family: Montserrat;
+    /* font-weight: 500; */
+    font-size: 18px;
+    line-height: 27px;
+    /* color: rgb(81, 119, 255); */
+
+    display: flex;
+    align-items: center;
+}
+
+.notification-content {
+    margin-left: 80px;
+    margin-top: 10px;
+    height: 580px;
+}
+
+.notice1-cam-show-example-layout {
+    position: relative;
+    /* width: 100%; */
+    height: 480px;
+    
+    display: flex;
+    background-color: #000000
+}
+
+.notice1-cam-show-example {
+    position: relative;
+    width: 855px;
+    height: 480px;
+    margin: auto;
+
+    display: flex;
+    background-color: rgb(133, 133, 133)
+}
+
+
+.cam-show-layout {
+    position: relative;
+    /* width: 100%; */
+    height: 480px;
+    margin-left: 80px;
+    margin-top: 10px;
+    /* margin-right: 80px; */
+    /* padding-right: 80px; */
+    
+    display: flex;
+    background-color: #000000
+}
+
+/*-------------------- next button --------------------*/
+.next-button-layout {
+    height: 120px;
+}
+
+.next-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+    position: relative;
+    width: 200px;
+    height: 60px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    /* line-height: 37px; */
+    text-decoration: none;
+
+    background: rgba(91, 126, 251, 0.5);
+    border-radius: 35px;
+    border: none;
+    /* border-color: #A5A5A5; */
+    /* border-style: hidden; */
+
+    cursor: pointer;
+}

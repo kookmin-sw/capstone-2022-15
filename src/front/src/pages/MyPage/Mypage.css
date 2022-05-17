@@ -93,7 +93,7 @@
 .mypage_footer_top2{
     z-index: 7;
     position: absolute;
-    top: 335vh;
+    top: 385vh;
 }
 .Menu-txt22{
     position: absolute;
@@ -140,6 +140,13 @@
     font-size: 1.2vw;
     font-weight: 600;
 }
+.Feedback-Q{
+    position: relative;
+    left: 2.5vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color:#5B7EFB;
+}
 
 .Chart{
     position: relative;
@@ -155,4 +162,10 @@
     /* border: 0.1vw solid #5B7EFB; */
     background-color: #F0F2F4;
     text-align: justify;
+}
+.ChartBackground{
+    position: absolute;
+    left: 20.3vw;
+    top: 4.3vh;
+
 }

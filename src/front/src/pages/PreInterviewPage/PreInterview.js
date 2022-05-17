@@ -114,7 +114,7 @@ const PreInterview = () => {
                     : `https://api.kmuin4u.com/interview/practice/save`;
     
     const getInterviewer = () => { 
-        console.log('called')
+        // console.log('called')
         axios({
             url: getInterviewerPreSignedUrl, // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
             method: 'GET',
@@ -155,7 +155,10 @@ const PreInterview = () => {
                     <div className="cam-setting-title">
                         • WEBCAM 연결 
                     </div>
-                </div>
+                    {/* <button className="notification" onClick={() => isOpenModal(true)}>
+                        i
+                    </button> */}
+                 </div>
                 <div className="cam-show-layout">
                     <div className="cam-show">
                         {<WebcamStreamCapture
