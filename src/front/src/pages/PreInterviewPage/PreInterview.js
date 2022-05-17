@@ -158,7 +158,7 @@ const PreInterview = () => {
                     {/* <button className="notification" onClick={() => isOpenModal(true)}>
                         i
                     </button> */}
-                </div>
+                 </div>
                 <div className="cam-show-layout">
                     <div className="cam-show">
                         {<WebcamStreamCapture
