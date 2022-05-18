@@ -12,33 +12,31 @@ import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
+
 const Feedback = () => {
   const isTest = false;
+  const interview_id = 1;
+  const question_n =0;
     let getFeedbackpage = isTest
     ? `http://localhost:8000/accounts/feedback` // checkedId -> ques
-    : `https://api.kmuin4u.com/accounts/feedback`; 
+    : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
 
   axios({
-    url: getFeedbackpage, 
+    url: getFeedbackpage,
     method: 'GET',
     headers: {
-      Authorization: 'Token aiefaengakejnf;aenf;erag;hwenrg;nq'
+      //Authorization: 'Token aiefaengakejnf;aenf;erag;hwenrg;nq'
+      'Authorization':'Token ' + window.localStorage.getItem('token')
+
     },
-    data: {
-      //interview_id: `${interviewId}`, 
-    //question_n: `${questionN}`,
-      interview_id: `1`, 
-      question_n: `1`,
-    }
   }).then(response => {
     console.log("Mypage Get Success")
-      getInterview_id(response.data.interview_id)
-      getQuestion_n(response.data.question_n)
-      getIris(response.data.iris_movement)
-      getFaceMovement(response.data.face_movement)
-      getVolumnInterview(response.data.volumn_interview)
-      getSttInterview(response.data.stt_interview)
-      getVedioUrl(response.data.interviewee_url);
+    console.log(response.data.volume_interview)
+      //getIris(response.data.iris_movement)
+     // getFaceMovement(response.data.face_movement)
+      getVolumeInterview(response.data.volume_interview)
+     // getSttInterview(response.data.stt_interview)
+     // getVedioUrl(response.data.interviewee_url);
   })
   .catch(error => {
       console.log(error)
@@ -50,10 +48,10 @@ const Feedback = () => {
     <div>
         <Navbar/>
         <Bar2/>
-        <MenuBox2/> 
+        <MenuBox2/>
         <div className='mypage_footer_top2'>
             <Footer/>
-        </div> 
+        </div>
     </div>
   );
 };
@@ -61,7 +59,7 @@ const Feedback = () => {
 
   class MainFeedback extends Component{
     render(){
-      const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo" 
+      const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo"
       //const video = getVedioUrl
       let chart_data1 = [
         { x: 100, y: 200, z: 200 },
@@ -111,42 +109,42 @@ const Feedback = () => {
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
-                <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
-              {/*{video!=='' && <video width="80%" height="80%" autoPlay={true}> 
+                <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              {/*{video!=='' && <video width="80%" height="80%" autoPlay={true}>
                         <source src={video}/>
                   </video>}
                     {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
                  */}
           </div>
-  
-  
+
+
   {/*나의 답변*/}
           <div className='Feedback-txt' style={{top:'17vh'}}>
                 🔹 나의 답변
             <div className="Stt">
-             {/* 여기에 STT 내용 <br/>
-              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>*/}
-              <getSttInterview/>
+              여기에 STT 내용 <br/>
+              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
+              {/*<getSttInterview/>*/}
             </div>
           </div>
-          
-  
+
+
   {/*시선 처리 차트*/}
           <div className='Feedback-txt'style={{top:'32vh'}}>
                 🔹 시선 처리
               <div className='ChartBackground'>
                 <img src={img_interviewer}/>
               </div>
-              
+
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
                 <Scatter_chart scatter_data= {chart_data1}  />
-                {/*<Scatter_chart scatter_data= {getIris}  /> */}
+                {/*<Scatter_chart scatter_data= {response.data.시선처리이름}  /> */}
               </div>
-              
+
           </div>
-          
-  
-  
+
+
+
   {/*머리 움직임 차트*/}
           <div className='Feedback-txt' style={{top:'100vh'}}>
                 🔹 머리 움직임
@@ -155,23 +153,23 @@ const Feedback = () => {
                 {/*<Line_chart line_data= {getFaceMovement}  /> */}
               </div>
           </div>
-  
-  
+
+
   {/*목소리 크기 차트*/}
           <div className='Feedback-txt' style={{top:'168vh'}}>
                 🔹 목소리 크기
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
                 {/*<Line_chart line_data= {chart_data2}/>*/}
-                <Line_chart line_data= {getVolumnInterview}  /> 
+                <Line_chart line_data= {getVolumnInterview}  />
               </div>
-          </div>  
-        </div>  
+          </div>
+        </div>
       );
     }
   }
 
 
-  
+
 {/*********************  Scatter Chart - 시선처리 차트 ********************/}
 const Scatter_chart = ({
   scatter_data
@@ -206,8 +204,8 @@ const Line_chart = ({
   return (
       <ResponsiveContainer width="100%" height="100%">
          <LineChart
-            width={500}
-            height={300}
+            width={'500px'}
+            height={'300px'}
             data={line_data}
             margin={{
                       top: 5,
@@ -217,17 +215,17 @@ const Line_chart = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" /><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="x" /><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
-              dataKey="time"
+              dataKey="y"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
             <Line type="monotone" dataKey="time" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
-    
+
   );
 }
 
@@ -236,7 +234,7 @@ const Line_chart = ({
 
 class Bar2 extends Component{
   render(){
-    
+
     return(
       <div className='Bar'>
           My Page - 피드백
@@ -257,24 +255,24 @@ class MenuBox2 extends Component{
           </div>
 
           <div onClick={()=>console.log("질문 1 Feedback")}>
-              <Link to="/feedback1/*" className='Menu-txt3' style={{top:'14vh'}}>
+              <Link to="/feedback1/" className='Menu-txt3' style={{top:'14vh'}}>
               &nbsp;&nbsp;질문 1
               </Link>
           </div>
 
           <div onClick={()=>console.log("질문 2 Feedback")}>
-              <Link to="/feedback2/*" className='Menu-txt3' style={{top:'20vh'}}>
+              <Link to="/feedback2/" className='Menu-txt3' style={{top:'20vh'}}>
               &nbsp;&nbsp;질문 2
               </Link>
           </div>
 
           <div onClick={()=>console.log("질문 3 Feedback") }>
-              <Link to="/feedback3/*" className='Menu-txt3' style={{top:'26vh'}}>
+              <Link to="/feedback3/" className='Menu-txt3' style={{top:'26vh'}}>
               &nbsp;&nbsp;질문 3
               </Link>
           </div>
 
-      
+
           <div className='Main-box'>
             <MainFeedback/>
         </div>

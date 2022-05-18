@@ -131,5 +131,9 @@ class FeedbackView(APIView):
             X, y = np.load(f).values()
         print(X, y)
         return Response(status=status.HTTP_200_OK, data={"success":True,
-                                                         "time":X, "x":X, "y":y})
+                                                         "volume_interview":{
+                                                             "time": X, "x": X, "y": y
+                                                         }
+                                                         })
+
 
