@@ -62,9 +62,9 @@ function Interview({
                 <div className="button-section">
                     {/* state true : 면접 시작 button */}
                     {buttonState 
-                    && <button className="interview-button" onClick={async () => {
-                        await setButtonState(false)
-                        await startCaptureHandler() // 녹화시작
+                    && <button className="interview-button" onClick={() => {
+                        setButtonState(false)
+                        startCaptureHandler() // 녹화시작
                         getInterviewerHandler()
                     }}>
                         면접 시작
@@ -84,7 +84,7 @@ function Interview({
                     {!buttonState 
                     && questionNumberState < 6
                     && questionNumberState % 2 === 0
-                    && <button className="done-button" onClick={async () => {
+                    && <button className="done-button" onClick={() => {
                         setQuestionNumberState(questionNumberState + 1)
                         getInterviewerHandler()
                         downloadHandler()
