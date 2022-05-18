@@ -24,7 +24,6 @@ class PracticeView(APIView):
         bucket = 'virtual-interview-video'
         question_id, key = select(field_id) # select video randomly
         interviewer_url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
-        print(interviewer_url)
 
         return Response(status=status.HTTP_200_OK, data={"success":True, 'interviewer_url':interviewer_url})
 
