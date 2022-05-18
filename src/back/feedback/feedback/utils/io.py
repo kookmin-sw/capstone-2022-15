@@ -15,7 +15,8 @@ def download_audio_from_s3(s3, bucket, object):
     return "/tmp/stt.wav"
 
 def download_video_from_s3(s3, bucket, object):
-    s3.download_file(bucket, object, "/tmp/feedback.mp4")
+    with open("/tmp/feedback.mp4", 'wb') as f:
+        s3.download_fileobj(bucket, object, f)
     return "/tmp/feedback.mp4"
 
 
