@@ -29,7 +29,7 @@ const Feedback = () => {
     //question_n: `${questionN}`,
       interview_id: `1`, 
       question_n: `1`,
-  }
+    }
   }).then(response => {
     console.log("Mypage Get Success")
       getInterview_id(response.data.interview_id)
@@ -217,14 +217,14 @@ const Line_chart = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" /><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="time" /><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
-              dataKey="pv"
+              dataKey="time"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="time" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
     
