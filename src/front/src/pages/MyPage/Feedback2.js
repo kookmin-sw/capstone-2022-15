@@ -28,8 +28,8 @@ const Feedback2 = () => {
       //interview_id: `${interviewId}`, 
     //question_n: `${questionN}`,
       interview_id: `1`, 
-      question_n: `2`,
-  }
+      question_n: `1`,
+    }
   }).then(response => {
     console.log("Mypage Get Success")
       getInterview_id(response.data.interview_id)
@@ -106,7 +106,7 @@ const Feedback2 = () => {
 
       return(
         <div>
-          <div className='Feedback-Q'> Q{} </div>
+          <div className='Feedback-Q'> Q2 </div>
           <div className='Feedback-txt'style={{top:'5.2vh'}}>
                 🔹 Video Check
           </div>
@@ -217,14 +217,14 @@ const Line_chart = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" /><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="time" /><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
-              dataKey="pv"
+              dataKey="time"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="time" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
     
