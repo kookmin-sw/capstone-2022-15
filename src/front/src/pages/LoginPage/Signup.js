@@ -13,12 +13,10 @@ const Signup = () => {
   const [user_id, setuser_id] = useState('');
   const [password1, setPassword1] = useState('');
   const [user_pw, setuser_pw] = useState('');
-  // const [user_interest, setuser_interest] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //setLoading(false);
     localStorage.clear();
     if (localStorage.getItem('token') !== null) {
       window.location.replace('https://api.kmuin4u.com/login');
@@ -39,9 +37,6 @@ const Signup = () => {
   const onChangePw2 = (e) => {
     setuser_pw(e.target.value)
   }
-  // const onChangeuser_interest = (e) => {
-  //   setuser_interest(e.target.value)
-  // }
   const onSubmit = e => {
     e.preventDefault();
 
@@ -64,7 +59,6 @@ const Signup = () => {
         if (res.data.token) {
           localStorage.clear()
           localStorage.setItem('token', res.data.token)
-          // 사용하려면 App.js에서 /로 라우팅해야 한다
           window.location.replace('/login')
           setErrors(false)
         } else {
@@ -72,7 +66,6 @@ const Signup = () => {
           setuser_id('아')
           setPassword1('abcABC123!@#')
           setuser_pw('abcABC123')
-          // setuser_interest('')
           localStorage.clear()
           setErrors(true)
         }
@@ -146,18 +139,6 @@ const Signup = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <br />
-              {/* <label htmlFor='user_interest'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심분야&nbsp;
-                <SelectBox options={OPTIONS} defaultValue="0"/>
-              </label>  */}
-              {/* <input
-                user_user_interest='user_interest'
-                type='user_interest'
-                value={user_interest}
-                onChange={onChangeuser_interest}
-                required
-              />{' '} */}
-              
-              {/* <br /><br /> */}
               <br />
               <input type='submit' className='BT-Join' value='회원가입' />
               <br /><br /><br />
@@ -175,12 +156,6 @@ const Signup = () => {
     </div>
   );
 };
-
-const OPTIONS = [
-  { value: "0", name: "선택없음" },
-	{ value: "1", name: "Front-end" },
-  { value: "1", name: "Back-end" },
-];
 
 
 const SelectBox = (props) => {

@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 import mediapipe as mp
-import matplotlib.pyplot as plt
 
 class FaceMovement:
     def __init__(self):
@@ -9,6 +8,7 @@ class FaceMovement:
         self.mp_drawing_styles = mp.solutions.drawing_styles
         self.mp_face_mesh = mp.solutions.face_mesh
         self.result_distance = []
+        self.duration = 0
 
     def eval(self, s3_url) -> np.array:
         cap = cv2.VideoCapture(s3_url)
@@ -16,6 +16,7 @@ class FaceMovement:
         print(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         fps = int(cap.get(cv2.CAP_PROP_FPS))
         frame_num = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        self.duration = frame_num / fps
         self.result_distance = []
         previous = np.array([0,0,0])
         with self.mp_face_mesh.FaceMesh(
@@ -29,7 +30,8 @@ class FaceMovement:
 
                 image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
                 results = face_mesh.process(image)
-                print(cnt)
+                if cnt % 100 == 0:
+                    print(cnt)
                 if results.multi_face_landmarks:
                     for face_landmarks in results.multi_face_landmarks:
                         landmark = face_landmarks.landmark[5]
@@ -39,10 +41,8 @@ class FaceMovement:
                         previous = copy.deepcopy(current)
 
         cap.release()
-        print(self.result_distance)
 
-    def write(self, path='/tmp/face_movemnt.png'):
-        plt.plot(self.result_distance[1:])
-#        plt.ylim([0,1])
-        plt.savefig(path)
+    def write(self, path='/tmp/face_movement.npz'):
+        time = np.linspace(0,self.duration, len(self.result_distance[1:]))
+        np.savez(path, time=time, data=self.result_distance[1:])
         return path
