@@ -24,10 +24,17 @@ const Feedback2 = () => {
     headers: {
       Authorization: 'Token aiefaengakejnf;aenf;erag;hwenrg;nq'
     },
+    data: {
+      //interview_id: `${interviewId}`, 
+    //question_n: `${questionN}`,
+      interview_id: `1`, 
+      question_n: `2`,
+  }
   }).then(response => {
     console.log("Mypage Get Success")
       getInterview_id(response.data.interview_id)
-      // getQuestion_n(response.data.question_n)
+      getQuestion_n(response.data.question_n)
+      getIris(response.data.iris_movement)
       getFaceMovement(response.data.face_movement)
       getVolumnInterview(response.data.volumn_interview)
       getSttInterview(response.data.stt_interview)
@@ -99,7 +106,7 @@ const Feedback2 = () => {
 
       return(
         <div>
-          <div className='Feedback-Q'> Q2 </div>
+          <div className='Feedback-Q'> Q{} </div>
           <div className='Feedback-txt'style={{top:'5.2vh'}}>
                 🔹 Video Check
           </div>
@@ -117,9 +124,9 @@ const Feedback2 = () => {
           <div className='Feedback-txt' style={{top:'17vh'}}>
                 🔹 나의 답변
             <div className="Stt">
-              여기에 STT 내용 <br/>
-              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
-              {/*<getSttInterview/>*/}
+             {/* 여기에 STT 내용 <br/>
+              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>*/}
+              <getSttInterview/>
             </div>
           </div>
           
@@ -133,7 +140,7 @@ const Feedback2 = () => {
               
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
                 <Scatter_chart scatter_data= {chart_data1}  />
-                {/*<Scatter_chart scatter_data= {response.data.시선처리이름}  /> */}
+                {/*<Scatter_chart scatter_data= {getIris}  /> */}
               </div>
               
           </div>
@@ -154,8 +161,8 @@ const Feedback2 = () => {
           <div className='Feedback-txt' style={{top:'168vh'}}>
                 🔹 목소리 크기
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Line_chart line_data= {chart_data2}/>
-                {/*<Line_chart line_data= {getVolumnInterview}  /> */}
+                {/*<Line_chart line_data= {chart_data2}/>*/}
+                <Line_chart line_data= {getVolumnInterview}  /> 
               </div>
           </div>  
         </div>  
@@ -172,8 +179,8 @@ const Scatter_chart = ({
   return (
     <ResponsiveContainer width="100%" height="100%">
     <ScatterChart
-      width={500}
-      height={300}
+      width={'500px'}
+      height={'300px'}
       margin={{
           top: 5,
           right: 30,
