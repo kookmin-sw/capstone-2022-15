@@ -1,3 +1,5 @@
+import io
+
 from django.contrib.auth import get_user_model, authenticate, login
 
 from rest_framework import permissions, authentication
@@ -11,6 +13,12 @@ from rest_framework.authtoken.models import Token
 
 from interview.models import Interview
 from django.core import serializers
+import numpy as np
+
+# s3
+import boto3
+from .file_manage import select
+s3 = boto3.resource('s3')
 
 User = get_user_model()
 
@@ -100,7 +108,28 @@ class FeedbackView(APIView):
     ]
 
     def get(self, request, interview_id, question_n, *args, **kwargs):
-        query = Interview.objects.filter(author_id=request.user)
-        query_data = serializers.serialize('json', query)
-        return HttpResponse(query_data, content_type='text/json-comment-filtered')
+        # s3 presigned url
+        presigend_url = []
+        bucket = 'user-feedback-bucket'
+        """
+        key_list = select(request.user, interview_id, question_n)
+        for key in key_list:
+            url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket': bucket, 'Key': key})
+            presigend_url.append(url)
+        """
+        #user_id_rkawkaks/interview_id_1/result/volume_interview_0.npz
+        user = 'rkawkaks'
+        #interview_id = 1
+        #question_n = 0
+
+        key = f'user_id_{user}/interview_id_{interview_id}/result/volume_interview_{question_n}.npz'
+        obj = s3.Object(bucket, key)
+
+        body = obj.get()['Body'].read()
+        with io.BytesIO(body) as f:
+            f.seek(0)
+            X, y = np.load(f).values()
+        print(X, y)
+        return Response(status=status.HTTP_200_OK, data={"success":True,
+                                                         "time":X, "x":X, "y":y})
 
