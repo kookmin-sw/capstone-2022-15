@@ -48,9 +48,9 @@ class List extends Component {
             const GoFeedbackPage = '/accounts/feedback1/'+ el.interview_id;
             return(
               <div className='list_grid list_data' key={key}>
-                <div> <Link to={GoFeedbackPage}> {el.field_id} </Link> </div>
+                <div className='acenter list_data'> <Link to={GoFeedbackPage}> {el.field_id} </Link> </div>
                 <div> </div>
-                <div className='acenter'> {el.interview_start.slice(0, 10)} </div>
+                <div className='acenter list_data'> {el.interview_date.slice(0, 10)} </div>
               </div>
             )
           })
