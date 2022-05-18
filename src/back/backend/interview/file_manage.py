@@ -11,3 +11,9 @@ def select(field_id):
         key = 'job_interview/{}/00{}.mp4'.format(field_list[field_id], question_id)
 
     return question_id, key
+
+
+if __name__=="__main__":
+    print(select(0))
+    print(select(1))
+
