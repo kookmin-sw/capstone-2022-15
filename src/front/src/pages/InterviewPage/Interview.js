@@ -95,6 +95,7 @@ function Interview({
                     {/* state false : 면접 종료 button */}
                     {questionNumberState === 6
                     && <button className="interview-button" onClick={() => {
+                        downloadHandler() // check : last recorded video download
                         closeModalHandler()
                         setQuestionNumberState(0)
                         clickHandler()
