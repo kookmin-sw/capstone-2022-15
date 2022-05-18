@@ -10,6 +10,6 @@ class Interview(models.Model):
     #interview_id = models.AutoField(primary_key=True, help_text="인터뷰 번호")
     interview_id = models.IntegerField(help_text="인터뷰 번호")
     question_id = models.CharField(max_length=2, help_text="질문 번호")
-    interview_time = models.DateTimeField(auto_now_add=True, help_text="인터뷰 날짜")
+    interview_date = models.DateTimeField(auto_now_add=True, help_text="인터뷰 날짜")
     field_id = models.IntegerField(help_text="분야")
     interviewee_url = models.URLField(help_text="면접자 영상 저장 url")
