@@ -14,10 +14,12 @@ class IrisMovement:
 
     def eval(self, s3, bucket, key) -> np.array:
         path = download_video_from_s3(s3, bucket, key)
+        print(path)
         cap = cv2.VideoCapture(path)
-        print('read url')
+        print('read file')
         print(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         fps = int(cap.get(cv2.CAP_PROP_FPS))
+        print(fps)
         frame_num = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         self.duration = frame_num / fps
         self.result_iris = [[],[]]
