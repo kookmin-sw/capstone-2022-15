@@ -14,6 +14,10 @@ def download_audio_from_s3(s3, bucket, object):
     print('download finished!')
     return "/tmp/stt.wav"
 
+def download_audio_from_s3(s3, bucket, object):
+    s3.download_file(bucket, object, "/tmp/feedback.mp4")
+    return "/tmp/feedback.mp4"
+
 
 def upload_file_to_s3(s3, path, bucket, key):
     s3.upload_file(path, bucket, key)
