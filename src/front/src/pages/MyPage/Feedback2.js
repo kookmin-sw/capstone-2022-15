@@ -5,10 +5,11 @@ import Footer from '../components/Footer';
 import './Mypage.css';
 import { Link } from 'react-router-dom';
 import img_interviewer from '../images/img_interviewer.png';
-
+import SyncLoader from "react-spinners/SyncLoader";
 import axios from 'axios';
 export const Authentication = React.createContext(null);
-import {ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
+import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis, 
+  CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
 const Feedback2 = () => {
@@ -21,14 +22,23 @@ const Feedback2 = () => {
     url: getFeedbackpage, 
     method: 'GET',
     headers: {
-        'Authorization':'Token ' + window.localStorage.getItem('token')
-        
+      Authorization: 'Token aiefaengakejnf;aenf;erag;hwenrg;nq'
+    },
+    data: {
+      //interview_id: `${interviewId}`, 
+    //question_n: `${questionN}`,
+      interview_id: `1`, 
+      question_n: `1`,
     }
   }).then(response => {
     console.log("Mypage Get Success")
-      setInterview_id(response.data.interview_id)
-      setQuestion_n(response.data.question_n)
-      setPreSignedUrl(response.data.interview_url);
+      getInterview_id(response.data.interview_id)
+      getQuestion_n(response.data.question_n)
+      getIris(response.data.iris_movement)
+      getFaceMovement(response.data.face_movement)
+      getVolumnInterview(response.data.volumn_interview)
+      getSttInterview(response.data.stt_interview)
+      getVedioUrl(response.data.interviewee_url);
   })
   .catch(error => {
       console.log(error)
@@ -52,7 +62,7 @@ const Feedback2 = () => {
   class MainFeedback extends Component{
     render(){
       const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo" 
-      //const videoUrl = user_id + interview_id + "/interview_video/interview" + interview_id+".mp4"
+      //const video = getVedioUrl
       let chart_data1 = [
         { x: 100, y: 200, z: 200 },
         { x: 120, y: 100, z: 260 },
@@ -61,15 +71,38 @@ const Feedback2 = () => {
         { x: 150, y: 400, z: 500 },
         { x: 110, y: 280, z: 200 },
       ];
-      const chart_data2 = [
-        { x: 200, y: 260, z: 240 },
-        { x: 240, y: 290, z: 220 },
-        { x: 190, y: 290, z: 250 },
-        { x: 198, y: 250, z: 210 },
-        { x: 180, y: 280, z: 260 },
-        { x: 210, y: 220, z: 230 },
+      let chart_data2 = [
+        {
+            name: "Page A",
+            pv: 2400,
+            amt: 2400,
+        },
+        {
+            name: "Page B",
+            pv: 1398,
+            amt: 2210,
+        },
+        {
+            name: "Page C",
+            pv: 9800,
+            amt: 2290,
+        },
+        {
+            name: "Page D",
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: "Page E",
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: "Page F",
+            pv: 3800,
+            amt: 2500,
+        },
       ];
-      
 
       return(
         <div>
@@ -79,6 +112,11 @@ const Feedback2 = () => {
           </div>
           <div className="Interviewer-section">
                 <iframe width="700vw" height="394vh" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
+              {/*{video!=='' && <video width="80%" height="80%" autoPlay={true}> 
+                        <source src={video}/>
+                  </video>}
+                    {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
+                 */}
           </div>
   
   
@@ -86,10 +124,9 @@ const Feedback2 = () => {
           <div className='Feedback-txt' style={{top:'17vh'}}>
                 🔹 나의 답변
             <div className="Stt">
-              여기에 STT 내용 <br/>
-              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
-              인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다. 인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다. 인퓨는 가상 생성된 모습의 면접관이 입모양을 움직이며 음성으로 질문을 전달할 수 있어, 면접관이 존재하지 않고 텍스트와 음성만으로 질문을 확인하여 연습하는 기존 면접 연습 서비스와 다르게 더욱 현장감있는 면접 연습을 제공한다.  
-  
+             {/* 여기에 STT 내용 <br/>
+              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>*/}
+              <getSttInterview/>
             </div>
           </div>
           
@@ -102,7 +139,8 @@ const Feedback2 = () => {
               </div>
               
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Rechart chart_data= {chart_data1}  />
+                <Scatter_chart scatter_data= {chart_data1}  />
+                {/*<Scatter_chart scatter_data= {getIris}  /> */}
               </div>
               
           </div>
@@ -113,8 +151,8 @@ const Feedback2 = () => {
           <div className='Feedback-txt' style={{top:'100vh'}}>
                 🔹 머리 움직임
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Rechart chart_data= {chart_data2}  />
-                {/*<Rechart chart_data= {response.data.face_movement}  /> */}
+                <Line_chart line_data= {chart_data2}  />
+                {/*<Line_chart line_data= {getFaceMovement}  /> */}
               </div>
           </div>
   
@@ -123,8 +161,8 @@ const Feedback2 = () => {
           <div className='Feedback-txt' style={{top:'168vh'}}>
                 🔹 목소리 크기
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Rechart chart_data= {chart_data1}/>
-                {/*<Rechart chart_data= {response.data.volumn_interview}  /> */}
+                {/*<Line_chart line_data= {chart_data2}/>*/}
+                <Line_chart line_data= {getVolumnInterview}  /> 
               </div>
           </div>  
         </div>  
@@ -134,15 +172,15 @@ const Feedback2 = () => {
 
 
   
-
-const Rechart = ({
-  chart_data
+{/*********************  Scatter Chart - 시선처리 차트 ********************/}
+const Scatter_chart = ({
+  scatter_data
   }) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
     <ScatterChart
-      width={500}
-      height={300}
+      width={'500px'}
+      height={'300px'}
       margin={{
           top: 5,
           right: 30,
@@ -154,11 +192,47 @@ const Rechart = ({
       <XAxis type="number" dataKey="x" name="stature" unit="cm" />
       <YAxis type="number" dataKey="y" name="weight" unit="kg" />
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-      <Scatter name="A school" data={chart_data} fill="#5B7EFB" />
+      <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
   </ResponsiveContainer>
   );
 }
+
+
+{/*********************  Line Chart - 시선처리 차트 ********************/}
+const Line_chart = ({
+  line_data
+  }) => {
+  return (
+      <ResponsiveContainer width="100%" height="100%">
+         <LineChart
+            width={500}
+            height={300}
+            data={line_data}
+            margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+            >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" /><YAxis /> <Tooltip /> <Legend />
+            <Line
+              type="monotone"
+              dataKey="time"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="time" stroke="#82ca9d" />
+          </LineChart>
+        </ResponsiveContainer>
+    
+  );
+}
+
+
+
 
 class Bar2 extends Component{
   render(){
@@ -170,6 +244,7 @@ class Bar2 extends Component{
     );
   }
 }
+
 
 class MenuBox2 extends Component{
   render(){
@@ -206,5 +281,14 @@ class MenuBox2 extends Component{
       </div>
     );
   }
+}
+const override = {
+  margin: 'auto',
+  borderColor: 'red',
+  justifyContent: 'center',
+  display: 'flex',
+  alignItems: 'center',
+  height: '98vh',
+  width: '100%'
 }
 export default Feedback2;
