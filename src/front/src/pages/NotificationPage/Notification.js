@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 // import { PageDescription } from '../../components/PageDescription';
 
 // import Footer from '../components/Footer';
-
+function clickHandler(e) {
+    window.location.href = "/preinterview"
+}
 
 const PreInterview = () => {
     return (
@@ -78,11 +80,13 @@ const PreInterview = () => {
                     </div>
                 </div> */}
                 <div className="next-button-layout">
-                    <Link to="/preinterview" >
-                        <button className="next-button">
+                    {/* <Link to="/preinterview" > */}
+                        <button className="next-button" onClick={() => {
+                            clickHandler()
+                        }}>
                             다음     
                         </button>
-                    </Link>
+                    {/* </Link> */}
                 </div>
             </div>
             {/* <Footer/> */}
