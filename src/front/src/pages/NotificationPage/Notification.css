@@ -9,23 +9,16 @@
 .notification-layout1 {
     position: relative;
     /* width: 100%; */
-    height: 880px;
+    height: 1000px;
     margin-top: 20px;
     margin-right: 80px;
 }
 
-.notice-1 {
-    /* height: 80px; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 1.2rem;
-}
 
 .notification-title {
-    position: relative;
+    /* position: relative; */
     /* width: 200px; */
-    height: 120px;
+    height: 90px;
     padding-left: 80px;
     
     font-family: Montserrat;
@@ -41,7 +34,7 @@
 .notification-content {
     margin-left: 80px;
     margin-top: 10px;
-    height: 580px;
+    height: 500px;
 }
 
 .notice1-cam-show-example-layout {
@@ -80,6 +73,8 @@
 /*-------------------- next button --------------------*/
 .next-button-layout {
     height: 120px;
+    margin-top: 45px;
+    /* position: relative; */
 }
 
 .next-button {
@@ -89,7 +84,7 @@
     align-items: center;
     margin-left: auto;
 
-    position: relative;
+    /* position: relative; */
     width: 200px;
     height: 60px;
 
