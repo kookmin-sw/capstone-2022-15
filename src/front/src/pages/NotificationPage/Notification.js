@@ -32,7 +32,7 @@ const PreInterview = () => {
             <div className="notification-layout1">
                 <div className="notification-title">
                     1️⃣ &nbsp;IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보다 정확한 피드백을 위해, 아래 그림에 표시된 선을 참고하여 카메라를 세팅해주세요.<br></br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보다 정확한 피드백을 위해, 아래의 샘플 이미지를 참고하여 카메라를 세팅해주세요.<br></br>
                 </div>
                 <div className="notification-content">
                     <div className="notice1-cam-show-example-layout">
