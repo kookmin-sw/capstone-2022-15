@@ -14,9 +14,9 @@ user-feedback-bucket -> bucket 이름
 def select(user_id, interview_id, question_n):
     user = f'user_id_{user_id}/interview_id_{interview_id}/result'
 
-    result_list = [f'{user}/face_movement_interview_{question_n}.npy',
-                   f'{user}/iris_movement_interview_{question_n}.npy',
-                   f'{user}/volume_interview_{question_n}.npy',
+    result_list = [f'{user}/face_movement_interview_{question_n}.npz',
+                   f'{user}/iris_movement_interview_{question_n}.npz',
+                   f'{user}/volume_interview_{question_n}.npz',
                    f'{user}/stt_interview_{question_n}.txt']
 
     return result_list
