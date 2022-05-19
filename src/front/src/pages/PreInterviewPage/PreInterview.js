@@ -103,7 +103,7 @@ const PreInterview = () => {
             })
         }
     }, [recordedChunks, intervieweePreSignedUrl]);
-    const isTest = true;
+    const isTest = false;
     let getInterviewerPreSignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
                     // ? `http://127.0.0.1:8000/interview/practice/${checkedId}`

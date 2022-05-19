@@ -32,7 +32,7 @@ class Feedback extends Component {
     }
 
     _getListData = async function(){
-      const isTest = true;
+      const isTest = false;
       const interview_id = 1; // --------------- 변경
       const question_n = 0;
         let getFeedbackpage = isTest

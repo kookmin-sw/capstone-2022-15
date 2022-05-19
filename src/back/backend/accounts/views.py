@@ -105,7 +105,7 @@ class MypageView(APIView):
     ]
 
     def get(self, request, *args, **kwargs):
-        query = Interview.objects.filter(author_id=request.user, question_n=0)
+        query = Interview.objects.filter(author_id=request.user, question_n=request.question_n)
         query_data = serializers.serialize('json', query)
         print(f"{request.user}: mypage success")
         return HttpResponse(query_data, content_type="text/json-comment-filtered")
