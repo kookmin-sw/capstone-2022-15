@@ -16,7 +16,7 @@ class FaceMovement:
         cap = cv2.VideoCapture(path)
         print('read url')
         print(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        fps = int(cap.get(cv2.CAP_PROP_FPS))
+        fps = cap.get(cv2.CAP_PROP_FPS)
         frame_num = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         self.duration = frame_num / fps
         self.result_distance = []
@@ -32,19 +32,20 @@ class FaceMovement:
 
                 image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
                 results = face_mesh.process(image)
-                if cnt % 100 == 0:
+                if int((cnt) % (fps/2)) == 0:
                     print(cnt)
-                if results.multi_face_landmarks:
-                    for face_landmarks in results.multi_face_landmarks:
-                        landmark = face_landmarks.landmark[5]
-                        current = np.array([landmark.x, landmark.y, landmark.z])
-                        self.result_distance.append(np.sqrt(np.sum((current-previous)**2)))
-                        import copy
-                        previous = copy.deepcopy(current)
+                    if results.multi_face_landmarks:
+                        for face_landmarks in results.multi_face_landmarks:
+                            landmark = face_landmarks.landmark[5]
+                            current = np.array([landmark.x, landmark.y, landmark.z])
+                            self.result_distance.append(np.sqrt(np.sum((current-previous)**2))*5)
+                            import copy
+                            previous = copy.deepcopy(current)
 
         cap.release()
 
     def write(self, path='/tmp/face_movement.npz'):
-        time = np.linspace(0,self.duration, len(self.result_distance[1:]))
+        time = np.linspace(0.5,int(self.duration), len(self.result_distance[1:]))
         np.savez(path, time=time, data=self.result_distance[1:])
+        # print(time, self.result_distance[1:])
         return path
