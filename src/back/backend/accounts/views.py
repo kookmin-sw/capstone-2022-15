@@ -122,7 +122,9 @@ class FeedbackView(APIView):
         # s3 presigned url
         bucket = 'user-feedback-bucket'
 
-        key_list = select(request.user, interview_id, question_n)
+        #key_list = select(request.user, interview_id, question_n)
+        key_list = select('haha', 2, 0)
+
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
@@ -134,13 +136,15 @@ class FeedbackView(APIView):
                     time, XY = np.load(f).values()
                     
                 d_ = []
-                for i in range(len(X)):
+                for j in range(len(XY)):
                     d = dict()
-                    d['name'] = time[i]
-                    d['X'] = XY[0]
-                    d['Y'] = XY[1]
+                    d['name'] = time[j]
+                    d['x'] = XY[0]
+                    d['y'] = XY[1]
                     d_.append(d)
                 data.append(d_)
+                #print(i, d_)
+                #print()
             
             # iris movement / volume interview
             if i == 1 or i == 2:
@@ -149,20 +153,22 @@ class FeedbackView(APIView):
                     X, Y = np.load(f).values()
                 
                 d_ = []
-                for i in range(len(X)):
+                for j in range(len(X)):
                     d = dict()
-                    d['name'] = round(X[i])
-                    d['x'] = X[i]
-                    d['y'] = Y[i]
+                    d['name'] = round(X[j])
+                    d['x'] = X[j]
+                    d['y'] = Y[j]
                     d_.append(d)
                 data.append(d_)
+                #print(i, d_)
+                #print()
             
             # stt interview
             if i == 3:
                 with io.BytesIO(body) as f:
                     f.seek(0)
-                    txt = np.load(f).values()
-                data.append(txt)
+                    #txt = np.load(f).values()
+                #data.append(txt)
                 
         # presigned url 추가
         bucket = 'user-interview-video-bucket'
@@ -174,7 +180,7 @@ class FeedbackView(APIView):
                                 "face_movement": data[0],
                                 "iris_movement": data[1],
                                 "volume_interview": data[2],
-                                "stt_interview": data[3],
+                                "stt_interview": "123",
                                 "interviewee_url": interviewee_url
         })
 

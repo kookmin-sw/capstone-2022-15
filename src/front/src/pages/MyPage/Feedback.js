@@ -12,53 +12,48 @@ import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
-class Feedback extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            data : [],
-            iris_movement : {},
-            face_movement : {},
-            volume_interview : {},
-            stt_interview : {},
-            videoUrl : '',
-            loading : true,
-            interview_id : 0
-        }
-    }
+const Feedback = () => {
+    const [list, setList] = useState();
+    const [loading, setLoading] = useState(true);
+    const [interview_id, setInterviewId] = useState(0);
 
-    componentDidMount(){
-        this._getListData()
-    }
+    const isTest = true;
+    //const interview_id = 1;
+    const question_n = 0;
+    let getFeedbackpage = isTest
+    ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
+    : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
 
-    _getListData = async function(){
-      const isTest = false;
-      const interview_id = 1; // --------------- 변경
-      const question_n = 0;
-        let getFeedbackpage = isTest
-        ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
-        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
+  useEffect(()=>{axios({
+    url: getFeedbackpage,
+    method: 'GET',
+    headers: {
+      'Authorization':'Token ' + window.localStorage.getItem('token')
 
-      const data_list = await axios(getFeedbackpage,{
-        method : 'GET',
-        headers : {
-            'Authorization':'Token ' + window.localStorage.getItem('token')
-        }
-      })
-      this.setState({data: data_list})
-    }
+    },
+  }).then(response => {
+    console.log("Mypage Get Success")
+    setList(response.data);
+    console.log("res:", response)
+    console.log("list:", list)
+    //setVolumeInterview(response.data.volume_interview)
+     // getSttInterview(response.data.stt_interview)
+     // getVedioUrl(response.data.interviewee_url);
+  })
+  .catch(error => {
+      console.log(error)
+      alert(' error')
+  })
+  }, [])
 
-    render(){
-        const list = this.state.data.data
-        console.log("Mypage Get Success")
-        console.log(list)
+
 
     if (!list) return (
         <div></div>
     )
     if (list){
-    console.log("video: ", list.interviewee_url)
-    console.log(list.interviewee_url.interviewee_url)
+    //console.log("video: ", list.interviewee_url)
+    //console.log(list.interviewee_url.interviewee_url)
         return (
             <div>
                 <Navbar/>
@@ -105,7 +100,7 @@ class Feedback extends Component {
           </div>
 
 
-  {/*나의 답변*/}
+           {/*나의 답변*/}
           <div className='Feedback-txt' style={{top:'17vh'}}>
                 🔹 나의 답변
             <div className="Stt">
@@ -114,7 +109,7 @@ class Feedback extends Component {
           </div>
 
 
-  {/*시선 처리 차트*/}
+            {/*시선 처리 차트*/}
           <div className='Feedback-txt'style={{top:'32vh'}}>
                 🔹 시선 처리
               <div className='ChartBackground'>
@@ -122,7 +117,7 @@ class Feedback extends Component {
               </div>
 
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Scatter_chart_iris scatter_data= {list.volume_interview}  />
+                <Scatter_chart_iris scatter_data= {list.iris_movement}  />
               </div>
 
           </div>
@@ -133,7 +128,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'100vh'}}>
                 🔹 머리 움직임
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
-                <Line_chart_face line_data= {list.volume_interview}  />
+                <Line_chart_face line_data= {list.face_movemet}  />
               </div>
           </div>
 
@@ -154,14 +149,12 @@ class Feedback extends Component {
             </div>
         );
     }
- }
 }
 
 
 
 
-
-{/*********************  Scatter Chart - 시선처리 차트 ********************/}
+{/*********************  Scatter Chart - 시선 처리 차트 ********************/}
 const Scatter_chart_iris = ({
   scatter_data
   }) => {
@@ -178,10 +171,10 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" name="x" unit="cm" />
-      <YAxis type="number" dataKey="y" name="y" unit="kg" />
+      <XAxis type="number" dataKey="X" name="x" unit="cm" />
+      <YAxis type="number" dataKey="Y" name="y" unit="kg" />
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-      <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
+      <Scatter name="name" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
   </ResponsiveContainer>
   );
@@ -191,7 +184,7 @@ const Scatter_chart_iris = ({
 {/*********************  Line Chart - 머리 움직임 차트 ********************/}
 const Line_chart_face = ({
   line_data
-  }) => {console.log("line", line_data)
+  }) => {
   return (
       <ResponsiveContainer width="100%" height="100%">
          <LineChart
@@ -225,7 +218,7 @@ const Line_chart_face = ({
 {/*********************  Line Chart - 목소리 크기 차트 ********************/}
 const Line_chart_volume = ({
   line_data
-  }) => {console.log("line", line_data)
+  }) => {
   return (
       <ResponsiveContainer width="100%" height="100%">
          <LineChart
@@ -258,9 +251,9 @@ const Line_chart_volume = ({
 
 
 
-class Bar2 extends Component{
-  render(){
-//function Bar2(props){
+//class Bar2 extends Component{
+//  render(){
+function Bar2(props){
 
     return(
       <div className='Bar'>
@@ -268,7 +261,6 @@ class Bar2 extends Component{
       </div>
     );
   }
-}
 
 
 const override = {

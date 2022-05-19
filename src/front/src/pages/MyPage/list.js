@@ -29,7 +29,7 @@ class List extends Component {
   }
 
   _getListData = async function() {
-    const isTest = false;
+    const isTest = true;
     let getMypage = isTest
     ? `http://localhost:8000/accounts/mypage` // checkedId -> ques
     : `https://api.kmuin4u.com/accounts/mypage`; 
