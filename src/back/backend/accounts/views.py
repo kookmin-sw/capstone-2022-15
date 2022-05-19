@@ -19,7 +19,8 @@ import numpy as np
 import boto3
 from .file_manage import select
 s3 = boto3.resource('s3')
-import json
+s3_interviewee = boto3.client('s3')
+
 
 User = get_user_model()
 
@@ -104,7 +105,7 @@ class MypageView(APIView):
     ]
 
     def get(self, request, *args, **kwargs):
-        query = Interview.objects.filter(author_id=request.user)
+        query = Interview.objects.filter(author_id=request.user, question_n=0)
         query_data = serializers.serialize('json', query)
         print(f"{request.user}: mypage success")
         return HttpResponse(query_data, content_type="text/json-comment-filtered")
@@ -120,7 +121,7 @@ class FeedbackView(APIView):
 
         # s3 presigned url
         bucket = 'user-feedback-bucket'
-        """
+
         key_list = select(request.user, interview_id, question_n)
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
@@ -153,7 +154,7 @@ class FeedbackView(APIView):
                     d['name'] = round(X[i])
                     d['x'] = X[i]
                     d['y'] = Y[i]
-                    d_.append(d)임
+                    d_.append(d)
                 data.append(d_)
             
             # stt interview
@@ -164,17 +165,23 @@ class FeedbackView(APIView):
                 data.append(txt)
                 
         # presigned url 추가
-                
+        bucket = 'user-interview-video-bucket'
+        key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(request.user, interview_id, question_n)
+        interviewee_url = s3_interviewee.generate_presigned_url(ClientMethod='get_object',
+                                                                Params={'Bucket': bucket, 'Key': key})
+
         return Response(status=status.HTTP_200_OK, data={
                                 "face_movement": data[0],
                                 "iris_movement": data[1],
                                 "volume_interview": data[2],
-                                "stt_interview": data[3]
-        }            
-        """
+                                "stt_interview": data[3],
+                                "interviewee_url": interviewee_url
+        })
 
+        """
         #user_id_rkawkaks/interview_id_1/result/volume_interview_0.npz
         user = 'rkawkaks'
+        #user = 'yei'
         #interview_id = 1
         #question_n = 0
 
@@ -185,19 +192,36 @@ class FeedbackView(APIView):
         with io.BytesIO(body) as f:
             f.seek(0)
             X, Y = np.load(f).values()
-        #data = {json.dumps(dict.fromkeys(x, y))}
+
+        key = f'user_id_{user}/interview_id_{interview_id}/result/stt_interview_.txt'
+        obj = s3.Object(bucket, key)
+        body = obj.get()['Body'].read()
+
+
         data = []
         for i in range(0, len(X), 5):
             d = dict()
-            d['name'] = round(X[i])
+            d['name'] = str(round(X[i]))+'초'
             d['x'] = X[i]
             d['y'] = Y[i]
             data.append(d)
 
-        print(f'{request.user}feeback success')
+        user='yei'
+        interview_id = 2
+        question_n = 1
+        bucket = 'user-interview-video-bucket'
+        key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(user, interview_id, question_n)
+        interviewee_url = s3_interviewee.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
+
+        print(f'{request.user}: feedback success')
 
         return Response(status=status.HTTP_200_OK, data={"success":True,
-                                                         "volume_interview":data
-                                                         })
+                                                        "volume_interview": data,
+                                                        "stt_interview": body,
+                                                        "interviewee_url": interviewee_url
+                                                        })
+        """
+        #return HttpResponse(body, content_type="text/json-comment-filtered")
+
 
 

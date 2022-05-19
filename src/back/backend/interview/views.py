@@ -29,7 +29,7 @@ class PracticeView(APIView):
     # interviewee url response
     def post(self, request, *args, **kwargs):
         interview = Interview()
-        # 토큰 / 유저 정보 / 인터뷰 번호 / 질문 번호 / 인터뷰 날짜 / 분야 / 면접자 영상 저장 url
+        # 토큰 / 유저 정보 / 인터뷰 번호 / 질문 번호 / 인터뷰 날짜 / 분야
         interview.author = request.user
         user_id = request.user
         interview_id = 2
@@ -46,7 +46,6 @@ class PracticeView(APIView):
         interview.question_n = question_n
         # interview date 자동 생성
         interview.field_id = field_id
-        interview.interviewee_url = interviewee_url
 
         interview.save()
 

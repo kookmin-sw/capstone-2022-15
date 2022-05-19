@@ -22,7 +22,8 @@ class Feedback extends Component {
             volume_interview : {},
             stt_interview : {},
             videoUrl : '',
-            loading : true
+            loading : true,
+            interview_id : 0
         }
     }
 
@@ -37,7 +38,6 @@ class Feedback extends Component {
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
         : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
-      const videoUrl = "https://www.youtube.com/embed/Y8JFxS1HlDo"
 
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
@@ -51,10 +51,14 @@ class Feedback extends Component {
     render(){
         const list = this.state.data.data
         console.log("Mypage Get Success")
+        console.log(list)
+
     if (!list) return (
         <div></div>
     )
     if (list){
+    console.log("video: ", list.interviewee_url)
+    console.log(list.interviewee_url.interviewee_url)
         return (
             <div>
                 <Navbar/>
@@ -93,12 +97,11 @@ class Feedback extends Component {
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
-                <iframe width="700vw" height="394vh" src={list.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              {/*{video!=='' && <video width="80%" height="80%" autoPlay={true}>
-                        <source src={video}/>
+                {/*<iframe width="700vw" height="394vh" src={list.interviewee_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
+              {list.interviewee_url!=='' && <video width="80%" height="80%" autoPlay={true} controls>
+                        <source src={list.interviewee_url}/>
                   </video>}
-                    {video==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
-                 */}
+                    {list.interviewee_url==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
           </div>
 
 
@@ -106,9 +109,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'17vh'}}>
                 🔹 나의 답변
             <div className="Stt">
-              여기에 STT 내용 <br/>
-              🐟🐠🐡🦐🦑🐙🦞🐬🐳🐋🦀🐧🐚<br/>
-              {/*<getSttInterview/>*/}
+              {list.stt_interview.slice(9, -2)}<br/>
             </div>
           </div>
 
@@ -137,7 +138,7 @@ class Feedback extends Component {
           </div>
 
 
-  {/*목소리 크기 차트*/}
+  {/*목소리 크기 차트 react horizontal scrolling?*/}
           <div className='Feedback-txt' style={{top:'168vh'}}>
                 🔹 목소리 크기
               <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
@@ -205,7 +206,7 @@ const Line_chart_face = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" unit="초"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" /><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
@@ -239,7 +240,7 @@ const Line_chart_volume = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" unit="초"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name"/><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
@@ -268,7 +269,6 @@ class Bar2 extends Component{
     );
   }
 }
-
 
 
 const override = {
