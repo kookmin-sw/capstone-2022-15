@@ -46,14 +46,26 @@
     background-color: #000000
 }
 
-.notice1-cam-show-example {
+.notice1-cam-show-example-layout-2 {
     position: relative;
     width: 855px;
     height: 480px;
     margin: auto;
 
     display: flex;
-    background-color: rgb(133, 133, 133)
+    background-color: rgb(245, 245, 245)
+}
+
+.notice1-cam-show-example {
+    position: relative;
+    width: 500px;
+    height: 425px;
+    /* margin: auto; */
+    margin: 50px 0px 0px 180px;
+    align-items: flex-end;
+
+    display: flex;
+    /* background-color: rgb(133, 133, 133) */
 }
 
 

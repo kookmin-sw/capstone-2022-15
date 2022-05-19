@@ -1,6 +1,7 @@
 import './Notification.css';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import intervieweeGuide from '../images/interviewee_sample_2.png'
 
 // import { PageDescription } from '../../components/PageDescription';
 
@@ -35,7 +36,9 @@ const PreInterview = () => {
                 </div>
                 <div className="notification-content">
                     <div className="notice1-cam-show-example-layout">
-                        <img className="notice1-cam-show-example"></img>
+                        <div className="notice1-cam-show-example-layout-2">
+                        <img src={intervieweeGuide} className="notice1-cam-show-example"></img>
+                        </div>
                     </div>
                 </div>
                 <div className="notification-title">
