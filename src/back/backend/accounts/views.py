@@ -136,7 +136,7 @@ class FeedbackView(APIView):
                     time, XY = np.load(f).values()
                     
                 d_ = []
-                for j in range(len(XY)):
+                for j in range(0, len(XY), 60):
                     d = dict()
                     d['name'] = time[j]
                     d['x'] = XY[0]
@@ -153,7 +153,7 @@ class FeedbackView(APIView):
                     X, Y = np.load(f).values()
                 
                 d_ = []
-                for j in range(len(X)):
+                for j in range(0, len(X), 60):
                     d = dict()
                     d['name'] = round(X[j])
                     d['x'] = X[j]
