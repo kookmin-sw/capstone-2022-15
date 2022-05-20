@@ -18,12 +18,12 @@
 .notification-title {
     /* position: relative; */
     /* width: 200px; */
-    height: 90px;
+    height: 100px;
     padding-left: 80px;
     
     font-family: Montserrat;
     /* font-weight: 500; */
-    font-size: 18px;
+    font-size: 19px;
     line-height: 27px;
     /* color: rgb(81, 119, 255); */
 
@@ -84,8 +84,8 @@
 
 /*-------------------- next button --------------------*/
 .next-button-layout {
-    height: 120px;
-    margin-top: 50px;
+    height: 130px;
+    margin-top: 55px;
     /* position: relative; */
 }
 

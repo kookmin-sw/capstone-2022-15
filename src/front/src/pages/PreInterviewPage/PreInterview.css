@@ -83,14 +83,14 @@
 .cam-setting-title {
     position: relative;
     width: 200px;
-    height: 37px;
+    height: 40px;
     padding-left: 80px;
     /* top: 42px; */
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 25px;
     line-height: 37px;
     color: rgb(81, 119, 255);
 
@@ -225,7 +225,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 37px;
+    line-height: 39px;
 
     display: flex;
     /* align-items: center; */
