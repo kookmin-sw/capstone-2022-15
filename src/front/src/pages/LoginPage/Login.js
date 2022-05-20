@@ -6,6 +6,7 @@ import img_main_simple from '../images/img_main_simple.png';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+
 const Login = () => {
 
   const [user_id, setUser_id] = useState('')
@@ -20,7 +21,8 @@ const Login = () => {
       password: user_pw
     }
 
-    Axios.post('https://api.kmuin4u.com/accounts/login', user)
+    //Axios.post('https://api.kmuin4u.com/accounts/login', user)
+    Axios.post('http://localhost:8000/accounts/login', user)
       .then(res => {
         console.log(res)
         if (res.data.token) {
@@ -67,9 +69,9 @@ const Login = () => {
                   onChange={e => setUser_id(e.target.value)}
                 />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br/><br/>
-                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;</label>
+                <label >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;</label>
                 <input
-                  type='user_pw'
+                  type='password'
                   value={user_pw}
                   required
                   onChange={e => setUser_pw(e.target.value)}
