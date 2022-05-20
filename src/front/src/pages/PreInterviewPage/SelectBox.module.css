@@ -30,7 +30,7 @@
     padding-left: 80px;
     padding-top: 22px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 850;
     font-size: 32px;
@@ -48,7 +48,7 @@
     height: 48px;
     padding-left: 80px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -76,7 +76,7 @@
     padding-left: 80px;
     /* top: 42px; */
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -125,7 +125,7 @@
 
 .Connected {
     position: relative;
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
@@ -165,7 +165,7 @@
     /* left: 1197px; */
     /* top: 805px; */
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
