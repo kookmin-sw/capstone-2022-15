@@ -55,8 +55,12 @@ ENV PYTHONPATH "/opt/conda-env/lib/python3.8/site-package"
 COPY lambda-entrypoint.sh /lambda-entrypoint.sh
 RUN chmod 755 /lambda-entrypoint.sh
 
+COPY pthread_shim.so /opt/pthread_shim.so
 RUN mkdir /tmp/numba-cache
+RUN mkdir /tmp/matplotlib
 ENV NUMBA_CACHE_DIR "/tmp/numba-cache"
+ENV MPLCONFIGDIR "/tmp/matplotlib"
+RUN chmod 755 -R /tmp/
 
 # RUN ls
 
