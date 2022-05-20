@@ -57,14 +57,15 @@ function Interview({
                         <source src={video}/>
                     </video>}
                     {video==='' && <BarLoader color={'rgb(81, 119, 255)'} loading={true} css={override} height={8} speedMultiplier={0.7} />}
+                    {/* {video==='' && <img className="notice1-cam-show-example"></img>} */}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
                     {/* state true : 면접 시작 button */}
                     {buttonState 
-                    && <button className="interview-button" onClick={async () => {
-                        await setButtonState(false)
-                        await startCaptureHandler() // 녹화시작
+                    && <button className="interview-button" onClick={() => {
+                        setButtonState(false)
+                        startCaptureHandler() // 녹화시작
                         getInterviewerHandler()
                     }}>
                         면접 시작
@@ -84,7 +85,7 @@ function Interview({
                     {!buttonState 
                     && questionNumberState < 6
                     && questionNumberState % 2 === 0
-                    && <button className="done-button" onClick={async () => {
+                    && <button className="done-button" onClick={() => {
                         setQuestionNumberState(questionNumberState + 1)
                         getInterviewerHandler()
                         downloadHandler()
@@ -95,6 +96,7 @@ function Interview({
                     {/* state false : 면접 종료 button */}
                     {questionNumberState === 6
                     && <button className="interview-button" onClick={() => {
+                        downloadHandler() // check : last recorded video download
                         closeModalHandler()
                         setQuestionNumberState(0)
                         clickHandler()
@@ -103,7 +105,7 @@ function Interview({
                     </button>}
                 </div>
             </div>}
-            {loading && <BarLoader color={'rgb(81, 119, 255)'} loading={loading} css={override} height={8} speedMultiplier={0.7} />}
+            {/* {loading && <BarLoader color={'rgb(81, 119, 255)'} loading={loading} css={override} height={8} speedMultiplier={0.7} />} */}
         </>
     );
 }
