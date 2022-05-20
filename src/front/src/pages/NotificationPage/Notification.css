@@ -21,7 +21,7 @@
     height: 100px;
     padding-left: 80px;
     
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     /* font-weight: 500; */
     font-size: 19px;
     line-height: 27px;
@@ -100,7 +100,7 @@
     width: 200px;
     height: 60px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
