@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 
-from .models import Interview
+from .models import Interview, InterviewInfo
 
 # s3
 import boto3
@@ -28,26 +28,34 @@ class PracticeView(APIView):
 
     # interviewee url response
     def post(self, request, *args, **kwargs):
-        interview = Interview()
-        # 토큰 / 유저 정보 / 인터뷰 번호 / 질문 번호 / 인터뷰 날짜 / 분야
-        interview.author = request.user
         user_id = request.user
-        interview_id = 2
         question_n = request.data['question_n']
         field_id = request.data['field_id']
+
+        if question_n == '0':
+            interview = Interview()
+            # 유저 정보 / 인터뷰 날짜
+            interview.author = request.user
+            interview.field_id = field_id
+            interview.save()
+
+        interview_id = len(Interview.objects.filter(author_id=request.user))
 
         # s3 presigned url
         bucket = 'user-interview-video-bucket'
         key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(user_id, interview_id, question_n)
         interviewee_url = s3.generate_presigned_url(ClientMethod='put_object', Params={'Bucket':bucket, 'Key':key})
 
-        # db save
-        interview.interview_id = interview_id
-        interview.question_n = question_n
-        # interview date 자동 생성
-        interview.field_id = field_id
 
-        interview.save()
+        # InterviewInfo db save
+        # 유저 정보 / 인터뷰 번호 / 질문 번호 / 분야
+        interviewInfo = InterviewInfo()
+        interviewInfo.author = request.user
+        interviewInfo.interview_id = interview_id
+        interviewInfo.question_n = question_n
+        interviewInfo.field_id = field_id
+        interviewInfo.save()
+
 
         print(f'{request.user} interviewee url success')
         return Response(

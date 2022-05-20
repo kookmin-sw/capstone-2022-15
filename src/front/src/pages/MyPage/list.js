@@ -42,6 +42,7 @@ class List extends Component {
     })
 
     this.setState({ data : data_list })
+    console.log(data_list)
   }
 
   render() {
