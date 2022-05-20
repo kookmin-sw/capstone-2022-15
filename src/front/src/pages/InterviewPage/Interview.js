@@ -97,11 +97,17 @@ function Interview({
                     {questionNumberState === 6
                     && <button className="interview-button" onClick={() => {
                         downloadHandler() // check : last recorded video download
+                        setQuestionNumberState(questionNumberState + 1)
+                    }}>
+                        면접 종료
+                    </button>}
+                    {questionNumberState > 6
+                    && <button className="interview-button" onClick={() => {
                         closeModalHandler()
                         setQuestionNumberState(0)
                         clickHandler()
                     }}>
-                        면접 종료
+                        마이페이지로 이동 
                     </button>}
                 </div>
             </div>}
