@@ -53,7 +53,8 @@ const Signup = () => {
     }
     //'/api/v1/mall/auth/register/'
 
-    Axios.post('https://api.kmuin4u.com/accounts/join', user)
+    //Axios.post('https://api.kmuin4u.com/accounts/join', user)
+    Axios.post('http://localhost:8000/accounts/join', user)
       .then(res => {
           console.log(res.data)
         if (res.data.token) {
