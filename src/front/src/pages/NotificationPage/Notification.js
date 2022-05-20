@@ -7,10 +7,10 @@ import intervieweeGuide from '../images/interviewee_sample_2.png'
 
 // import Footer from '../components/Footer';
 function clickHandler(e) {
-    window.location.href = "/preinterview"
+    window.location.href = "/step"
 }
 
-const PreInterview = () => {
+const Notification = () => {
     return (
         <div className="NotificationApp">
             <Navbar/>
@@ -83,7 +83,7 @@ const PreInterview = () => {
                     </div>
                 </div> */}
                 <div className="next-button-layout">
-                    {/* <Link to="/preinterview" > */}
+                    {/* <Link to="/step" > */}
                         <button className="next-button" onClick={() => {
                             clickHandler()
                         }}>
@@ -97,4 +97,4 @@ const PreInterview = () => {
     );
 }
 
-export default PreInterview;
+export default Notification;

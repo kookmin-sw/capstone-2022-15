@@ -19,6 +19,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/homeafterlogin" element={<HomeAfterLogin />} />
       <Route path="/notification" element={<Notification />} />
+      <Route path="/step" element={<Step />} />
       <Route path="/preinterview" element={<PreInterview />} />
       <Route path="/interview" element={<Interview />} />
       <Route path="/mypage" element={<Mypage />} />
