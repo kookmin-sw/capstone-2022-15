@@ -1,7 +1,8 @@
 .interview-app {
   position: relative;
   width: "100%";
-  height: 100vh;
+  height: "100%";
+  /* height: 100vh; */
   /* padding-left: 140px;
   padding-right: 140px; */
 }
@@ -11,33 +12,32 @@
   position: relative;
   width: 100%;
   margin-left: auto;
-  /* height: 650px; */
-  height: 80vh;
-  text-align: center;
+  height: 650px;
+  /* height: 100vh; */
+  /* text-align: center; */
 }
 
 /*---------------------- button ----------------------*/
 .button-section {
-  position: relative;
+  /* position: relative; */
   width: 100%;
-  /* height: 135px; */
+  /* height: 100%; */
   /* margin-top: 330px; */
-  margin: auto;
-
+  /* margin: auto; */
   display: flex;
 }
 
 .interview-button {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 8px;
 
-  position: relative;
+  /* position: relative; */
   width: 200px;
-  height: 48px;
+  height: 40px;
 
   font-family: Montserrat;
   font-style: normal;
@@ -75,11 +75,11 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 8px;
 
   position: relative;
   width: 200px;
-  height: 48px;
+  height: 40px;
 
   font-family: Montserrat;
   font-style: normal;

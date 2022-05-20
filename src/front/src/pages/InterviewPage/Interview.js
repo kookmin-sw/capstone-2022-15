@@ -53,7 +53,7 @@ function Interview({
             {!loading && <div className="interview-app">
                 {/*------------------ 가상 면접관 ------------------*/}
                 <div className="interviewer-section">
-                    {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
+                    {video!=='' && <video width="100%" height="100%" autoPlay={true}> 
                         <source src={video}/>
                     </video>}
                     {video==='' && <BarLoader color={'rgb(81, 119, 255)'} loading={true} css={override} height={8} speedMultiplier={0.7} />}
