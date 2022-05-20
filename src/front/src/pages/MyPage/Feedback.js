@@ -64,7 +64,10 @@ class Feedback extends Component {
                 <Navbar/>
                 <Bar2/>
 
-      <div className='Menu-box' style={{height: '377vh'}}>
+      <div className='Menu-box' style={{height: '2300px'}}>
+          <div className='mypage_footer_top2'>
+            <Footer/>
+          </div> 
           <div onClick={()=>console.log("마이 페이지(연습목록)로 페이지 변경")}>
               <Link to="/mypage" className='Menu-txt22'>
               연습목록
@@ -93,7 +96,7 @@ class Feedback extends Component {
           <div className='Main-box'>
             <div>
           <div className='Feedback-Q'> Q1 </div>
-          <div className='Feedback-txt'style={{top:'5.2vh'}}>
+          <div className='Feedback-txt'style={{top:'50px'}}>
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
@@ -106,7 +109,7 @@ class Feedback extends Component {
 
 
   {/*나의 답변*/}
-          <div className='Feedback-txt' style={{top:'17vh'}}>
+          <div className='Feedback-txt' style={{top:'117px'}}>
                 🔹 나의 답변
             <div className="Stt">
               {list.stt_interview.slice(9, -2)}<br/>
@@ -115,13 +118,13 @@ class Feedback extends Component {
 
 
   {/*시선 처리 차트*/}
-          <div className='Feedback-txt'style={{top:'32vh'}}>
+          <div className='Feedback-txt'style={{top:'194px'}}>
                 🔹 시선 처리
               <div className='ChartBackground'>
                 <img src={img_interviewer}/>
               </div>
 
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
+              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
                 <Scatter_chart_iris scatter_data= {list.volume_interview}  />
               </div>
 
@@ -130,30 +133,30 @@ class Feedback extends Component {
 
 
   {/*머리 움직임 차트*/}
-          <div className='Feedback-txt' style={{top:'100vh'}}>
+          <div className='Feedback-txt' style={{top:'605px'}}>
                 🔹 머리 움직임
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
+              <div style={{ width: '594px', height: '300px', left:'150px',position:'absolute'}}>
                 <Line_chart_face line_data= {list.volume_interview}  />
               </div>
           </div>
 
 
   {/*목소리 크기 차트 react horizontal scrolling?*/}
-          <div className='Feedback-txt' style={{top:'168vh'}}>
+          <div className='Feedback-txt' style={{top:'968px'}}>
                 🔹 목소리 크기
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
+              {/*<div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ width: '800px', height: '300px'}}> */}  
+              <div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>
                 <Line_chart_volume line_data= {list.volume_interview}  />
               </div>
+          {/*</div> */} 
           </div>
         </div>
         </div>
       </div>
-                <div className='mypage_footer_top2'>
-                    <Footer/>
-                </div>
-            </div>
-        );
-    }
+    </div>
+    );
+  }
  }
 }
 
