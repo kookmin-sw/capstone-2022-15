@@ -95,7 +95,7 @@ class Feedback2 extends Component {
 
           <div className='Main-box'>
             <div>
-          <div className='Feedback-Q'> Q1 </div>
+          <div className='Feedback-Q'> Q2 </div>
           <div className='Feedback-txt'style={{top:'50px'}}>
                 🔹 Video Check
           </div>
