@@ -102,7 +102,7 @@ function Interview({
                         면접 종료
                     </button>}
                     {questionNumberState > 6
-                    && <button className="interview-button" onClick={() => {
+                    && <button className="mypage-button" onClick={() => {
                         closeModalHandler()
                         setQuestionNumberState(0)
                         clickHandler()

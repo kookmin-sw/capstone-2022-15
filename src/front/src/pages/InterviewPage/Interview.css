@@ -105,3 +105,33 @@
   border: none;
 
 } */
+
+.mypage-button {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 8px;
+
+  width: 250px;
+  height: 40px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  color: white;
+
+  background: #fcdde4;
+  border-radius: 30px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.mypage-button:hover {
+  background-color: #ff85a1;
+  color: #fff;
+  border-radius: 10px;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
