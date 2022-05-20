@@ -1,6 +1,5 @@
 import librosa
 import numpy as np
-import matplotlib.pyplot as plt
 from feedback.utils.io import download_audio_from_s3
 
 DOWN_SAMPLING = 100  # TODO : find appropriate sample rate

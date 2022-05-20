@@ -5,29 +5,29 @@
     top: 80px;
     background: #56565c;
     color: #fff;
-    font-size: 1vw;
+    font-size: 14px;
 }
 
 .Menu-box{
     position: relative;
     top: 80px;
-    width: 20vw;
+    width: 250px;
     background: #F0F2F4;
     flex-direction: row;
     align-items: stretch;
 }
 .Menu-txt2{
     position: absolute;
-    font-size: 1.1vw;
-    left: 6vw;
-    top: 7vh;
+    font-size: 14px;
+    left: 105px;
+    top: 40px;
     padding: 1rem;
     color: #5B7EFB;
     background: #fff;
     font-weight: 600;
     cursor: pointer;
+    width: 130px;
     text-decoration: none;
-    width: 13vw;
     text-align: center;
 }
 .Menu-txt2:hover{
@@ -36,16 +36,16 @@
 
 .Main-box{
     position: absolute;
-    width: 70vw;
-    left:22.5vw;
+    width: 890px;
+    left:260px;
     top: 6.5vh;
 }
 .Img_mypage{
     position: absolute;
-    width:13vw;
+    width:160px;
     bottom: 3vh;
-    left: 3vw;
-    top:55vh;
+    left: 20px;
+    top:350px;
 }
 .List {
     padding: 1vw;
@@ -70,14 +70,21 @@
 
 }
 .list_data {
-    line-height: 40px;
+    line-height: 50px;
     text-decoration-line: none;
-    font-size: 1vw;
+    font-size: 1.2vw;
     text-align: center;
     color: #000000;
+    text-decoration: none;
 }
 .list_data:hover {
-    color: #5B7EFB;
+    background: #d3dbf7;
+}
+a { 
+    text-decoration: none; 
+    color: #000000;
+    font-weight: 500;
+
 }
 
 .acenter {
@@ -92,19 +99,19 @@
 /*-------------------- Feedback.js에서만 사용 -----------------*/
 .mypage_footer_top2{
     z-index: 7;
-    position: absolute;
-    top: 385vh;
+    position: relative;
+    top:2300px;
 }
 .Menu-txt22{
     position: absolute;
-    font-size: 1.1vw;
-    left: 6vw;
-    top: 7vh;
+    font-size: 14px;
+    left: 105px;
+    top: 40px;
     padding: 1rem;
     color: #5B7EFB;
     font-weight: 600;
     cursor: pointer;
-    width: 13vw;
+    width: 80px;
     text-decoration: none;
     text-align: center;
 }
@@ -113,14 +120,14 @@
 }
 .Menu-txt3{
     position: absolute;
-    font-size: 1.1vw;
-    left: 6vw;
-    top: 14vh;
+    font-size: 13px;
+    left: 40px;
+
     padding: 1rem;
     color: #5B7EFB;
     background: #fff;
     font-weight: 600;
-    width: 13vw;
+    width: 200px;
     text-decoration: none;
     text-align: center;
 }
@@ -129,43 +136,44 @@
 }
 .Interviewer-section{
     position: relative;
-    width: 40vw;
-    left: 14vw;
-    top:2vh;
+    width: 30px;
+    left: 190px;
+    top:40px;
 }
 
 .Feedback-txt{
     position: relative;
-    left: 2.5vw;
-    font-size: 1.2vw;
+    left: 30px;
+    font-size: 16px;
     font-weight: 600;
 }
 .Feedback-Q{
     position: relative;
-    left: 2.5vw;
-    font-size: 1.2vw;
+    left: 30px;
+    font-size: 17px;
     font-weight: 600;
     color:#5B7EFB;
 }
 
 .Chart{
     position: relative;
-    width: 30vw;
-    left: 22vw;
 }
 .Stt{
     position: relative;
-    width: 54.5vw;
-    left: 11.5vw;
-    font-size: 1.1vw;
+    width: 650px;
+    left: 160px;
+    font-size: 10px;
     font-weight: 500;
+    padding:24px;
     /* border: 0.1vw solid #5B7EFB; */
     background-color: #F0F2F4;
     text-align: justify;
 }
 .ChartBackground{
     position: absolute;
-    left: 20.3vw;
-    top: 4.3vh;
+    left: 230px;
+    top: 27px;
+    width: 500px;
+    height: 305x;
 
 }

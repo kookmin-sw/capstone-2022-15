@@ -53,7 +53,7 @@ const ModalComponent = ({
                     clearVideoHandler={clearVideoHandler}
                     questionNHandler={questionNHandler}
                 />
-                <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
+                {/* <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button> */}
             </Modal>
         </div>
     );

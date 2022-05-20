@@ -79,7 +79,6 @@ class Feedback3 extends Component {
               &nbsp;&nbsp;질문 1
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 2 Feedback")}>
               <Link to="/feedback2/" className='Menu-txt3' style={{top:'20vh'}}>
               &nbsp;&nbsp;질문 2
@@ -97,6 +96,7 @@ class Feedback3 extends Component {
             <div>
           <div className='Feedback-Q'> Q3 </div>
           <div className='Feedback-txt'style={{top:'50px'}}>
+
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
@@ -123,8 +123,8 @@ class Feedback3 extends Component {
               <div className='ChartBackground'>
                 <img src={img_interviewer}/>
               </div>
-
               <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
+
                 <Scatter_chart_iris scatter_data= {list.volume_interview}  />
               </div>
 
@@ -161,10 +161,6 @@ class Feedback3 extends Component {
   }
  }
 }
-
-
-
-
 
 {/*********************  Scatter Chart - 시선처리 차트 ********************/}
 const Scatter_chart_iris = ({
@@ -287,3 +283,4 @@ const override = {
 }
 
 export default Feedback3;
+

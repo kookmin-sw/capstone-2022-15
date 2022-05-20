@@ -40,13 +40,13 @@ class Top extends Component{
   render(){
     return(
       <div className="FR-top">
-        <img src={img_top_txt} className="top-txt"/> 
-      {/* <span className="top-txt">
+        {/* <img src={img_top_txt} className="top-txt"/>  */}
+      <span className="top-txt">
       가상 면접관이 있는 <br></br>
       인퓨와 함께라면 <br></br>
       내일은 면접왕 <br></br>
       👑
-      </span> */}
+      </span>
       <div onClick={()=>console.log("화상기기 설정 페이지로 페이지 변경")}>
             <Link to="/notification" className="BT-start" style={{width:'9.5vw', height:'6vh', left:'6.5vw', top:'47vh'}}>
                 연습시작!

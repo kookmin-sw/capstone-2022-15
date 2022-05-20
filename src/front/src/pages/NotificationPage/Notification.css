@@ -9,28 +9,21 @@
 .notification-layout1 {
     position: relative;
     /* width: 100%; */
-    height: 880px;
+    height: 1000px;
     margin-top: 20px;
     margin-right: 80px;
 }
 
-.notice-1 {
-    /* height: 80px; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 1.2rem;
-}
 
 .notification-title {
-    position: relative;
+    /* position: relative; */
     /* width: 200px; */
-    height: 80px;
+    height: 100px;
     padding-left: 80px;
     
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     /* font-weight: 500; */
-    font-size: 18px;
+    font-size: 19px;
     line-height: 27px;
     /* color: rgb(81, 119, 255); */
 
@@ -41,7 +34,7 @@
 .notification-content {
     margin-left: 80px;
     margin-top: 10px;
-    height: 580px;
+    height: 500px;
 }
 
 .notice1-cam-show-example-layout {
@@ -53,14 +46,26 @@
     background-color: #000000
 }
 
-.notice1-cam-show-example {
+.notice1-cam-show-example-layout-2 {
     position: relative;
     width: 855px;
     height: 480px;
     margin: auto;
 
     display: flex;
-    background-color: rgb(133, 133, 133)
+    background-color: rgb(245, 245, 245)
+}
+
+.notice1-cam-show-example {
+    position: relative;
+    width: 500px;
+    height: 425px;
+    /* margin: auto; */
+    margin: 50px 0px 0px 180px;
+    align-items: flex-end;
+
+    display: flex;
+    /* background-color: rgb(133, 133, 133) */
 }
 
 
@@ -79,7 +84,9 @@
 
 /*-------------------- next button --------------------*/
 .next-button-layout {
-    height: 120px;
+    height: 130px;
+    margin-top: 55px;
+    /* position: relative; */
 }
 
 .next-button {
@@ -89,17 +96,17 @@
     align-items: center;
     margin-left: auto;
 
-    position: relative;
+    /* position: relative; */
     width: 200px;
     height: 60px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     color: white;
     /* line-height: 37px; */
-    text-decoration: none;
+    /* text-decoration-line: none; */
 
     background: rgba(91, 126, 251, 0.5);
     border-radius: 35px;
@@ -107,5 +114,11 @@
     /* border-color: #A5A5A5; */
     /* border-style: hidden; */
 
+    /* cursor: pointer; */
+}
+
+.next-button:hover{
+    background-color: #5B7EFB;
+    transition: all .2s ease-out;
     cursor: pointer;
 }

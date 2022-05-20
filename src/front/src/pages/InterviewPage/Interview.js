@@ -53,18 +53,19 @@ function Interview({
             {!loading && <div className="interview-app">
                 {/*------------------ 가상 면접관 ------------------*/}
                 <div className="interviewer-section">
-                    {video!=='' && <video width="80%" height="80%" autoPlay={true}> 
+                    {video!=='' && <video width="100%" height="100%" autoPlay={true}> 
                         <source src={video}/>
                     </video>}
                     {video==='' && <BarLoader color={'rgb(81, 119, 255)'} loading={true} css={override} height={8} speedMultiplier={0.7} />}
+                    {/* {video==='' && <img className="notice1-cam-show-example"></img>} */}
                 </div>
                 {/*-------------------- 사용자 --------------------*/}
                 <div className="button-section">
                     {/* state true : 면접 시작 button */}
                     {buttonState 
-                    && <button className="interview-button" onClick={async () => {
-                        await setButtonState(false)
-                        await startCaptureHandler() // 녹화시작
+                    && <button className="interview-button" onClick={() => {
+                        setButtonState(false)
+                        startCaptureHandler() // 녹화시작
                         getInterviewerHandler()
                     }}>
                         면접 시작
@@ -84,7 +85,7 @@ function Interview({
                     {!buttonState 
                     && questionNumberState < 6
                     && questionNumberState % 2 === 0
-                    && <button className="done-button" onClick={async () => {
+                    && <button className="done-button" onClick={() => {
                         setQuestionNumberState(questionNumberState + 1)
                         getInterviewerHandler()
                         downloadHandler()
@@ -95,15 +96,22 @@ function Interview({
                     {/* state false : 면접 종료 button */}
                     {questionNumberState === 6
                     && <button className="interview-button" onClick={() => {
+                        downloadHandler() // check : last recorded video download
+                        setQuestionNumberState(questionNumberState + 1)
+                    }}>
+                        면접 종료
+                    </button>}
+                    {questionNumberState > 6
+                    && <button className="mypage-button" onClick={() => {
                         closeModalHandler()
                         setQuestionNumberState(0)
                         clickHandler()
                     }}>
-                        면접 종료
+                        마이페이지로 이동 
                     </button>}
                 </div>
             </div>}
-            {loading && <BarLoader color={'rgb(81, 119, 255)'} loading={loading} css={override} height={8} speedMultiplier={0.7} />}
+            {/* {loading && <BarLoader color={'rgb(81, 119, 255)'} loading={loading} css={override} height={8} speedMultiplier={0.7} />} */}
         </>
     );
 }

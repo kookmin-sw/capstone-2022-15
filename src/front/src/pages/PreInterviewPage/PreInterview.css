@@ -39,7 +39,7 @@
     padding-top: 22px;
     margin-top: 100px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 850;
     font-size: 34px;
@@ -57,7 +57,7 @@
     height: 150px;
     padding-left: 80px;
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -83,14 +83,14 @@
 .cam-setting-title {
     position: relative;
     width: 200px;
-    height: 37px;
+    height: 40px;
     padding-left: 80px;
     /* top: 42px; */
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 25px;
     line-height: 37px;
     color: rgb(81, 119, 255);
 
@@ -180,7 +180,7 @@
     /* left: 1197px; */
     /* top: 805px; */
 
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -195,6 +195,12 @@
     /* border-color: #A5A5A5; */
     /* border-style: hidden; */
 
+    /* cursor: pointer; */
+}
+
+.start-button:hover{
+    background-color: #5B7EFB;
+    transition: all .2s ease-out;
     cursor: pointer;
 }
 
@@ -215,11 +221,11 @@
     /* margin-right: 80px; */
     /* padding-right: 80px; */
     
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 37px;
+    line-height: 39px;
 
     display: flex;
     /* align-items: center; */

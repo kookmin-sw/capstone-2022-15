@@ -37,8 +37,7 @@ class Feedback extends Component {
       const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
-        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
-      
+        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;      
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -47,7 +46,6 @@ class Feedback extends Component {
       })
       this.setState({data: data_list})
     }
-
     render(){
         const list = this.state.data.data
         console.log("Mypage Get Success")
@@ -73,7 +71,6 @@ class Feedback extends Component {
               연습목록
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 1 Feedback")}>
               <Link to="/feedback1/" className='Menu-txt3' style={{top:'14vh'}}>
               &nbsp;&nbsp;질문 1
@@ -85,7 +82,6 @@ class Feedback extends Component {
               &nbsp;&nbsp;질문 2
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 3 Feedback") }>
               <Link to="/feedback3/" className='Menu-txt3' style={{top:'26vh'}}>
               &nbsp;&nbsp;질문 3
