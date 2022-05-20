@@ -12,6 +12,7 @@ import Feedback3 from './pages/MyPage/Feedback3';
 //import Feedback4 from './pages/MyPage/Feedback4';
 //import Feedback5 from './pages/MyPage/Feedback5';
 import Notification from './pages/NotificationPage/Notification';
+import Step from './pages/StepPage/Step';
 
 function App() {
   return (
@@ -28,8 +29,6 @@ function App() {
       <Route path="/feedback1/*" element={<Feedback1 />} />
       <Route path="/feedback2/*" element={<Feedback2 />} />
       <Route path="/feedback3/*" element={<Feedback3 />} />
-
-
     </Routes>
   );
 }
