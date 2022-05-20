@@ -10,7 +10,7 @@ html { font-size: 62.5%; }
 /*---------------------------------T O P-------------------------------*/
 .FR-top{
     position: absolute;
-    width: 98vw;
+    width: 99.2vw;
     height: 61vh;
     left: 5px;
     top: 14vh;
@@ -118,7 +118,7 @@ html { font-size: 62.5%; }
  /*--------------------------------- middle -------------------------------*/
  .FR-middle{
     position: absolute;
-    width: 98vw;
+    width: 99.2vw;
     height: 70vh;
     left: 5px;
     top: 80vh;
@@ -181,7 +181,7 @@ html { font-size: 62.5%; }
   /*--------------------------------- bottom -------------------------------*/
   .FR-bottom{
     position: absolute;
-    width: 98vw;
+    width: 99.2vw;
     height: 90vh;
     left: 5px;
     top: 161vh;
