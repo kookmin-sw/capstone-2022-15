@@ -7,14 +7,15 @@ from django.contrib.auth import get_user_model
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ("user_id", "password", "user_name", "user_interest")
+        #fields = ("user_id", "password", "user_name", "user_interest")
+        fields = ("user_id", "password", "user_name")
 
     def create(self, validated_data):
         user = User.objects.create_user(
             validated_data["user_id"],
             validated_data["password"],
             validated_data["user_name"],
-            validated_data["user_interest"],
+            #validated_data["user_interest"],
         )
         user.save()
         return user
