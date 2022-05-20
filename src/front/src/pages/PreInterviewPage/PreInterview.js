@@ -164,7 +164,7 @@ const PreInterview = () => {
                         {<WebcamStreamCapture
                             webcamRef={webcamRef}
                             recordedChunks={recordedChunks}
-                            />}
+                        />}
                     </div>
                 </div>
             </div>
@@ -183,9 +183,11 @@ const PreInterview = () => {
                         selectBoxObject={interviewTypeName} />
                 </div>
                 <div className="button-layout">
+                    {/* {checkedId !== '' &&*/}
                     <button className="start-button" onClick={() => isOpenModal(true)}>
                         START
                     </button>
+                    {/* } */}
                 {isOpenModal && <ModalComponent
                     isOpen={openModal}
                     closeModalHandler={closeModalHandler}

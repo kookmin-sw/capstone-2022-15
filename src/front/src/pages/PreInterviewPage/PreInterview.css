@@ -195,6 +195,12 @@
     /* border-color: #A5A5A5; */
     /* border-style: hidden; */
 
+    /* cursor: pointer; */
+}
+
+.start-button:hover{
+    background-color: #5B7EFB;
+    transition: all .2s ease-out;
     cursor: pointer;
 }
 
