@@ -19,20 +19,20 @@ html { font-size: 62.5%; }
 .top-txt{
     position: absolute;
     white-space: pre-line;
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
-    font-size: 2.6vw;
-    line-height: 9.3vh;
+    font-size: 3vw;
+    line-height: 8.5vh;
     color: #000000; 
 
     /* width: auto;  */
-    width: 20vw;
+    width: 30vw;
     left: 6.5vw; 
     top: 8vh;
 }
 .BT-start{
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -55,7 +55,7 @@ html { font-size: 62.5%; }
     background:  #ff85a1;
 }
 .BT-login{
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -134,7 +134,7 @@ html { font-size: 62.5%; }
 
   .middle-txt1{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-style: normal;
     font-weight: 700;
     font-size: 2.8vw;
@@ -144,7 +144,7 @@ html { font-size: 62.5%; }
   }
   .middle-txt2{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-style: normal;
     font-weight: 700;
     font-size: 1.3vw;
@@ -153,7 +153,7 @@ html { font-size: 62.5%; }
 
   }
   .BT-join{
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     font-size: 1.8vw;
@@ -202,7 +202,7 @@ html { font-size: 62.5%; }
   }
   .bottom-txt1{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     width: 20vw;
     height:3vw;
     top:52vh;
@@ -217,7 +217,7 @@ html { font-size: 62.5%; }
   }
   .bottom-txt2{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     width: 25vw;
     height: 4vw;
     top:65vh;
@@ -256,7 +256,7 @@ html { font-size: 62.5%; }
     left: 4vw;
     top: 10vh;
 
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-weight: 700;
     font-size: 3.7vw;
 
@@ -269,7 +269,7 @@ html { font-size: 62.5%; }
     left: 4.5vw;
     top: 17vh;
 
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-weight: 560;
     font-size: 1.5vw;
     display: flex;

@@ -8,11 +8,11 @@ import img_interviewer from '../images/img_interviewer.png';
 import SyncLoader from "react-spinners/SyncLoader";
 import axios from 'axios';
 export const Authentication = React.createContext(null);
-import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis,
+import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis, 
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
-class Feedback extends Component {
+class Feedback2 extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -22,7 +22,8 @@ class Feedback extends Component {
             volume_interview : {},
             stt_interview : {},
             videoUrl : '',
-            loading : true
+            loading : true,
+            interview_id : 0
         }
     }
 
@@ -31,13 +32,13 @@ class Feedback extends Component {
     }
 
     _getListData = async function(){
-      const isTest = true;
+      const isTest = false;
       const interview_id = 1; // --------------- 변경
-      const question_n = 1;
+      const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
         : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
-
+      
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -63,7 +64,10 @@ class Feedback extends Component {
                 <Navbar/>
                 <Bar2/>
 
-      <div className='Menu-box' style={{height: '377vh'}}>
+      <div className='Menu-box' style={{height: '2300px'}}>
+          <div className='mypage_footer_top2'>
+            <Footer/>
+          </div> 
           <div onClick={()=>console.log("마이 페이지(연습목록)로 페이지 변경")}>
               <Link to="/mypage" className='Menu-txt22'>
               연습목록
@@ -75,7 +79,6 @@ class Feedback extends Component {
               &nbsp;&nbsp;질문 1
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 2 Feedback")}>
               <Link to="/feedback2/" className='Menu-txt3' style={{top:'20vh'}}>
               &nbsp;&nbsp;질문 2
@@ -91,8 +94,9 @@ class Feedback extends Component {
 
           <div className='Main-box'>
             <div>
-          <div className='Feedback-Q'> Q1 </div>
-          <div className='Feedback-txt'style={{top:'5.2vh'}}>
+          <div className='Feedback-Q'> Q2 </div>
+          <div className='Feedback-txt'style={{top:'50px'}}>
+
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
@@ -105,7 +109,7 @@ class Feedback extends Component {
 
 
   {/*나의 답변*/}
-          <div className='Feedback-txt' style={{top:'17vh'}}>
+          <div className='Feedback-txt' style={{top:'117px'}}>
                 🔹 나의 답변
             <div className="Stt">
               {list.stt_interview.slice(9, -2)}<br/>
@@ -114,13 +118,13 @@ class Feedback extends Component {
 
 
   {/*시선 처리 차트*/}
-          <div className='Feedback-txt'style={{top:'32vh'}}>
+          <div className='Feedback-txt'style={{top:'194px'}}>
                 🔹 시선 처리
               <div className='ChartBackground'>
                 <img src={img_interviewer}/>
               </div>
+              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
 
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
                 <Scatter_chart_iris scatter_data= {list.volume_interview}  />
               </div>
 
@@ -129,36 +133,34 @@ class Feedback extends Component {
 
 
   {/*머리 움직임 차트*/}
-          <div className='Feedback-txt' style={{top:'100vh'}}>
+          <div className='Feedback-txt' style={{top:'605px'}}>
                 🔹 머리 움직임
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
+              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ width: '800px', height: '300px'}}>  
                 <Line_chart_face line_data= {list.volume_interview}  />
+              </div>
               </div>
           </div>
 
 
   {/*목소리 크기 차트 react horizontal scrolling?*/}
-          <div className='Feedback-txt' style={{top:'168vh'}}>
+          <div className='Feedback-txt' style={{top:'968px'}}>
                 🔹 목소리 크기
-              <div style={{ width: '46.5vw', height: '51.3vh',  left:'14vw',position:'absolute'}}>
+              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ width: '800px', height: '300px'}}>  
+              {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
                 <Line_chart_volume line_data= {list.volume_interview}  />
               </div>
+            </div>
           </div>
         </div>
         </div>
       </div>
-                <div className='mypage_footer_top2'>
-                    <Footer/>
-                </div>
-            </div>
-        );
-    }
+    </div>
+    );
+  }
  }
 }
-
-
-
-
 
 {/*********************  Scatter Chart - 시선처리 차트 ********************/}
 const Scatter_chart_iris = ({
@@ -280,4 +282,5 @@ const override = {
   width: '100%'
 }
 
-export default Feedback;
+export default Feedback2;
+

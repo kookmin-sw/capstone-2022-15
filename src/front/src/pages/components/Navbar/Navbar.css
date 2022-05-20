@@ -5,8 +5,9 @@
     align-items: center;
     font-size: 1.2rem;
     position:absolute;
-    left: 1vw;
+    left: 2.5vw;
     width:auto;
+    /* margin-top: 10px; */
 
     z-index: 5;
     background: rgb(255, 255, 255);
