@@ -215,14 +215,15 @@
     height: 300px;
     margin-left: 80px;
     margin-top: 10px;
+    margin-bottom: 30px;
     /* margin-right: 80px; */
     /* padding-right: 80px; */
     
     /* font-family: Montserrat; */
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 39px;
+    font-size: 21px;
+    line-height: 42px;
 
     display: flex;
     /* align-items: center; */
