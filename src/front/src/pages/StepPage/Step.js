@@ -2,6 +2,9 @@ import './Step.css';
 import Navbar from '../components/Navbar/Navbar';
 import step1 from '../images/step1.png'
 import step2 from '../images/step2.jpg'
+import step3 from '../images/step3.jpg'
+import step3_2 from '../images/step3_2.jpg'
+import step5 from '../images/step5.jpg'
 
 
 function clickHandler(e) {
@@ -49,6 +52,8 @@ const Step = () => {
                 </div>
                 <div className="step-content">
                     Start 버튼을 누르고 면접 연습 창이 나오면 면접 시작 버튼을 눌러 연습을 시작한다.
+                    <img src={step3} className="step3"></img>
+                    <img src={step3_2} className="step3_2"></img>
                 </div>
                 <div className="step-title">
                     STEP 4 
@@ -61,6 +66,7 @@ const Step = () => {
                 </div>
                 <div className="step-content">
                     다음 질문 버튼을 눌러 면접을 진행한다.
+                    <img src={step5} className="step5"></img>
                 </div>
                 <div className="step-title">
                     STEP 6 

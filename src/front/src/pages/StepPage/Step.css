@@ -30,17 +30,41 @@
     /* margin: auto; */
 
     margin-top: 22px;
-    width: 700px;
-    height: 450px;
+    width: 620px;
+    height: 400px;
     border: solid;
-    border-color: black;
+    /* border-color: black; */
 }
 
 .step2 {
     display: flex;
     margin-top: 22px;
-    width: 700px;
-    height: 450px;
+    width: 620px;
+    height: 400px;
     border: solid;
+}
 
+.step3 {
+    /* display: flex; */
+    margin-top: 22px;
+    width: 620px;
+    height: 275px;
+    border: solid;
+}
+
+.step3_2 {
+    margin-top: 22px;
+    margin-left: 8px;
+    width: 620px;
+    height: 275px;
+    border: solid;
+}
+
+.step5 {
+    display: flex;
+
+    margin-top: 22px;
+    width: 620px;
+    height: 275px;
+    border: solid;
 }
