@@ -153,7 +153,7 @@ const PreInterview = () => {
             <div className="cam-setting-layout">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        • WEBCAM 연결 
+                        🖥 &nbsp;WEBCAM 연결 {/* ✔︎ */}
                     </div>
                     {/* <button className="notification" onClick={() => isOpenModal(true)}>
                         i
@@ -171,7 +171,7 @@ const PreInterview = () => {
             <div className="select-interview-type">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        • 면접 종류 선택
+                        📌 &nbsp;면접 종류 선택 
                     </div>
                 </div>
                 <div className="select-interview-type-layout">
