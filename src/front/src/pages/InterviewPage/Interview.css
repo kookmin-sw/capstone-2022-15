@@ -30,18 +30,18 @@
 .interview-button {
   /* display: flex; */
   /* flex-direction: row; */
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   margin: auto;
-  margin-top: 8px;
+  /* margin-top: 5px; */
+  padding-bottom: 5px;
 
   /* position: relative; */
   width: 200px;
   height: 40px;
 
   /* font-family: Montserrat; */
-  font-style: normal;
-  font-weight: 500;
+  font-family: EliceDigitalBaeum_Regular;
   font-size: 25px;
   color: white;
 
@@ -76,14 +76,13 @@
   align-items: center;
   margin: auto;
   margin-top: 8px;
+  padding-bottom: 6px;
 
   position: relative;
   width: 200px;
   height: 40px;
 
-  /* font-family: Montserrat; */
-  font-style: normal;
-  font-weight: 500;
+  font-family: EliceDigitalBaeum_Regular;
   font-size: 25px;
   color: white;
 
@@ -111,13 +110,12 @@
   align-items: center;
   margin: auto;
   margin-top: 8px;
+  padding-bottom: 6px;
 
   width: 250px;
   height: 40px;
 
-  /* font-family: Montserrat; */
-  font-style: normal;
-  font-weight: 600;
+  font-family: EliceDigitalBaeum_Regular;
   font-size: 23px;
   color: white;
 

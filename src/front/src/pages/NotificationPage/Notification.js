@@ -31,11 +31,9 @@ const Notification = () => {
                     1️⃣ &nbsp;IN4U의 면접 연습은 웹캠을 통해 사용자의 모습을 녹화하며 진행됩니다.<br></br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보다 정확한 피드백을 위해, 아래의 샘플 이미지를 참고하여 카메라를 세팅해주세요.<br></br>
                 </div>
-                <div className="notification-content">
-                    <div className="notice1-cam-show-example-layout">
-                        <div className="notice1-cam-show-example-layout-2">
-                        <img src={intervieweeGuide} className="notice1-cam-show-example"></img>
-                        </div>
+                <div className="notice1-cam-show-example-layout">
+                    <div className="notice1-cam-show-example-layout-2">
+                    <img src={intervieweeGuide} className="notice1-cam-show-example"></img>
                     </div>
                 </div>
                 <div className="notification-title">
@@ -45,7 +43,7 @@ const Notification = () => {
                 <div className="notification-title">
                     3️⃣ &nbsp;면접 연습은 한 문제당 질문 시간을 포함하여 1분으로 제한됩니다.<br></br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시간은 면접 시작 버튼을 누른 시점부터 대답 완료를 누를 때까지 입니다.<br></br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1분이 될 때까지 대답 완료 버튼을 누르지 않으면 면접관 영상이 종료되고(?) 녹화가 중지됩니다.<br></br>
+                    {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1분이 될 때까지 대답 완료 버튼을 누르지 않으면 면접관 영상이 종료되고(?) 녹화가 중지됩니다.<br></br> */}
                 </div>
                 <div className="notification-title">
                     4️⃣ &nbsp;네트워크 연결이 불안정하면 면접 연습이 원활하게 진행되지 않을 수 있습니다.<br></br>
