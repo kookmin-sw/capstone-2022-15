@@ -12,8 +12,9 @@
     font-family: EliceDigitalBaeum_Bold;
     font-size: 25px;
     line-height: 27px;
+    font-style: italic;
 
-    color: rgb(81, 119, 255);
+    /* color: #ff85a1; */
 }
 
 .step-content {
@@ -62,9 +63,24 @@
 
 .step5 {
     display: flex;
-
     margin-top: 22px;
     width: 620px;
     height: 275px;
+    border: solid;
+}
+
+.step6 {
+    /* display: flex; */
+    margin-top: 22px;
+    width: 620px;
+    height: 295px;
+    border: solid;
+}
+
+.step6_2 {
+    margin-top: 22px;
+    margin-left: 8px;
+    width: 620px;
+    height: 295px;
     border: solid;
 }

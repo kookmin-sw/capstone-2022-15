@@ -18,12 +18,12 @@
     /* position: relative; */
     /* width: 200px; */
     /* height: 80px; */
-    margin-top: 30px;
+    margin-top: 38px;
     margin-bottom: 20px;
     padding-left: 80px;
     
     font-weight: 500;
-    font-size: 19px;
+    font-size: 20px;
     line-height: 27px;
     /* color: rgb(81, 119, 255); */
 
@@ -68,7 +68,6 @@
 /*-------------------- next button --------------------*/
 .next-button-layout {
     height: 130px;
-    margin-top: 55px;
     /* position: relative; */
 }
 
@@ -78,6 +77,7 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
+    
     padding-bottom: 6px;
 
     /* position: relative; */

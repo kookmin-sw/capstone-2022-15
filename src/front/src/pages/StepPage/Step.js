@@ -5,6 +5,8 @@ import step2 from '../images/step2.jpg'
 import step3 from '../images/step3.jpg'
 import step3_2 from '../images/step3_2.jpg'
 import step5 from '../images/step5.jpg'
+import step6 from '../images/step6.jpeg'
+import step6_2 from '../images/step6_2.jpeg'
 
 
 function clickHandler(e) {
@@ -72,8 +74,10 @@ const Step = () => {
                     STEP 6 
                 </div>
                 <div className="step-content">
-                    한 면접당 3개의 질문이 주어지고, 질문이 모두 끝나면 면접 종료 버튼을 눌러 면접을 종료한다.
-                    면접 종료 버튼을 누르면 면접이 종료되고 마이페이지로 이동한다.
+                    한 면접당 3개의 질문이 주어지고, 질문이 모두 끝나면 면접 종료 버튼을 눌러 면접을 종료한다. <br></br>
+                    면접 종료 버튼을 누르면 면접이 종료되고, 피드백 확인을 위해 마이페이지로 이동한다.
+                    <img src={step6} className="step6"></img>
+                    <img src={step6_2} className="step6_2"></img>
                 </div>
                 <div className="next-button-layout">
                     {/* <Link to="/preinterview" > */}
