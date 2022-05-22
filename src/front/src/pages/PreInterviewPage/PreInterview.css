@@ -85,8 +85,6 @@
     /* top: 42px; */
 
     font-family: EliceDigitalBaeum_Bold;
-    font-style: normal;
-    font-weight: 700;
     font-size: 26px;
     line-height: 37px;
     color: rgb(81, 119, 255);
@@ -170,6 +168,7 @@
     align-items: center;
     margin-left: auto;
     /* margin-top: 25px; */
+    padding-bottom: 4px;
 
     position: relative;
     width: 200px;
@@ -177,9 +176,7 @@
     /* left: 1197px; */
     /* top: 805px; */
 
-    /* font-family: Montserrat; */
-    font-style: normal;
-    font-weight: 700;
+    font-family: EliceDigitalBaeum_Bold;
     font-size: 30px;
     color: white;
     /* line-height: 37px; */
