@@ -122,8 +122,8 @@ class FeedbackView(APIView):
         # s3 presigned url
         bucket = 'user-feedback-bucket'
 
-        #key_list = select(request.user, interview_id, question_n)
-        key_list = select('haha', 2, 0)
+        key_list = select(request.user, interview_id, question_n)
+        #key_list = select('haha', 2, 0)
 
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
