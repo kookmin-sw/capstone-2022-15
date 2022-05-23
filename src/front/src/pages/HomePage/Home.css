@@ -240,7 +240,7 @@ html { font-size: 62.5%; }
   .box-pink{
     position: absolute;
     width: 90vw;
-    height: 40vh;
+    height: 35vh;
     left: 4vw;
     top: 10vh;
 
@@ -252,7 +252,7 @@ html { font-size: 62.5%; }
     width: 70vw;
     height: 20vh;
     left: 4vw;
-    top: 10vh;
+    top: 9vh;
 
     font-family: 'EliceDigitalBaeum_Bold';
     font-weight: 700;
@@ -265,7 +265,7 @@ html { font-size: 62.5%; }
     width: 40vw;
     height: 20vh;
     left: 4.5vw;
-    top: 17vh;
+    top: 12vh;
 
     /* font-family: 'Montserrat'; */
     font-weight: 560;
@@ -278,5 +278,5 @@ html { font-size: 62.5%; }
   .footer_top{
     z-index: 7;
     position: absolute;
-    top:330vh;
+    top:325vh;
   }
