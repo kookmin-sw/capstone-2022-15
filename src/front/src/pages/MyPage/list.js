@@ -56,7 +56,7 @@ class List extends Component {
           <div className='acenter'> 날짜 </div>
         </div>
           {list ? list.map( (el, key) => {
-            const GoFeedbackPage = '/feedback1/'+el.fields.interview_id
+            const GoFeedbackPage = '/feedback1/'
             return(
               <div className='list_grid list_data' key={key}>
                 <div className='acenter list_data'> <Link to={GoFeedbackPage}> {interviewTypename[el.fields.field_id]} </Link> </div>
