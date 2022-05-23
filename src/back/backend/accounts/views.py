@@ -155,11 +155,11 @@ class FeedbackView(APIView):
             if i == 2:
                 with io.BytesIO(body) as f:
                     f.seek(0)
-                    XY = np.load(f).values()
+                    XY = np.load(f)['data']
 
                 d_ = []
                 time = np.linspace(time_min, time_max, len(XY))
-                for j in range(0, len(XY), 60):
+                for j in range(0, len(XY), INTERVAL):
                     d = dict()
                     d['x'] = time[j]
                     d['y'] = XY[j]
