@@ -20,8 +20,8 @@ class PracticeView(APIView):
     def get(self, request, field_id, *args, **kwargs):
         # s3 presigned url
         bucket = 'virtual-interview-video'
-        #question_id, key = select(field_id) # select video randomly
-        key = 'job_interview/ui-ux/00{0}.mp4'
+        question_id, key = select(field_id) # select video randomly
+        #key = 'job_interview/ui-ux/00{0}.mp4'
         interviewer_url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
 
         print(f'{request.user} interviewer url success')
