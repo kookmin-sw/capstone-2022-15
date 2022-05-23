@@ -39,6 +39,7 @@
     width: 890px;
     left:260px;
     top: 6.5vh;
+    
 }
 .Img_mypage{
     position: absolute;
@@ -47,11 +48,22 @@
     left: 20px;
     top:350px;
 }
+.List_layer{
+    display: grid;
+    min-height: 90vh;
+    left: 50%;
+    color: #56565c;
+}
+.List_box{
+    display: inline-block;
+}
 .List {
     padding: 1vw;
-    margin-left: 5vw;
+    margin-left: 20%;
     margin-right: 1vw;
     min-height: 400px;
+    min-width: 750px;
+    
     /* border: 0.2vw solid #5B7EFB; */
 }
 
