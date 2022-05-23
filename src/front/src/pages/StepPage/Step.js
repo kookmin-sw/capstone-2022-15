@@ -8,6 +8,7 @@ import step4 from '../images/step4.png'
 import step5 from '../images/step5.jpg'
 import step6 from '../images/step6.jpeg'
 import step6_2 from '../images/step6_2.jpeg'
+import Footer from '../components/Footer';
 
 
 function clickHandler(e) {
@@ -21,13 +22,15 @@ const Step = () => {
             <div className="description-layout">
                 <span className="description-title">
                     <div style={{color:'rgba(91, 126, 251, 0.3)'}}>   
-                    안내 사항&nbsp;
+                        안내 사항&nbsp;
                     </div>
                     <div style={{color:'rgb(81, 119, 255)'}}>
-                    • 연습 방법&nbsp;
+                        • 연습 방법&nbsp;•&nbsp;
                     </div>
-                    <div style={{color:'rgba(91, 126, 251, 0.3)'}}>   
-                    • 면접 환경 세팅하기
+                    <div className="direct-to-setting" onClick={() => {
+                        clickHandler()
+                    }}>
+                        면접 환경 세팅하기
                     </div>
                 </span>
                 <span className="description-content">
@@ -91,7 +94,9 @@ const Step = () => {
                     {/* </Link> */}
                 </div>
             </div>
-            {/* <Footer/> */}
+            <div className='step-footer'>
+              <Footer/>
+            </div>
         </div>
     );
 }
