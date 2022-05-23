@@ -45,10 +45,10 @@
 }
 .Img_mypage{
     position: absolute;
-    width:160px;
+    width:200px;
     bottom: 3vh;
-    left: 20px;
-    top:350px;
+    left: 19px;
+    top:375px;
 }
 .List_layer{
     display: grid;
@@ -61,7 +61,7 @@
 }
 .List {
     padding: 1vw;
-    left: 70%;
+    left: 50%;
     margin-left: 20%;
     margin-right: 1vw;
     min-height: 400px;
@@ -108,7 +108,7 @@ a {
 .mypage_footer_top{
     z-index: 7;
     position: absolute;
-    top: 110vh;
+    top: 100vh;
 }
 
 /*-------------------- Feedback.js에서만 사용 -----------------*/
