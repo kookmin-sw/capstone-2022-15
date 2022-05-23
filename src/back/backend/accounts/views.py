@@ -133,12 +133,12 @@ class FeedbackView(APIView):
             if i == 0:
                 with io.BytesIO(body) as f:
                     f.seek(0)
-                    time, XY = np.load(f).values()
+                    XY = np.load(f).values()
                     
                 d_ = []
                 for j in range(0, len(XY), 60):
                     d = dict()
-                    d['name'] = time[j]
+
                     d['x'] = XY[0]
                     d['y'] = XY[1]
                     d_.append(d)
