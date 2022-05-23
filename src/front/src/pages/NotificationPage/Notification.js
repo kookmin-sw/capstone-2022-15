@@ -1,8 +1,8 @@
 import './Notification.css';
 import Navbar from '../components/Navbar/Navbar';
 import intervieweeGuide from '../images/interviewee_sample_2.png'
+import Footer from '../components/Footer';
 
-// import Footer from '../components/Footer';
 function clickHandler(e) {
     window.location.href = "/step"
 }
@@ -72,7 +72,9 @@ const Notification = () => {
                     {/* </Link> */}
                 </div>
             </div>
-            {/* <Footer/> */}
+            <div className='notification-footer'>
+              <Footer/>
+            </div>
         </div>
     );
 }
