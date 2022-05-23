@@ -179,8 +179,8 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" name="x" unit="cm" />
-      <YAxis type="number" dataKey="y" name="y" unit="kg" />
+      <XAxis type="number" dataKey="x" name="x" unit="" />
+      <YAxis type="number" dataKey="y" name="y" unit="" />
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
       <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
@@ -211,7 +211,7 @@ const Line_chart_face = ({
             <Line
               type="monotone"
               dataKey="y"
-              name="머리움직임"
+              name="머리움직임 빈도"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
@@ -241,11 +241,11 @@ const Line_chart_volume = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="db"/><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
-              name="크기"
+              name="목소리 크기"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
