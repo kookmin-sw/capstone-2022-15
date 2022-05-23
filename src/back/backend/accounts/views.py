@@ -21,6 +21,7 @@ from .file_manage import select
 s3 = boto3.resource('s3')
 s3_interviewee = boto3.client('s3')
 
+INTERVAL = 60
 
 User = get_user_model()
 
@@ -130,9 +131,6 @@ class FeedbackView(APIView):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
 
-            time_min = 1
-            time_max = 0
-
             # iris movement / volume interview
             if i == 0 or i == 1:
                 with io.BytesIO(body) as f:
@@ -140,17 +138,18 @@ class FeedbackView(APIView):
                     X, Y = np.load(f).values()
                 
                 d_ = []
-                for j in range(0, len(X), 60):
+                for j in range(0, len(X), INTERVAL):
                     d = dict()
                     d['name'] = np.round(X[j])
                     d['x'] = X[j]
                     d['y'] = Y[j]
-                    time_min = min(time_min, X[j])
-                    time_max = max(time_max, X[j])
                     d_.append(d)
                 data.append(d_)
                 #print(i, d_)
                 #print()
+
+            time_min = X[0]
+            time_max = int(len(X)//INTERVAL * INTERVAL)
 
             # face movement
             if i == 2:
