@@ -1,8 +1,8 @@
 import './Notification.css';
 import Navbar from '../components/Navbar/Navbar';
 import intervieweeGuide from '../images/interviewee_sample_2.png'
+import Footer from '../components/Footer';
 
-// import Footer from '../components/Footer';
 function clickHandler(e) {
     window.location.href = "/step"
 }
@@ -21,7 +21,7 @@ const Notification = () => {
                     </div>
                 </span>
                 <span className="description-content">
-                    님, 안녕하세요.<br></br>
+                    김소융 님, 안녕하세요.<br></br>
                     면접 시간은 총 3분입니다.<br></br>
                     면접 연습을 시작하기 전에 아래의 안내 사항을 잘 숙지해주세요. 
                 </span>
@@ -64,7 +64,9 @@ const Notification = () => {
                     {/* </Link> */}
                 </div>
             </div>
-            {/* <Footer/> */}
+            <div className='notification-footer'>
+              <Footer/>
+            </div>
         </div>
     );
 }

@@ -32,7 +32,7 @@
 
     margin-top: 22px;
     width: 620px;
-    height: 305px;
+    height: 290px;
     border: solid;
     /* border-color: black; */
 }
@@ -41,7 +41,7 @@
     display: flex;
     margin-top: 22px;
     width: 620px;
-    height: 400px;
+    height: 395px;
     border: solid;
 }
 
@@ -65,7 +65,7 @@
     display: flex;
     margin-top: 22px;
     width: 620px;
-    height: 310px;
+    height: 315px;
     border: solid;
 }
 
@@ -73,7 +73,7 @@
     display: flex;
     margin-top: 22px;
     width: 620px;
-    height: 295px;
+    height: 300px;
     border: solid;
 }
 
@@ -81,7 +81,7 @@
     /* display: flex; */
     margin-top: 22px;
     width: 620px;
-    height: 295px;
+    height: 300px;
     border: solid;
 }
 
@@ -89,6 +89,12 @@
     margin-top: 22px;
     margin-left: 8px;
     width: 620px;
-    height: 295px;
+    height: 300px;
     border: solid;
+}
+
+.step-footer{
+    z-index: 8;
+    position: absolute;
+    top: 3435px;
 }
