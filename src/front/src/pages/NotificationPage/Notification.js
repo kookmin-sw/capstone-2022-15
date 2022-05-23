@@ -6,6 +6,9 @@ import Footer from '../components/Footer';
 function clickHandler(e) {
     window.location.href = "/step"
 }
+function directToSettingHandler(e) {
+    window.location.href = "/preinterview"
+}
 
 const Notification = () => {
     return (
@@ -14,10 +17,15 @@ const Notification = () => {
             <div className="description-layout">
                 <span className="description-title">
                     <div style={{color:'rgb(81, 119, 255)'}}>   
-                    안내 사항&nbsp;
+                        안내 사항&nbsp;
                     </div>
                     <div style={{color:'rgba(91, 126, 251, 0.3)'}}>
-                    • 연습 방법 • 면접 환경 세팅하기
+                        • 연습 방법&nbsp;•&nbsp;
+                    </div>
+                    <div className="direct-to-setting" onClick={() => {
+                        directToSettingHandler()
+                    }}>
+                        면접 환경 세팅하기
                     </div>
                 </span>
                 <span className="description-content">
