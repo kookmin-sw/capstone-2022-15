@@ -142,7 +142,7 @@ class FeedbackView(APIView):
                 d_ = []
                 for j in range(0, len(X), 60):
                     d = dict()
-                    d['name'] = round(X[j])
+                    d['name'] = np.round(X[j])
                     d['x'] = X[j]
                     d['y'] = Y[j]
                     time_min = min(time_min, X[j])
