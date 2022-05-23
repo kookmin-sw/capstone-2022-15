@@ -61,6 +61,14 @@
     border: solid;
 }
 
+.step4 {
+    display: flex;
+    margin-top: 22px;
+    width: 620px;
+    height: 310px;
+    border: solid;
+}
+
 .step5 {
     display: flex;
     margin-top: 22px;

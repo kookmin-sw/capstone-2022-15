@@ -4,6 +4,7 @@ import step1 from '../images/step1.png'
 import step2 from '../images/step2.jpg'
 import step3 from '../images/step3.jpg'
 import step3_2 from '../images/step3_2.jpg'
+import step4 from '../images/step4.png'
 import step5 from '../images/step5.jpg'
 import step6 from '../images/step6.jpeg'
 import step6_2 from '../images/step6_2.jpeg'
@@ -62,6 +63,7 @@ const Step = () => {
                 </div>
                 <div className="step-content">
                     면접관의 질문이 끝나면 대답을 시작한다. 대답이 완료되면 대답 완료 버튼을 누른다.
+                    <img src={step4} className="step4"></img>
                 </div>
                 <div className="step-title">
                     STEP 5 
