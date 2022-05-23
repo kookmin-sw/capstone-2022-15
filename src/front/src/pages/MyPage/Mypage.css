@@ -149,14 +149,14 @@ a {
 }
 .Interviewer-section{
     position: relative;
-    width: 700px;
-    left: 190px;
+    width: 870px;
+    left: 250px;
     top:40px;
 }
 
 .Feedback-txt{
     position: relative;
-    left: 30px;
+    left: 90px;
     font-size: 16px;
     font-weight: 600;
 }
@@ -164,7 +164,7 @@ a {
     position: relative;
     left: 30px;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 700;
     color:#5B7EFB;
 }
 
@@ -184,9 +184,9 @@ a {
 }
 .ChartBackground{
     position: absolute;
-    left: 230px;
-    top: 27px;
+    left: 270px;
+    top: 29px;
     width: 500px;
-    height: 305x;
+    height: 310x;
 
 }
