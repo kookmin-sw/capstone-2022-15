@@ -121,3 +121,12 @@
         opacity: 0; 
     } 
 } 
+
+.notification-footer{
+    z-index: 8;
+    /* position: relative; */
+    position: absolute;
+    /* display: flex; */
+    top: 1600px;
+}
+
