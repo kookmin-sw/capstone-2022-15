@@ -29,7 +29,7 @@ class List extends Component {
   }
 
   _getListData = async function() {
-    const isTest = true;
+    const isTest = false;
     let getMypage = isTest
     ? `http://localhost:8000/accounts/mypage` // checkedId -> ques
     : `https://api.kmuin4u.com/accounts/mypage`; 
@@ -56,7 +56,7 @@ class List extends Component {
           <div className='acenter'> 날짜 </div>
         </div>
           {list ? list.map( (el, key) => {
-            const GoFeedbackPage = '/feedback1/'+el.fields.interview_id
+            const GoFeedbackPage = '/feedback1/'
             return(
               <div className='list_grid list_data' key={key}>
                 <div className='acenter list_data'> <Link to={GoFeedbackPage}> {interviewTypename[el.fields.field_id]} </Link> </div>
@@ -65,7 +65,7 @@ class List extends Component {
             )
           })
             : null }
-
+        
       </div>
     );
   }

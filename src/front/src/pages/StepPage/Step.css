@@ -1,0 +1,100 @@
+.StepApp {
+    /* position: relative; */
+    width: 100%;
+    height: auto;
+    left: 0vw;
+}
+
+.step-title {
+    margin-bottom: 7px;
+    padding-left: 80px;
+    
+    font-family: EliceDigitalBaeum_Bold;
+    font-size: 25px;
+    line-height: 32px;
+    font-style: italic;
+
+    /* color: #ff85a1; */
+}
+
+.step-content {
+    margin-bottom: 65px;
+    padding-left: 80px;
+    
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 31px;
+}
+
+.step1 {
+    display: flex;
+    /* margin: auto; */
+
+    margin-top: 22px;
+    width: 620px;
+    height: 290px;
+    border: solid;
+    /* border-color: black; */
+}
+
+.step2 {
+    display: flex;
+    margin-top: 22px;
+    width: 620px;
+    height: 395px;
+    border: solid;
+}
+
+.step3 {
+    /* display: flex; */
+    margin-top: 22px;
+    width: 620px;
+    height: 275px;
+    border: solid;
+}
+
+.step3_2 {
+    margin-top: 22px;
+    margin-left: 8px;
+    width: 620px;
+    height: 275px;
+    border: solid;
+}
+
+.step4 {
+    display: flex;
+    margin-top: 22px;
+    width: 620px;
+    height: 315px;
+    border: solid;
+}
+
+.step5 {
+    display: flex;
+    margin-top: 22px;
+    width: 620px;
+    height: 300px;
+    border: solid;
+}
+
+.step6 {
+    /* display: flex; */
+    margin-top: 22px;
+    width: 620px;
+    height: 300px;
+    border: solid;
+}
+
+.step6_2 {
+    margin-top: 22px;
+    margin-left: 8px;
+    width: 620px;
+    height: 300px;
+    border: solid;
+}
+
+.step-footer{
+    z-index: 8;
+    position: absolute;
+    top: 3435px;
+}

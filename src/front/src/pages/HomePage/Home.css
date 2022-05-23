@@ -10,7 +10,7 @@ html { font-size: 62.5%; }
 /*---------------------------------T O P-------------------------------*/
 .FR-top{
     position: absolute;
-    width: 98vw;
+    width: 99.2vw;
     height: 61vh;
     left: 5px;
     top: 14vh;
@@ -19,20 +19,20 @@ html { font-size: 62.5%; }
 .top-txt{
     position: absolute;
     white-space: pre-line;
-    font-family: Montserrat;
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
-    font-size: 2.6vw;
-    line-height: 9.3vh;
+    font-size: 3vw;
+    line-height: 8.5vh;
     color: #000000; 
 
     /* width: auto;  */
-    width: 20vw;
+    width: 30vw;
     left: 6.5vw; 
     top: 8vh;
 }
 .BT-start{
-    font-family: Montserrat;
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -55,7 +55,7 @@ html { font-size: 62.5%; }
     background:  #ff85a1;
 }
 .BT-login{
-    font-family: Montserrat;
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -84,7 +84,7 @@ html { font-size: 62.5%; }
     position: absolute;
     width: 20vw;
     left: 71.5vw;
-    top: 3vh;
+    top: 7.5vh;
 }
 .img-circle1{
     position: absolute;
@@ -118,7 +118,7 @@ html { font-size: 62.5%; }
  /*--------------------------------- middle -------------------------------*/
  .FR-middle{
     position: absolute;
-    width: 98vw;
+    width: 99.2vw;
     height: 70vh;
     left: 5px;
     top: 80vh;
@@ -127,33 +127,31 @@ html { font-size: 62.5%; }
   }
   .img-gan{
     position: absolute;
-    width: 30vw;
-    left: 6.5vw;
+    width: 34vw;
+    left: 11vw;
     top: 12vh;
   }
 
   .middle-txt1{
     position: absolute;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
+    font-family: 'EliceDigitalBaeum_Bold';
     font-size: 2.8vw;
-    line-height: 9vh;
+    line-height: 8.5vh;
     color: #000000;
 
   }
   .middle-txt2{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-style: normal;
     font-weight: 700;
     font-size: 1.3vw;
-    line-height: 5vh;
+    line-height: 4.3vh;
     color: #000000;
 
   }
   .BT-join{
-    font-family: Montserrat;
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.8vw;
@@ -181,8 +179,8 @@ html { font-size: 62.5%; }
   /*--------------------------------- bottom -------------------------------*/
   .FR-bottom{
     position: absolute;
-    width: 98vw;
-    height: 90vh;
+    width: 99.2vw;
+    height: 100vh;
     left: 5px;
     top: 161vh;
     background: #F0F2F4;
@@ -190,8 +188,8 @@ html { font-size: 62.5%; }
   .box-step{
     position: absolute;
     width: 25vw;
-    height: 80vh;
-    top: 5vh;
+    height: 76vh;
+    top: 12vh;
     background: #FFFFFF;
   }
   .img-step{
@@ -202,10 +200,10 @@ html { font-size: 62.5%; }
   }
   .bottom-txt1{
     position: absolute;
-    font-family: 'Montserrat';
+    font-family: 'EliceDigitalBaeum_Bold';
     width: 20vw;
     height:3vw;
-    top:52vh;
+    top: 50vh;
     left: 2.5vw;
 
     font-size: 3vw;
@@ -217,10 +215,10 @@ html { font-size: 62.5%; }
   }
   .bottom-txt2{
     position: absolute;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     width: 25vw;
     height: 4vw;
-    top:65vh;
+    top:62vh;
     left:0px;
 
     font-size: 1.4vw;
@@ -237,12 +235,12 @@ html { font-size: 62.5%; }
     width: 98vw;
     height: 68vh;
     left: 0px;
-    top: 260vh;
+    top: 265vh;
   }
   .box-pink{
     position: absolute;
     width: 90vw;
-    height: 40vh;
+    height: 35vh;
     left: 4vw;
     top: 10vh;
 
@@ -254,11 +252,11 @@ html { font-size: 62.5%; }
     width: 70vw;
     height: 20vh;
     left: 4vw;
-    top: 10vh;
+    top: 9vh;
 
-    font-family: 'Montserrat';
+    font-family: 'EliceDigitalBaeum_Bold';
     font-weight: 700;
-    font-size: 3.7vw;
+    font-size: 3.5vw;
 
     color: rgba(0, 0, 0, 0.72);
   }
@@ -267,9 +265,9 @@ html { font-size: 62.5%; }
     width: 40vw;
     height: 20vh;
     left: 4.5vw;
-    top: 17vh;
+    top: 12vh;
 
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-weight: 560;
     font-size: 1.5vw;
     display: flex;
@@ -280,5 +278,5 @@ html { font-size: 62.5%; }
   .footer_top{
     z-index: 7;
     position: absolute;
-    top:330vh;
+    top:325vh;
   }

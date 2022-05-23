@@ -1,5 +1,3 @@
-// 1111 make modal component
-
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
 import Interview from '../pages/InterviewPage/Interview'
@@ -53,7 +51,7 @@ const ModalComponent = ({
                     clearVideoHandler={clearVideoHandler}
                     questionNHandler={questionNHandler}
                 />
-                <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button>
+                {/* <button onClick={closeModalHandler} style={CloseButtonStyle ? CloseButtonStyle : {color: 'red'}}>close</button> */}
             </Modal>
         </div>
     );

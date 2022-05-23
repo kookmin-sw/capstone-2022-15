@@ -1,0 +1,23 @@
+
+.App {
+    /* font-family: 'EliceDigitalBaeum_Bold'; */
+    font-family: 'EliceDigitalBaeum_Regular';
+    /* font-family: 'Gowun Dodum', sans-serif; */
+    /* font-family: 'Montserrat', sans-serif; */
+}
+.allPage {
+    /* font-family: 'EliceDigitalBaeum_Bold'; */
+    font-family: 'EliceDigitalBaeum_Regular'
+}
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

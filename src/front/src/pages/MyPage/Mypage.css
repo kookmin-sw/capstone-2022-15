@@ -5,7 +5,9 @@
     top: 80px;
     background: #56565c;
     color: #fff;
-    font-size: 14px;
+    font-family: EliceDigitalBaeum_Bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
 
 .Menu-box{
@@ -18,8 +20,8 @@
 }
 .Menu-txt2{
     position: absolute;
-    font-size: 14px;
-    left: 105px;
+    font-size: 16px;
+    left: 100px;
     top: 40px;
     padding: 1rem;
     color: #5B7EFB;
@@ -39,19 +41,31 @@
     width: 890px;
     left:260px;
     top: 6.5vh;
+    
 }
 .Img_mypage{
     position: absolute;
-    width:160px;
+    width:200px;
     bottom: 3vh;
-    left: 20px;
-    top:350px;
+    left: 19px;
+    top:375px;
+}
+.List_layer{
+    display: grid;
+    min-height: 90vh;
+    left: 50%;
+    color: #56565c;
+}
+.List_box{
+    display: inline-block;
 }
 .List {
     padding: 1vw;
-    margin-left: 5vw;
+    margin-left: 20%;
     margin-right: 1vw;
     min-height: 400px;
+    min-width: 750px;
+    
     /* border: 0.2vw solid #5B7EFB; */
 }
 
@@ -93,7 +107,7 @@ a {
 .mypage_footer_top{
     z-index: 7;
     position: absolute;
-    top: 110vh;
+    top: 100vh;
 }
 
 /*-------------------- Feedback.js에서만 사용 -----------------*/
@@ -136,7 +150,7 @@ a {
 }
 .Interviewer-section{
     position: relative;
-    width: 30px;
+    width: 180px;
     left: 190px;
     top:40px;
 }

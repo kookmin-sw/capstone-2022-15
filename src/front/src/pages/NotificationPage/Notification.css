@@ -14,33 +14,29 @@
     margin-right: 80px;
 }
 
-
 .notification-title {
     /* position: relative; */
     /* width: 200px; */
-    height: 90px;
+    /* height: 80px; */
+    margin-top: 38px;
+    margin-bottom: 25px;
     padding-left: 80px;
     
-    font-family: Montserrat;
-    /* font-weight: 500; */
-    font-size: 18px;
-    line-height: 27px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 31px;
     /* color: rgb(81, 119, 255); */
 
     display: flex;
-    align-items: center;
-}
-
-.notification-content {
-    margin-left: 80px;
-    margin-top: 10px;
-    height: 500px;
+    /* align-items: center; */
 }
 
 .notice1-cam-show-example-layout {
     position: relative;
     /* width: 100%; */
     height: 480px;
+    margin-left: 80px;
+    margin-bottom: 42px;
     
     display: flex;
     background-color: #000000
@@ -69,23 +65,9 @@
 }
 
 
-.cam-show-layout {
-    position: relative;
-    /* width: 100%; */
-    height: 480px;
-    margin-left: 80px;
-    margin-top: 10px;
-    /* margin-right: 80px; */
-    /* padding-right: 80px; */
-    
-    display: flex;
-    background-color: #000000
-}
-
 /*-------------------- next button --------------------*/
 .next-button-layout {
-    height: 120px;
-    margin-top: 50px;
+    height: 130px;
     /* position: relative; */
 }
 
@@ -95,14 +77,14 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
+    
+    padding-bottom: 6px;
 
     /* position: relative; */
     width: 200px;
     height: 60px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
+    font-family: EliceDigitalBaeum_Bold;
     font-size: 30px;
     color: white;
     /* line-height: 37px; */
@@ -122,3 +104,29 @@
     transition: all .2s ease-out;
     cursor: pointer;
 }
+
+.direct-to-setting {
+    color: rgba(91, 126, 251, 0.3);
+    animation: blink-effect 0.8s step-end infinite; 
+}
+
+.direct-to-setting:hover {
+    color: #ff85a1;
+    cursor: pointer;
+    animation: blink-effect step-end infinite; 
+}
+
+@keyframes blink-effect { 
+    50% { 
+        opacity: 0; 
+    } 
+} 
+
+.notification-footer{
+    z-index: 8;
+    /* position: relative; */
+    position: absolute;
+    /* display: flex; */
+    top: 1600px;
+}
+
