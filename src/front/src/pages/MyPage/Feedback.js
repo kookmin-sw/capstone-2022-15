@@ -121,7 +121,7 @@ class Feedback extends Component {
               </div>
 
               <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
-                <Scatter_chart_iris scatter_data= {list.volume_interview}  />
+                <Scatter_chart_iris scatter_data= {list.iris_movement}  />
               </div>
 
           </div>
@@ -133,7 +133,7 @@ class Feedback extends Component {
                 🔹 머리 움직임
               <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
               <div style={{ width: '800px', height: '300px'}}>  
-                <Line_chart_face line_data= {list.volume_interview}  />
+                <Line_chart_face line_data= {list.face_movement}  />
               </div>
               </div>
           </div>
