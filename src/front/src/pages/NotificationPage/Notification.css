@@ -104,3 +104,20 @@
     transition: all .2s ease-out;
     cursor: pointer;
 }
+
+.direct-to-setting {
+    color: rgba(91, 126, 251, 0.3);
+    animation: blink-effect 0.8s step-end infinite; 
+}
+
+.direct-to-setting:hover {
+    color: #ff85a1;
+    cursor: pointer;
+    animation: blink-effect step-end infinite; 
+}
+
+@keyframes blink-effect { 
+    50% { 
+        opacity: 0; 
+    } 
+} 
