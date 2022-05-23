@@ -158,13 +158,13 @@ class FeedbackView(APIView):
                     XY = np.load(f).values()
 
                 d_ = []
+                time = np.linspace(time_min, time_max, len(d_))
                 for j in range(0, len(XY), 60):
                     d = dict()
-                    d['x'] =
-                    d['y'] = XY[0]
+                    d['x'] = time[j]
+                    d['y'] = XY[j]
                     d_.append(d)
                 data.append(d_)
-                data.append(np.linspace(time_min, time_max, len(d_)))
                 # print(i, d_)
                 # print()
 
