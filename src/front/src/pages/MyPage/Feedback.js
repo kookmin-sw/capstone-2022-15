@@ -120,7 +120,7 @@ class Feedback extends Component {
                 <img src={img_interviewer}/>
               </div>
 
-              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
+              <div style={{ width: '594px', height: '313px',  left:'190px',position:'absolute'}}>
                 <Scatter_chart_iris scatter_data= {list.iris_movement}  />
               </div>
 
@@ -131,7 +131,7 @@ class Feedback extends Component {
   {/*머리 움직임 차트*/}
           <div className='Feedback-txt' style={{top:'605px'}}>
                 🔹 머리 움직임
-              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
               <div style={{ width: '800px', height: '300px'}}>  
                 <Line_chart_face line_data= {list.face_movement}  />
               </div>
@@ -140,9 +140,9 @@ class Feedback extends Component {
 
 
   {/*목소리 크기 차트 react horizontal scrolling?*/}
-          <div className='Feedback-txt' style={{top:'968px'}}>
+          <div className='Feedback-txt' style={{top:'1058px'}}>
                 🔹 목소리 크기
-              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
               <div style={{ width: '800px', height: '300px'}}>  
               {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
                 <Line_chart_volume line_data= {list.volume_interview}  />
