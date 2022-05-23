@@ -123,31 +123,18 @@ class FeedbackView(APIView):
         bucket = 'user-feedback-bucket'
 
         key_list = select(request.user, interview_id, question_n)
+        print(key_list)
         #key_list = select('haha', 2, 0)
 
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
-            
-            # face movement
-            if i == 0:
-                with io.BytesIO(body) as f:
-                    f.seek(0)
-                    XY = np.load(f).values()
-                    
-                d_ = []
-                for j in range(0, len(XY), 60):
-                    d = dict()
 
-                    d['x'] = XY[0]
-                    d['y'] = XY[1]
-                    d_.append(d)
-                data.append(d_)
-                #print(i, d_)
-                #print()
-            
+            time_min = 1
+            time_max = 0
+
             # iris movement / volume interview
-            if i == 1 or i == 2:
+            if i == 0 or i == 1:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     X, Y = np.load(f).values()
@@ -158,10 +145,30 @@ class FeedbackView(APIView):
                     d['name'] = round(X[j])
                     d['x'] = X[j]
                     d['y'] = Y[j]
+                    time_min = min(time_min, X[j])
+                    time_max = max(time_max, X[j])
                     d_.append(d)
                 data.append(d_)
                 #print(i, d_)
                 #print()
+
+            # face movement
+            if i == 2:
+                with io.BytesIO(body) as f:
+                    f.seek(0)
+                    XY = np.load(f).values()
+
+                d_ = []
+                time = np.linspace(time_min, time_max, len(d_))
+                for j in range(0, len(XY), 60):
+                    d = dict()
+                    d['x'] = time[j]
+                    d['y'] = XY[j]
+                    d_.append(d)
+                data.append(d_)
+                # print(i, d_)
+                # print()
+
             
             # stt interview
             if i == 3:
