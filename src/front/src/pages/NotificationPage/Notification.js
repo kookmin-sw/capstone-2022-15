@@ -6,9 +6,6 @@ import intervieweeGuide from '../images/interviewee_sample_2.png'
 function clickHandler(e) {
     window.location.href = "/step"
 }
-function directToSettingHandler(e) {
-    window.location.href = "/preinterview"
-}
 
 const Notification = () => {
     return (
@@ -17,19 +14,14 @@ const Notification = () => {
             <div className="description-layout">
                 <span className="description-title">
                     <div style={{color:'rgb(81, 119, 255)'}}>   
-                        안내 사항&nbsp;
+                    안내 사항&nbsp;
                     </div>
                     <div style={{color:'rgba(91, 126, 251, 0.3)'}}>
-                        • 연습 방법&nbsp;•&nbsp;
-                    </div>
-                    <div className="direct-to-setting" onClick={() => {
-                        directToSettingHandler()
-                    }}>
-                        면접 환경 세팅하기
+                    • 연습 방법 • 면접 환경 세팅하기
                     </div>
                 </span>
                 <span className="description-content">
-                    님, 안녕하세요.<br></br>
+                    김소융 님, 안녕하세요.<br></br>
                     면접 시간은 총 3분입니다.<br></br>
                     면접 연습을 시작하기 전에 아래의 안내 사항을 잘 숙지해주세요. 
                 </span>
