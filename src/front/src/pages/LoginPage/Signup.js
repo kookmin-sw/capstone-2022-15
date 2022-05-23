@@ -126,7 +126,7 @@ const Signup = () => {
                 required
               />{' '}
               <br/>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(소문자, 숫자, 특수문자 포함 8~16자) </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <br />
               <label htmlFor='user_pw'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인&nbsp;&nbsp;</label>

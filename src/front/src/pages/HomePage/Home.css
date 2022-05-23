@@ -19,7 +19,7 @@ html { font-size: 62.5%; }
 .top-txt{
     position: absolute;
     white-space: pre-line;
-    /* font-family: Montserrat; */
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 3vw;
@@ -32,7 +32,7 @@ html { font-size: 62.5%; }
     top: 8vh;
 }
 .BT-start{
-    /* font-family: Montserrat; */
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -55,7 +55,7 @@ html { font-size: 62.5%; }
     background:  #ff85a1;
 }
 .BT-login{
-    /* font-family: Montserrat; */
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.4vw;
@@ -127,18 +127,16 @@ html { font-size: 62.5%; }
   }
   .img-gan{
     position: absolute;
-    width: 30vw;
-    left: 6.5vw;
+    width: 34vw;
+    left: 11vw;
     top: 12vh;
   }
 
   .middle-txt1{
     position: absolute;
-    /* font-family: 'Montserrat'; */
-    font-style: normal;
-    font-weight: 700;
+    font-family: 'EliceDigitalBaeum_Bold';
     font-size: 2.8vw;
-    line-height: 9vh;
+    line-height: 8.5vh;
     color: #000000;
 
   }
@@ -148,12 +146,12 @@ html { font-size: 62.5%; }
     font-style: normal;
     font-weight: 700;
     font-size: 1.3vw;
-    line-height: 5vh;
+    line-height: 4.3vh;
     color: #000000;
 
   }
   .BT-join{
-    /* font-family: Montserrat; */
+    font-family: EliceDigitalBaeum_Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 1.8vw;
@@ -182,7 +180,7 @@ html { font-size: 62.5%; }
   .FR-bottom{
     position: absolute;
     width: 99.2vw;
-    height: 90vh;
+    height: 100vh;
     left: 5px;
     top: 161vh;
     background: #F0F2F4;
@@ -190,8 +188,8 @@ html { font-size: 62.5%; }
   .box-step{
     position: absolute;
     width: 25vw;
-    height: 80vh;
-    top: 5vh;
+    height: 76vh;
+    top: 12vh;
     background: #FFFFFF;
   }
   .img-step{
@@ -202,10 +200,10 @@ html { font-size: 62.5%; }
   }
   .bottom-txt1{
     position: absolute;
-    /* font-family: 'Montserrat'; */
+    font-family: 'EliceDigitalBaeum_Bold';
     width: 20vw;
     height:3vw;
-    top:52vh;
+    top: 50vh;
     left: 2.5vw;
 
     font-size: 3vw;
@@ -220,7 +218,7 @@ html { font-size: 62.5%; }
     /* font-family: 'Montserrat'; */
     width: 25vw;
     height: 4vw;
-    top:65vh;
+    top:62vh;
     left:0px;
 
     font-size: 1.4vw;
@@ -237,7 +235,7 @@ html { font-size: 62.5%; }
     width: 98vw;
     height: 68vh;
     left: 0px;
-    top: 260vh;
+    top: 265vh;
   }
   .box-pink{
     position: absolute;
@@ -256,9 +254,9 @@ html { font-size: 62.5%; }
     left: 4vw;
     top: 10vh;
 
-    /* font-family: 'Montserrat'; */
+    font-family: 'EliceDigitalBaeum_Bold';
     font-weight: 700;
-    font-size: 3.7vw;
+    font-size: 3.5vw;
 
     color: rgba(0, 0, 0, 0.72);
   }

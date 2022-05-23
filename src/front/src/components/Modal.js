@@ -1,5 +1,3 @@
-// 1111 make modal component
-
 import React, { useState, useEffect } from "react"; 
 import Modal from 'react-modal';
 import Interview from '../pages/InterviewPage/Interview'

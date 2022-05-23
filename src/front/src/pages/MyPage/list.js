@@ -65,7 +65,7 @@ class List extends Component {
             )
           })
             : null }
-
+        
       </div>
     );
   }
