@@ -122,8 +122,8 @@ class FeedbackView(APIView):
         # s3 presigned url
         bucket = 'user-feedback-bucket'
 
-        #key_list = select(request.user, interview_id, question_n)
-        key_list = select('haha', 2, 0)
+        key_list = select(request.user, interview_id, question_n)
+        #key_list = select('haha', 2, 0)
 
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
@@ -136,7 +136,7 @@ class FeedbackView(APIView):
                     time, XY = np.load(f).values()
                     
                 d_ = []
-                for j in range(len(XY)):
+                for j in range(0, len(XY), 60):
                     d = dict()
                     d['name'] = time[j]
                     d['x'] = XY[0]
@@ -153,7 +153,7 @@ class FeedbackView(APIView):
                     X, Y = np.load(f).values()
                 
                 d_ = []
-                for j in range(len(X)):
+                for j in range(0, len(X), 60):
                     d = dict()
                     d['name'] = round(X[j])
                     d['x'] = X[j]
