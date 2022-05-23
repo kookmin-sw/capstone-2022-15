@@ -83,7 +83,7 @@ class Middle extends Component{
             실제 면접과 유사한 방식으로 연습할 수 있습니다.
           </span>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
-                <Link to ="signup" className="BT-join" style={{left:'68.2vw', top:'52vh'}}>
+                <Link to ="signup" className="BT-join" style={{left:'60.5vw', top:'50vh'}}>
                   회원가입
                 </Link>
           </div>
@@ -146,7 +146,7 @@ class Footer_pink extends Component{
             </span>
           </div>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경 이벤트 추가")}>
-            <Link to ="signup" className="BT-join" style={{left:'74vw', top:'33vh'}}>
+            <Link to ="signup" className="BT-join" style={{left:'74vw', top:'26vh'}}>
                   회원가입
             </Link>
           </div>
