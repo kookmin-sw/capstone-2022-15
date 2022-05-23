@@ -120,8 +120,8 @@ class Feedback extends Component {
                 <img src={img_interviewer}/>
               </div>
 
-              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
-                <Scatter_chart_iris scatter_data= {list.volume_interview}  />
+              <div style={{ width: '594px', height: '313px',  left:'190px',position:'absolute'}}>
+                <Scatter_chart_iris scatter_data= {list.iris_movement}  />
               </div>
 
           </div>
@@ -131,18 +131,18 @@ class Feedback extends Component {
   {/*머리 움직임 차트*/}
           <div className='Feedback-txt' style={{top:'605px'}}>
                 🔹 머리 움직임
-              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
               <div style={{ width: '800px', height: '300px'}}>  
-                <Line_chart_face line_data= {list.volume_interview}  />
+                <Line_chart_face line_data= {list.face_movement}  />
               </div>
               </div>
           </div>
 
 
   {/*목소리 크기 차트 react horizontal scrolling?*/}
-          <div className='Feedback-txt' style={{top:'968px'}}>
+          <div className='Feedback-txt' style={{top:'1058px'}}>
                 🔹 목소리 크기
-              <div style={{ overflowX:'scroll',width: '594px', height: '330px',  left:'150px',position:'absolute'}}>  
+              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
               <div style={{ width: '800px', height: '300px'}}>  
               {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
                 <Line_chart_volume line_data= {list.volume_interview}  />
@@ -179,8 +179,8 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" name="x" unit="cm" />
-      <YAxis type="number" dataKey="y" name="y" unit="kg" />
+      <XAxis type="number" dataKey="x" name="x" unit="" />
+      <YAxis type="number" dataKey="y" name="y" unit="" />
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
       <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
@@ -211,7 +211,7 @@ const Line_chart_face = ({
             <Line
               type="monotone"
               dataKey="y"
-              name="머리움직임"
+              name="머리움직임 빈도"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
@@ -241,11 +241,11 @@ const Line_chart_volume = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="db"/><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
-              name="크기"
+              name="목소리 크기"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />

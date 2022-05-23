@@ -37,8 +37,7 @@ class Feedback2 extends Component {
       const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
-        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
-      
+        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;      
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -47,7 +46,6 @@ class Feedback2 extends Component {
       })
       this.setState({data: data_list})
     }
-
     render(){
         const list = this.state.data.data
         console.log("Mypage Get Success")
@@ -73,18 +71,17 @@ class Feedback2 extends Component {
               연습목록
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 1 Feedback")}>
               <Link to="/feedback1/" className='Menu-txt3' style={{top:'14vh'}}>
               &nbsp;&nbsp;질문 1
               </Link>
           </div>
+
           <div onClick={()=>console.log("질문 2 Feedback")}>
               <Link to="/feedback2/" className='Menu-txt3' style={{top:'20vh'}}>
               &nbsp;&nbsp;질문 2
               </Link>
           </div>
-
           <div onClick={()=>console.log("질문 3 Feedback") }>
               <Link to="/feedback3/" className='Menu-txt3' style={{top:'26vh'}}>
               &nbsp;&nbsp;질문 3
@@ -96,7 +93,6 @@ class Feedback2 extends Component {
             <div>
           <div className='Feedback-Q'> Q2 </div>
           <div className='Feedback-txt'style={{top:'50px'}}>
-
                 🔹 Video Check
           </div>
           <div className="Interviewer-section">
@@ -123,8 +119,8 @@ class Feedback2 extends Component {
               <div className='ChartBackground'>
                 <img src={img_interviewer}/>
               </div>
-              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
 
+              <div style={{ width: '594px', height: '313px',  left:'150px',position:'absolute'}}>
                 <Scatter_chart_iris scatter_data= {list.volume_interview}  />
               </div>
 
@@ -162,6 +158,10 @@ class Feedback2 extends Component {
  }
 }
 
+
+
+
+
 {/*********************  Scatter Chart - 시선처리 차트 ********************/}
 const Scatter_chart_iris = ({
   scatter_data
@@ -179,8 +179,8 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" name="x" unit="cm" />
-      <YAxis type="number" dataKey="y" name="y" unit="kg" />
+      <XAxis type="number" dataKey="x" name="x" unit="" />
+      <YAxis type="number" dataKey="y" name="y" unit="" />
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
       <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
@@ -211,7 +211,7 @@ const Line_chart_face = ({
             <Line
               type="monotone"
               dataKey="y"
-              name="머리움직임"
+              name="머리움직임 빈도"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
@@ -241,11 +241,11 @@ const Line_chart_volume = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="db"/><YAxis /> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
-              name="크기"
+              name="목소리 크기"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
@@ -283,4 +283,3 @@ const override = {
 }
 
 export default Feedback2;
-
