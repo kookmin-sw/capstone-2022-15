@@ -8,6 +8,7 @@ import step4 from '../images/step4.png'
 import step5 from '../images/step5.jpg'
 import step6 from '../images/step6.jpeg'
 import step6_2 from '../images/step6_2.jpeg'
+import Footer from '../components/Footer';
 
 
 function clickHandler(e) {
@@ -93,7 +94,9 @@ const Step = () => {
                     {/* </Link> */}
                 </div>
             </div>
-            {/* <Footer/> */}
+            <div className='step-footer'>
+              <Footer/>
+            </div>
         </div>
     );
 }

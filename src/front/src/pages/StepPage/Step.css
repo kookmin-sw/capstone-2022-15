@@ -92,3 +92,9 @@
     height: 300px;
     border: solid;
 }
+
+.step-footer{
+    z-index: 8;
+    position: absolute;
+    top: 3435px;
+}
