@@ -140,6 +140,7 @@ class FeedbackView(APIView):
                     INTERVAL = int(len(X)/max(X))
                     print(len(X), max(X), INTERVAL)
 
+
                 d_ = []
                 for j in range(0, len(X), INTERVAL):
                     d = dict()
@@ -150,8 +151,8 @@ class FeedbackView(APIView):
                 data.append(d_)
 
                 # for face movement
-                time_min = X[0]
-                time_max = int(len(X) // INTERVAL * INTERVAL)
+                time_min = 0
+                time_max = int(max(X))
 
 
             # iris movement
@@ -159,9 +160,10 @@ class FeedbackView(APIView):
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY, center = np.load(f).values()
+                    INTERVAL = len(XY) / time_max
 
                 d_ = []
-                for j in range(0, len(XY[0])):
+                for j in range(0, len(XY[0]), INTERVAL):
                     d = dict()
                     d['name'] = np.round(XY[0][j])
                     d['x'] = XY[0][j]
@@ -176,9 +178,10 @@ class FeedbackView(APIView):
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY = np.load(f)['data']
+                    INTERVAL = len(XY) / time_max
 
                 d_ = []
-                time = np.linspace(time_min, time_max, len(XY))
+                time = np.linspace(time_min, time_max, INTERVAL)
                 for j in range(0, len(XY), INTERVAL):
                     d = dict()
                     d['x'] = time[j]
