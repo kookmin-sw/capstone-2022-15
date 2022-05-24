@@ -135,7 +135,7 @@ class FeedbackView(APIView):
             if i == 0:
                 with io.BytesIO(body) as f:
                     f.seek(0)
-                    XY = np.load(f).values()
+                    XY, center = np.load(f).values()
 
                 d_ = []
                 for j in range(0, len(XY), INTERVAL):
@@ -145,6 +145,7 @@ class FeedbackView(APIView):
                     d['y'] = XY[1][j]
                     d_.append(d)
                 data.append(d_)
+                print(center)
 
             # volume interview
             if i == 1:
