@@ -183,7 +183,7 @@ class FeedbackView(APIView):
                     print("face:", len(XY), time_max)
 
                 d_ = []
-                time = np.linspace(time_min, time_max, INTERVAL)
+                time = np.linspace(time_min, time_max, len(XY))
                 for j in range(0, len(XY), INTERVAL):
                     d = dict()
                     d['x'] = time[j]
