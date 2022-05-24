@@ -52,6 +52,7 @@ class List extends Component {
     return (
       <div className='List'>
         <div className='list_grid list_tit'>
+          <div className='acenter'> 번호 </div>
           <div className='acenter'> 제목 </div>
           <div className='acenter'> 날짜 </div>
         </div>
@@ -59,6 +60,7 @@ class List extends Component {
             const GoFeedbackPage = '/feedback1/'
             return(
               <div className='list_grid list_data' key={key}>
+                <div className='acenter list_data'> {el+1}</div>
                 <div className='acenter list_data'> <Link to={GoFeedbackPage}> {interviewTypename[el.fields.field_id]} </Link> </div>
                 <div className='acenter list_data'> {el.fields.interview_date.slice(0,10)} </div>
               </div>

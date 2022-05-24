@@ -57,7 +57,9 @@ class Feedback extends Component {
     if (list){
     console.log("video: ", list.interviewee_url)
     console.log(list.interviewee_url.interviewee_url)
+    alert('2 ~ 3분 후 피드백이 생성됩니다.')
         return (
+          
             <div>
                 <Navbar/>
                 <Bar2/>
