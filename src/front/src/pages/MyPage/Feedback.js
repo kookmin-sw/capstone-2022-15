@@ -145,7 +145,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'1058px'}}>
                 🔹 목소리 크기
               <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
-              <div style={{ width: '800px', height: '300px'}}>  
+              <div style={{ width: '800px', height: '300px'}}>
               {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
                 <Line_chart_volume line_data= {list.volume_interview}  />
               </div>
@@ -172,7 +172,7 @@ const Scatter_chart_iris = ({
     <ResponsiveContainer width="100%" height="100%">
     <ScatterChart
       width={'500px'}
-      height={'300px'}
+      height={'900px'}
       margin={{
           top: 5,
           right: 30,
@@ -202,14 +202,14 @@ const Line_chart_face = ({
             height={'300px'}
             data={line_data}
             margin={{
-                      top: 5,
+                      top: 30,
                       right: 30,
                       left: 20,
                       bottom: 5,
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" /><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" /><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
@@ -223,8 +223,6 @@ const Line_chart_face = ({
 
   );
 }
-
-
 {/*********************  Line Chart - 목소리 크기 차트 ********************/}
 const Line_chart_volume = ({
   line_data
@@ -236,14 +234,14 @@ const Line_chart_volume = ({
             height={'300px'}
             data={line_data}
             margin={{
-                      top: 5,
+                      top: 30,
                       right: 30,
                       left: 20,
                       bottom: 5,
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" unit="db"/><YAxis /> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="초"/><YAxis unit="dB"/> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
@@ -257,8 +255,6 @@ const Line_chart_volume = ({
 
   );
 }
-
-
 
 
 class Bar2 extends Component{
