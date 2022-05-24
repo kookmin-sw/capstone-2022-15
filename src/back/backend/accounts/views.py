@@ -137,7 +137,7 @@ class FeedbackView(APIView):
                     f.seek(0)
                     XY, center = np.load(f).values()
                     INTERVAL = int(len(XY[0])/max(XY[0]))
-                    print(len(XY[0]), max(XY[0][-1]), INTERVAL)
+                    print(len(XY[0]), max(XY[0]), INTERVAL)
 
                 d_ = []
                 for j in range(0, len(XY[0]), INTERVAL):
