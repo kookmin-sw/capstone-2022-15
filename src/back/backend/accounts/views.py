@@ -184,9 +184,9 @@ class FeedbackView(APIView):
                                                                 Params={'Bucket': bucket, 'Key': key})
 
         return Response(status=status.HTTP_200_OK, data={
-                                "face_movement": data[0],
-                                "iris_movement": data[1],
-                                "volume_interview": data[2],
+                                "iris_movement": data[0],
+                                "volume_interview": data[1],
+                                "face_movement": data[2],
                                 "stt_interview": data[3],
                                 "interviewee_url": interviewee_url
         })
