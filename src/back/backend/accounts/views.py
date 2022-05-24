@@ -170,6 +170,12 @@ class FeedbackView(APIView):
                     d['x'] = XY[0][j]
                     d['y'] = XY[1][j]
                     d_.append(d)
+                # center
+                d = dict()
+                d['name'] = np.round(center[0])
+                d['x'] = center[0]
+                d['y'] = center[1]
+                d_.append(d)
                 data.append(d_)
                 print(center)
 
