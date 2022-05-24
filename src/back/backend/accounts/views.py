@@ -131,8 +131,23 @@ class FeedbackView(APIView):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
 
-            # iris movement / volume interview
-            if i == 0 or i == 1:
+            # iris movement
+            if i == 0:
+                with io.BytesIO(body) as f:
+                    f.seek(0)
+                    XY = np.load(f).values()
+
+                d_ = []
+                for j in range(0, len(XY), INTERVAL):
+                    d = dict()
+                    d['name'] = np.round(XY[j])
+                    d['x'] = XY[0][j]
+                    d['y'] = XY[1][j]
+                    d_.append(d)
+                data.append(d_)
+
+            # volume interview
+            if i == 1:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     X, Y = np.load(f).values()
