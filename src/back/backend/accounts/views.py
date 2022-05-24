@@ -131,26 +131,8 @@ class FeedbackView(APIView):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
 
-            # iris movement
-            if i == 0:
-                with io.BytesIO(body) as f:
-                    f.seek(0)
-                    XY, center = np.load(f).values()
-                    INTERVAL = int(len(XY[0])/max(XY[0]))
-                    print(len(XY[0]), max(XY[0]), INTERVAL)
-
-                d_ = []
-                for j in range(0, len(XY[0]), INTERVAL):
-                    d = dict()
-                    d['name'] = np.round(XY[0][j], 1)
-                    d['x'] = XY[0][j]
-                    d['y'] = XY[1][j]
-                    d_.append(d)
-                data.append(d_)
-                print(center)
-
             # volume interview
-            if i == 1:
+            if i == 0:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     X, Y = np.load(f).values()
@@ -167,6 +149,26 @@ class FeedbackView(APIView):
                 # for face movement
                 time_min = X[0]
                 time_max = int(len(X) // INTERVAL * INTERVAL)
+
+
+            # iris movement
+            if i == 1:
+                with io.BytesIO(body) as f:
+                    f.seek(0)
+                    XY, center = np.load(f).values()
+                    INTERVAL = int(len(XY[0])/max(XY[0]))
+                    print(len(XY[0]), max(XY[0]), INTERVAL)
+
+                d_ = []
+                for j in range(0, len(XY[0]), INTERVAL):
+                    d = dict()
+                    d['name'] = np.round(XY[0][j], 1)
+                    d['x'] = XY[0][j]
+                    d['y'] = XY[1][j]
+                    d_.append(d)
+                data.append(d_)
+                print(center)
+
 
             # face movement
             if i == 2:
@@ -194,8 +196,8 @@ class FeedbackView(APIView):
                                                                 Params={'Bucket': bucket, 'Key': key})
 
         return Response(status=status.HTTP_200_OK, data={
-                                "iris_movement": data[0],
-                                "volume_interview": data[1],
+                                "volume_interview": data[0],
+                                "iris_movement": data[1],
                                 "face_movement": data[2],
                                 "stt_interview": data[3],
                                 "interviewee_url": interviewee_url
