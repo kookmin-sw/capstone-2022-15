@@ -171,8 +171,9 @@ class FeedbackView(APIView):
             
             # stt interview
             if i == 3:
-                with io.BytesIO(body) as f:
-                    f.seek(0)
+                data.append(body)
+
+
                     #txt = np.load(f).values()
                 #data.append(txt)
                 
@@ -186,7 +187,7 @@ class FeedbackView(APIView):
                                 "face_movement": data[0],
                                 "iris_movement": data[1],
                                 "volume_interview": data[2],
-                                "stt_interview": "123",
+                                "stt_interview": data[3],
                                 "interviewee_url": interviewee_url
         })
 
