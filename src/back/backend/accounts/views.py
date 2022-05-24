@@ -138,7 +138,7 @@ class FeedbackView(APIView):
                     X, Y = np.load(f).values()
 
                     INTERVAL = int(len(X)/max(X))
-                    print(len(X), max(X), INTERVAL)
+                    print("volume:", len(X), max(X), INTERVAL)
 
 
                 d_ = []
@@ -160,7 +160,8 @@ class FeedbackView(APIView):
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY, center = np.load(f).values()
-                    INTERVAL = len(XY[0]) / time_max
+                    INTERVAL = int(len(XY[0]) / time_max)
+                    print("iris:", len(XY[0]), time_max)
 
                 d_ = []
                 for j in range(0, len(XY[0]), INTERVAL):
@@ -178,7 +179,8 @@ class FeedbackView(APIView):
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY = np.load(f)['data']
-                    INTERVAL = len(XY) / time_max
+                    INTERVAL = int(len(XY) / time_max)
+                    print("face:", len(XY), time_max)
 
                 d_ = []
                 time = np.linspace(time_min, time_max, INTERVAL)
