@@ -21,7 +21,7 @@ from .file_manage import select
 s3 = boto3.resource('s3')
 s3_interviewee = boto3.client('s3')
 
-INTERVAL = 60
+INTERVAL = 30
 
 User = get_user_model()
 
@@ -131,12 +131,16 @@ class FeedbackView(APIView):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
 
-            # iris movement / volume interview
-            if i == 0 or i == 1:
+            # volume interview
+            if i == 0:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     X, Y = np.load(f).values()
-                
+
+                    INTERVAL = int(len(X)/max(X))
+                    print("volume:", len(X), max(X), INTERVAL)
+
+
                 d_ = []
                 for j in range(0, len(X), INTERVAL):
                     d = dict()
@@ -145,17 +149,44 @@ class FeedbackView(APIView):
                     d['y'] = Y[j]
                     d_.append(d)
                 data.append(d_)
-                #print(i, d_)
-                #print()
 
-            time_min = X[0]
-            time_max = int(len(X)//INTERVAL * INTERVAL)
+                # for face movement
+                time_min = 0
+                time_max = int(max(X))
+
+
+            # iris movement
+            if i == 1:
+                with io.BytesIO(body) as f:
+                    f.seek(0)
+                    XY, center = np.load(f).values()
+                    INTERVAL = int(len(XY[0]) / time_max)
+                    print("iris:", len(XY[0]), time_max)
+
+                d_ = []
+                for j in range(0, len(XY[0]), INTERVAL):
+                    d = dict()
+                    d['name'] = np.round(XY[0][j])
+                    d['x'] = XY[0][j]
+                    d['y'] = XY[1][j]
+                    d_.append(d)
+                # center
+                d = dict()
+                d['name'] = np.round(center[0])
+                d['x'] = center[0]
+                d['y'] = center[1]
+                d_.append(d)
+                data.append(d_)
+                print(center)
+
 
             # face movement
             if i == 2:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY = np.load(f)['data']
+                    INTERVAL = int(len(XY) / time_max)
+                    print("face:", len(XY), time_max)
 
                 d_ = []
                 time = np.linspace(time_min, time_max, len(XY))
@@ -165,16 +196,11 @@ class FeedbackView(APIView):
                     d['y'] = XY[j]
                     d_.append(d)
                 data.append(d_)
-                # print(i, d_)
-                # print()
-
             
             # stt interview
             if i == 3:
-                with io.BytesIO(body) as f:
-                    f.seek(0)
-                    #txt = np.load(f).values()
-                #data.append(txt)
+                data.append(body)
+                print(body)
                 
         # presigned url 추가
         bucket = 'user-interview-video-bucket'
@@ -183,57 +209,12 @@ class FeedbackView(APIView):
                                                                 Params={'Bucket': bucket, 'Key': key})
 
         return Response(status=status.HTTP_200_OK, data={
-                                "face_movement": data[0],
+                                "volume_interview": data[0],
                                 "iris_movement": data[1],
-                                "volume_interview": data[2],
-                                "stt_interview": "123",
+                                "face_movement": data[2],
+                                "stt_interview": data[3],
                                 "interviewee_url": interviewee_url
         })
-
-        """
-        #user_id_rkawkaks/interview_id_1/result/volume_interview_0.npz
-        user = 'rkawkaks'
-        #user = 'yei'
-        #interview_id = 1
-        #question_n = 0
-
-        key = f'user_id_{user}/interview_id_{interview_id}/result/volume_interview_{question_n}.npz'
-        obj = s3.Object(bucket, key)
-
-        body = obj.get()['Body'].read()
-        with io.BytesIO(body) as f:
-            f.seek(0)
-            X, Y = np.load(f).values()
-
-        key = f'user_id_{user}/interview_id_{interview_id}/result/stt_interview_.txt'
-        obj = s3.Object(bucket, key)
-        body = obj.get()['Body'].read()
-
-
-        data = []
-        for i in range(0, len(X), 5):
-            d = dict()
-            d['name'] = str(round(X[i]))+'초'
-            d['x'] = X[i]
-            d['y'] = Y[i]
-            data.append(d)
-
-        user='yei'
-        interview_id = 2
-        question_n = 1
-        bucket = 'user-interview-video-bucket'
-        key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(user, interview_id, question_n)
-        interviewee_url = s3_interviewee.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
-
-        print(f'{request.user}: feedback success')
-
-        return Response(status=status.HTTP_200_OK, data={"success":True,
-                                                        "volume_interview": data,
-                                                        "stt_interview": body,
-                                                        "interviewee_url": interviewee_url
-                                                        })
-        """
-        #return HttpResponse(body, content_type="text/json-comment-filtered")
 
 
 
