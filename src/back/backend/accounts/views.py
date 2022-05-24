@@ -161,7 +161,7 @@ class FeedbackView(APIView):
                     XY, center = np.load(f).values()
 
                 d_ = []
-                for j in range(0, len(XY[0]), INTERVAL):
+                for j in range(0, len(XY[0])):
                     d = dict()
                     d['name'] = np.round(XY[0][j])
                     d['x'] = XY[0][j]
