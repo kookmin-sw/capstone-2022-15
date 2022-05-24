@@ -161,11 +161,10 @@ class FeedbackView(APIView):
                     d['y'] = Y[j]
                     d_.append(d)
                 data.append(d_)
-                #print(i, d_)
-                #print()
 
-            time_min = X[0]
-            time_max = int(len(X)//INTERVAL * INTERVAL)
+                # for face movement
+                time_min = X[0]
+                time_max = int(len(X) // INTERVAL * INTERVAL)
 
             # face movement
             if i == 2:
