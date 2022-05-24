@@ -136,7 +136,7 @@ class FeedbackView(APIView):
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY, center = np.load(f).values()
-                    INTERVAL =
+                    INTERVAL = int(XY[-1] / len(XY))
 
                 d_ = []
                 for j in range(0, len(XY[0]), INTERVAL):
@@ -154,7 +154,6 @@ class FeedbackView(APIView):
                     f.seek(0)
                     X, Y = np.load(f).values()
 
-                INTERVAL = int(X[-1] / len(X))
                 d_ = []
                 for j in range(0, len(X), INTERVAL):
                     d = dict()
