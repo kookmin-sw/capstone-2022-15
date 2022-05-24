@@ -21,7 +21,7 @@ from .file_manage import select
 s3 = boto3.resource('s3')
 s3_interviewee = boto3.client('s3')
 
-INTERVAL = 60
+INTERVAL = 30
 
 User = get_user_model()
 
@@ -138,7 +138,7 @@ class FeedbackView(APIView):
                     XY, center = np.load(f).values()
 
                 d_ = []
-                for j in range(0, len(XY[0])):
+                for j in range(0, len(XY[0]), INTERVAL):
                     d = dict()
                     d['name'] = np.round(XY[0][j])
                     d['x'] = XY[0][j]
