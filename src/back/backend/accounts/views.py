@@ -189,6 +189,7 @@ class FeedbackView(APIView):
             # stt interview
             if i == 3:
                 data.append(body)
+                print(body)
                 
         # presigned url 추가
         bucket = 'user-interview-video-bucket'
