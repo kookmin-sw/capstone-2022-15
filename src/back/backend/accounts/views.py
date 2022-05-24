@@ -140,7 +140,7 @@ class FeedbackView(APIView):
                 d_ = []
                 for j in range(0, len(XY), INTERVAL):
                     d = dict()
-                    d['name'] = np.round(XY[j])
+                    d['name'] = np.round(XY[0][j])
                     d['x'] = XY[0][j]
                     d['y'] = XY[1][j]
                     d_.append(d)
