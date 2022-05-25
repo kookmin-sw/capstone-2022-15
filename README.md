@@ -108,7 +108,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 ```
 Student ID: 20181690
 E-mail: usun18813@kookmin.ac.kr
-Role: 프론트엔드
+Role: 프로젝트 매니저, 프론트엔드
     • UI/UX 디자인
     • 웹 클라이언트 개발
     • 로고, 이미지 디자인 
@@ -135,9 +135,9 @@ Role: 프론트엔드 리더, GIT 관리
 Student ID: 20181630
 E-mail: skm0626@kookmin.ac.kr
 Role: AI
-    • 가상 면접관 얼굴 생성
+    • 가상 면접관 얼굴 생성 및 합성
     • 질문 mp3 생성
-    • 입 모양 생성 및 면접관 영상 구현 
+    • 가상 면접관 입모양 생성 
 ```
 
 
@@ -161,8 +161,8 @@ Role: 백엔드 리더, 피드백
 Student ID: 20181710
 E-mail: yeieun1213@kookmin.ac.kr
 Role: 서버
-    • API
-    • DB 
+    • API 서버
+    • DB 구축
 
 ```
 
