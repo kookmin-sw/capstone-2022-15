@@ -33,7 +33,7 @@ class Bar extends Component{
 class MenuBox extends Component{
   render(){
     return(
-      <div className='Menu-box' style={{height: '89vh'}}>
+      <div className='Menu-box' style={{height: '750px'}}>
           <div onClick={()=>console.log("마이 페이지로 페이지 변경")}>
                 <Link to="/mypage" className='Menu-txt2'>
                 연습목록
