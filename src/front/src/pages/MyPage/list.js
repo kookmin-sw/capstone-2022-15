@@ -60,8 +60,8 @@ class List extends Component {
             const GoFeedbackPage = '/feedback1/'
             return(
               <div className='list_grid list_data' key={key}>
-                <div className='acenter list_data'> {el+1}</div>
-                <div className='acenter list_data'> <Link to={GoFeedbackPage}> {interviewTypename[el.fields.field_id]} </Link> </div>
+                <div className='acenter list_data'> {key+1}</div>
+                <div className='acenter list_data'> <Link to={'/feedback1/'+(key+1)}> {interviewTypename[el.fields.field_id]} </Link> </div>
                 <div className='acenter list_data'> {el.fields.interview_date.slice(0,10)} </div>
               </div>
             )

@@ -1,4 +1,6 @@
 /* eslint-disable */
+import { useParams, withRouter } from 'react-router-dom';
+// import { withRouter } from "react-router";
 import React, { useState, PureComponent, Component, useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
@@ -8,8 +10,10 @@ import img_interviewer from '../images/img_interviewer.png';
 import SyncLoader from "react-spinners/SyncLoader";
 import axios from 'axios';
 export const Authentication = React.createContext(null);
+
 import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis, 
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
+
 
 
 class Feedback extends Component {
@@ -32,8 +36,11 @@ class Feedback extends Component {
     }
 
     _getListData = async function(){
+      const interview_id = this.props.params.interview_id;
+      console.log(interview_id)
+
       const isTest = false;
-      const interview_id = 5; // --------------- 변경
+      // const interview_id = 5; // --------------- 변경
       const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
@@ -110,7 +117,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'117px'}}>
                 🔹 나의 답변
             <div className="Stt">
-              {list.stt_interview.slice(9, -2)}<br/>
+              {list.stt_interview.slice(46, -2)}<br/>
             </div>
           </div>
 
@@ -280,4 +287,9 @@ const override = {
   width: '100%'
 }
 
-export default Feedback;
+export default (props) => (
+  <Feedback
+      {...props}
+      params={useParams()}
+  />
+);
