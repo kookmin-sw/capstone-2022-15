@@ -149,8 +149,8 @@ Student ID: 20181696
 E-mail: cho5095@kookmin.ac.kr
 Role: 백엔드 리더, 피드백
     • 면접 결과에 대한 피드백 구현
+      (영상 처리, 음성 처리)
     • AWS 시스템 구성  
-
 ```
 
 
