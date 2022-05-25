@@ -33,7 +33,7 @@ class Feedback extends Component {
 
     _getListData = async function(){
       const isTest = false;
-      const interview_id = 1; // --------------- 변경
+      const interview_id = 5; // --------------- 변경
       const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
@@ -110,7 +110,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'117px'}}>
                 🔹 나의 답변
             <div className="Stt">
-              {list.stt_interview.slice(9, -2)}<br/>
+              {list.stt_interview.slice(46, -2)}<br/>
             </div>
           </div>
 
@@ -209,7 +209,7 @@ const Line_chart_face = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" /><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="초"/><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
