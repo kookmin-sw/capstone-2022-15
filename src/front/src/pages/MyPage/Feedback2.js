@@ -209,7 +209,7 @@ const Line_chart_face = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" /><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
+            <XAxis dataKey="name" unit="초"/><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
