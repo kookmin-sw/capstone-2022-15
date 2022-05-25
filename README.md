@@ -22,7 +22,7 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 <!-- 인퓨의 주요 기능 및 기대 효과는 다음과 같다. -->
 
 <!-- 앞서 본 기존의 서비스들과 저희 인퓨의 차별점은 바로 면접관이 있다는 것입니다.  -->
-
+<br>
 
 ### I. 주요 기능 
 
@@ -33,7 +33,7 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
     - 면접자(사용자)가 진행한 면접에 대한 수치화된 객관적 정보 제공
         - 영상 처리 : 머리 움직임, 시선 처리 
         - 음성 처리 : 목소리 크기
-
+<br>
 
 ### II. 기대효과
 
@@ -44,18 +44,20 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 - 녹화된 나의 모습을 확인하면서 면접 중 무의식으로 나오는 습관을 확인할 수 있다.
 - 피드백을 통해 면접자가 기본적으로 갖추어야할 면접 태도를 점검하고 개선할 수 있다.
  
+<br>
 
 ### III. 시스템 구조도
 
-![시스템구조도](https://user-images.githubusercontent.com/39400030/161416926-ed514b15-0010-49f4-85d3-2664438e77db.jpg)
+![시스템구조도](https://user-images.githubusercontent.com/39400030/170180525-26469b5c-c216-4bbf-81e4-1c0e7859eae3.png)
 <!-- <img width="1440" alt="시스템구조도" src="https://user-images.githubusercontent.com/39400030/161415199-beed98b6-9382-4046-bf38-957439de9734.png"> -->
-
+<br>
 
 ### IV. 실행 흐름 
 
 ![실행흐름](https://user-images.githubusercontent.com/39400030/161416930-fa4d4268-9061-486f-a769-a00122854310.jpg)
  <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
 
+<br>
 <br>
 
 ## 2. Abstract
@@ -71,12 +73,15 @@ As more and more companies continue to maintain non-face-to-face employment even
 Interview practice with interviewers created by StyleGAN and Wav2lip can help you practice face-to-face interviews as well as online interviews.
 
 <br>
+<br>
 
 ## 3. 소개 영상
 
 ### I. 200초 소개 동영상
 <!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
 [![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
+
+<br>
 
 ### II. 중간 발표 영상
 [![중간 발표 영상](https://user-images.githubusercontent.com/39400030/162360283-c2917008-e1e4-45ad-a0e1-8e31e4ca5712.png)](https://youtu.be/YphsQx7i4go)
@@ -85,6 +90,7 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
 
+<br>
 <br>
 
 ## 4. 팀 소개
