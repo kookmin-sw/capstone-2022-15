@@ -50,9 +50,15 @@ StyleGAN과 Wav2lip으로 생성된 면접관과 함께 면접 연습을 할 수
 
 ![시스템구조도](https://user-images.githubusercontent.com/39400030/170180525-26469b5c-c216-4bbf-81e4-1c0e7859eae3.png)
 <!-- <img width="1440" alt="시스템구조도" src="https://user-images.githubusercontent.com/39400030/161415199-beed98b6-9382-4046-bf38-957439de9734.png"> -->
+
 <br>
 
-### IV. 실행 흐름 
+### IV. AWS 구조도
+![AWS구조도](https://user-images.githubusercontent.com/39400030/170181004-ddbdc923-201c-4afe-8f70-6651d182acff.png)
+
+<br>
+
+### V. 실행 흐름 
 
 ![실행흐름](https://user-images.githubusercontent.com/39400030/161416930-fa4d4268-9061-486f-a769-a00122854310.jpg)
  <!-- <img width="1440" alt="실행흐름" src="https://user-images.githubusercontent.com/39400030/161415203-c5c2d4ac-6bcd-4b46-b6d8-aaf868c4026e.png"> -->
