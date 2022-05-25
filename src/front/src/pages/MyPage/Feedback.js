@@ -110,7 +110,7 @@ class Feedback extends Component {
           <div className='Feedback-txt' style={{top:'117px'}}>
                 🔹 나의 답변
             <div className="Stt">
-              {list.stt_interview.slice(46, -2)}<br/>
+              {list.stt_interview.slice(9, -2)}<br/>
             </div>
           </div>
 
