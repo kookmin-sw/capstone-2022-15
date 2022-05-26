@@ -17,10 +17,20 @@ class PracticeView(APIView):
         permissions.IsAuthenticated
     ]
     # interviewer url response
-    def get(self, request, field_id, *args, **kwargs):
+    def get(self, request, field_id, question_n, *args, **kwargs):
         # s3 presigned url
         bucket = 'virtual-interview-video'
-        question_id, key = select(field_id) # select video randomly
+
+        interviewer_id, question_id, key = select(field_id)  # select video randomly
+        print(interviewer_id)
+        if question_n == 0:
+            interview = Interview()
+            # 유저 정보 / 인터뷰 날짜 / 면접관 번호 / 분야
+            interview.author = request.user
+            interview.interviewer_id = interviewer_id
+            interview.field_id = field_id
+            interview.save()
+
         interviewer_url = s3.generate_presigned_url(ClientMethod='get_object', Params={'Bucket':bucket, 'Key':key})
 
         print(f'{request.user} interviewer url success')
@@ -32,15 +42,7 @@ class PracticeView(APIView):
         question_n = request.data['question_n']
         field_id = request.data['field_id']
 
-        if question_n == '0':
-            interview = Interview()
-            # 유저 정보 / 인터뷰 날짜
-            interview.author = request.user
-            interview.field_id = field_id
-            interview.save()
-
         interview_id = len(Interview.objects.filter(author_id=request.user))
-        print(interview_id)
 
         # s3 presigned url
         bucket = 'user-interview-video-bucket'
@@ -52,6 +54,7 @@ class PracticeView(APIView):
         # 유저 정보 / 인터뷰 번호 / 질문 번호 / 분야
         interviewInfo = InterviewInfo()
         interviewInfo.author = request.user
+        #interviewInfo.interviewer_id =
         interviewInfo.interview_id = interview_id
         interviewInfo.question_n = question_n
         interviewInfo.field_id = field_id
@@ -63,5 +66,3 @@ class PracticeView(APIView):
             status=status.HTTP_200_OK,
             data={"success":True, "interviewee_url":interviewee_url}
         )
-
-
