@@ -38,6 +38,7 @@ const ModalComponent = ({
                 onRequestClose={closeModalHandler}
                 style={modalStyle.content ? modalStyle : defaultStyle}
                 ariaHideApp={false}
+                // preventScroll={true}
             >
                 <Interview 
                     selectedInterviewType={selectedInterviewType}
