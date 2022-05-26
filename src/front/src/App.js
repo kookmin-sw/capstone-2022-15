@@ -28,9 +28,10 @@ function App() {
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/feedback1/*" element={<Feedback1 />} />
-        <Route path="/feedback2/*" element={<Feedback2 />} />
-        <Route path="/feedback3/*" element={<Feedback3 />} />
+        //<Route path="/feedback1/:interview_id" element={<Feedback1 />} />
+        //<Route path="/feedback2/:interview_id" element={<Feedback2 />} />
+        //<Route path="/feedback3/:interview_id" element={<Feedback3 />} />
+        <Route path="/feedback/:interview_id/:question_n" element={<Feedback1 />} />
       </Routes>
     </div>
   );
