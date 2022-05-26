@@ -83,24 +83,19 @@ class Feedback extends Component {
                   연습목록
                   </Link>
               </div>
-              <div onClick={()=>console.log("질문 1 Feedback")}>
-                  <Link to={"/feedback/"+interview_id+'/0'} className='Menu-txt3' style={{top:'14vh'}}>
+              <a onClick={()=>console.log("질문 1 Feedback")} href={"/feedback/"+interview_id+'/0'} className='Menu-txt3' style={{top:'14vh'}}>
+
                   &nbsp;&nbsp;질문 1
-                  </Link>
-              </div>
+              </a>
+              <a onClick={()=>console.log("질문 2 Feedback")} href={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
 
-              <div onClick={()=>console.log("질문 2 Feedback")}>
-                  <Link to={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
                   &nbsp;&nbsp;질문 2
-                  </Link>
-              </div>
-              <div onClick={()=>console.log("질문 3 Feedback") }>
-                  <Link to={"/feedback/"+interview_id+'/2'} className='Menu-txt3' style={{top:'26vh'}}>
+              </a>
+              <a onClick={()=>console.log("질문 3 Feedback") } href={"/feedback/"+interview_id+'/2'} className='Menu-txt3' style={{top:'26vh'}}>
+
                   &nbsp;&nbsp;질문 3
-                  </Link>
-              </div>
 
-
+              </a>
               <div className='Main-box'>
                 <div>
               <div className='Feedback-Q'> Q1 </div>
