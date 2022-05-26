@@ -40,8 +40,8 @@ const Login = () => {
         }
       })
       .catch(err => {
-        console.clear()
-        alert('아이디 또는 비밀번호가 일치하지 않습니다')
+        console.log(err.response.data)
+        alert(err.response.data.error)
         setUser_id('')
         setUser_pw('')
       })

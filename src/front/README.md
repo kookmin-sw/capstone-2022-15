@@ -2,27 +2,44 @@
 
 ```sh
 front
- │    README.md
+ │  README.md
  ├─ public
  │        index.html
  └─ src
      │    App.js
      │    index.js
+     │
      └─ pages
          ├─ HomePage
          │    Home.js
+         │    HomeAfterLogin.js
          │    Home.css
+         │
          ├─ InterviewPage
          │    Interview.js
          │    Interview.css
+         │
          ├─ LoginPage
          │    Login.js
-         │    Login.css
+         │    Signup.js
+         │    Signup.css
+         │
          ├─ MyPage
+         │    Feedback.js
+         │    list.js
          │    MyPage.js
          │    MyPage.css
-         └─ PreInterviewPage
-              PreInterview.js
-              PreInterview.css
+         │
+         ├─ NotificationPage
+         │  Notification.js
+         │  Notification.css
+         │
+         ├─ PreInterviewPage
+         │  PreInterview.js
+         │  PreInterview.css
+         │    
+         └─ StepPage
+            Step.js
+            Step.css              
 ```
 
