@@ -51,11 +51,17 @@ class Top extends Component{
                 연습시작!
             </Link>
       </div>
-      <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
-            <Link to ="/mypage" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
-                피드백
+      {/* <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
+            <Link to ="/" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
+                로그아웃
             </Link>
-      </div>
+      </div> */}
+      <button className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}} onClick={() => {
+          localStorage.clear()
+          window.location.replace('/')
+      }}>
+          로그아웃
+      </button>
       <img src={img_main} className="img-main"/> 
       <img src={img_circle1} className="img-circle1"/>
       <img src={img_circle2} className="img-circle2"/>
@@ -82,7 +88,7 @@ class Middle extends Component{
             실제 면접과 유사한 방식으로 연습할 수 있습니다.
           </span>
           <div onClick={()=>console.log("면접연습 페이지로 페이지 변경")}>
-                <Link to ="/preinterview" className="BT-join" style={{left:'68.2vw', top:'52vh'}}>
+                <Link to ="/notification" className="BT-join" style={{left:'60.5vw', top:'50vh'}}>
                   연습시작
                 </Link>
           </div>
@@ -145,7 +151,7 @@ class Footer_pink extends Component{
             </span>
           </div>
           <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경 이벤트 추가")}>
-            <Link to ="/preinterview" className="BT-join" style={{left:'74vw', top:'33vh'}}>
+            <Link to ="/notification" className="BT-join" style={{left:'74vw', top:'26vh'}}>
                  연습시작
             </Link>
           </div>
