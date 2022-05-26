@@ -1,7 +1,21 @@
 import './Notification.css';
 import Navbar from '../components/Navbar/Navbar';
 import intervieweeGuide from '../images/interviewee_sample_2.png'
+import { checkToken } from '../LoginPage/Login'
 import Footer from '../components/Footer';
+
+const isLoggedIn = !!localStorage.getItem('token');
+
+useEffect(() => {
+    if(!isLoggedIn){
+        window.location.replace('/login')
+    }
+    const isTokenValid = checkToken(localStorage.getItem('token'))
+    if(!isTokenValid){
+        window.localStorage.clear()
+        window.location.replace('/login')
+    }
+}, [])
 
 function clickHandler(e) {
     window.location.href = "/step"
