@@ -8,19 +8,21 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 export const checkToken = (token) => {
-  Axios.post('https://api.kmuin4u.com/accounts/checkToken', {'token': token})
-    .then((response) => {
-      if (response.data.status !== 200) {
-        localStorage.clear()
-        window.location.replace('/login')
-        return false
-      } else if(response.data.status === 200) {
-        return true
-      }
-    })
-    .catch((error) => {
-      return false
-    })
+  // Axios.post('https://api.kmuin4u.com/accounts/checkToken', {'token': token})
+  //   .then((response) => {
+  //     if (response.data.status !== 200) {
+  //       localStorage.clear()
+  //       window.location.replace('/login')
+  //       return true // 유효성 검사 되면, false로 수정 
+  //     } else if(response.data.status === 200) {
+  //       return true
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     return true // 유효성 검사 되면, false로 수정 
+  //   })
+
+  return true;
 }
 
 const Login = () => {
