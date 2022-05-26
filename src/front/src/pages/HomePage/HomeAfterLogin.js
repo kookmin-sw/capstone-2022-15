@@ -51,11 +51,17 @@ class Top extends Component{
                 연습시작!
             </Link>
       </div>
-      <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
+      {/* <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
             <Link to ="/" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
                 로그아웃
             </Link>
-      </div>
+      </div> */}
+      <button className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}} onClick={() => {
+          localStorage.clear()
+          window.location.replace('/')
+      }}>
+          로그아웃
+      </button>
       <img src={img_main} className="img-main"/> 
       <img src={img_circle1} className="img-circle1"/>
       <img src={img_circle2} className="img-circle2"/>
