@@ -28,10 +28,11 @@ const modalStyle = {
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        width: '90vw',
-        height: '90vh',
+        width: '95vw',
+        height: '92vh',
         transform: 'translate(-50%, -50%)',
-        background: 'white'
+        background: 'white',
+        padding: '0px'
     }
 }
 
@@ -162,7 +163,7 @@ const PreInterview = () => {
 
     return (
         <div className="PreInterviewApp">
-            <Navbar/>
+            {!openModal && <Navbar/>}
             <PageDescription/>
             <div className="cam-setting-layout">
                 <div className="mini-title">
