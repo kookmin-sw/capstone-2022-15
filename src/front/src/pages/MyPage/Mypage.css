@@ -81,7 +81,7 @@
 
 .list_grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 20% 50% 30%;
 
 }
 .list_data {
@@ -108,7 +108,7 @@ a {
 .mypage_footer_top{
     z-index: 7;
     position: absolute;
-    top: 100vh;
+    top: 800px;
 }
 
 /*-------------------- Feedback.js에서만 사용 -----------------*/
