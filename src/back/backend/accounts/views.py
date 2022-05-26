@@ -21,7 +21,7 @@ from .file_manage import select
 s3 = boto3.resource('s3')
 s3_interviewee = boto3.client('s3')
 
-INTERVAL = 30
+INTERVAL = 60
 
 User = get_user_model()
 
@@ -47,7 +47,7 @@ class SignupView(APIView):
                 },
             )
         # already id exists etc..
-        print(f'error: {serializer.errors}')
+        print(f'error: {serializer.errors}', type(serializer.errors))
         return Response(
             status=status.HTTP_400_BAD_REQUEST,
             data={
@@ -83,13 +83,15 @@ class LoginView(APIView):
         if user is None:
             print("user is not founded")
             return Response(
-                {"isLogin": False, "error": "user is not founded"}, status=status.HTTP_404_NOT_FOUND
+                status=status.HTTP_404_NOT_FOUND,
+                data={"isLogin": False, "error": "id is not founded"}
             )
         # wrong password
         if not user.check_password(password):
             print("wrong password")
             return Response(
-                {"isLogin": False, "error": "wrong password"}, status=status.HTTP_400_BAD_REQUEST
+                status=status.HTTP_400_BAD_REQUEST,
+                data={"isLogin": False, "error": "wrong password"}
             )
         # success
         token = Token.objects.get(user=user)  # token get
@@ -114,7 +116,8 @@ class MypageView(APIView):
 
 class FeedbackView(APIView):
     permission_class=[
-        permissions.IsAuthenticated
+        #permissions.IsAuthenticated
+        permissions.AllowAny
     ]
 
     def get(self, request, interview_id, question_n, *args, **kwargs):
@@ -131,15 +134,11 @@ class FeedbackView(APIView):
             obj = s3.Object(bucket, key)
             body = obj.get()['Body'].read()
 
-            # volume interview
-            if i == 0:
+            # iris movement / volume interview
+            if i == 0 or i == 1:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     X, Y = np.load(f).values()
-
-                    INTERVAL = int(len(X)/max(X))
-                    print("volume:", len(X), max(X), INTERVAL)
-
 
                 d_ = []
                 for j in range(0, len(X), INTERVAL):
@@ -149,44 +148,17 @@ class FeedbackView(APIView):
                     d['y'] = Y[j]
                     d_.append(d)
                 data.append(d_)
+                #print(i, d_)
+                #print()
 
-                # for face movement
-                time_min = 0
-                time_max = int(max(X))
-
-
-            # iris movement
-            if i == 1:
-                with io.BytesIO(body) as f:
-                    f.seek(0)
-                    XY, center = np.load(f).values()
-                    INTERVAL = int(len(XY[0]) / time_max)
-                    print("iris:", len(XY[0]), time_max)
-
-                d_ = []
-                for j in range(0, len(XY[0]), INTERVAL):
-                    d = dict()
-                    d['name'] = np.round(XY[0][j])
-                    d['x'] = XY[0][j]
-                    d['y'] = XY[1][j]
-                    d_.append(d)
-                # center
-                d = dict()
-                d['name'] = np.round(center[0])
-                d['x'] = center[0]
-                d['y'] = center[1]
-                d_.append(d)
-                data.append(d_)
-                print(center)
-
+            time_min = X[0]
+            time_max = int(len(X)//INTERVAL * INTERVAL)
 
             # face movement
             if i == 2:
                 with io.BytesIO(body) as f:
                     f.seek(0)
                     XY = np.load(f)['data']
-                    INTERVAL = int(len(XY) / time_max)
-                    print("face:", len(XY), time_max)
 
                 d_ = []
                 time = np.linspace(time_min, time_max, len(XY))
@@ -196,12 +168,17 @@ class FeedbackView(APIView):
                     d['y'] = XY[j]
                     d_.append(d)
                 data.append(d_)
-            
+                # print(i, d_)
+                # print()
+
+
             # stt interview
             if i == 3:
-                data.append(body)
-                print(body)
-                
+                with io.BytesIO(body) as f:
+                    f.seek(0)
+                    #txt = np.load(f).values()
+                #data.append(txt)
+
         # presigned url 추가
         bucket = 'user-interview-video-bucket'
         key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(request.user, interview_id, question_n)
@@ -209,12 +186,10 @@ class FeedbackView(APIView):
                                                                 Params={'Bucket': bucket, 'Key': key})
 
         return Response(status=status.HTTP_200_OK, data={
-                                "volume_interview": data[0],
+                                "face_movement": data[0],
                                 "iris_movement": data[1],
-                                "face_movement": data[2],
-                                "stt_interview": data[3],
+                                "volume_interview": data[2],
+                                "stt_interview": "123",
                                 "interviewee_url": interviewee_url
         })
-
-
 
