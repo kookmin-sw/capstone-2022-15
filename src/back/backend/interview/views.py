@@ -17,7 +17,7 @@ class PracticeView(APIView):
         permissions.IsAuthenticated
     ]
     # interviewer url response
-    def get(self, request, field_id, question_n, *args, **kwargs):
+    def get(self, request, field_id, *args, **kwargs):
         # s3 presigned url
         bucket = 'virtual-interview-video'
 
