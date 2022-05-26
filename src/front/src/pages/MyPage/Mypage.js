@@ -6,6 +6,20 @@ import './Mypage.css';
 import List from './list.js'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { checkToken } from '../LoginPage/Login'
+
+const isLoggedIn = !!localStorage.getItem('token');
+
+useEffect(() => {
+  if(!isLoggedIn){
+      window.location.replace('/login')
+  }
+  const isTokenValid = checkToken(localStorage.getItem('token'))
+  if(!isTokenValid){
+      window.localStorage.clear()
+      window.location.replace('/login')
+  }
+}, [])
 
 const Mypage = () => {
     return (
