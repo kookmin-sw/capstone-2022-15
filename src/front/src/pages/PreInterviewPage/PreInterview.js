@@ -2,12 +2,15 @@ import './PreInterview.css';
 import styles from './SelectBox.module.css';
 import { PageDescription } from '../../components/PageDescription';
 import WebcamStreamCapture from '../../components/Webcam'
+import { checkToken } from '../LoginPage/Login'
 import React, { useEffect, useState, useRef, useCallback } from "react"; 
 import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 // import Footer from '../components/Footer';
+
+const isLoggedIn = !!localStorage.getItem('token');
 
 const interviewTypeName = {
     0: '[인성] 인성 면접',
@@ -57,10 +60,21 @@ const PreInterview = () => {
     const [video, setVideo] = useState('')
 
     useEffect(() => {
-        if(preSignedUrl !== ''){
+        if (preSignedUrl !== '') {
             setVideo(preSignedUrl)
         }
     }, [preSignedUrl])
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            window.location.replace('/login')
+        }
+        const isTokenValid = checkToken(localStorage.getItem('token'))
+        if (!isTokenValid) {
+            window.localStorage.clear()
+            window.location.replace('/login')
+        }
+    }, [])
 
     const startCaptureHandler = useCallback(() => {
 

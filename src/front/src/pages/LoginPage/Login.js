@@ -7,6 +7,22 @@ import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
+export const checkToken = (token) => {
+  Axios.post('https://api.kmuin4u.com/accounts/checkToken', {'token': token})
+    .then((response) => {
+      if (response.data.status !== 200) {
+        localStorage.clear()
+        window.location.replace('/login')
+        return false
+      } else if(response.data.status === 200) {
+        return true
+      }
+    })
+    .catch((error) => {
+      return false
+    })
+}
+
 const Login = () => {
 
   const [user_id, setUser_id] = useState('')

@@ -3,6 +3,9 @@ import './Interview.css';
 import React, {useState, useEffect} from "react"; 
 // import axios from 'axios';
 import BarLoader from "react-spinners/BarLoader";
+import { checkToken } from '../LoginPage/Login'
+
+const isLoggedIn = !!localStorage.getItem('token');
 
 const override = {
 //   margin: '200px 0 0 0',
@@ -43,6 +46,17 @@ function Interview({
         }
     }, [questionNumberState])
     // console.log(video, 'video')
+
+    useEffect(() => {
+        if(!isLoggedIn){
+            window.location.replace('/login')
+        }
+        const isTokenValid = checkToken(localStorage.getItem('token'))
+        if(!isTokenValid){
+            window.localStorage.clear()
+            window.location.replace('/login')
+        }
+    }, [])
 
     function clickHandler(e) {
         window.location.href = "/mypage"
