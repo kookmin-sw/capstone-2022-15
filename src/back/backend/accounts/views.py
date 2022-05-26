@@ -179,7 +179,8 @@ class FeedbackView(APIView):
                 d['y_max'] = np.max(XY[1])
                 d['y_min'] = np.min(XY[1])
                 iris.append(d)
-                print(center)
+                data.append(d_)
+                print(iris)
 
             # face movement
             if i == 2:
