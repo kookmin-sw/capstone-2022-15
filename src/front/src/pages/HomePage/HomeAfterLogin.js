@@ -52,8 +52,8 @@ class Top extends Component{
             </Link>
       </div>
       <div onClick={()=>console.log("로그인(회원가입) 페이지로 페이지 변경")}>
-            <Link to ="/mypage" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
-                피드백
+            <Link to ="/" className="BT-login" style={{width:'10vw', height:'7vh', left:'18vw', top:'47vh'}}>
+                로그아웃
             </Link>
       </div>
       <img src={img_main} className="img-main"/> 
