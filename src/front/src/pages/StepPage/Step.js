@@ -9,7 +9,20 @@ import step5 from '../images/step5.jpg'
 import step6 from '../images/step6.jpeg'
 import step6_2 from '../images/step6_2.jpeg'
 import Footer from '../components/Footer';
+import { checkToken } from '../LoginPage/Login'
 
+const isLoggedIn = !!localStorage.getItem('token');
+
+useEffect(() => {
+    if(!isLoggedIn){
+        window.location.replace('/login')
+    }
+    const isTokenValid = checkToken(localStorage.getItem('token'))
+    if(!isTokenValid){
+        window.localStorage.clear()
+        window.location.replace('/login')
+    }
+}, [])
 
 function clickHandler(e) {
     window.location.href = "/preinterview"
