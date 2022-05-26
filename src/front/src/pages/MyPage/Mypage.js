@@ -10,18 +10,20 @@ import { checkToken } from '../LoginPage/Login'
 
 const isLoggedIn = !!localStorage.getItem('token');
 
-useEffect(() => {
-  if(!isLoggedIn){
-      window.location.replace('/login')
-  }
-  const isTokenValid = checkToken(localStorage.getItem('token'))
-  if(!isTokenValid){
-      window.localStorage.clear()
-      window.location.replace('/login')
-  }
-}, [])
 
 const Mypage = () => {
+
+    useEffect(() => {
+      if(!isLoggedIn){
+          window.location.replace('/login')
+      }
+      const isTokenValid = checkToken(localStorage.getItem('token'))
+      if(!isTokenValid){
+          window.localStorage.clear()
+          window.location.replace('/login')
+      }
+    }, [])
+    
     return (
         <div>
             <Navbar/>
