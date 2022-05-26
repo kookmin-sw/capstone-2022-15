@@ -13,6 +13,7 @@ export const Authentication = React.createContext(null);
 
 import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis, 
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
+import Mypage from './Mypage';
 
 
 
@@ -26,8 +27,8 @@ class Feedback extends Component {
         }
     }
 
-    componentDidMount(){
-        this._getListData()
+    componentWillMount(){
+        let status = this._getListData()
     }
 
     _getListData = async function(){
@@ -42,7 +43,8 @@ class Feedback extends Component {
       //const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}`
-        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;      
+        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;   
+      try {   
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -53,20 +55,26 @@ class Feedback extends Component {
       this.setState({interview_id: this.props.params.interview_id})
       //this.setState({question_n: this.props.params.question_n})
       console.log("data:", data_list)
+      this.setState({status:1})
+      }
+      catch(ex) {
+        this.setState({status:-1})
+      }
     }
     render(){
         const list = this.state.data.data
         let interview_id = this.state.interview_id
+        let status = this.state.status
         console.log("Mypage")
 
-        if (!list){
+        if (status == -1){
             console.log("wait")
             alert('피드백 결과가 나오는 중입니다. 잠시만 기다려주세요.')
             return(
-            <div></div>
+            <Mypage/>
             )
         }
-        if (list){
+        if (status==1){
             console.log("Mypage get sucess")
             return (
 
@@ -161,6 +169,9 @@ class Feedback extends Component {
           </div>
         </div>
         );
+      }
+      else {
+        return(<div></div>)
       }
  }
 }
