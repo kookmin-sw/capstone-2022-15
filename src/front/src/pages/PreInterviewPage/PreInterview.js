@@ -120,9 +120,9 @@ const PreInterview = () => {
     }, [recordedChunks, intervieweePreSignedUrl]);
     const isTest = false;
     let getInterviewerPreSignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}?${questionN}` // checkedId -> ques
+                    ? `http://localhost:8000/interview/practice/${checkedId}?questionN=${questionN}` // checkedId -> ques
                     // ? `http://127.0.0.1:8000/interview/practice/${checkedId}`
-                    : `https://api.kmuin4u.com/interview/practice/${checkedId}?${questionN}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
+                    : `https://api.kmuin4u.com/interview/practice/${checkedId}?questionN=${questionN}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/save` 
                     // ? 'http://127.0.0.1:8000/interview/practice/save'
