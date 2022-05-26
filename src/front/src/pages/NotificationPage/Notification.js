@@ -15,16 +15,16 @@ function directToSettingHandler(e) {
 }
 
 const Notification = () => {
-    
+
     useEffect(() => {
         if(!isLoggedIn){
             window.location.replace('/login')
         }
-        const isTokenValid = checkToken(localStorage.getItem('token'))
-        if(!isTokenValid){
-            window.localStorage.clear()
-            window.location.replace('/login')
-        }
+        // const isTokenValid = checkToken(window.localStorage.getItem('token'))
+        // if(!isTokenValid){
+        //     window.localStorage.clear()
+        //     window.location.replace('/login')
+        // }
     }, [])
 
     return (
