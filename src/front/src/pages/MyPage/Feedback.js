@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { useParams, withRouter } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 // import { withRouter } from "react-router";
 import React, { useState, PureComponent, Component, useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
@@ -70,9 +70,7 @@ class Feedback extends Component {
         if (status == -1){
             console.log("wait")
             alert('피드백 결과가 나오는 중입니다. 잠시만 기다려주세요.')
-            return(
-            <Mypage/>
-            )
+            return <Navigate to='/mypage'/>
         }
         if (status==1){
             console.log("Mypage get sucess")
