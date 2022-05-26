@@ -88,7 +88,6 @@ class Feedback extends Component {
                   &nbsp;&nbsp;질문 1
                   </Link>
               </div>
-
               <div onClick={()=>console.log("질문 2 Feedback")}>
                   <Link to={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
                   &nbsp;&nbsp;질문 2
@@ -99,8 +98,6 @@ class Feedback extends Component {
                   &nbsp;&nbsp;질문 3
                   </Link>
               </div>
-
-
               <div className='Main-box'>
                 <div>
               <div className='Feedback-Q'> Q1 </div>

@@ -15,8 +15,8 @@ def select(user_id, interview_id, question_n):
     user = f'user_id_{user_id}/interview_id_{interview_id}/result'
 
     result_list = [
-                   f'{user}/iris_movement_interview_{question_n}.npz',
                    f'{user}/volume_interview_{question_n}.npz',
+                   f'{user}/iris_movement_interview_{question_n}.npz',
                    f'{user}/face_movement_interview_{question_n}.npz',
                    f'{user}/stt_interview_{question_n}.txt']
 
