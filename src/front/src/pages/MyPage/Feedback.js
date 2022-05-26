@@ -21,13 +21,8 @@ class Feedback extends Component {
         super(props)
         this.state = {
             data : [],
-            iris_movement : {},
-            face_movement : {},
-            volume_interview : {},
-            stt_interview : {},
-            videoUrl : '',
-            loading : true,
-            interview_id : 0
+            interview_id: 0,
+            //question_n : 0
         }
     }
 
@@ -36,14 +31,17 @@ class Feedback extends Component {
     }
 
     _getListData = async function(){
-      const interview_id = this.props.params.interview_id;
-      console.log(interview_id)
+      const interview_id = Number(this.props.params.interview_id);
+      const question_n = Number(this.props.params.question_n);
+      //const question_n = 0
+      console.log("interview id:", this.props.params.interview_id)
+      console.log("question_n:", this.props.params.question_n)
+      //const interview_id = 1;
 
       const isTest = false;
-      // const interview_id = 5; // --------------- 변경
-      const question_n = 0;
+      //const question_n = 0;
         let getFeedbackpage = isTest
-        ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}` // checkedId -> ques
+        ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}`
         : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;      
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
@@ -52,118 +50,123 @@ class Feedback extends Component {
         }
       })
       this.setState({data: data_list})
+      this.setState({interview_id: this.props.params.interview_id})
+      //this.setState({question_n: this.props.params.question_n})
+      console.log("data:", data_list)
     }
     render(){
         const list = this.state.data.data
-        console.log("Mypage Get Success")
-        console.log(list)
+        let interview_id = this.state.interview_id
+        console.log("Mypage")
 
-    if (!list) return (
-        <div></div>
-    )
-    if (list){
-    console.log("video: ", list.interviewee_url)
-    console.log(list.interviewee_url.interviewee_url)
-    alert('2 ~ 3분 후 피드백이 생성됩니다.')
-        return (
-          
-            <div>
-                <Navbar/>
-                <Bar2/>
+        if (!list){
+            console.log("wait")
+            alert('피드백 결과가 나오는 중입니다. 잠시만 기다려주세요.')
+            return(
+            <div></div>
+            )
+        }
+        if (list){
+            console.log("Mypage get sucess")
+            return (
 
-      <div className='Menu-box' style={{height: '2300px'}}>
-          <div className='mypage_footer_top2'>
-            <Footer/>
-          </div> 
-          <div onClick={()=>console.log("마이 페이지(연습목록)로 페이지 변경")}>
-              <Link to="/mypage" className='Menu-txt22'>
-              연습목록
-              </Link>
-          </div>
-          <div onClick={()=>console.log("질문 1 Feedback")}>
-              <Link to="/feedback1/" className='Menu-txt3' style={{top:'14vh'}}>
-              &nbsp;&nbsp;질문 1
-              </Link>
-          </div>
+                <div>
+                    <Navbar/>
+                    <Bar2/>
 
-          <div onClick={()=>console.log("질문 2 Feedback")}>
-              <Link to="/feedback2/" className='Menu-txt3' style={{top:'20vh'}}>
-              &nbsp;&nbsp;질문 2
-              </Link>
-          </div>
-          <div onClick={()=>console.log("질문 3 Feedback") }>
-              <Link to="/feedback3/" className='Menu-txt3' style={{top:'26vh'}}>
-              &nbsp;&nbsp;질문 3
-              </Link>
-          </div>
+          <div className='Menu-box' style={{height: '2300px'}}>
+              <div className='mypage_footer_top2'>
+                <Footer/>
+              </div>
+              <div onClick={()=>console.log("마이 페이지(연습목록)로 페이지 변경")}>
+                  <Link to="/mypage" className='Menu-txt22'>
+                  연습목록
+                  </Link>
+              </div>
+              <div onClick={()=>console.log("질문 1 Feedback")}>
+                  <Link to={"/feedback/"+interview_id+'/0'} className='Menu-txt3' style={{top:'14vh'}}>
+                  &nbsp;&nbsp;질문 1
+                  </Link>
+              </div>
 
-
-          <div className='Main-box'>
-            <div>
-          <div className='Feedback-Q'> Q1 </div>
-          <div className='Feedback-txt'style={{top:'50px'}}>
-                🔹 Video Check
-          </div>
-          <div className="Interviewer-section">
-                {/*<iframe width="700vw" height="394vh" src={list.interviewee_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-              {list.interviewee_url!=='' && <video width="80%" height="80%" autoPlay={true} controls>
-                        <source src={list.interviewee_url}/>
-                  </video>}
-                    {list.interviewee_url==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
-          </div>
+              <div onClick={()=>console.log("질문 2 Feedback")}>
+                  <Link to={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
+                  &nbsp;&nbsp;질문 2
+                  </Link>
+              </div>
+              <div onClick={()=>console.log("질문 3 Feedback") }>
+                  <Link to={"/feedback/"+interview_id+'/2'} className='Menu-txt3' style={{top:'26vh'}}>
+                  &nbsp;&nbsp;질문 3
+                  </Link>
+              </div>
 
 
-  {/*나의 답변*/}
-          <div className='Feedback-txt' style={{top:'117px'}}>
-                🔹 나의 답변
-            <div className="Stt">
-              {list.stt_interview.slice(46, -2)}<br/>
+              <div className='Main-box'>
+                <div>
+              <div className='Feedback-Q'> Q1 </div>
+              <div className='Feedback-txt'style={{top:'50px'}}>
+                    🔹 Video Check
+              </div>
+              <div className="Interviewer-section">
+                    {/*<iframe width="700vw" height="394vh" src={list.interviewee_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
+                  {list.interviewee_url!=='' && <video width="80%" height="80%" autoPlay={true} controls>
+                            <source src={list.interviewee_url}/>
+                      </video>}
+                        {list.interviewee_url==='' && <SyncLoader color={'blue'} loading={true} css={override} size={30} />}
+              </div>
+
+
+      {/*나의 답변*/}
+              <div className='Feedback-txt' style={{top:'117px'}}>
+                    🔹 나의 답변
+                <div className="Stt">
+                  {list.stt_interview.slice(46, -2)}<br/>
+                </div>
+              </div>
+
+
+      {/*시선 처리 차트*/}
+              <div className='Feedback-txt'style={{top:'194px'}}>
+                    🔹 시선 처리
+                  <div className='ChartBackground'>
+                    <img src={img_interviewer}/>
+                  </div>
+
+                  <div style={{ width: '594px', height: '313px',  left:'190px',position:'absolute'}}>
+                    <Scatter_chart_iris scatter_data= {list.iris_movement}  />
+                  </div>
+
+              </div>
+
+
+
+      {/*머리 움직임 차트*/}
+              <div className='Feedback-txt' style={{top:'605px'}}>
+                    🔹 머리 움직임
+                  <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
+                  <div style={{ width: '800px', height: '300px'}}>
+                    <Line_chart_face line_data= {list.face_movement}  />
+                  </div>
+                  </div>
+              </div>
+
+
+      {/*목소리 크기 차트 react horizontal scrolling?*/}
+              <div className='Feedback-txt' style={{top:'1058px'}}>
+                    🔹 목소리 크기
+                  <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
+                  <div style={{ width: '800px', height: '300px'}}>
+                  {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
+                    <Line_chart_volume line_data= {list.volume_interview}  />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-
-  {/*시선 처리 차트*/}
-          <div className='Feedback-txt'style={{top:'194px'}}>
-                🔹 시선 처리
-              <div className='ChartBackground'>
-                <img src={img_interviewer}/>
-              </div>
-
-              <div style={{ width: '594px', height: '313px',  left:'190px',position:'absolute'}}>
-                <Scatter_chart_iris scatter_data= {list.iris_movement}  />
-              </div>
-
-          </div>
-
-
-
-  {/*머리 움직임 차트*/}
-          <div className='Feedback-txt' style={{top:'605px'}}>
-                🔹 머리 움직임
-              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
-              <div style={{ width: '800px', height: '300px'}}>  
-                <Line_chart_face line_data= {list.face_movement}  />
-              </div>
-              </div>
-          </div>
-
-
-  {/*목소리 크기 차트 react horizontal scrolling?*/}
-          <div className='Feedback-txt' style={{top:'1058px'}}>
-                🔹 목소리 크기
-              <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
-              <div style={{ width: '800px', height: '300px'}}>
-              {/*<div style={{ width: '594px', height: '300px',  left:'150px',position:'absolute'}}>*/}
-                <Line_chart_volume line_data= {list.volume_interview}  />
-              </div>
             </div>
           </div>
         </div>
-        </div>
-      </div>
-    </div>
-    );
-  }
+        );
+      }
  }
 }
 
@@ -201,7 +204,7 @@ const Scatter_chart_iris = ({
 {/*********************  Line Chart - 머리 움직임 차트 ********************/}
 const Line_chart_face = ({
   line_data
-  }) => {console.log("line", line_data)
+  }) => {console.log("head line", line_data)
   return (
       <ResponsiveContainer width="100%" height="100%">
          <LineChart
