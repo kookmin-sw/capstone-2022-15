@@ -215,7 +215,8 @@ class FeedbackView(APIView):
             "iris_movement": data[1],
             "face_movement": data[2],
             "stt_interview": data[3],
-            "interviewee_url": interviewee_url
+            "interviewee_url": interviewee_url,
+            "iris": iris
         })
 
 
