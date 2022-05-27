@@ -18,6 +18,7 @@ import numpy as np
 # s3
 import boto3
 from .file_manage import select
+
 s3 = boto3.resource('s3')
 s3_interviewee = boto3.client('s3')
 
@@ -57,13 +58,14 @@ class SignupView(APIView):
 
 
 class LoginView(APIView):
-    authentication_classes=[
+    authentication_classes = [
         authentication.TokenAuthentication
     ]
 
     permission_classes = [
         permissions.AllowAny
     ]
+
     def post(self, request, *args, **kwargs):
         serializer = LoginUserSerializer(data=self.request.data)
         serializer.is_valid(raise_exception=True)
@@ -96,12 +98,12 @@ class LoginView(APIView):
         print("success login", user_id)
         return Response(
             status=status.HTTP_200_OK,
-            data={"isLogin": True, "user_id": user_id, "token":token.key},
+            data={"isLogin": True, "user_id": user_id, "token": token.key},
         )
 
 
 class MypageView(APIView):
-    permission_class=[
+    permission_class = [
         permissions.IsAuthenticated
     ]
 
@@ -113,19 +115,20 @@ class MypageView(APIView):
 
 
 class FeedbackView(APIView):
-    permission_class=[
+    permission_class = [
         permissions.IsAuthenticated
     ]
 
     def get(self, request, interview_id, question_n, *args, **kwargs):
         data = []
+        iris = []
 
         # s3 presigned url
         bucket = 'user-feedback-bucket'
 
         key_list = select(request.user, interview_id, question_n)
         print(key_list)
-        #key_list = select('haha', 2, 0)
+        # key_list = select('haha', 2, 0)
 
         for (i, key) in zip(range(4), key_list):
             obj = s3.Object(bucket, key)
@@ -137,9 +140,8 @@ class FeedbackView(APIView):
                     f.seek(0)
                     X, Y = np.load(f).values()
 
-                    INTERVAL = int(len(X)/max(X))
+                    INTERVAL = int(len(X) / max(X))
                     print("volume:", len(X), max(X), INTERVAL)
-
 
                 d_ = []
                 for j in range(0, len(X), INTERVAL):
@@ -154,7 +156,6 @@ class FeedbackView(APIView):
                 time_min = 0
                 time_max = int(max(X))
 
-
             # iris movement
             if i == 1:
                 with io.BytesIO(body) as f:
@@ -164,21 +165,23 @@ class FeedbackView(APIView):
                     print("iris:", len(XY[0]), time_max)
 
                 d_ = []
-                for j in range(0, len(XY[0]), INTERVAL):
+                for j in range(0, len(XY[0])):
                     d = dict()
-                    d['name'] = np.round(XY[0][j])
+                    #d['name_x'] = np.round(XY[0][j], 2)
+                    #d['name_y'] = np.round(XY[1][j], 2)
                     d['x'] = XY[0][j]
                     d['y'] = XY[1][j]
                     d_.append(d)
                 # center
                 d = dict()
-                d['name'] = np.round(center[0])
-                d['x'] = center[0]
-                d['y'] = center[1]
-                d_.append(d)
+                d['x_max'] = np.round(np.max(XY[0])+0.02, 2)
+                d['x_min'] = np.round(np.min(XY[0])-0.02, 2)
+                d['y_max'] = np.round(np.max(XY[1])+0.02, 2)
+                d['y_min'] = np.round(np.min(XY[1])-0.02 ,2)
+                iris.append(d)
                 data.append(d_)
-                print(center)
-
+                #print(iris)
+                #print(d_)
 
             # face movement
             if i == 2:
@@ -192,29 +195,33 @@ class FeedbackView(APIView):
                 time = np.linspace(time_min, time_max, len(XY))
                 for j in range(0, len(XY), INTERVAL):
                     d = dict()
+                    d['name'] = np.round(time[j])
                     d['x'] = time[j]
                     d['y'] = XY[j]
                     d_.append(d)
                 data.append(d_)
-            
+
             # stt interview
             if i == 3:
                 data.append(body)
-                print(body)
-                
+                #print(body)
+
         # presigned url 추가
         bucket = 'user-interview-video-bucket'
-        key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(request.user, interview_id, question_n)
+        key = 'user_id_{}/interview_id_{}/interview_video/interview_{}.mp4'.format(request.user, interview_id,
+                                                                                   question_n)
         interviewee_url = s3_interviewee.generate_presigned_url(ClientMethod='get_object',
                                                                 Params={'Bucket': bucket, 'Key': key})
 
+        #print("iris_movement:", data[1])
+        #print("iris:", iris)
         return Response(status=status.HTTP_200_OK, data={
-                                "volume_interview": data[0],
-                                "iris_movement": data[1],
-                                "face_movement": data[2],
-                                "stt_interview": data[3],
-                                "interviewee_url": interviewee_url
+            "volume_interview": data[0],
+            "iris_movement": data[1],
+            "face_movement": data[2],
+            "stt_interview": data[3],
+            "interviewee_url": interviewee_url,
+            "iris": iris
         })
-
 
 
