@@ -194,6 +194,7 @@ class FeedbackView(APIView):
                 time = np.linspace(time_min, time_max, len(XY))
                 for j in range(0, len(XY), INTERVAL):
                     d = dict()
+                    d['name'] = np.round(time[j])
                     d['x'] = time[j]
                     d['y'] = XY[j]
                     d_.append(d)
