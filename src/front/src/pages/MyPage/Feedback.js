@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { useParams, withRouter } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 // import { withRouter } from "react-router";
 import React, { useState, PureComponent, Component, useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
@@ -34,6 +34,7 @@ class Feedback extends Component {
       const interview_id = Number(this.props.params.interview_id);
       const question_n = Number(this.props.params.question_n);
       //const question_n = 0
+      this.setState({question_n:question_n})
       console.log("interview id:", this.props.params.interview_id)
       console.log("question_n:", this.props.params.question_n)
       //const interview_id = 1;
@@ -43,6 +44,7 @@ class Feedback extends Component {
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}`
         : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
+        try {  
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -53,20 +55,25 @@ class Feedback extends Component {
       this.setState({interview_id: this.props.params.interview_id})
       //this.setState({question_n: this.props.params.question_n})
       console.log("data:", data_list)
+      this.setState({status:1})
+    }
+      catch(ex) {
+        this.setState({status:-1})
+      }
     }
     render(){
         const list = this.state.data.data
         let interview_id = this.state.interview_id
+        let question_n = this.state.question_n
+        let status = this.state.status
         console.log("Mypage")
 
-        if (!list){
-            console.log("wait")
-            alert('피드백 결과가 나오는 중입니다. 잠시만 기다려주세요.')
-            return(
-            <div></div>
-            )
+        if (status==-1){
+          console.log("wait")
+          alert('피드백 결과가 나오는 중입니다. 잠시만 기다려주세요.')
+          return <Navigate to='/mypage'/>
         }
-        if (list){
+        if (status == 1){
             console.log("Mypage get sucess")
             console.log("list iris:", list.iris[0])
             console.log("list iris:", list.iris[0].x_max)
@@ -85,24 +92,22 @@ class Feedback extends Component {
                   연습목록
                   </Link>
               </div>
-              <div onClick={()=>console.log("질문 1 Feedback")}>
-                  <Link to={"/feedback/"+interview_id+'/0'} className='Menu-txt3' style={{top:'14vh'}}>
+              <a onClick={()=>console.log("질문 1 Feedback")} href={"/feedback/"+interview_id+'/0'} className='Menu-txt3' style={{top:'14vh'}}>
+
                   &nbsp;&nbsp;질문 1
-                  </Link>
-              </div>
-              <div onClick={()=>console.log("질문 2 Feedback")}>
-                  <Link to={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
+              </a>
+              <a onClick={()=>console.log("질문 2 Feedback")} href={"/feedback/"+interview_id+'/1'} className='Menu-txt3' style={{top:'20vh'}}>
+
                   &nbsp;&nbsp;질문 2
-                  </Link>
-              </div>
-              <div onClick={()=>console.log("질문 3 Feedback") }>
-                  <Link to={"/feedback/"+interview_id+'/2'} className='Menu-txt3' style={{top:'26vh'}}>
+              </a>
+              <a onClick={()=>console.log("질문 3 Feedback") } href={"/feedback/"+interview_id+'/2'} className='Menu-txt3' style={{top:'26vh'}}>
+
                   &nbsp;&nbsp;질문 3
-                  </Link>
-              </div>
+
+              </a>
               <div className='Main-box'>
                 <div>
-              <div className='Feedback-Q'> Q1 </div>
+              <div className='Feedback-Q'> {'Q'+(question_n+1)} </div>
               <div className='Feedback-txt'style={{top:'50px'}}>
                     🔹 Video Check
               </div>
@@ -119,7 +124,7 @@ class Feedback extends Component {
               <div className='Feedback-txt' style={{top:'117px'}}>
                     🔹 나의 답변
                 <div className="Stt">
-                  {list.stt_interview.slice(46, -2)}<br/>
+                  {list.stt_interview.slice(9, -2)}<br/>
                 </div>
               </div>
 
@@ -165,6 +170,9 @@ class Feedback extends Component {
           </div>
         </div>
         );
+      }
+      else {
+        return(<div></div>)
       }
  }
 }
