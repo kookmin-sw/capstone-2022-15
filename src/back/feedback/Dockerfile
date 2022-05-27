@@ -8,8 +8,9 @@ RUN yum install mesa-libGL -y
 RUN yum install libsndfile -y
 RUN pip freeze > requirements.txt
 
+
 # Download Feedback files
-RUN git clone -b develop --single-branch https://github.com/kookmin-sw/capstone-2022-15
+RUN git clone -b feedback --single-branch https://github.com/kookmin-sw/capstone-2022-15
 RUN mv capstone-2022-15/src/back/feedback/* ./
 RUN rm -rf capstone-2022-15
 # RUN pip install -r requirements.txt
@@ -51,7 +52,7 @@ RUN cat /lambda-entrypoint.sh
 
 ENV LAMBDA_TASK_ROOT=/var/task
 
-ENV PYTHONPATH "/opt/conda-env/lib/python3.8/site-package"
+ENV PYTHONPATH "/opt/conda-env/lib/python3.8/site-package:/var/task:/var/task/feedback"
 COPY lambda-entrypoint.sh /lambda-entrypoint.sh
 RUN chmod 755 /lambda-entrypoint.sh
 
@@ -67,6 +68,15 @@ RUN /opt/conda-env/bin/python3.8 -c "import cv2; print(cv2.__version__)"
 RUN /opt/conda-env/bin/python3.8 -c "import librosa; print(librosa.__version__)"
 RUN /opt/conda-env/bin/python3.8 -c "import numpy; print(numpy.__version__)"
 RUN /opt/conda-env/bin/python3.8 -c "import matplotlib; print(matplotlib.__version__)"
+
+RUN pwd
+RUN ls
+RUN /opt/conda-env/bin/python3.8 -c "from feedback.utils.io import get_url_from_s3"
+
+COPY pthread_shim.so /opt/pthread_shim.so
+RUN mkdir /tmp/matplotlib
+ENV MPLCONFIGDIR "/tmp/matplotlib"
+RUN chmod 755 -R /tmp/
 
 ENTRYPOINT ["/lambda-entrypoint.sh"]
 CMD ["main.lambda_handler"]
