@@ -101,6 +101,12 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 [![시연 영상](https://user-images.githubusercontent.com/39400030/170182668-383448cf-c65a-46b8-8212-6edc240b7c0f.png)](https://youtu.be/v1Mnj-jDEJA)
 
 <br>
+
+### IV. 최종 발표 영상
+[![최종 발표 영상](https://user-images.githubusercontent.com/39400030/162360283-c2917008-e1e4-45ad-a0e1-8e31e4ca5712.png)](https://youtu.be/v0MnBo9dQ98)
+
+
+<br>
 <br>
 
 ## 4. 팀 소개
