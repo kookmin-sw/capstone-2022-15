@@ -34,6 +34,7 @@ class Feedback extends Component {
     _getListData = async function(){
       const interview_id = Number(this.props.params.interview_id);
       const question_n = Number(this.props.params.question_n);
+      this.setState({question_n:question_n})
       //const question_n = 0
       console.log("interview id:", this.props.params.interview_id)
       console.log("question_n:", this.props.params.question_n)
@@ -64,6 +65,7 @@ class Feedback extends Component {
     render(){
         const list = this.state.data.data
         let interview_id = this.state.interview_id
+        let question_n = this.state.question_n
         let status = this.state.status
         console.log("Mypage")
 
@@ -104,7 +106,7 @@ class Feedback extends Component {
               </a>
               <div className='Main-box'>
                 <div>
-              <div className='Feedback-Q'> Q1 </div>
+              <div className='Feedback-Q'> {'Q' + (question_n+1)} </div>
               <div className='Feedback-txt'style={{top:'50px'}}>
                     🔹 Video Check
               </div>
@@ -121,7 +123,7 @@ class Feedback extends Component {
               <div className='Feedback-txt' style={{top:'117px'}}>
                     🔹 나의 답변
                 <div className="Stt">
-                  {list.stt_interview.slice(46, -2)}<br/>
+                  {list.stt_interview.slice(9, -2)}<br/>
                 </div>
               </div>
 
@@ -223,7 +225,7 @@ const Line_chart_face = ({
                     }}
             >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" unit="초"/><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
+            <XAxis dataKey="x" unit="초"/><YAxis domain={[0, 0.03]}/> <Tooltip /> <Legend />
             <Line
               type="monotone"
               dataKey="y"
