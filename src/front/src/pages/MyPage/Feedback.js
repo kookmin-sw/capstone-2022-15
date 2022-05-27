@@ -11,7 +11,7 @@ import SyncLoader from "react-spinners/SyncLoader";
 import axios from 'axios';
 export const Authentication = React.createContext(null);
 
-import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis, 
+import {LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, ZAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,} from 'recharts';
 
 
@@ -42,7 +42,7 @@ class Feedback extends Component {
       //const question_n = 0;
         let getFeedbackpage = isTest
         ? `http://localhost:8000/accounts/feedback/${interview_id}/${question_n}`
-        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;      
+        : `https://api.kmuin4u.com/accounts/feedback/${interview_id}/${question_n}`;
       const data_list = await axios(getFeedbackpage,{
         method : 'GET',
         headers : {
@@ -68,6 +68,8 @@ class Feedback extends Component {
         }
         if (list){
             console.log("Mypage get sucess")
+            console.log("list iris:", list.iris[0])
+            console.log("list iris:", list.iris[0].x_max)
             return (
 
                 <div>
@@ -130,7 +132,7 @@ class Feedback extends Component {
                   </div>
 
                   <div style={{ width: '594px', height: '313px',  left:'190px',position:'absolute'}}>
-                    <Scatter_chart_iris scatter_data= {list.iris_movement}  />
+                    <Scatter_chart_iris scatter_data= {list.iris_movement} iris_data={list.iris[0]} />
                   </div>
 
               </div>
@@ -142,7 +144,7 @@ class Feedback extends Component {
                     🔹 머리 움직임
                   <div style={{ overflowX:'scroll',width: '650px', height: '350px',  left:'160px',position:'absolute'}}>
                   <div style={{ width: '800px', height: '300px'}}>
-                    <Line_chart_face line_data= {list.face_movement}  />
+                    <Line_chart_face line_data= {list.face_movement} />
                   </div>
                   </div>
               </div>
@@ -173,8 +175,8 @@ class Feedback extends Component {
 
 {/*********************  Scatter Chart - 시선처리 차트 ********************/}
 const Scatter_chart_iris = ({
-  scatter_data
-  }) => {
+  scatter_data, iris_data}) => {
+  //console.log("iris data:", x_min, x_max)
   return (
     <ResponsiveContainer width="100%" height="100%">
     <ScatterChart
@@ -188,8 +190,8 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" name="x" unit="" />
-      <YAxis type="number" dataKey="y" name="y" unit="" />
+      <XAxis type="number" dataKey="x" unit="" domain={[iris_data.x_min, iris_data.x_max]} tick={false}/>
+      <YAxis type="number" dataKey="y" unit="" domain={[iris_data.y_min, iris_data.y_max]} tick={false}/>
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
       <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
