@@ -190,8 +190,8 @@ const Scatter_chart_iris = ({
       }}
     >
       <CartesianGrid />
-      <XAxis type="number" dataKey="x" unit="" domain={[iris_data.x_min- 0.1, iris_data.x_max+0.1]}/>
-      <YAxis type="number" dataKey="y" unit="" domain={[iris_data.y_min- 0.1, iris_data.y_max+0.1]}/>
+      <XAxis type="number" dataKey="x" unit="" domain={[iris_data.x_min, iris_data.x_max]} tick={false}/>
+      <YAxis type="number" dataKey="y" unit="" domain={[iris_data.y_min, iris_data.y_max]} tick={false}/>
       <Tooltip cursor={{ strokeDasharray: '3 3' }} />
       <Scatter name="A school" data={scatter_data} fill="#5B7EFB" />
     </ScatterChart>
