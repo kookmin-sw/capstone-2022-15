@@ -83,22 +83,22 @@ Interview practice with interviewers created by StyleGAN and Wav2lip can help yo
 
 ## 3. 소개 영상
 
-### I. 200초 소개 동영상
+### I. 시연 영상
+[![시연 영상](https://user-images.githubusercontent.com/39400030/170182668-383448cf-c65a-46b8-8212-6edc240b7c0f.png)](https://youtu.be/ToXu0BNCu38)
+
+<br>
+
+### II. 200초 소개 동영상
 <!-- [200초 소개 동영상](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be) -->
 [![200초 소개 동영상](https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png)](https://www.youtube.com/watch?v=7H8VzdCyxu0&feature=youtu.be)
 
 <br>
 
-### II. 중간 발표 영상
+### III. 중간 발표 영상
 [![중간 발표 영상](https://user-images.githubusercontent.com/39400030/162360283-c2917008-e1e4-45ad-a0e1-8e31e4ca5712.png)](https://youtu.be/YphsQx7i4go)
 
 <!-- <img width="1440" alt="200초소개동영상썸네일" src="https://user-images.githubusercontent.com/39400030/161255151-c149c739-6f6d-4eed-b79a-25bb87b332dc.png">
 ![200초소개동영상썸네일크롭](https://user-images.githubusercontent.com/39400030/161255171-7454753f-0751-4c2f-b490-e7ab5637597e.jpeg) -->
-
-<br>
-
-### III. 시연 영상
-[![시연 영상](https://user-images.githubusercontent.com/39400030/170182668-383448cf-c65a-46b8-8212-6edc240b7c0f.png)](https://youtu.be/ToXu0BNCu38)
 
 <br>
 
