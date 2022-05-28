@@ -13,13 +13,16 @@ const SelectBox = ({
             {Object.keys(selectBoxObject).map((key, idx) => {
                 return (
                     <div>
-                        <input
-                            type={type}
-                            key={idx}
-                            name={key}
-                            value={key}
-                            onClick={() => changeHandler(key)}
-                            checked={key === checkedId}/> {selectBoxObject[key]}
+                        {/* <label for="chk2"><input type="checkbox" id="chk2" name="chk2">체크박스2</label><br>
+                        <label for="r2_1"><input type="radio" id="r2_1" name="r2" checked>라디오3</label> */}
+                        <input 
+                        type={type}
+                        key={idx}
+                        name={key}
+                        id={key}
+                        value={key}
+                        onClick={() => changeHandler(key)}
+                        checked={key === checkedId}/> &nbsp;{selectBoxObject[key]}
                     </div>
                 )
             })}

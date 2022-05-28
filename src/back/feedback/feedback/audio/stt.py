@@ -1,4 +1,4 @@
-import boto3
+import json
 import requests
 from feedback.utils.io import download_audio_from_s3
 
@@ -19,7 +19,7 @@ class STT:
         speech_data = open(path, 'rb')
         response = requests.post(self.url, data=speech_data, headers=self.headers)
         response_code = response.status_code
-        self.text = response.text
+        self.text = json.loads(response.text)["text"]
         assert response_code == 200, f"Error : {response.text}"
 
         return response.status_code

@@ -2,12 +2,15 @@ import './PreInterview.css';
 import styles from './SelectBox.module.css';
 import { PageDescription } from '../../components/PageDescription';
 import WebcamStreamCapture from '../../components/Webcam'
+import { checkToken } from '../LoginPage/Login'
 import React, { useEffect, useState, useRef, useCallback } from "react"; 
 import Navbar from '../components/Navbar/Navbar';
 import ModalComponent from '../../components/Modal';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 // import Footer from '../components/Footer';
+
+const isLoggedIn = !!localStorage.getItem('token');
 
 const interviewTypeName = {
     0: '[인성] 인성 면접',
@@ -25,10 +28,11 @@ const modalStyle = {
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        width: '90vw',
-        height: '90vh',
+        width: '95vw',
+        height: '92vh',
         transform: 'translate(-50%, -50%)',
-        background: 'white'
+        background: 'white',
+        padding: '0px'
     }
 }
 
@@ -57,10 +61,21 @@ const PreInterview = () => {
     const [video, setVideo] = useState('')
 
     useEffect(() => {
-        if(preSignedUrl !== ''){
+        if (preSignedUrl !== '') {
             setVideo(preSignedUrl)
         }
     }, [preSignedUrl])
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            window.location.replace('/login')
+        }
+        const isTokenValid = checkToken(localStorage.getItem('token'))
+        if (!isTokenValid) {
+            window.localStorage.clear()
+            window.location.replace('/login')
+        }
+    }, [])
 
     const startCaptureHandler = useCallback(() => {
 
@@ -105,9 +120,9 @@ const PreInterview = () => {
     }, [recordedChunks, intervieweePreSignedUrl]);
     const isTest = false;
     let getInterviewerPreSignedUrl = isTest
-                    ? `http://localhost:8000/interview/practice/${checkedId}` // checkedId -> ques
+                    ? `http://localhost:8000/interview/practice/${checkedId}/${questionN}` // checkedId -> ques
                     // ? `http://127.0.0.1:8000/interview/practice/${checkedId}`
-                    : `https://api.kmuin4u.com/interview/practice/${checkedId}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
+                    : `https://api.kmuin4u.com/interview/practice/${checkedId}/${questionN}`; // interviewer 영상을 get요청할 수 있는 presigned url을 요청할 수 있는 url
     let postIntervieweePresignedUrl = isTest
                     ? `http://localhost:8000/interview/practice/save` 
                     // ? 'http://127.0.0.1:8000/interview/practice/save'
@@ -148,12 +163,12 @@ const PreInterview = () => {
 
     return (
         <div className="PreInterviewApp">
-            <Navbar/>
+            {!openModal && <Navbar/>}
             <PageDescription/>
             <div className="cam-setting-layout">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        • WEBCAM 연결 
+                        🖥 &nbsp;WEBCAM 연결 {/* ✔︎ */}
                     </div>
                     {/* <button className="notification" onClick={() => isOpenModal(true)}>
                         i
@@ -164,14 +179,14 @@ const PreInterview = () => {
                         {<WebcamStreamCapture
                             webcamRef={webcamRef}
                             recordedChunks={recordedChunks}
-                            />}
+                        />}
                     </div>
                 </div>
             </div>
             <div className="select-interview-type">
                 <div className="mini-title">
                     <div className="cam-setting-title">
-                        • 면접 종류 선택
+                        📌 &nbsp;면접 종류 선택 
                     </div>
                 </div>
                 <div className="select-interview-type-layout">
@@ -183,9 +198,11 @@ const PreInterview = () => {
                         selectBoxObject={interviewTypeName} />
                 </div>
                 <div className="button-layout">
+                    {/* {checkedId !== '' &&*/}
                     <button className="start-button" onClick={() => isOpenModal(true)}>
                         START
                     </button>
+                    {/* } */}
                 {isOpenModal && <ModalComponent
                     isOpen={openModal}
                     closeModalHandler={closeModalHandler}

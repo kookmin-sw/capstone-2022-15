@@ -1,6 +1,6 @@
 .Signup_App {
     width: 100%;
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     
@@ -19,7 +19,7 @@
     background: #eaebec; 
 }
 .BT-Join{
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     color:#fff;
@@ -39,7 +39,7 @@
     font-size: 0.9vw;
 }
 .BT-Login{
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-style: normal;
     font-weight: bold;
     font-size: 1.1vw;

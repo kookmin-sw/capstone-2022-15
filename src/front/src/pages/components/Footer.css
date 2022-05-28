@@ -1,5 +1,5 @@
 .FR-footer-gray{
-  width: 98vw;
+  width: 99vw;
   height: 14vh;
   left: 0vw;
   background: #F0F2F4;
@@ -18,7 +18,7 @@
   top: 0.8vw;
   left: 4vw;
 
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 500;
   font-size: 0.75vw;

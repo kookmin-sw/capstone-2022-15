@@ -5,21 +5,21 @@ from urllib.parse import unquote_plus
 from feedback.utils.io import *
 
 
-def face_movement(url):
+def face_movement(s3, bucket, key):
     from feedback.video.face_movement import FaceMovement
     fm = FaceMovement()
     print("Init Face Movement")
-    fm.eval(url)
+    fm.eval(s3, bucket, key)
     path = fm.write()
     print("Save result on /tmp")
     return path
 
 
-def iris_movement(url):
+def iris_movement(s3, bucket, key):
     from feedback.video.face_iris_movement import IrisMovement
     ir = IrisMovement()
     print("Init Iris Movement")
-    ir.eval(url)
+    ir.eval(s3, bucket, key)
     path = ir.write()
     print("Save result on /tmp")
     return path
@@ -99,27 +99,27 @@ def lambda_handler(event, context):
 
     # (video) face movement
     if feedback_type == 'face-movement':
-        path = face_movement(url)
+        path = face_movement(s3, bucket, key)
         # user_id_{}/interview_id_{}/result/face_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"face_movement_{filename}.npy"
+        upload_key = BASE_RESULT_PATH + f"face_movement_{filename}.npz"
 
     # (video) iris movement
     elif feedback_type == 'iris-movement':
-        path = iris_movement(url)
+        path = iris_movement(s3, bucket, key)
         # user_id_{}/interview_id_{}/result/iris_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"iris_movement_{filename}.npy"
+        upload_key = BASE_RESULT_PATH + f"iris_movement_{filename}.npz"
 
     # (video) hand movemnt
     elif feedback_type == 'hand-movement':
         path = hand_movement(url)
         # user_id_{}/interview_id_{}/result/hand_movement_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"hand_movemnt_{filename}.npy"
+        upload_key = BASE_RESULT_PATH + f"hand_movemnt_{filename}.npz"
 
     # (audio) voice analysis
     elif feedback_type == 'voice-analysis':
         path = voice_analysis(s3, bucket, key)
         # user_id_{}/interview_id_{}/result/volume_{filename}.png
-        upload_key = BASE_RESULT_PATH + f"volume_{filename}.npy"
+        upload_key = BASE_RESULT_PATH + f"volume_{filename}.npz"
 
     # (audio) STT
     elif feedback_type == 'stt':
@@ -134,5 +134,40 @@ def lambda_handler(event, context):
     upload_file_to_s3(s3, path, save_bucket, upload_key)
     print("Upload result file")
 
+if __name__ == '__main__':
+    event = {
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:{{{accountId}}}:ExampleTopic",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+        "TopicArn": "arn:aws:sns:us-east-1:123456789012:ExampleTopic",
+        "Subject": "example subject",
+        "Message": "interviewer-bucket\tuser_id_01/interview01/interviewer.mp4",
+        "Timestamp": "1970-01-01T00:00:00.000Z",
+        "SignatureVersion": "1",
+        "Signature": "EXAMPLE",
+        "SigningCertUrl": "EXAMPLE",
+        "UnsubscribeUrl": "EXAMPLE",
+        "MessageAttributes": {
+          "Test": {
+            "Type": "String",
+            "Value": "TestString"
+          },
+          "TestBinary": {
+            "Type": "Binary",
+            "Value": "TestBinary"
+          }
+        }
+      }
+    }
+  ]
+}
+    os.environ['FEEDBACK_TYPE'] = 'iris-movement'
+    os.environ['S3_BUCKET_NAME_SUBMIT'] = 'interviewer-bucket'
+    lambda_handler(event, "")
 
 

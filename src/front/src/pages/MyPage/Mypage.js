@@ -6,8 +6,24 @@ import './Mypage.css';
 import List from './list.js'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { checkToken } from '../LoginPage/Login'
+
+const isLoggedIn = !!localStorage.getItem('token');
+
 
 const Mypage = () => {
+
+    useEffect(() => {
+      if(!isLoggedIn){
+          window.location.replace('/login')
+      }
+      const isTokenValid = checkToken(localStorage.getItem('token'))
+      if(!isTokenValid){
+          window.localStorage.clear()
+          window.location.replace('/login')
+      }
+    }, [])
+    
     return (
         <div>
             <Navbar/>
@@ -33,7 +49,7 @@ class Bar extends Component{
 class MenuBox extends Component{
   render(){
     return(
-      <div className='Menu-box' style={{height: '89vh'}}>
+      <div className='Menu-box' style={{height: '750px'}}>
           <div onClick={()=>console.log("마이 페이지로 페이지 변경")}>
                 <Link to="/mypage" className='Menu-txt2'>
                 연습목록
