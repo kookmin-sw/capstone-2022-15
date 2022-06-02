@@ -1,9 +1,0 @@
-#!/Users/yeieun/Documents/GitHub/capstone-2022-15/src/back/backend/vir_cap/bin/python
-# -*- coding: utf-8 -*-
-import re
-import sys
-from falcon.cmd.inspect_app import route_main
-
-if __name__ == "__main__":
-    sys.argv[0] = re.sub(r"(-script\.pyw|\.exe)?$", "", sys.argv[0])
-    sys.exit(route_main())
