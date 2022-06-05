@@ -126,7 +126,7 @@ Role: 프로젝트 매니저, 프론트엔드
 
 
 #### 김지민 [@miniee](https://github.com/JiminK)
-<img align="left" src="https://user-images.githubusercontent.com/39400030/161191988-d428db0a-437a-47e8-b90d-17d4b82c52a2.png" width="135"  height="135"/>
+<img align="left" src="https://user-images.githubusercontent.com/39400030/171572684-5f9dbe1b-ff4e-4580-b617-6f8317aee306.png" width="135"  height="135"/>
 
 ```
 Student ID: 20181597
