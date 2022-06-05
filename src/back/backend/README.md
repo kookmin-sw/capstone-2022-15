@@ -2,20 +2,25 @@ BACKEND
 
 to enter virtual environment
 
-    capstone-2022-15/src/back/backend> source vir_cap/bin/activate
+    capstone-2022-15/src/back/backend> python -m venv {venv_name}
+    capstone-2022-15/src/back/backend> source {venv_name}/bin/activate
+
+to install packages
+
+    (venv) capstone-2022-15/src/back/backend? pip install -r requirements/dev.txt
 
 
 django
 
-    (vir_cap)capstone-2022-15/src/back/backend> python3 manage.py runserver
+    (venv)capstone-2022-15/src/back/backend> python3 manage.py runserver
 
 
-sqlit3 db, table
+sqlite3 db, table
 
-    python3 manage.py dbshell
-    .tables
+    (venv) python3 manage.py dbshell
+    (venv) .tables
 
 sqlite3 table column name
     
-    pragma table_info({table_name});
+    (venv) pragma table_info({table_name});
 

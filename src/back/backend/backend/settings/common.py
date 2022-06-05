@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     # local apps
     "interview",
     "accounts",
-    "mypage"
 ]
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -86,16 +85,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
 
 # Password validation
@@ -154,10 +143,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.AllowAny",
         "rest_framework.permissions.IsAuthenticated", # 인증된 사용자
-
-
     ),
 
 }
-# 로그인 성공후 이동하는 URL
-LOGIN_REDIRECT_URL = "/"
