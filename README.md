@@ -4,6 +4,11 @@
 
 <br>
 
+### 우수상 수상 🏆 
+Won Second Prize 
+
+<br>
+
 ## 1. 프로젝트 소개
 <p align="center"><img src="https://user-images.githubusercontent.com/39540525/158740938-f31ba6ad-a470-444c-b433-1924d181d633.png"></p>
 
